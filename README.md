@@ -135,9 +135,10 @@ Obviously you need to put the NPM lib of @ionic in the assets folder.
 
 # Todo's
 A number of todo's:
-- Ionic 6 - expected in March?
-- Snowpack instead of rollup
 - Add some other Ionic things like Platform
+- Ionic 6 - launched in Dec 2021!
+- Github comment by AlexRMU on opening modals https://github.com/Tommertom/svelte-ionic-app/issues/15#issuecomment-937903116
+- ~~Snowpack instead of rollup~~
 - ~~Copy snippets of source code~~
 - ~~Implement workbox and spassr as shown in the startertemplate of routify (or at least check) - using https://github.com/OliwerDrywa/svelte-pwa/blob/master/public/service-worker.js~~
 - ~~fix IonTab~~
@@ -164,18 +165,18 @@ A number of todo's:
 - ~~split pane~~
 - ~~searchbox in ionicons~~
 - add non Ionic elements to complete UI: 
-    - chat ui and other social elements (https://github.com/thenaim/ionic-tk-social-network)
+    - ~~chat ui and other social elements (https://github.com/thenaim/ionic-tk-social-network) - nope, won't do this~~
     - ~~Stimeline~~S
-    - accordion
-    - ~~pane~~ 
+    - ~~accordion - part of Ionic 6~~
+    - ~~pane - part of Ionic 6~~ 
 - ~~SSR~~
 - ~~to docs link https://ionicframework.com/docs/api/input~~
 - https://css-tricks.com/what-i-like-about-writing-styles-with-svelte/
 - https://github.com/pngwn/prism-svelte or something else that works
 - ~~REPLs~~
 - ~~change router? https://github.com/qutran/swheel, https://github.com/jorgegorka/svelte-router/blob/master/README.md~~
-- source code formatter in HTML
-- Font Awesome icons
+- ~~ source code formatter in HTML - won't do this~~
+- ~~Font Awesome icons - won't do this~~
 - ~~Web Animations API trial - see Avatars~~
 - ~~replace manual route filter with ignore option~~
 - ~~Sseek ways to include in rollup bundler instead of script include~~S
