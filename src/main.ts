@@ -1,16 +1,14 @@
-import App from './App.svelte';
 
-// import { myRoutes as routes } from "./myRoutes.js";
+import App from './App.svelte'
 
-// import { routes } from "@sveltech/routify/tmp/routes";
-// import { routes } from "@roxi/routify";
-import { routes } from "./routes/routes";
+import { initialiseIonicSvelte } from "./services/IonicSvelte";
+
+initialiseIonicSvelte();
 
 const app = new App({
-	target: document.body,
-	props: {
-		routes
-	}
-});
+  target: document.getElementById('app')
+})
 
-export default app;
+export default app
+
+

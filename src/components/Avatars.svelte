@@ -1,0 +1,70 @@
+<ion-list-header>Default</ion-list-header>
+<ion-avatar class="ion-margin-start">
+  <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+</ion-avatar>
+<ion-chip class="ion-margin-start">
+  <ion-avatar>
+    <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+  </ion-avatar>
+  <ion-label>Kit Bishop</ion-label>
+</ion-chip>
+<ion-list-header>Chip!</ion-list-header>
+<ion-chip class="ion-margin-start">
+  <ion-avatar>
+    <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+  </ion-avatar>
+  <ion-label>Kit Bishop</ion-label>
+</ion-chip>
+
+<ion-list>
+  <ion-list-header>Item Avatars</ion-list-header>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>Lorem ipsum</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="end">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h3>Click me!</h3>
+      <p>Click this item to launch the WEB Animation API</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h3>Lorem ipsum</h3>
+      <p>dolor sit amet</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h3>Lorem ipsum</h3>
+      <p>dolor sit amet</p>
+      <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="end">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>Lorem ipsum</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-avatar slot="end">
+      <img alt="avatar" src="/assets/img/ionic/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h3>Lorem ipsum</h3>
+      <p>dolor sit amet</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
