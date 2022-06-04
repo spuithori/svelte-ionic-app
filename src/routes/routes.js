@@ -1,17 +1,63 @@
 
 /**
- * @roxi/routify 2.1.2
- * File generated Thu Jun 02 2022 14:53:03 GMT+0200 (Central European Summer Time)
+ * @roxi/routify 2.18.7
+ * File generated Sat Jun 04 2022 13:57:12 GMT+0200 (Central European Summer Time)
  */
 
-export const __version = "2.1.2"
-export const __timestamp = "2022-06-02T12:53:03.139Z"
+export const __version = "2.18.7"
+export const __timestamp = "2022-06-04T11:57:12.932Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
 
 //imports
-
+import __fallback from '../pages/_fallback.svelte'
+import _index from '../pages/index.svelte'
+import _ionic_AltDetails from '../pages/ionic/AltDetails.svelte'
+import _ionic_Avatars from '../pages/ionic/Avatars.svelte'
+import _ionic_Badge from '../pages/ionic/Badge.svelte'
+import _ionic_Button from '../pages/ionic/Button.svelte'
+import _ionic_Card from '../pages/ionic/Card.svelte'
+import _ionic_Checkbox from '../pages/ionic/Checkbox.svelte'
+import _ionic_Chip from '../pages/ionic/Chip.svelte'
+import _ionic_Controllers from '../pages/ionic/Controllers.svelte'
+import _ionic_Datetime from '../pages/ionic/Datetime.svelte'
+import _ionic_Fab from '../pages/ionic/Fab.svelte'
+import _ionic_Games from '../pages/ionic/Games.svelte'
+import _ionic_Grid from '../pages/ionic/Grid.svelte'
+import _ionic_Icon from '../pages/ionic/Icon.svelte'
+import _ionic_Infinitescroll from '../pages/ionic/Infinitescroll.svelte'
+import _ionic_Inputs from '../pages/ionic/Inputs.svelte'
+import _ionic_Item from '../pages/ionic/Item.svelte'
+import _ionic_List from '../pages/ionic/List.svelte'
+import _ionic_ModalExtra from '../pages/ionic/ModalExtra.svelte'
+import _ionic_Music from '../pages/ionic/Music.svelte'
+import _ionic_Nav from '../pages/ionic/Nav.svelte'
+import _ionic_NavDetail from '../pages/ionic/NavDetail.svelte'
+import _ionic_NavList from '../pages/ionic/NavList.svelte'
+import _ionic_Note from '../pages/ionic/Note.svelte'
+import _ionic_Pane from '../pages/ionic/Pane.svelte'
+import _ionic_PopoverExtra from '../pages/ionic/PopoverExtra.svelte'
+import _ionic_ProgressBar from '../pages/ionic/ProgressBar.svelte'
+import _ionic_Radio from '../pages/ionic/Radio.svelte'
+import _ionic_Range from '../pages/ionic/Range.svelte'
+import _ionic_Refresher from '../pages/ionic/Refresher.svelte'
+import _ionic_Reorder from '../pages/ionic/Reorder.svelte'
+import _ionic_Searchbar from '../pages/ionic/Searchbar.svelte'
+import _ionic_Segment from '../pages/ionic/Segment.svelte'
+import _ionic_Select from '../pages/ionic/Select.svelte'
+import _ionic_Skeleton from '../pages/ionic/Skeleton.svelte'
+import _ionic_Slides from '../pages/ionic/Slides.svelte'
+import _ionic_Spinner from '../pages/ionic/Spinner.svelte'
+import _ionic_Splash from '../pages/ionic/Splash.svelte'
+import _ionic_tabs__tab from '../pages/ionic/tabs/[tab].svelte'
+import _ionic_Text from '../pages/ionic/Text.svelte'
+import _ionic_Thumbnails from '../pages/ionic/Thumbnails.svelte'
+import _ionic_Timeline from '../pages/ionic/Timeline.svelte'
+import _ionic_Toggle from '../pages/ionic/Toggle.svelte'
+import _ionic_Toolbar from '../pages/ionic/Toolbar.svelte'
+import _ionic__layout from '../pages/ionic/_layout.svelte'
+import __layout from '../pages/_layout.svelte'
 
 //options
 export const options = {}
@@ -41,15 +87,13 @@ export const _tree = {
       "isPage": false,
       "ownMeta": {},
       "meta": {
+        "recursive": true,
         "preload": false,
-        "prerender": true,
-        "precache-order": false,
-        "precache-proximity": true,
-        "recursive": true
+        "prerender": true
       },
       "path": "/_fallback",
       "id": "__fallback",
-      "component": () => import('../pages/_fallback.svelte').then(m => m.default)
+      "component": () => __fallback
     },
     {
       "isFile": true,
@@ -68,15 +112,13 @@ export const _tree = {
       "isPage": true,
       "ownMeta": {},
       "meta": {
+        "recursive": true,
         "preload": false,
-        "prerender": true,
-        "precache-order": false,
-        "precache-proximity": true,
-        "recursive": true
+        "prerender": true
       },
       "path": "/index",
       "id": "_index",
-      "component": () => import('../pages/index.svelte').then(m => m.default)
+      "component": () => _index
     },
     {
       "isFile": true,
@@ -105,15 +147,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/AltDetails",
           "id": "_ionic_AltDetails",
-          "component": () => import('../pages/ionic/AltDetails.svelte').then(m => m.default)
+          "component": () => _ionic_AltDetails
         },
         {
           "isFile": true,
@@ -132,15 +172,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Avatars",
           "id": "_ionic_Avatars",
-          "component": () => import('../pages/ionic/Avatars.svelte').then(m => m.default)
+          "component": () => _ionic_Avatars
         },
         {
           "isFile": true,
@@ -159,15 +197,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Badge",
           "id": "_ionic_Badge",
-          "component": () => import('../pages/ionic/Badge.svelte').then(m => m.default)
+          "component": () => _ionic_Badge
         },
         {
           "isFile": true,
@@ -186,15 +222,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Button",
           "id": "_ionic_Button",
-          "component": () => import('../pages/ionic/Button.svelte').then(m => m.default)
+          "component": () => _ionic_Button
         },
         {
           "isFile": true,
@@ -213,15 +247,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Card",
           "id": "_ionic_Card",
-          "component": () => import('../pages/ionic/Card.svelte').then(m => m.default)
+          "component": () => _ionic_Card
         },
         {
           "isFile": true,
@@ -240,15 +272,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Checkbox",
           "id": "_ionic_Checkbox",
-          "component": () => import('../pages/ionic/Checkbox.svelte').then(m => m.default)
+          "component": () => _ionic_Checkbox
         },
         {
           "isFile": true,
@@ -267,15 +297,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Chip",
           "id": "_ionic_Chip",
-          "component": () => import('../pages/ionic/Chip.svelte').then(m => m.default)
+          "component": () => _ionic_Chip
         },
         {
           "isFile": true,
@@ -294,15 +322,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Controllers",
           "id": "_ionic_Controllers",
-          "component": () => import('../pages/ionic/Controllers.svelte').then(m => m.default)
+          "component": () => _ionic_Controllers
         },
         {
           "isFile": true,
@@ -321,15 +347,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Datetime",
           "id": "_ionic_Datetime",
-          "component": () => import('../pages/ionic/Datetime.svelte').then(m => m.default)
+          "component": () => _ionic_Datetime
         },
         {
           "isFile": true,
@@ -348,15 +372,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Fab",
           "id": "_ionic_Fab",
-          "component": () => import('../pages/ionic/Fab.svelte').then(m => m.default)
+          "component": () => _ionic_Fab
         },
         {
           "isFile": true,
@@ -375,15 +397,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Games",
           "id": "_ionic_Games",
-          "component": () => import('../pages/ionic/Games.svelte').then(m => m.default)
+          "component": () => _ionic_Games
         },
         {
           "isFile": true,
@@ -402,15 +422,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Grid",
           "id": "_ionic_Grid",
-          "component": () => import('../pages/ionic/Grid.svelte').then(m => m.default)
+          "component": () => _ionic_Grid
         },
         {
           "isFile": true,
@@ -429,15 +447,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Icon",
           "id": "_ionic_Icon",
-          "component": () => import('../pages/ionic/Icon.svelte').then(m => m.default)
+          "component": () => _ionic_Icon
         },
         {
           "isFile": true,
@@ -456,15 +472,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Infinitescroll",
           "id": "_ionic_Infinitescroll",
-          "component": () => import('../pages/ionic/Infinitescroll.svelte').then(m => m.default)
+          "component": () => _ionic_Infinitescroll
         },
         {
           "isFile": true,
@@ -483,15 +497,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Inputs",
           "id": "_ionic_Inputs",
-          "component": () => import('../pages/ionic/Inputs.svelte').then(m => m.default)
+          "component": () => _ionic_Inputs
         },
         {
           "isFile": true,
@@ -510,15 +522,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Item",
           "id": "_ionic_Item",
-          "component": () => import('../pages/ionic/Item.svelte').then(m => m.default)
+          "component": () => _ionic_Item
         },
         {
           "isFile": true,
@@ -537,15 +547,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/List",
           "id": "_ionic_List",
-          "component": () => import('../pages/ionic/List.svelte').then(m => m.default)
+          "component": () => _ionic_List
         },
         {
           "isFile": true,
@@ -564,15 +572,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/ModalExtra",
           "id": "_ionic_ModalExtra",
-          "component": () => import('../pages/ionic/ModalExtra.svelte').then(m => m.default)
+          "component": () => _ionic_ModalExtra
         },
         {
           "isFile": true,
@@ -591,15 +597,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Music",
           "id": "_ionic_Music",
-          "component": () => import('../pages/ionic/Music.svelte').then(m => m.default)
+          "component": () => _ionic_Music
         },
         {
           "isFile": true,
@@ -618,15 +622,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Nav",
           "id": "_ionic_Nav",
-          "component": () => import('../pages/ionic/Nav.svelte').then(m => m.default)
+          "component": () => _ionic_Nav
         },
         {
           "isFile": true,
@@ -645,15 +647,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/NavDetail",
           "id": "_ionic_NavDetail",
-          "component": () => import('../pages/ionic/NavDetail.svelte').then(m => m.default)
+          "component": () => _ionic_NavDetail
         },
         {
           "isFile": true,
@@ -672,15 +672,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/NavList",
           "id": "_ionic_NavList",
-          "component": () => import('../pages/ionic/NavList.svelte').then(m => m.default)
+          "component": () => _ionic_NavList
         },
         {
           "isFile": true,
@@ -699,15 +697,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Note",
           "id": "_ionic_Note",
-          "component": () => import('../pages/ionic/Note.svelte').then(m => m.default)
+          "component": () => _ionic_Note
         },
         {
           "isFile": true,
@@ -726,15 +722,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Pane",
           "id": "_ionic_Pane",
-          "component": () => import('../pages/ionic/Pane.svelte').then(m => m.default)
+          "component": () => _ionic_Pane
         },
         {
           "isFile": true,
@@ -753,15 +747,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/PopoverExtra",
           "id": "_ionic_PopoverExtra",
-          "component": () => import('../pages/ionic/PopoverExtra.svelte').then(m => m.default)
+          "component": () => _ionic_PopoverExtra
         },
         {
           "isFile": true,
@@ -780,15 +772,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/ProgressBar",
           "id": "_ionic_ProgressBar",
-          "component": () => import('../pages/ionic/ProgressBar.svelte').then(m => m.default)
+          "component": () => _ionic_ProgressBar
         },
         {
           "isFile": true,
@@ -807,15 +797,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Radio",
           "id": "_ionic_Radio",
-          "component": () => import('../pages/ionic/Radio.svelte').then(m => m.default)
+          "component": () => _ionic_Radio
         },
         {
           "isFile": true,
@@ -834,15 +822,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Range",
           "id": "_ionic_Range",
-          "component": () => import('../pages/ionic/Range.svelte').then(m => m.default)
+          "component": () => _ionic_Range
         },
         {
           "isFile": true,
@@ -861,15 +847,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Refresher",
           "id": "_ionic_Refresher",
-          "component": () => import('../pages/ionic/Refresher.svelte').then(m => m.default)
+          "component": () => _ionic_Refresher
         },
         {
           "isFile": true,
@@ -888,15 +872,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Reorder",
           "id": "_ionic_Reorder",
-          "component": () => import('../pages/ionic/Reorder.svelte').then(m => m.default)
+          "component": () => _ionic_Reorder
         },
         {
           "isFile": true,
@@ -915,15 +897,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Searchbar",
           "id": "_ionic_Searchbar",
-          "component": () => import('../pages/ionic/Searchbar.svelte').then(m => m.default)
+          "component": () => _ionic_Searchbar
         },
         {
           "isFile": true,
@@ -942,15 +922,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Segment",
           "id": "_ionic_Segment",
-          "component": () => import('../pages/ionic/Segment.svelte').then(m => m.default)
+          "component": () => _ionic_Segment
         },
         {
           "isFile": true,
@@ -969,15 +947,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Select",
           "id": "_ionic_Select",
-          "component": () => import('../pages/ionic/Select.svelte').then(m => m.default)
+          "component": () => _ionic_Select
         },
         {
           "isFile": true,
@@ -996,15 +972,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Skeleton",
           "id": "_ionic_Skeleton",
-          "component": () => import('../pages/ionic/Skeleton.svelte').then(m => m.default)
+          "component": () => _ionic_Skeleton
         },
         {
           "isFile": true,
@@ -1023,15 +997,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Slides",
           "id": "_ionic_Slides",
-          "component": () => import('../pages/ionic/Slides.svelte').then(m => m.default)
+          "component": () => _ionic_Slides
         },
         {
           "isFile": true,
@@ -1050,15 +1022,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Spinner",
           "id": "_ionic_Spinner",
-          "component": () => import('../pages/ionic/Spinner.svelte').then(m => m.default)
+          "component": () => _ionic_Spinner
         },
         {
           "isFile": true,
@@ -1077,15 +1047,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Splash",
           "id": "_ionic_Splash",
-          "component": () => import('../pages/ionic/Splash.svelte').then(m => m.default)
+          "component": () => _ionic_Splash
         },
         {
           "isFile": false,
@@ -1114,15 +1082,13 @@ export const _tree = {
               "isPage": true,
               "ownMeta": {},
               "meta": {
+                "recursive": true,
                 "preload": false,
-                "prerender": true,
-                "precache-order": false,
-                "precache-proximity": true,
-                "recursive": true
+                "prerender": true
               },
               "path": "/ionic/tabs/:tab",
               "id": "_ionic_tabs__tab",
-              "component": () => import('../pages/ionic/tabs/[tab].svelte').then(m => m.default)
+              "component": () => _ionic_tabs__tab
             }
           ],
           "isLayout": false,
@@ -1132,11 +1098,9 @@ export const _tree = {
           "isPage": false,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/tabs"
         },
@@ -1157,15 +1121,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Text",
           "id": "_ionic_Text",
-          "component": () => import('../pages/ionic/Text.svelte').then(m => m.default)
+          "component": () => _ionic_Text
         },
         {
           "isFile": true,
@@ -1184,15 +1146,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Thumbnails",
           "id": "_ionic_Thumbnails",
-          "component": () => import('../pages/ionic/Thumbnails.svelte').then(m => m.default)
+          "component": () => _ionic_Thumbnails
         },
         {
           "isFile": true,
@@ -1211,15 +1171,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Timeline",
           "id": "_ionic_Timeline",
-          "component": () => import('../pages/ionic/Timeline.svelte').then(m => m.default)
+          "component": () => _ionic_Timeline
         },
         {
           "isFile": true,
@@ -1238,15 +1196,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Toggle",
           "id": "_ionic_Toggle",
-          "component": () => import('../pages/ionic/Toggle.svelte').then(m => m.default)
+          "component": () => _ionic_Toggle
         },
         {
           "isFile": true,
@@ -1265,15 +1221,13 @@ export const _tree = {
           "isPage": true,
           "ownMeta": {},
           "meta": {
+            "recursive": true,
             "preload": false,
-            "prerender": true,
-            "precache-order": false,
-            "precache-proximity": true,
-            "recursive": true
+            "prerender": true
           },
           "path": "/ionic/Toolbar",
           "id": "_ionic_Toolbar",
-          "component": () => import('../pages/ionic/Toolbar.svelte').then(m => m.default)
+          "component": () => _ionic_Toolbar
         }
       ],
       "isLayout": true,
@@ -1284,15 +1238,13 @@ export const _tree = {
       "importPath": "../pages/ionic/_layout.svelte",
       "ownMeta": {},
       "meta": {
+        "recursive": true,
         "preload": false,
-        "prerender": true,
-        "precache-order": false,
-        "precache-proximity": true,
-        "recursive": true
+        "prerender": true
       },
       "path": "/ionic",
       "id": "_ionic__layout",
-      "component": () => import('../pages/ionic/_layout.svelte').then(m => m.default)
+      "component": () => _ionic__layout
     }
   ],
   "isLayout": true,
@@ -1306,15 +1258,13 @@ export const _tree = {
   "badExt": false,
   "importPath": "../pages/_layout.svelte",
   "meta": {
+    "recursive": true,
     "preload": false,
-    "prerender": true,
-    "precache-order": false,
-    "precache-proximity": true,
-    "recursive": true
+    "prerender": true
   },
   "path": "/",
   "id": "__layout",
-  "component": () => import('../pages/_layout.svelte').then(m => m.default)
+  "component": () => __layout
 }
 
 

@@ -3,16 +3,16 @@ module.exports = {
   "sourceDir": "public",
   "routifyDir": "src/routes",
   "ignore": "",
-  "dynamicImports": true,
+  "dynamicImports": false,
   "singleBuild": false,
   "noHashScroll": false,
+  "distDir": "dist",
+  "hashScroll": true,
   "extensions": [
     "html",
     "svelte",
     "md",
     "svx"
   ],
-  "distDir": "dist",
-  "hashScroll": true,
-  "started": "2022-06-02T12:53:02.917Z"
+  "started": "2022-06-04T11:57:12.782Z"
 }
