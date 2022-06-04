@@ -3,6 +3,9 @@ Ionic 6 integration currently being build - checkout branch ionic6vite
 
 This version also integrates using vite - bringing vite power to you!
 
+https://github.com/Tommertom/svelte-ionic-app/tree/ionic6vite
+
+
 # Ionic Svelte UI demo
 A showcase app for all Ionic UI elements - up to Ionic 5!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
