@@ -3,6 +3,54 @@ Ionic 6 integration currently being build - checkout branch ionic6vite
 
 This version also integrates using vite - bringing vite power to you!
 
+
+# Svelte + TS + Vite
+
+This template should help get you started developing with Svelte and TypeScript in Vite.
+
+
+
+
+// testing
+import "@ionic/core/css/global.bundle.css";
+import "@ionic/core/css/ionic-swiper.css";
+import "@ionic/core/css/ionic.bundle.css";
+import "@ionic/core/css/typography.css";
+import "@ionic/core/css/utils.bundle.css";
+
+Gedaan
+
+npm create vite@latest
+npm i @ionic/core  sass
+roxy router ^ run-all
+package.json scripts
+remove public
+created statics
+config vite -> asset dir
+main.ts -> styles en initi
+App.svelte -> ion-app
+
+Importeren van componenten
+
+
+Icons - <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+https://ionic.io/ionicons/usage
+
+import * as icons from 'ionicons/icons';
+
+icons['whatever'] 
+
+Issues
+- ripple effect button werkt niet
+- icons werken niet (fab)
+- Icons.svelte werkt niet
+- Reorder not working
+- appSetfocus not a focus (Ion Select backdrop click)
+- Slides not working
+- Sourceviewer
+- Splash
+- ...
+
 # Ionic Svelte UI demo
 A showcase app for all Ionic UI elements - up to Ionic 5!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
