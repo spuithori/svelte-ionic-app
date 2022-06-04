@@ -44,6 +44,7 @@ Issues
 - Sourceviewer
 - Splash
 - ...
+- index.html compare (PWA)
 
 # Ionic Svelte UI demo
 A showcase app for all Ionic UI elements - up to Ionic 5!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
