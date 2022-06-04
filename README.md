@@ -25,6 +25,10 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - Slides not working
 
 # Todo
+- Breadcrumbs
+- Accordion
+- Ion Img
+- Ion Back Button
 - Work on outstanding items - Nav, Tab 
 - side-pane
 - menu
@@ -32,6 +36,7 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - Platform?
 - Gestures?Animations?
 - compare with all UI components on Ionic site
+- compare with Vue & React add-on functions (on top of core)
 - Sourceviewer
 - Splash
 - index.html compare and prepare for PWA
