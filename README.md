@@ -1,5 +1,5 @@
 *BIG NEWS*
-Ionic 6 integration currently being build - checkout branch ionic6
+Ionic 6 integration currently being build - checkout branch ionic6vite
 
 This version also integrates using vite - bringing vite power to you!
 
