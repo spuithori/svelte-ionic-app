@@ -2,17 +2,17 @@
 Implementing Ionic 6 in Svelte Vite!
 
 # Steps performed
-npm create vite@latest (config - Svelte, TS)
-npm i @ionic/core  sass
-roxy router run-all
-package.json scripts changed
-package.json configured routify routes directory
-remove public folder
-created static
-config vite -> to include static dir for assets etc
-added initialise function (initialiseIonicSvelte)
-main.ts -> refer to initialiseIonicSvelte
-App.svelte -> include ion-app 
+- npm create vite@latest (config - Svelte, TS)
+- npm i @ionic/core  sass
+- install roxy router run-all
+- package.json scripts changed
+- package.json configured routify routes directory
+- remove public folder
+- created static
+- config vite -> to include static dir for assets etc
+- added initialise function (initialiseIonicSvelte)
+- main.ts -> refer to initialiseIonicSvelte
+- App.svelte -> include ion-app 
 
 Status - currently working on initialiseIonicSvelte - see issues & todo
 
@@ -26,6 +26,8 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 
 # Todo
 - Work on outstanding items - Nav, Tab 
+- side-pane
+- menu
 - Backbutton?
 - Platform?
 - Gestures?Animations?
