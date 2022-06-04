@@ -1,4 +1,5 @@
 import { register } from "svelte-custom-elements";
+// https://css-tricks.com/using-custom-elements-in-svelte/
 import {
     MenuI,
     loadingController,
@@ -14,7 +15,7 @@ import {
 // Private functions 
 //
 // see if webcomponent is already created
-const isRegistered = function(name) {
+const isRegistered = function (name) {
     return document.createElement(name).constructor !== HTMLElement;
 };
 
@@ -32,12 +33,12 @@ export const getIonicNav = () => {
     return document.querySelector("ion-nav");
 }
 
-export const getIonicMenu = (menuId):MenuI => {
+export const getIonicMenu = (menuId): MenuI => {
     const query = "ion-menu[menu-id='" + menuId + "']";
     return document.querySelector(query) as unknown as MenuI;
 }
 
-export const IonicShowModal = (selector, component, componentProps):any => {
+export const IonicShowModal = (selector, component, componentProps): any => {
     registerWebComponentOnce(selector, component);
     return modalController
         .create({
@@ -51,7 +52,7 @@ export const IonicShowModal = (selector, component, componentProps):any => {
 }
 
 
-export const IonicShowPopover = (event, selector, component, componentProps):any => {
+export const IonicShowPopover = (event, selector, component, componentProps): any => {
     registerWebComponentOnce(selector, component);
     return popoverController
         .create({

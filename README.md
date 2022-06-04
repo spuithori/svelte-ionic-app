@@ -137,6 +137,7 @@ Obviously you need to put the NPM lib of @ionic in the assets folder.
 A number of todo's:
 - Add some other Ionic things like Platform
 - Ionic 6 - launched in Dec 2021!
+- Consider Vite for PWA (https://vite-plugin-pwa.netlify.app/frameworks/svelte.html https://rubenr.dev/en/pwa-vite/)
 - Github comment by AlexRMU on opening modals https://github.com/Tommertom/svelte-ionic-app/issues/15#issuecomment-937903116
 - ~~Snowpack instead of rollup~~
 - ~~Copy snippets of source code~~
@@ -169,7 +170,7 @@ A number of todo's:
     - ~~Stimeline~~S
     - ~~accordion - part of Ionic 6~~
     - ~~pane - part of Ionic 6~~ 
-- ~~SSR~~
+- SSR ??
 - ~~to docs link https://ionicframework.com/docs/api/input~~
 - https://css-tricks.com/what-i-like-about-writing-styles-with-svelte/
 - https://github.com/pngwn/prism-svelte or something else that works
