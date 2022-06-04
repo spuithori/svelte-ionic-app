@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Sat Jun 04 2022 18:52:32 GMT+0200 (Central European Summer Time)
+ * File generated Sat Jun 04 2022 22:50:15 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-04T16:52:32.430Z"
+export const __timestamp = "2022-06-04T20:50:15.823Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -34,6 +34,31 @@ export const _tree = {
       "badExt": false,
       "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components",
       "children": [
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Accordion.svelte",
+          "filepath": "/components/Accordion.svelte",
+          "name": "Accordion",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Accordion.svelte",
+          "importPath": "../src/routes/components/Accordion.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Accordion",
+          "id": "_components_Accordion",
+          "component": () => import('../src/routes/components/Accordion.svelte').then(m => m.default)
+        },
         {
           "isFile": true,
           "isDir": false,
@@ -83,6 +108,31 @@ export const _tree = {
           "path": "/components/Badge",
           "id": "_components_Badge",
           "component": () => import('../src/routes/components/Badge.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Breadcrumb.svelte",
+          "filepath": "/components/Breadcrumb.svelte",
+          "name": "Breadcrumb",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Breadcrumb.svelte",
+          "importPath": "../src/routes/components/Breadcrumb.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Breadcrumb",
+          "id": "_components_Breadcrumb",
+          "component": () => import('../src/routes/components/Breadcrumb.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -308,6 +358,31 @@ export const _tree = {
           "path": "/components/Grid",
           "id": "_components_Grid",
           "component": () => import('../src/routes/components/Grid.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Icon.svelte",
+          "filepath": "/components/Icon.svelte",
+          "name": "Icon",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Icon.svelte",
+          "importPath": "../src/routes/components/Icon.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Icon",
+          "id": "_components_Icon",
+          "component": () => import('../src/routes/components/Icon.svelte').then(m => m.default)
         },
         {
           "isFile": true,

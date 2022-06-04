@@ -1,19 +1,41 @@
+<script>
+  import { onMount } from "svelte";
+
+  let listElement;
+  let items;
+
+  onMount(() => {
+    items = Array.from(listElement.children);
+  });
+
+  const handleInput = (event) => {
+    const query = event.target.value.toLowerCase();
+    requestAnimationFrame(() => {
+      items.forEach((item) => {
+        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+        console.log("Should show", item.textContent, shouldShow);
+        item.style.display = shouldShow ? "block" : "none";
+      });
+    });
+  };
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Searchbar</title>
 </svelte:head>
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
     </ion-buttons>
     <ion-title>Searchbar</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar on:ionInput="{handleInput}"></ion-searchbar>
+    <ion-searchbar on:ionInput={handleInput} />
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen>
-  <ion-list bind:this="{listElement}">
+  <ion-list bind:this={listElement}>
     <ion-item>Amsterdam</ion-item>
     <ion-item>Bogota</ion-item>
     <ion-item>Buenos Aires</ion-item>
@@ -53,25 +75,3 @@
     <ion-item>Washington</ion-item>
   </ion-list>
 </ion-content>
-
-<script>
-import { onMount } from "svelte";
-
-let listElement;
-let items;
-
-onMount(() => {
-  items = Array.from(listElement.children);
-});
-
-function handleInput(event) {
-  const query = event.target.value.toLowerCase();
-  requestAnimationFrame(() => {
-    items.forEach((item) => {
-      const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-      console.log("Should show", item.textContent, shouldShow);
-      item.style.display = shouldShow ? "block" : "none";
-    });
-  });
-}
-</script>

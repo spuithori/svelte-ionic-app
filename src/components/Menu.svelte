@@ -3,11 +3,9 @@
   import { goto } from "@roxi/routify";
   import { getIonicMenu } from "../services/IonicSvelte";
 
-  import { logoIonic, wifi, wine, warning, walk, star, logoGithub } from "ionicons/icons";
+  import * as allIonicIcons from "ionicons/icons";
 
   import { routes } from "../../.routify/routes";
-
-  // import { path } from "../services/routestore";
 
   let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
@@ -39,8 +37,8 @@
 
   // let's use the generated routes for making the menu items
   // and skip a few ones for the menu
-  let menuItems: Array<{ url: string; label: string; icon: string }> = routes
-    .filter((route) => route.path.includes("ionic"))
+  let menuItems: Array<{ url: string; label: string; icon: any }> = routes
+    .filter((route) => route.path.includes("components"))
     .filter((route) => {
       let found = false;
       excludedPaths.forEach((exclude) => {
@@ -55,7 +53,7 @@
       return {
         url: route.path,
         label: route.name.replace("ionic/", ""),
-        icon: "home",
+        icon: allIonicIcons["home"],
       };
     })
     .sort(function (a, b) {
@@ -72,26 +70,13 @@
       return 0;
     });
 
-  // randomize the icons for the menu
-  // using RXJS for fun
-  let icons;
-  /*
-  fromFetch("/assets/json/ionicons.json").subscribe(
-    (response) => {
-      response.json().then((json) => {
-        icons = json.icons;
-        menuItems.map((menuItem) => {
-          //   menuItem.icon = "at";
-          menuItem.icon = icons[Math.floor(Math.random() * icons.length)];
-        });
-        menuItems = [...menuItems];
-      });
-    },
-    (error) => {
-      console.error("Error HTTP", error);
-    }
-  );
-*/
+  // Randomize the icons
+  const icons = Object.keys(allIonicIcons);
+  menuItems.map((menuItem) => {
+    const iconForMenu = icons[Math.floor(Math.random() * icons.length)];
+    menuItem.icon = allIonicIcons[iconForMenu];
+  });
+  menuItems = [...menuItems];
 
   const closeAndNavigate = (url) => {
     console.log("Navigate url", url);
@@ -132,13 +117,13 @@
               closeAndNavigate(menuItem.url);
             }}
           >
-            <ion-icon icon={star} slot="start" color={getRandomColor()} />
+            <ion-icon icon={menuItem.icon} slot="start" color={getRandomColor()} />
             <ion-label>{menuItem.label}</ion-label>
           </ion-item>
         {/each}
         <ion-item />
         <ion-item on:click={goToReview}>
-          <ion-icon icon={star} slot="start" />
+          <ion-icon icon={allIonicIcons["star"]} slot="start" />
           <ion-label>Rate this app</ion-label>
         </ion-item>
         <ion-item
@@ -146,7 +131,7 @@
             window.open("https://github.com/Tommertom/svelte-ionic-app", "_blank");
           }}
         >
-          <ion-icon icon={logoGithub} slot="start" />
+          <ion-icon icon={allIonicIcons["star"]} slot="start" />
           <ion-label>Go to GitHub for this app</ion-label>
         </ion-item>
         <ion-item
@@ -157,7 +142,7 @@
             );
           }}
         >
-          <ion-icon icon={logoIonic} slot="start" />
+          <ion-icon icon={allIonicIcons["star"]} slot="start" />
           <ion-label>Go to Ionic Forum</ion-label>
         </ion-item>
       </ion-list>

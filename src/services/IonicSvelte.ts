@@ -115,6 +115,7 @@ import { IonAccordionGroup } from "@ionic/core/components/ion-accordion-group";
 import { IonAvatar } from "@ionic/core/components/ion-avatar";
 import { IonBackdrop } from "@ionic/core/components/ion-backdrop";
 import { IonBadge } from "@ionic/core/components/ion-badge";
+import { IonBreadcrumb } from "@ionic/core/components/ion-breadcrumb";
 import { IonBreadcrumbs } from "@ionic/core/components/ion-breadcrumbs";
 import { IonButton } from "@ionic/core/components/ion-button";
 import { IonButtons } from "@ionic/core/components/ion-buttons";
@@ -251,6 +252,7 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     tryDefine("ion-avatar", IonAvatar);
     tryDefine("ion-backdrop", IonBackdrop);
     tryDefine("ion-badge", IonBadge);
+    tryDefine("ion-breadcrumb", IonBreadcrumb);
     tryDefine("ion-breadcrumbs", IonBreadcrumbs);
     tryDefine("ion-button", IonButton);
     tryDefine("ion-buttons", IonButtons);

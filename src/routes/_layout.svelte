@@ -3,7 +3,10 @@
 </script>
 
 <ion-app>
-  <div class="ion-page" id="main">
-    <slot />
-  </div>
+  <ion-split-pane content-id="main">
+    <Menu />
+    <div class="ion-page" id="main">
+      <slot />
+    </div>
+  </ion-split-pane>
 </ion-app>

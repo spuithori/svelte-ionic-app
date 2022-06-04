@@ -26,6 +26,8 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "@capacitor/clipboard": "^1.0.8",
+    "@capacitor/core": "^3.5.1",
     "@ionic/core": "^6.1.8",
     "@ionic/pwa-elements": "^3.1.1"
   },
