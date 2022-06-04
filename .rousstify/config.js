@@ -1,10 +1,10 @@
 module.exports = {
-  "pages": "./src/routes",
+  "pages": "src/pages",
   "sourceDir": "public",
-  "routifyDir": ".routify",
+  "routifyDir": ".rousstify",
   "ignore": "",
   "dynamicImports": true,
-  "singleBuild": true,
+  "singleBuild": false,
   "noHashScroll": false,
   "distDir": "dist",
   "hashScroll": true,
@@ -14,5 +14,5 @@ module.exports = {
     "md",
     "svx"
   ],
-  "started": "2022-06-04T16:10:26.890Z"
+  "started": "2022-06-04T16:07:00.956Z"
 }

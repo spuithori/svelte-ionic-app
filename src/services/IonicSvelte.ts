@@ -269,7 +269,7 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     tryDefine("ion-footer", IonFooter);
     tryDefine("ion-grid", IonGrid);
     tryDefine("ion-header", IonHeader);
-    //  tryDefine('ion-icon', IonIcon);
+
     tryDefine("ion-img", IonImg);
     tryDefine("ion-infinite-scroll", IonInfiniteScroll);
     tryDefine("ion-infinite-scroll-content", IonInfiniteScrollContent);
@@ -332,9 +332,11 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     //    actionSheetController, alertController, loadingController, menuController,
     //    modalController, pickerController, popoverController, toastController
 
+    // Ion Icon definition
+    tryDefine('ion-icon', IonIcon);
 
     // Ensures that hot reloading doesn't throw an exception when trying to reregister a component
-    function tryDefine(tag, impl) {
+    function try2Define(tag, impl) {
         try {
             customElements.define(tag, impl);
         } catch (error) { }
@@ -343,6 +345,15 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     document.documentElement.classList.add("ion-ce");
 
     defineCustomElements(window);
+}
+
+// taken from Vue implementation of ionic
+export const tryDefine = (tagName: string, customElement: any) => {
+    if (typeof customElements === 'undefined') return;
+
+    if (!customElements.get(tagName)) {
+        customElements.define(tagName, customElement);
+    }
 }
 
 export const getIonicNav = () => {

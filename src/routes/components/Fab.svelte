@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { add, logoFacebook, logoTwitter, logoVimeo, logoGoogle } from "ionicons/icons";
+  import { add, logoFacebook, logoTwitter, logoVimeo, logoGoogle, share } from "ionicons/icons";
 </script>
 
 <svelte:head>
@@ -16,14 +16,9 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-  Icons worden niet getoond.
-  <ion-icon name="add" />
-
-  <ion-icon icon={logoVimeo} />
-  ssfd
   <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
     <ion-fab-button>
-      <ion-icon name="add" />
+      <ion-icon icon={add} />
     </ion-fab-button>
     <ion-fab-list>
       <ion-fab-button color="light">
@@ -40,13 +35,14 @@
 
   <ion-fab horizontal="end" vertical="center" slot="fixed">
     <ion-fab-button color="danger">
-      <ion-icon name="add" />
+      <ion-icon icon={add} />
     </ion-fab-button>
   </ion-fab>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="light">
-      <ion-icon md="caret-back" ios="chevron-back-circle-outline" />
+      <ion-icn md={logoFacebook} ios={logoGoogle} />
+      <ion-icon icon={add} />
     </ion-fab-button>
     <ion-fab-list side="start">
       <ion-fab-button color="light">
@@ -63,7 +59,8 @@
 
   <ion-fab horizontal="start" vertical="bottom" slot="fixed">
     <ion-fab-button color="dark">
-      <ion-icon md="caret-up" ios="chevron-up-circle-outline" />
+      <ion-icn md="caret-up" ios="chevron-up-circle-outline" />
+      <ion-icon icon={add} />
     </ion-fab-button>
     <ion-fab-list side="top">
       <ion-fab-button color="light">
@@ -80,7 +77,8 @@
 
   <ion-fab horizontal="start" vertical="top" slot="fixed">
     <ion-fab-button color="secondary">
-      <ion-icon md="caret-forward" ios="chevron-forward-circle-outline" />
+      <ion-icn md="caret-forward" ios="chevron-forward-circle-outline" />
+      <ion-icon icon={add} />
     </ion-fab-button>
     <ion-fab-list side="end">
       <ion-fab-button color="light">
@@ -97,7 +95,7 @@
 
   <ion-fab horizontal="center" vertical="center" slot="fixed">
     <ion-fab-button color="light">
-      <ion-icon name="share" />
+      <ion-icon icon={share} />
     </ion-fab-button>
     <ion-fab-list side="top">
       <ion-fab-button color="light">

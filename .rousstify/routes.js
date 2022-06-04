@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Sat Jun 04 2022 18:52:32 GMT+0200 (Central European Summer Time)
+ * File generated Sat Jun 04 2022 18:07:01 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-04T16:52:32.430Z"
+export const __timestamp = "2022-06-04T16:07:01.028Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -22,7 +22,7 @@ export const _tree = {
   "filepath": "/_layout.svelte",
   "root": true,
   "ownMeta": {},
-  "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/_layout.svelte",
+  "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/_layout.svelte",
   "children": [
     {
       "isFile": false,
@@ -32,7 +32,7 @@ export const _tree = {
       "name": "components",
       "ext": "",
       "badExt": false,
-      "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components",
+      "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components",
       "children": [
         {
           "isFile": true,
@@ -42,8 +42,8 @@ export const _tree = {
           "name": "Avatars",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Avatars.svelte",
-          "importPath": "../src/routes/components/Avatars.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Avatars.svelte",
+          "importPath": "../src/pages/components/Avatars.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -57,7 +57,7 @@ export const _tree = {
           },
           "path": "/components/Avatars",
           "id": "_components_Avatars",
-          "component": () => import('../src/routes/components/Avatars.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Avatars.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -67,8 +67,8 @@ export const _tree = {
           "name": "Badge",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Badge.svelte",
-          "importPath": "../src/routes/components/Badge.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Badge.svelte",
+          "importPath": "../src/pages/components/Badge.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -82,7 +82,7 @@ export const _tree = {
           },
           "path": "/components/Badge",
           "id": "_components_Badge",
-          "component": () => import('../src/routes/components/Badge.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Badge.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -92,8 +92,8 @@ export const _tree = {
           "name": "Button",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Button.svelte",
-          "importPath": "../src/routes/components/Button.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Button.svelte",
+          "importPath": "../src/pages/components/Button.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -107,7 +107,7 @@ export const _tree = {
           },
           "path": "/components/Button",
           "id": "_components_Button",
-          "component": () => import('../src/routes/components/Button.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Button.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -117,8 +117,8 @@ export const _tree = {
           "name": "Card",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Card.svelte",
-          "importPath": "../src/routes/components/Card.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Card.svelte",
+          "importPath": "../src/pages/components/Card.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -132,7 +132,7 @@ export const _tree = {
           },
           "path": "/components/Card",
           "id": "_components_Card",
-          "component": () => import('../src/routes/components/Card.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Card.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -142,8 +142,8 @@ export const _tree = {
           "name": "Checkbox",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Checkbox.svelte",
-          "importPath": "../src/routes/components/Checkbox.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Checkbox.svelte",
+          "importPath": "../src/pages/components/Checkbox.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -157,7 +157,7 @@ export const _tree = {
           },
           "path": "/components/Checkbox",
           "id": "_components_Checkbox",
-          "component": () => import('../src/routes/components/Checkbox.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Checkbox.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -167,8 +167,8 @@ export const _tree = {
           "name": "Chip",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Chip.svelte",
-          "importPath": "../src/routes/components/Chip.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Chip.svelte",
+          "importPath": "../src/pages/components/Chip.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -182,7 +182,7 @@ export const _tree = {
           },
           "path": "/components/Chip",
           "id": "_components_Chip",
-          "component": () => import('../src/routes/components/Chip.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Chip.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -192,8 +192,8 @@ export const _tree = {
           "name": "Controllers",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Controllers.svelte",
-          "importPath": "../src/routes/components/Controllers.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Controllers.svelte",
+          "importPath": "../src/pages/components/Controllers.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -207,7 +207,7 @@ export const _tree = {
           },
           "path": "/components/Controllers",
           "id": "_components_Controllers",
-          "component": () => import('../src/routes/components/Controllers.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Controllers.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -217,8 +217,8 @@ export const _tree = {
           "name": "Datetime",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Datetime.svelte",
-          "importPath": "../src/routes/components/Datetime.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Datetime.svelte",
+          "importPath": "../src/pages/components/Datetime.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -232,7 +232,7 @@ export const _tree = {
           },
           "path": "/components/Datetime",
           "id": "_components_Datetime",
-          "component": () => import('../src/routes/components/Datetime.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Datetime.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -242,8 +242,8 @@ export const _tree = {
           "name": "Fab",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Fab.svelte",
-          "importPath": "../src/routes/components/Fab.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Fab.svelte",
+          "importPath": "../src/pages/components/Fab.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -257,7 +257,7 @@ export const _tree = {
           },
           "path": "/components/Fab",
           "id": "_components_Fab",
-          "component": () => import('../src/routes/components/Fab.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Fab.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -267,8 +267,8 @@ export const _tree = {
           "name": "Games",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Games.svelte",
-          "importPath": "../src/routes/components/Games.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Games.svelte",
+          "importPath": "../src/pages/components/Games.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -282,7 +282,7 @@ export const _tree = {
           },
           "path": "/components/Games",
           "id": "_components_Games",
-          "component": () => import('../src/routes/components/Games.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Games.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -292,8 +292,8 @@ export const _tree = {
           "name": "Grid",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Grid.svelte",
-          "importPath": "../src/routes/components/Grid.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Grid.svelte",
+          "importPath": "../src/pages/components/Grid.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -307,7 +307,32 @@ export const _tree = {
           },
           "path": "/components/Grid",
           "id": "_components_Grid",
-          "component": () => import('../src/routes/components/Grid.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Grid.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Icon.svelte",
+          "filepath": "/components/Icon.svelte",
+          "name": "Icon",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Icon.svelte",
+          "importPath": "../src/pages/components/Icon.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Icon",
+          "id": "_components_Icon",
+          "component": () => import('../src/pages/components/Icon.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -317,8 +342,8 @@ export const _tree = {
           "name": "Infinitescroll",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Infinitescroll.svelte",
-          "importPath": "../src/routes/components/Infinitescroll.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Infinitescroll.svelte",
+          "importPath": "../src/pages/components/Infinitescroll.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -332,7 +357,7 @@ export const _tree = {
           },
           "path": "/components/Infinitescroll",
           "id": "_components_Infinitescroll",
-          "component": () => import('../src/routes/components/Infinitescroll.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Infinitescroll.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -342,8 +367,8 @@ export const _tree = {
           "name": "Inputs",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Inputs.svelte",
-          "importPath": "../src/routes/components/Inputs.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Inputs.svelte",
+          "importPath": "../src/pages/components/Inputs.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -357,7 +382,7 @@ export const _tree = {
           },
           "path": "/components/Inputs",
           "id": "_components_Inputs",
-          "component": () => import('../src/routes/components/Inputs.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Inputs.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -367,8 +392,8 @@ export const _tree = {
           "name": "Item",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Item.svelte",
-          "importPath": "../src/routes/components/Item.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Item.svelte",
+          "importPath": "../src/pages/components/Item.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -382,7 +407,7 @@ export const _tree = {
           },
           "path": "/components/Item",
           "id": "_components_Item",
-          "component": () => import('../src/routes/components/Item.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Item.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -392,8 +417,8 @@ export const _tree = {
           "name": "List",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/List.svelte",
-          "importPath": "../src/routes/components/List.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/List.svelte",
+          "importPath": "../src/pages/components/List.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -407,7 +432,7 @@ export const _tree = {
           },
           "path": "/components/List",
           "id": "_components_List",
-          "component": () => import('../src/routes/components/List.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/List.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -417,8 +442,8 @@ export const _tree = {
           "name": "ModalExtra",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/ModalExtra.svelte",
-          "importPath": "../src/routes/components/ModalExtra.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/ModalExtra.svelte",
+          "importPath": "../src/pages/components/ModalExtra.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -432,7 +457,7 @@ export const _tree = {
           },
           "path": "/components/ModalExtra",
           "id": "_components_ModalExtra",
-          "component": () => import('../src/routes/components/ModalExtra.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/ModalExtra.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -442,8 +467,8 @@ export const _tree = {
           "name": "Music",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Music.svelte",
-          "importPath": "../src/routes/components/Music.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Music.svelte",
+          "importPath": "../src/pages/components/Music.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -457,7 +482,7 @@ export const _tree = {
           },
           "path": "/components/Music",
           "id": "_components_Music",
-          "component": () => import('../src/routes/components/Music.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Music.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -467,8 +492,8 @@ export const _tree = {
           "name": "Nav",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Nav.svelte",
-          "importPath": "../src/routes/components/Nav.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Nav.svelte",
+          "importPath": "../src/pages/components/Nav.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -482,7 +507,7 @@ export const _tree = {
           },
           "path": "/components/Nav",
           "id": "_components_Nav",
-          "component": () => import('../src/routes/components/Nav.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Nav.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -492,8 +517,8 @@ export const _tree = {
           "name": "NavDetail",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/NavDetail.svelte",
-          "importPath": "../src/routes/components/NavDetail.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/NavDetail.svelte",
+          "importPath": "../src/pages/components/NavDetail.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -507,7 +532,7 @@ export const _tree = {
           },
           "path": "/components/NavDetail",
           "id": "_components_NavDetail",
-          "component": () => import('../src/routes/components/NavDetail.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/NavDetail.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -517,8 +542,8 @@ export const _tree = {
           "name": "NavList",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/NavList.svelte",
-          "importPath": "../src/routes/components/NavList.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/NavList.svelte",
+          "importPath": "../src/pages/components/NavList.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -532,7 +557,7 @@ export const _tree = {
           },
           "path": "/components/NavList",
           "id": "_components_NavList",
-          "component": () => import('../src/routes/components/NavList.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/NavList.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -542,8 +567,8 @@ export const _tree = {
           "name": "Note",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Note.svelte",
-          "importPath": "../src/routes/components/Note.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Note.svelte",
+          "importPath": "../src/pages/components/Note.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -557,7 +582,7 @@ export const _tree = {
           },
           "path": "/components/Note",
           "id": "_components_Note",
-          "component": () => import('../src/routes/components/Note.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Note.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -567,8 +592,8 @@ export const _tree = {
           "name": "PopoverExtra",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/PopoverExtra.svelte",
-          "importPath": "../src/routes/components/PopoverExtra.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/PopoverExtra.svelte",
+          "importPath": "../src/pages/components/PopoverExtra.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -582,7 +607,7 @@ export const _tree = {
           },
           "path": "/components/PopoverExtra",
           "id": "_components_PopoverExtra",
-          "component": () => import('../src/routes/components/PopoverExtra.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/PopoverExtra.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -592,8 +617,8 @@ export const _tree = {
           "name": "ProgressBar",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/ProgressBar.svelte",
-          "importPath": "../src/routes/components/ProgressBar.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/ProgressBar.svelte",
+          "importPath": "../src/pages/components/ProgressBar.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -607,7 +632,7 @@ export const _tree = {
           },
           "path": "/components/ProgressBar",
           "id": "_components_ProgressBar",
-          "component": () => import('../src/routes/components/ProgressBar.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/ProgressBar.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -617,8 +642,8 @@ export const _tree = {
           "name": "Radio",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Radio.svelte",
-          "importPath": "../src/routes/components/Radio.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Radio.svelte",
+          "importPath": "../src/pages/components/Radio.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -632,7 +657,7 @@ export const _tree = {
           },
           "path": "/components/Radio",
           "id": "_components_Radio",
-          "component": () => import('../src/routes/components/Radio.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Radio.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -642,8 +667,8 @@ export const _tree = {
           "name": "Range",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Range.svelte",
-          "importPath": "../src/routes/components/Range.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Range.svelte",
+          "importPath": "../src/pages/components/Range.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -657,7 +682,7 @@ export const _tree = {
           },
           "path": "/components/Range",
           "id": "_components_Range",
-          "component": () => import('../src/routes/components/Range.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Range.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -667,8 +692,8 @@ export const _tree = {
           "name": "Refresher",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Refresher.svelte",
-          "importPath": "../src/routes/components/Refresher.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Refresher.svelte",
+          "importPath": "../src/pages/components/Refresher.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -682,7 +707,7 @@ export const _tree = {
           },
           "path": "/components/Refresher",
           "id": "_components_Refresher",
-          "component": () => import('../src/routes/components/Refresher.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Refresher.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -692,8 +717,8 @@ export const _tree = {
           "name": "Reorder",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Reorder.svelte",
-          "importPath": "../src/routes/components/Reorder.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Reorder.svelte",
+          "importPath": "../src/pages/components/Reorder.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -707,7 +732,7 @@ export const _tree = {
           },
           "path": "/components/Reorder",
           "id": "_components_Reorder",
-          "component": () => import('../src/routes/components/Reorder.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Reorder.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -717,8 +742,8 @@ export const _tree = {
           "name": "Searchbar",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Searchbar.svelte",
-          "importPath": "../src/routes/components/Searchbar.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Searchbar.svelte",
+          "importPath": "../src/pages/components/Searchbar.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -732,7 +757,7 @@ export const _tree = {
           },
           "path": "/components/Searchbar",
           "id": "_components_Searchbar",
-          "component": () => import('../src/routes/components/Searchbar.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Searchbar.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -742,8 +767,8 @@ export const _tree = {
           "name": "Segment",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Segment.svelte",
-          "importPath": "../src/routes/components/Segment.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Segment.svelte",
+          "importPath": "../src/pages/components/Segment.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -757,7 +782,7 @@ export const _tree = {
           },
           "path": "/components/Segment",
           "id": "_components_Segment",
-          "component": () => import('../src/routes/components/Segment.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Segment.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -767,8 +792,8 @@ export const _tree = {
           "name": "Select",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Select.svelte",
-          "importPath": "../src/routes/components/Select.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Select.svelte",
+          "importPath": "../src/pages/components/Select.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -782,7 +807,7 @@ export const _tree = {
           },
           "path": "/components/Select",
           "id": "_components_Select",
-          "component": () => import('../src/routes/components/Select.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Select.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -792,8 +817,8 @@ export const _tree = {
           "name": "Skeleton",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Skeleton.svelte",
-          "importPath": "../src/routes/components/Skeleton.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Skeleton.svelte",
+          "importPath": "../src/pages/components/Skeleton.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -807,7 +832,7 @@ export const _tree = {
           },
           "path": "/components/Skeleton",
           "id": "_components_Skeleton",
-          "component": () => import('../src/routes/components/Skeleton.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Skeleton.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -817,8 +842,8 @@ export const _tree = {
           "name": "Slides",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Slides.svelte",
-          "importPath": "../src/routes/components/Slides.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Slides.svelte",
+          "importPath": "../src/pages/components/Slides.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -832,7 +857,7 @@ export const _tree = {
           },
           "path": "/components/Slides",
           "id": "_components_Slides",
-          "component": () => import('../src/routes/components/Slides.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Slides.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -842,8 +867,8 @@ export const _tree = {
           "name": "Spinner",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Spinner.svelte",
-          "importPath": "../src/routes/components/Spinner.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Spinner.svelte",
+          "importPath": "../src/pages/components/Spinner.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -857,7 +882,7 @@ export const _tree = {
           },
           "path": "/components/Spinner",
           "id": "_components_Spinner",
-          "component": () => import('../src/routes/components/Spinner.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Spinner.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -867,8 +892,8 @@ export const _tree = {
           "name": "Text",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Text.svelte",
-          "importPath": "../src/routes/components/Text.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Text.svelte",
+          "importPath": "../src/pages/components/Text.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -882,7 +907,7 @@ export const _tree = {
           },
           "path": "/components/Text",
           "id": "_components_Text",
-          "component": () => import('../src/routes/components/Text.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Text.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -892,8 +917,8 @@ export const _tree = {
           "name": "Thumbnails",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Thumbnails.svelte",
-          "importPath": "../src/routes/components/Thumbnails.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Thumbnails.svelte",
+          "importPath": "../src/pages/components/Thumbnails.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -907,7 +932,7 @@ export const _tree = {
           },
           "path": "/components/Thumbnails",
           "id": "_components_Thumbnails",
-          "component": () => import('../src/routes/components/Thumbnails.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Thumbnails.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -917,8 +942,8 @@ export const _tree = {
           "name": "Toggle",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Toggle.svelte",
-          "importPath": "../src/routes/components/Toggle.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Toggle.svelte",
+          "importPath": "../src/pages/components/Toggle.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -932,7 +957,7 @@ export const _tree = {
           },
           "path": "/components/Toggle",
           "id": "_components_Toggle",
-          "component": () => import('../src/routes/components/Toggle.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Toggle.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -942,8 +967,8 @@ export const _tree = {
           "name": "Toolbar",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Toolbar.svelte",
-          "importPath": "../src/routes/components/Toolbar.svelte",
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/components/Toolbar.svelte",
+          "importPath": "../src/pages/components/Toolbar.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -957,7 +982,7 @@ export const _tree = {
           },
           "path": "/components/Toolbar",
           "id": "_components_Toolbar",
-          "component": () => import('../src/routes/components/Toolbar.svelte').then(m => m.default)
+          "component": () => import('../src/pages/components/Toolbar.svelte').then(m => m.default)
         }
       ],
       "isLayout": false,
@@ -981,8 +1006,8 @@ export const _tree = {
       "name": "index",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/index.svelte",
-      "importPath": "../src/routes/index.svelte",
+      "absolutePath": "C:/Data/src/svelte-ionic-app/src/pages/index.svelte",
+      "importPath": "../src/pages/index.svelte",
       "isLayout": false,
       "isReset": false,
       "isIndex": true,
@@ -996,7 +1021,7 @@ export const _tree = {
       },
       "path": "/index",
       "id": "_index",
-      "component": () => import('../src/routes/index.svelte').then(m => m.default)
+      "component": () => import('../src/pages/index.svelte').then(m => m.default)
     }
   ],
   "isLayout": true,
@@ -1008,7 +1033,7 @@ export const _tree = {
   "file": "_layout.svelte",
   "ext": "svelte",
   "badExt": false,
-  "importPath": "../src/routes/_layout.svelte",
+  "importPath": "../src/pages/_layout.svelte",
   "meta": {
     "recursive": true,
     "preload": false,
@@ -1016,7 +1041,7 @@ export const _tree = {
   },
   "path": "/",
   "id": "__layout",
-  "component": () => import('../src/routes/_layout.svelte').then(m => m.default)
+  "component": () => import('../src/pages/_layout.svelte').then(m => m.default)
 }
 
 
