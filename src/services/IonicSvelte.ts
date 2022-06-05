@@ -3,6 +3,8 @@ import type {
     MenuI
 } from "@ionic/core";
 
+import type { SvelteComponent } from "svelte/internal";
+
 /* Ionic initialisation */
 import { IonicConfig, initialize } from '@ionic/core/components';
 import { defineCustomElements } from "@ionic/pwa-elements/loader";
@@ -263,3 +265,170 @@ export const getIonicMenu = (menuId): MenuI => {
     const query = "ion-menu[menu-id='" + menuId + "']";
     return document.querySelector(query) as unknown as MenuI;
 }
+
+export const presentModal = async (
+    selector: string,
+    component: new (...args: any) => SvelteComponent,
+    componentPropsReceived: any
+) => {
+    const modal = await modalController.create({
+        component: selector,
+        componentProps: componentPropsReceived,
+    });
+    await modal.present();
+    let elem = document.getElementsByTagName(selector)[0];
+    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
+
+    let res = await modal.onWillDismiss();
+    svelteComponent.$destroy();
+    elem.remove();
+
+    return res;
+};
+
+export const presentPopover = async (
+    selector: string,
+    component: new (...args: any) => SvelteComponent,
+    componentPropsReceived: any
+) => {
+    const popover = await popoverController.create({
+        component: selector,
+        componentProps: componentPropsReceived,
+    });
+    await popover.present();
+    let elem = document.getElementsByTagName(selector)[0];
+    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
+
+    let res = await popover.onWillDismiss();
+    svelteComponent.$destroy();
+    elem.remove();
+
+    return res;
+};
+
+
+/*
+
+Obsolete code
+
+    const popover = await popoverController.create({
+      component: PopoverExtra,
+      event,
+      componentProps: {
+        firstName: "Douglas",
+        lastName: "Adams",
+        middleInitial: "N",
+      },
+    });
+
+    popover.present();
+
+
+
+defineComponent("modal-extra", ModalExtra);
+const modal = await modalController.create({
+  component: "modal-extra",
+  cssClass: "my-custom-class",
+  componentProps: {
+    firstName: "Douglas",
+    lastName: "Adams",
+    middleInitial: "N",
+  },
+});
+return await modal.present(); 
+
+// this one works - but with a delay shownig the modal content, the others don't work at all
+const create1 = async (
+    selector: string,
+    component: new (...args: any) => SvelteComponent,
+    componentPropsReceived: any
+) => {
+    const modal = await modalController.create({
+        component: selector,
+        componentProps: componentPropsReceived,
+    });
+    await modal.present();
+    let elem = document.getElementsByTagName(selector)[0];
+    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
+
+    let res = await modal.onWillDismiss();
+    svelteComponent.$destroy();
+    elem.remove();
+
+    return res;
+};
+
+const create1b = async (
+    selector: string,
+    component: new (...args: any) => SvelteComponent,
+    componentPropsReceived: any
+) => {
+    const modal: HTMLIonModalElement = await modalController.create({
+        component: selector,
+        componentProps: componentPropsReceived,
+    });
+    //      await modal.present();
+
+    let elem = document.getElementsByTagName(selector)[0];
+    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
+
+    modal.onWillDismiss().then((_) => {
+        svelteComponent.$destroy();
+        elem.remove();
+    });
+
+    return modal;
+
+    //  let elem = document.getElementsByTagName(selector)[0];
+    //    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
+    // let res = await modal.onWillDismiss();
+
+    //  return res;
+};
+
+const create2 = async (selector: string, component: any, opts: any) => {
+    defineComponent(selector, component);
+    const modal = await modalController.create({
+        component: selector,
+        ...opts,
+    });
+    modal.present();
+};
+
+const create4 = async (selector: string, component: any, opts: any) => {
+    // defineComponent(selector, component);
+
+    customElements.define(
+        selector,
+        class extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modal Header</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button onClick="dismissModal()">
+        Close
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  Modal Content
+</ion-content>`;
+            }
+        }
+    );
+
+    const modalElement = document.createElement("ion-modal");
+    modalElement.component = selector;
+    modalElement.cssClass = "my-custom-class";
+    modalElement.componentProps = opts;
+
+    // present the modal
+    document.body.appendChild(modalElement);
+    return modalElement.present();
+};
+
+
+*/

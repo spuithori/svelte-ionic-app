@@ -1,5 +1,5 @@
 <script>
-  import NavList from "./NavList.svelte";
+  import NavList from "../../components/NavList.svelte";
   import IonNav from "../../components/IonNav.svelte";
 </script>
 

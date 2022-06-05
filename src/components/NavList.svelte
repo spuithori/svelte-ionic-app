@@ -1,7 +1,7 @@
 <script>
   import NavDetail from "./NavDetail.svelte";
-  import { techs } from "./techs.js";
-  import { defineComponent, getIonicNav, getIonicMenu } from "../../services/IonicSvelte";
+  import { techs } from "../services/techs";
+  import { defineComponent, getIonicNav, getIonicMenu } from "./../services/IonicSvelte";
 
   defineComponent("nav-detail", NavDetail);
 

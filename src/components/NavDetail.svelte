@@ -1,5 +1,5 @@
 <script>
-  import IonBackButton from "../../components/IonBackButton.svelte";
+  import IonBackButton from "./IonBackButton.svelte";
 
   const nav = document.querySelector("ion-nav");
   const tech = document.querySelector("nav-detail")["tech"];

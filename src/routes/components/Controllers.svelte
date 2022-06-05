@@ -1,41 +1,41 @@
-<script>
-  import ModalExtra from "./ModalExtra.svelte";
-  import PopoverExtra from "./PopoverExtra.svelte";
+<script lang="ts">
+  import ModalExtra from "../../components/ModalExtra.svelte";
+  import PopoverExtra from "../../components/PopoverExtra.svelte";
   import {
-    modalController,
-    popoverController,
     alertController,
     loadingController,
     toastController,
     pickerController,
     actionSheetController,
+    presentModal,
+    presentPopover,
   } from "./../../services/IonicSvelte";
 
+  import Music from "../../components/Music.svelte";
+
+  let inlineModalOpen = false;
+  let breakpoints = [0, 0.5, 1];
+
+  const inlineModalDismissed = () => {
+    inlineModalOpen = false;
+  };
+
   const showModal = async () => {
-    const modal = await modalController.create({
-      component: ModalExtra,
-      cssClass: "my-custom-class",
-      componentProps: {
-        firstName: "Douglas",
-        lastName: "Adams",
-        middleInitial: "N",
-      },
+    const s = await presentModal("modal-extra", ModalExtra, {
+      firstName: "Douglas",
+      lastName: "Adams",
+      middleInitial: "N",
     });
-    return await modal.present();
+
+    console.log("Resulting value", s);
   };
 
   const showPopover = async (event) => {
-    const popover = await popoverController.create({
-      component: PopoverExtra,
-      event,
-      componentProps: {
-        firstName: "Douglas",
-        lastName: "Adams",
-        middleInitial: "N",
-      },
+    await presentPopover("popover-extra", PopoverExtra, {
+      firstName: "Douglas",
+      lastName: "Adams",
+      middleInitial: "N",
     });
-
-    popover.present();
   };
 
   const showLoading = async () => {
@@ -126,10 +126,68 @@
   const showInputAlert = async () => {
     const options = {
       cssClass: "my-custom-class",
-      header: "Alert",
-      subHeader: "Subtitle",
-      message: "This is an alert message. - INCORRECT - SHOULD SHOW INPUTS",
-      buttons: ["Cancel", "Open Modal", "Delete"],
+      header: "Prompt!",
+      inputs: [
+        {
+          name: "name1",
+          type: "text",
+          placeholder: "Placeholder 1",
+        },
+        {
+          name: "name2",
+          type: "text",
+          id: "name2-id",
+          value: "hello",
+          placeholder: "Placeholder 2",
+        },
+        // multiline input.
+        {
+          name: "paragraph",
+          id: "paragraph",
+          type: "textarea",
+          placeholder: "Placeholder 3",
+        },
+        {
+          name: "name3",
+          value: "http://ionicframework.com",
+          type: "url",
+          placeholder: "Favorite site ever",
+        },
+        // input date with min & max
+        {
+          name: "name4",
+          type: "date",
+          min: "2017-03-01",
+          max: "2018-01-12",
+        },
+        // input date without min nor max
+        {
+          name: "name5",
+          type: "date",
+        },
+        {
+          name: "name6",
+          type: "number",
+          min: -5,
+          max: 10,
+        },
+      ],
+      buttons: [
+        {
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: () => {
+            console.log("Confirm Cancel");
+          },
+        },
+        {
+          text: "Ok",
+          handler: () => {
+            console.log("Confirm Ok");
+          },
+        },
+      ],
     };
 
     return showAlert(options);
@@ -321,18 +379,39 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-  Modal and popover not working - needs frameworkdelegate and all sorts of other stuff Picker also
-  not ok.
   <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
   <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
   <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
   <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
   <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
   <ion-button expand="block" on:click={showModal}>Show Modal</ion-button>
+  <ion-button
+    expand="block"
+    on:click={() => {
+      inlineModalOpen = true;
+    }}>Show Inline Modal with Breakpoints</ion-button
+  >
   <ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
   <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
   <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
   <ion-button expand="block" on:click={showToast}>Show Toast</ion-button>
-
-  Todo: Card Modal Sheet Modal Inline modal
+  <ion-modal
+    is-open={inlineModalOpen}
+    initial-breakpoint="0.5"
+    {breakpoints}
+    on:ionModalDidDismiss={inlineModalDismissed}
+  >
+    <ion-content>
+      <br /><br /><br />
+      <ion-button
+        expand="block"
+        on:click={() => {
+          inlineModalOpen = false;
+        }}
+      >
+        Close modal
+      </ion-button>
+      <Music />
+    </ion-content>
+  </ion-modal>
 </ion-content>

@@ -1,10 +1,10 @@
 <script>
   const nav = document.querySelector("ion-nav");
 
-  export let color;
+  export let color = undefined;
   export let disabled = false;
-  export let icon;
-  export let text;
+  export let icon = undefined;
+  export let text = undefined;
 
   const isMd = document.querySelector("html").className.includes("md");
   if (!icon) {

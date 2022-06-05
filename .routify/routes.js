@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Sun Jun 05 2022 19:11:24 GMT+0200 (Central European Summer Time)
+ * File generated Sun Jun 05 2022 21:19:43 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-05T17:11:24.592Z"
+export const __timestamp = "2022-06-05T19:19:43.501Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -58,31 +58,6 @@ export const _tree = {
           "path": "/components/Accordion",
           "id": "_components_Accordion",
           "component": () => import('../src/routes/components/Accordion.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "AltDetails.svelte",
-          "filepath": "/components/AltDetails.svelte",
-          "name": "AltDetails",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/AltDetails.svelte",
-          "importPath": "../src/routes/components/AltDetails.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/AltDetails",
-          "id": "_components_AltDetails",
-          "component": () => import('../src/routes/components/AltDetails.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -337,31 +312,6 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "Games.svelte",
-          "filepath": "/components/Games.svelte",
-          "name": "Games",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Games.svelte",
-          "importPath": "../src/routes/components/Games.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/Games",
-          "id": "_components_Games",
-          "component": () => import('../src/routes/components/Games.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
           "file": "Grid.svelte",
           "filepath": "/components/Grid.svelte",
           "name": "Grid",
@@ -512,56 +462,6 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "ModalExtra.svelte",
-          "filepath": "/components/ModalExtra.svelte",
-          "name": "ModalExtra",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/ModalExtra.svelte",
-          "importPath": "../src/routes/components/ModalExtra.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/ModalExtra",
-          "id": "_components_ModalExtra",
-          "component": () => import('../src/routes/components/ModalExtra.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "Music.svelte",
-          "filepath": "/components/Music.svelte",
-          "name": "Music",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Music.svelte",
-          "importPath": "../src/routes/components/Music.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/Music",
-          "id": "_components_Music",
-          "component": () => import('../src/routes/components/Music.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
           "file": "Nav.svelte",
           "filepath": "/components/Nav.svelte",
           "name": "Nav",
@@ -587,56 +487,6 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "NavDetail.svelte",
-          "filepath": "/components/NavDetail.svelte",
-          "name": "NavDetail",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/NavDetail.svelte",
-          "importPath": "../src/routes/components/NavDetail.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/NavDetail",
-          "id": "_components_NavDetail",
-          "component": () => import('../src/routes/components/NavDetail.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "NavList.svelte",
-          "filepath": "/components/NavList.svelte",
-          "name": "NavList",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/NavList.svelte",
-          "importPath": "../src/routes/components/NavList.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/NavList",
-          "id": "_components_NavList",
-          "component": () => import('../src/routes/components/NavList.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
           "file": "Note.svelte",
           "filepath": "/components/Note.svelte",
           "name": "Note",
@@ -658,31 +508,6 @@ export const _tree = {
           "path": "/components/Note",
           "id": "_components_Note",
           "component": () => import('../src/routes/components/Note.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "PopoverExtra.svelte",
-          "filepath": "/components/PopoverExtra.svelte",
-          "name": "PopoverExtra",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/PopoverExtra.svelte",
-          "importPath": "../src/routes/components/PopoverExtra.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/PopoverExtra",
-          "id": "_components_PopoverExtra",
-          "component": () => import('../src/routes/components/PopoverExtra.svelte').then(m => m.default)
         },
         {
           "isFile": true,

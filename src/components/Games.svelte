@@ -1,8 +1,8 @@
 <script>
   import AltDetails from "./AltDetails.svelte";
   import { onMount } from "svelte";
-  import { techs } from "./techs.js";
-  import { defineComponent, getIonicNav } from "../../services/IonicSvelte";
+  import { techs } from "../services/techs.js";
+  import { defineComponent, getIonicNav } from "../services/IonicSvelte";
 
   // not the proper one - as a nav in a tab is a difficult thing
   defineComponent("nav-detail", AltDetails);

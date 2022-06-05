@@ -26,13 +26,13 @@
   };
 
   const excludedPaths = [
-    "AltDetails",
-    "ModalExtra",
-    "NavDetail",
-    "NavList",
-    "Games",
-    "Music",
-    "PopoverExtra",
+    // "AltDetails",
+    //  "ModalExtra",
+    //  "NavDetail",
+    //  "NavList",
+    //  "Games",
+    //  "Music",
+    // "PopoverExtra",
   ];
 
   // let's use the generated routes for making the menu items

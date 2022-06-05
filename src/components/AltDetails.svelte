@@ -1,7 +1,7 @@
 <script>
-  import IonBackButton from "../../components/IonBackButton.svelte";
-  import IonPage from "../../components/IonPage.svelte";
-  import { techs } from "./techs.js";
+  import IonBackButton from "../components/IonBackButton.svelte";
+  import IonPage from "../components/IonPage.svelte";
+  import { techs } from "../services/techs.js";
 
   export let techName;
   let tech = {
