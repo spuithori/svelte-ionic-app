@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
+  import * as ionIcons from "ionicons/icons";
+
   export let tabs;
   export let selected;
 
@@ -11,7 +13,7 @@
   let tries = 0;
   const selectTab = () => {
     const controller = document.querySelector("ion-tabs");
-    if (controller.select) {
+    if (controller && controller.select) {
       controller.select(selected);
     } else if (tries < 300) {
       setTimeout(() => {
@@ -27,7 +29,7 @@
     }
   });
 
-  const tabsChange = event => {
+  const tabsChange = (event) => {
     console.log("Tabs change", event.detail.tab);
 
     // to support back button - some tries
@@ -40,7 +42,6 @@
   };
 </script>
 
-<ion-router />
 <ion-tabs on:ionTabsDidChange={tabsChange}>
   {#each tabs as tab}
     <ion-tab tab={tab.tab}>
@@ -52,9 +53,7 @@
     {#each tabs as tab}
       <ion-tab-button tab={tab.tab}>
         <ion-label>{tab.label}</ion-label>
-        <ion-icon name={tab.icon} />
       </ion-tab-button>
     {/each}
-
   </ion-tab-bar>
 </ion-tabs>

@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Sun Jun 05 2022 21:21:06 GMT+0200 (Central European Summer Time)
+ * File generated Sun Jun 05 2022 21:52:31 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-05T19:21:06.822Z"
+export const __timestamp = "2022-06-05T19:52:31.645Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -783,6 +783,55 @@ export const _tree = {
           "path": "/components/Spinner",
           "id": "_components_Spinner",
           "component": () => import('../src/routes/components/Spinner.svelte').then(m => m.default)
+        },
+        {
+          "isFile": false,
+          "isDir": true,
+          "file": "tabs",
+          "filepath": "/components/tabs",
+          "name": "tabs",
+          "ext": "",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/tabs",
+          "children": [
+            {
+              "isFile": true,
+              "isDir": false,
+              "file": "[tab].svelte",
+              "filepath": "/components/tabs/[tab].svelte",
+              "name": "[tab]",
+              "ext": "svelte",
+              "badExt": false,
+              "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/tabs/[tab].svelte",
+              "importPath": "../src/routes/components/tabs/[tab].svelte",
+              "isLayout": false,
+              "isReset": false,
+              "isIndex": false,
+              "isFallback": false,
+              "isPage": true,
+              "ownMeta": {},
+              "meta": {
+                "recursive": true,
+                "preload": false,
+                "prerender": true
+              },
+              "path": "/components/tabs/:tab",
+              "id": "_components_tabs__tab",
+              "component": () => import('../src/routes/components/tabs/[tab].svelte').then(m => m.default)
+            }
+          ],
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": false,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/tabs"
         },
         {
           "isFile": true,

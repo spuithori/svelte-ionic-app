@@ -21,7 +21,7 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - Ion Icons implementation will not support md and ios specific icons etc
 - Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there
 - Accordion - toggle-icon property won't work - because of the Ionic Icons implementation 
-
+- Tab bar -> does not move to default selected
 
 # Todo
 - Breadcrumbs - add script code from example
@@ -37,6 +37,7 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - Splash
 - index.html compare and prepare for PWA (PWA Vite)
 - Remove capacitor for clipboard
+- Unresolved routes to /
 
 # Icons issue - how to resolve?
 

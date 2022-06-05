@@ -1,6 +1,4 @@
 <script>
-  import { Clipboard } from "@capacitor/clipboard";
-
   import * as allIonicIcons from "ionicons/icons";
 
   import { toastController } from "./../../services/IonicSvelte";
@@ -17,10 +15,15 @@
   const iconClicked = async (icon) => {
     console.log("Icon clicked", icon);
 
+    navigator.clipboard.writeText(
+      `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`
+    );
+
+    /*
     Clipboard.write({
       string: `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`,
     });
-
+*/
     const toast = await toastController.create({
       color: "dark",
       duration: 3000,
