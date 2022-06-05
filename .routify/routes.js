@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Sun Jun 05 2022 18:08:16 GMT+0200 (Central European Summer Time)
+ * File generated Sun Jun 05 2022 19:11:24 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-05T16:08:16.202Z"
+export const __timestamp = "2022-06-05T17:11:24.592Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -58,6 +58,31 @@ export const _tree = {
           "path": "/components/Accordion",
           "id": "_components_Accordion",
           "component": () => import('../src/routes/components/Accordion.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "AltDetails.svelte",
+          "filepath": "/components/AltDetails.svelte",
+          "name": "AltDetails",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/AltDetails.svelte",
+          "importPath": "../src/routes/components/AltDetails.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/AltDetails",
+          "id": "_components_AltDetails",
+          "component": () => import('../src/routes/components/AltDetails.svelte').then(m => m.default)
         },
         {
           "isFile": true,
