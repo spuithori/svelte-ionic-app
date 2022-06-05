@@ -17,7 +17,7 @@
     { label: "Music", icon: "musicalNote", tab: "music", component: Music },
     {
       label: "Nothing",
-      icon: "logoTwiter",
+      icon: "pin",
       tab: "games",
       component: Games,
     },
