@@ -27,7 +27,7 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - Breadcrumbs - add script code from example
 - Accordion
 - Slides
-- Controller - Inline modal, sheet modal, card modal
+- Controller - Card modal
 - Ion Back Button - testing if it works
 - Work on outstanding items - Nav, Tab 
 - Platform? - testing if works
