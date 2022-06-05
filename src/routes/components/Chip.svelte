@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { pin, wine, checkmarkCircle, closeCircle, restaurant, videocam } from "ionicons/icons";
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Chips</title>
 </svelte:head>
@@ -5,7 +9,7 @@
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
     </ion-buttons>
     <ion-title>Chip</ion-title>
   </ion-toolbar>
@@ -18,7 +22,7 @@
       <ion-label>Default</ion-label>
     </ion-chip>
     <ion-chip>
-      <ion-icon name="checkmark-circle"></ion-icon>
+      <ion-icon icon={checkmarkCircle} />
       <ion-label>Icon</ion-label>
     </ion-chip>
     <ion-chip>
@@ -79,31 +83,31 @@
   <ion-list-header>Icons</ion-list-header>
   <p>
     <ion-chip outline color="primary">
-      <ion-icon name="pin"></ion-icon>
+      <ion-icon icon={pin} />
       <ion-label>Madison</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
+      <ion-icon icon={closeCircle} />
     </ion-chip>
     <ion-chip outline color="secondary">
-      <ion-icon name="wine"></ion-icon>
+      <ion-icon icon={wine} />
       <ion-label>Nightlife</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
+      <ion-icon icon={closeCircle} />
     </ion-chip>
     <ion-chip outline color="tertiary">
-      <ion-icon name="restaurant"></ion-icon>
+      <ion-icon icon={restaurant} />
       <ion-label>Dining</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
+      <ion-icon icon={closeCircle} />
     </ion-chip>
     <ion-chip outline color="dark">
-      <ion-icon name="videocam"></ion-icon>
+      <ion-icon icon={videocam} />
       <ion-label>Entertainment</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
+      <ion-icon icon={closeCircle} />
     </ion-chip>
   </p>
 </ion-content>
 
 <style>
-p {
-  margin-left: 16px;
-  margin-top: 0;
-}
+  p {
+    margin-left: 16px;
+    margin-top: 0;
+  }
 </style>

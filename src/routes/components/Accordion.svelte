@@ -7,7 +7,7 @@
     <ion-buttons slot="start">
       <ion-menu-button />
     </ion-buttons>
-    <ion-title>Avatar</ion-title>
+    <ion-title>Accordion</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -72,7 +72,7 @@
   <ion-list inset="true">
     <ion-list-header>Custom Icon</ion-list-header>
     <ion-accordion-group>
-      <ion-accordion value="colors" toggle-icon="arrow-down-circle">
+      <ion-accordion value="colors">
         <ion-item slot="header">
           <ion-label>Colors</ion-label>
         </ion-item>
@@ -89,7 +89,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="shapes" toggle-icon="arrow-down-circle">
+      <ion-accordion value="shapes">
         <ion-item slot="header">
           <ion-label>Shapes</ion-label>
         </ion-item>
@@ -106,7 +106,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="numbers" toggle-icon="arrow-down-circle">
+      <ion-accordion value="numbers">
         <ion-item slot="header">
           <ion-label>Numbers</ion-label>
         </ion-item>

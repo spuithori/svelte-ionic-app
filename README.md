@@ -18,31 +18,25 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 
 
 # Issues
-- Ripple Effect not working - ?https://github.com/ionic-team/ionic-framework/issues/17477
 - Ion Icons implementation will not support md and ios specific icons etc
-- Reorder not working - FIXED
-- appSetfocus not a focus (Ion Select backdrop click)
-- Slides not working
 - Modal and Popover not working
+- Accordion - toggle-icon property won't work
 
 # Todo
 - Breadcrumbs
 - Accordion
+- Slides
+- Controller - > Input box not complete
 - Modal - inline
-- Ion Img
-- Ion Back Button
+- Ion Back Button - testing if it works
 - Work on outstanding items - Nav, Tab 
-- side-pane - DONE
-- menu - DONE
-- Backbutton?
-- Platform?
+- Platform? - testing if works
 - Gestures?Animations?
-- compare with all UI components on Ionic site
-- compare with Vue & React add-on functions (on top of core)
+-- compare with Vue & React add-on functions (on top of core)
 - Sourceviewer
 - Splash
-- index.html compare and prepare for PWA
-- Menu does not need JSON - DONE
+- index.html compare and prepare for PWA (PWA Vite)
+- Remove capacitor for clipboard
 
 # Icons issue - how to resolve?
 

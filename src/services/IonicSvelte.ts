@@ -1,108 +1,6 @@
 import type {
     // TYPES
-    MenuI,
-    Animation,
-    AnimationBuilder,
-    AnimationCallbackOptions,
-    AnimationDirection,
-    AnimationFill,
-    AnimationKeyFrames,
-    AnimationLifecycle,
-    Gesture,
-    GestureConfig,
-    GestureDetail,
-    NavComponentWithProps,
-
-    SpinnerTypes,
-
-    AccordionGroupCustomEvent,
-    AccordionGroupChangeEventDetail,
-
-    BreadcrumbCustomEvent,
-    BreadcrumbCollapsedClickEventDetail,
-
-    ActionSheetOptions,
-    ActionSheetButton,
-
-    AlertOptions,
-    AlertInput,
-    AlertTextareaAttributes,
-    AlertInputAttributes,
-    AlertButton,
-
-    BackButtonEvent,
-
-    CheckboxCustomEvent,
-    CheckboxChangeEventDetail,
-
-    DatetimeCustomEvent,
-    DatetimeChangeEventDetail,
-
-    InfiniteScrollCustomEvent,
-
-    InputCustomEvent,
-    InputChangeEventDetail,
-
-    ItemReorderEventDetail,
-    ItemReorderCustomEvent,
-
-    ItemSlidingCustomEvent,
-
-    IonicSafeString,
-
-    LoadingOptions,
-
-    MenuCustomEvent,
-
-    ModalOptions,
-
-    NavCustomEvent,
-
-    PickerOptions,
-    PickerButton,
-    PickerColumn,
-    PickerColumnOption,
-
-    PopoverOptions,
-
-    RadioGroupCustomEvent,
-    RadioGroupChangeEventDetail,
-
-    RangeCustomEvent,
-    RangeChangeEventDetail,
-    RangeKnobMoveStartEventDetail,
-    RangeKnobMoveEndEventDetail,
-
-    RefresherCustomEvent,
-    RefresherEventDetail,
-
-    RouterEventDetail,
-    RouterCustomEvent,
-
-    ScrollBaseCustomEvent,
-    ScrollBaseDetail,
-    ScrollDetail,
-    ScrollCustomEvent,
-
-    SearchbarCustomEvent,
-    SearchbarChangeEventDetail,
-
-    SegmentChangeEventDetail,
-    SegmentCustomEvent,
-
-    SelectChangeEventDetail,
-    SelectCustomEvent,
-
-    TabsCustomEvent,
-
-    TextareaChangeEventDetail,
-    TextareaCustomEvent,
-
-    ToastOptions,
-    ToastButton,
-
-    ToggleChangeEventDetail,
-    ToggleCustomEvent,
+    MenuI
 } from "@ionic/core";
 
 /* Ionic initialisation */
@@ -112,13 +10,16 @@ import { defineCustomElements } from "@ionic/pwa-elements/loader";
 /* All Ionic components */
 import { IonAccordion } from "@ionic/core/components/ion-accordion";
 import { IonAccordionGroup } from "@ionic/core/components/ion-accordion-group";
+import { IonApp } from "@ionic/core/components/ion-app";
 import { IonAvatar } from "@ionic/core/components/ion-avatar";
 import { IonBackdrop } from "@ionic/core/components/ion-backdrop";
+import { IonBackButton } from "@ionic/core/components/ion-back-button";
 import { IonBadge } from "@ionic/core/components/ion-badge";
 import { IonBreadcrumb } from "@ionic/core/components/ion-breadcrumb";
 import { IonBreadcrumbs } from "@ionic/core/components/ion-breadcrumbs";
 import { IonButton } from "@ionic/core/components/ion-button";
 import { IonButtons } from "@ionic/core/components/ion-buttons";
+import { IonCard } from "@ionic/core/components/ion-card";
 import { IonCardContent } from "@ionic/core/components/ion-card-content";
 import { IonCardHeader } from "@ionic/core/components/ion-card-header";
 import { IonCardSubtitle } from "@ionic/core/components/ion-card-subtitle";
@@ -174,6 +75,9 @@ import { IonSlides } from "@ionic/core/components/ion-slides";
 import { IonSpinner } from "@ionic/core/components/ion-spinner";
 import { IonSplitPane } from "@ionic/core/components/ion-split-pane";
 import { IonTab } from "@ionic/core/components/ion-tab";
+import { IonTabs } from "@ionic/core/components/ion-tabs";
+import { IonTabBar } from "@ionic/core/components/ion-tab-bar";
+import { IonTabButton } from "@ionic/core/components/ion-tab-button";
 import { IonText } from "@ionic/core/components/ion-text";
 import { IonTextarea } from "@ionic/core/components/ion-textarea";
 import { IonThumbnail } from "@ionic/core/components/ion-thumbnail";
@@ -187,7 +91,11 @@ import { IonAlert } from "@ionic/core/components/ion-alert"
 import { IonLoading } from "@ionic/core/components/ion-loading"
 import { IonModal } from "@ionic/core/components/ion-modal"
 import { IonPicker } from "@ionic/core/components/ion-picker"
+import { IonPickerColumn } from "@ionic/core/components/ion-picker-column"
+import { IonPickerColumnInternal } from "@ionic/core/components/ion-picker-column-internal"
+import { IonPickerInternal } from "@ionic/core/components/ion-picker-internal"
 import { IonPopover } from "@ionic/core/components/ion-popover"
+import { IonSelectPopover } from "@ionic/core/components/ion-select-popover"
 import { IonToast } from "@ionic/core/components/ion-toast"
 
 export {
@@ -219,19 +127,6 @@ import "@ionic/core/css/text-transformation.css";
 import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 
-// export * from './proxies';
-// export * from './routing-proxies';
-
-
-// export { IonAlert } from '@ionic/core/components/alert';
-// export { IonLoading } from '@ionic/core/components/';
-// export * from './IonToast';
-// export { IonPicker } from './IonPicker';
-
-// export { isPlatform, getPlatforms, getConfig } from '@ionic/core/utils';
-
-// import {isPlatform} from '@ionic/core';
-
 export {
     // UTILS
     createAnimation,
@@ -247,102 +142,104 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
 
     initialize(config);
 
-    tryDefine("ion-accordion", IonAccordion);
-    tryDefine("ion-accordion-group", IonAccordionGroup);
-    tryDefine("ion-avatar", IonAvatar);
-    tryDefine("ion-backdrop", IonBackdrop);
-    tryDefine("ion-badge", IonBadge);
-    tryDefine("ion-breadcrumb", IonBreadcrumb);
-    tryDefine("ion-breadcrumbs", IonBreadcrumbs);
-    tryDefine("ion-button", IonButton);
-    tryDefine("ion-buttons", IonButtons);
-    tryDefine("ion-card-content", IonCardContent);
-    tryDefine("ion-card-header", IonCardHeader);
-    tryDefine("ion-card-subtitle", IonCardSubtitle);
-    tryDefine("ion-card-title", IonCardTitle);
-    tryDefine("ion-checkbox", IonCheckbox);
-    tryDefine("ion-chip", IonChip);
-    tryDefine("ion-col", IonCol);
-    tryDefine("ion-content", IonContent);
-    tryDefine("ion-datetime", IonDatetime);
-    tryDefine("ion-fab", IonFab);
-    tryDefine("ion-fab-button", IonFabButton);
-    tryDefine("ion-fab-list", IonFabList);
-    tryDefine("ion-footer", IonFooter);
-    tryDefine("ion-grid", IonGrid);
-    tryDefine("ion-header", IonHeader);
+    defineComponent("ion-accordion", IonAccordion);
+    defineComponent("ion-accordion-group", IonAccordionGroup);
+    defineComponent("ion-app", IonApp);
+    defineComponent("ion-avatar", IonAvatar);
+    defineComponent("ion-backdrop", IonBackdrop);
+    defineComponent("ion-back-button", IonBackButton);
+    defineComponent("ion-badge", IonBadge);
+    defineComponent("ion-breadcrumb", IonBreadcrumb);
+    defineComponent("ion-breadcrumbs", IonBreadcrumbs);
+    defineComponent("ion-button", IonButton);
+    defineComponent("ion-buttons", IonButtons);
+    defineComponent("ion-card", IonCard);
+    defineComponent("ion-card-content", IonCardContent);
+    defineComponent("ion-card-header", IonCardHeader);
+    defineComponent("ion-card-subtitle", IonCardSubtitle);
+    defineComponent("ion-card-title", IonCardTitle);
+    defineComponent("ion-checkbox", IonCheckbox);
+    defineComponent("ion-chip", IonChip);
+    defineComponent("ion-col", IonCol);
+    defineComponent("ion-content", IonContent);
+    defineComponent("ion-datetime", IonDatetime);
+    defineComponent("ion-fab", IonFab);
+    defineComponent("ion-fab-button", IonFabButton);
+    defineComponent("ion-fab-list", IonFabList);
+    defineComponent("ion-footer", IonFooter);
+    defineComponent("ion-grid", IonGrid);
+    defineComponent("ion-header", IonHeader);
+    defineComponent('ion-icon', IonIcon);
+    defineComponent("ion-img", IonImg);
+    defineComponent("ion-infinite-scroll", IonInfiniteScroll);
+    defineComponent("ion-infinite-scroll-content", IonInfiniteScrollContent);
+    defineComponent("ion-input", IonInput);
+    defineComponent("ion-item", IonItem);
+    defineComponent("ion-item-divider", IonItemDivider);
+    defineComponent("ion-item-group", IonItemGroup);
+    defineComponent("ion-item-options", IonItemOptions);
+    defineComponent("ion-item-sliding", IonItemSliding);
+    defineComponent("ion-label", IonLabel);
+    defineComponent("ion-list", IonList);
+    defineComponent("ion-list-header", IonListHeader);
+    defineComponent("ion-menu", IonMenu);
+    defineComponent("ion-menu-button", IonMenuButton);
+    defineComponent("ion-menu-toggle", IonMenuToggle);
+    defineComponent("ion-nav", IonNav);
+    defineComponent("ion-nav-link", IonNavLink);
+    defineComponent("ion-note", IonNote);
+    defineComponent("ion-progress-bar", IonProgressBar);
+    defineComponent("ion-popover", IonPopover);
+    defineComponent("ion-radio", IonRadio);
+    defineComponent("ion-radio-group", IonRadioGroup);
+    defineComponent("ion-range", IonRange);
+    defineComponent("ion-refresher", IonRefresher);
+    defineComponent("ion-refresher-content", IonRefresherContent);
+    defineComponent("ion-reorder", IonReorder);
+    defineComponent("ion-reorder-group", IonReorderGroup);
+    defineComponent("ion-ripple-effect", IonRippleEffect);
+    defineComponent("ion-row", IonRow);
+    defineComponent("ion-searchbar", IonSearchbar);
+    defineComponent("ion-segment", IonSegment);
+    defineComponent("ion-segment-button", IonSegmentButton);
+    defineComponent("ion-select", IonSelect);
+    defineComponent("ion-select-option", IonSelectOption);
+    defineComponent("ion-select-popover", IonSelectPopover);
+    defineComponent("ion-skeleton-text", IonSkeletonText);
+    defineComponent("ion-slide", IonSlide);
+    defineComponent("ion-slides", IonSlides);
+    defineComponent("ion-spinner", IonSpinner);
+    defineComponent("ion-split-pane", IonSplitPane);
+    defineComponent("ion-tab", IonTab);
+    defineComponent("ion-tabs", IonTabs);
+    defineComponent("ion-tab-bar", IonTabBar);
+    defineComponent("ion-tab-button", IonTabButton);
 
-    tryDefine("ion-img", IonImg);
-    tryDefine("ion-infinite-scroll", IonInfiniteScroll);
-    tryDefine("ion-infinite-scroll-content", IonInfiniteScrollContent);
-    tryDefine("ion-input", IonInput);
-    tryDefine("ion-item", IonItem);
-    tryDefine("ion-item-divider", IonItemDivider);
-    tryDefine("ion-item-group", IonItemGroup);
-    tryDefine("ion-item-options", IonItemOptions);
-    tryDefine("ion-item-sliding", IonItemSliding);
-    tryDefine("ion-label", IonLabel);
-    tryDefine("ion-list", IonList);
-    tryDefine("ion-list-header", IonListHeader);
-    tryDefine("ion-menu", IonMenu);
-    tryDefine("ion-menu-button", IonMenuButton);
-    tryDefine("ion-menu-toggle", IonMenuToggle);
-    tryDefine("ion-nav", IonNav);
-    tryDefine("ion-nav-link", IonNavLink);
-    tryDefine("ion-note", IonNote);
-    tryDefine("ion-progress-bar", IonProgressBar);
-    tryDefine("ion-radio", IonRadio);
-    tryDefine("ion-radio-group", IonRadioGroup);
-    tryDefine("ion-range", IonRange);
-    tryDefine("ion-refresher", IonRefresher);
-    tryDefine("ion-refresher-content", IonRefresherContent);
-    tryDefine("ion-reorder", IonReorder);
-    tryDefine("ion-reorder-group", IonReorderGroup);
-    tryDefine("ion-ripple-effect", IonRippleEffect);
-    tryDefine("ion-row", IonRow);
-    tryDefine("ion-searchbar", IonSearchbar);
-    tryDefine("ion-segment", IonSegment);
-    tryDefine("ion-segment-button", IonSegmentButton);
-    tryDefine("ion-select", IonSelect);
-    tryDefine("ion-select-option", IonSelectOption);
-    tryDefine("ion-skeleton-text", IonSkeletonText);
-    tryDefine("ion-slide", IonSlide);
-    tryDefine("ion-slides", IonSlides);
-    tryDefine("ion-spinner", IonSpinner);
-    tryDefine("ion-split-pane", IonSplitPane);
-    tryDefine("ion-tab", IonTab);
-    tryDefine("ion-text", IonText);
-    tryDefine("ion-textarea", IonTextarea);
-    tryDefine("ion-thumbnail", IonThumbnail);
-    tryDefine("ion-title", IonTitle);
-    tryDefine("ion-toggle", IonToggle);
-    tryDefine("ion-toolbar", IonToolbar);
-    tryDefine("ion-virtual-scroll", IonVirtualScroll);
+    defineComponent("ion-text", IonText);
+    defineComponent("ion-textarea", IonTextarea);
+    defineComponent("ion-thumbnail", IonThumbnail);
+    defineComponent("ion-title", IonTitle);
+    defineComponent("ion-toggle", IonToggle);
+    defineComponent("ion-toolbar", IonToolbar);
+    defineComponent("ion-virtual-scroll", IonVirtualScroll);
 
-    tryDefine("ion-action-sheet", IonActionSheet);
-    tryDefine("ion-alert", IonAlert);
-    tryDefine("ion-loading", IonLoading);
-    tryDefine("ion-modal", IonModal);
-    tryDefine("ion-picker", IonPicker);
-    tryDefine("ion-popover", IonPopover);
-    tryDefine("ion-toast", IonToast);
+    defineComponent("ion-action-sheet", IonActionSheet);
+    defineComponent("ion-alert", IonAlert);
+    defineComponent("ion-loading", IonLoading);
+    defineComponent("ion-modal", IonModal);
+    defineComponent("ion-picker", IonPicker);
+    defineComponent("ion-picker-column", IonPickerColumn)
+    defineComponent("ion-picker-column-internal", IonPickerColumnInternal)
+    defineComponent("ion-picker-internal", IonPickerInternal)
+
+    defineComponent("ion-toast", IonToast);
 
     // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
-    (window as any).alertController = alertController;
-    (window as any).menuController = menuController;
+    // (window as any).alertController = alertController;
+    // (window as any).menuController = menuController;
 
     //    actionSheetController, alertController, loadingController, menuController,
     //    modalController, pickerController, popoverController, toastController
-
-    // Ion Icon definition
-    tryDefine('ion-icon', IonIcon);
-
-    // Ensures that hot reloading doesn't throw an exception when trying to reregister a component
-    function try2Define(tag, impl) {
-        try {
-            customElements.define(tag, impl);
-        } catch (error) { }
-    }
 
     document.documentElement.classList.add("ion-ce");
 
@@ -350,7 +247,7 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
 }
 
 // taken from Vue implementation of ionic
-export const tryDefine = (tagName: string, customElement: any) => {
+export const defineComponent = (tagName: string, customElement: any) => {
     if (typeof customElements === 'undefined') return;
 
     if (!customElements.get(tagName)) {
