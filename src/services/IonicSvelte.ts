@@ -7,7 +7,6 @@ import type { SvelteComponent } from "svelte/internal";
 
 /* Ionic initialisation */
 import { IonicConfig, initialize } from '@ionic/core/components';
-import { defineCustomElements } from "@ionic/pwa-elements/loader";
 
 /* All Ionic components */
 import { IonAccordion } from "@ionic/core/components/ion-accordion";
@@ -246,8 +245,6 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     //    modalController, pickerController, popoverController, toastController
 
     document.documentElement.classList.add("ion-ce");
-
-    defineCustomElements(window);
 }
 
 // taken from Vue implementation of ionic

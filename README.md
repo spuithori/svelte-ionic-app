@@ -20,7 +20,7 @@ Some things learned
 - Vue implementation resembles most what needed in Svelte
 - 
 
-# Issues
+# Issues (work in progress)
 - Ion Icons implementation will not support md and ios specific icons etc 
 - Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there (Controller.svelte)
 - Tab bar -> does not move to default selected (IonTab.svelte)
@@ -44,6 +44,7 @@ Some things learned
 - Research if ion-router and such need to be built
 - Maybe add some platform goodies from Angular's implementation
 - page lifecycles
+- Datetime popover
 
 # Icons issue - how to resolve?
 
