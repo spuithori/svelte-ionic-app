@@ -7,7 +7,7 @@
 
   export let tab = "music";
 
-  // too much?
+  // too much? - maybe change into a redirect/navigate to tabs/music
   if (tab == ":tab") {
     tab = "music";
   }

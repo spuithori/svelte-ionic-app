@@ -1,13 +1,14 @@
 # Ionic Svelte UI demo
-A showcase app for all Ionic UI elements - up to Ionic 5!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
+A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
-Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app.
+Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
 
 Design objectives
 - Use all Ionic 6 UI elements
 - Fast bundler using VITE
 - Ease PWA configuration with good documentation - using zero-config Vite (https://vite-plugin-pwa.netlify.app/)
 - Deployable as PWA
+- File based router (using Roxy/Routify)
 
 As far as I can see now, the current new version is getting there pretty closely. 
 
