@@ -21,12 +21,13 @@ Some things learned
 - 
 
 # Issues
-- Ion Icons implementation will not support md and ios specific icons etc
-- Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there
-- Tab bar -> does not move to default selected
-- TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content)
+- Ion Icons implementation will not support md and ios specific icons etc 
+- Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there (Controller.svelte)
+- Tab bar -> does not move to default selected (IonTab.svelte)
+- Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content)
 - unused styles warning - what is happening?
-- item sliding npt working
+- item sliding npt working (Item)
+- Need a timeout to get proper style value even though I am using onMount?? (Gesture)
 
 
 # Todo
@@ -34,7 +35,6 @@ Some things learned
 - Ion Back Button - testing if it works
 - Work on outstanding items - Nav
 - Platform? - testing if works
-- Gestures?Animations?
 -- compare with Vue & React add-on functions (on top of core)
 - Sourceviewer
 - Splash
@@ -42,6 +42,7 @@ Some things learned
 - Remove capacitor for clipboard
 - Unresolved routes to /
 - Home screen
+- Research if ion-router and such need to be built
 
 # Icons issue - how to resolve?
 

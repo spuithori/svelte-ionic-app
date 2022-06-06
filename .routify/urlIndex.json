@@ -1,5 +1,6 @@
 [
   "/components/Accordion",
+  "/components/Animations",
   "/components/Avatars",
   "/components/Badge",
   "/components/Breadcrumb",
@@ -10,6 +11,7 @@
   "/components/Controllers",
   "/components/Datetime",
   "/components/Fab",
+  "/components/Gesture",
   "/components/Grid",
   "/components/Icon",
   "/components/Infinitescroll",

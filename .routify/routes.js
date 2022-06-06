@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Mon Jun 06 2022 10:16:04 GMT+0200 (Central European Summer Time)
+ * File generated Mon Jun 06 2022 11:26:11 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-06T08:16:04.936Z"
+export const __timestamp = "2022-06-06T09:26:11.119Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -58,6 +58,31 @@ export const _tree = {
           "path": "/components/Accordion",
           "id": "_components_Accordion",
           "component": () => import('../src/routes/components/Accordion.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Animations.svelte",
+          "filepath": "/components/Animations.svelte",
+          "name": "Animations",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Animations.svelte",
+          "importPath": "../src/routes/components/Animations.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Animations",
+          "id": "_components_Animations",
+          "component": () => import('../src/routes/components/Animations.svelte').then(m => m.default)
         },
         {
           "isFile": true,
@@ -308,6 +333,31 @@ export const _tree = {
           "path": "/components/Fab",
           "id": "_components_Fab",
           "component": () => import('../src/routes/components/Fab.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Gesture.svelte",
+          "filepath": "/components/Gesture.svelte",
+          "name": "Gesture",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Gesture.svelte",
+          "importPath": "../src/routes/components/Gesture.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Gesture",
+          "id": "_components_Gesture",
+          "component": () => import('../src/routes/components/Gesture.svelte').then(m => m.default)
         },
         {
           "isFile": true,
