@@ -1,16 +1,30 @@
-import App from './App.svelte';
+// @ts-ignore
+import { registerSW } from 'virtual:pwa-register'
 
-// import { myRoutes as routes } from "./myRoutes.js";
+const updateSW = registerSW({
+  onNeedRefresh() {
+    console.log('PWA App needs refresh - will do so in 5 secs');
+    setTimeout(() => {
+      updateSW()
+    }, 5000);
+  },
+  onOfflineReady() { console.log('PWA Offline ready') },
+  onRegisterError(error) { console.log('PWA error', error) },
+  onRegistered(registration) { console.log('PWA registration', registration) }
+})
 
-// import { routes } from "@sveltech/routify/tmp/routes";
-// import { routes } from "@roxi/routify";
-import { routes } from "./routes/routes";
+console.log('UpdateSW', updateSW);
+
+import App from './App.svelte'
+
+import { initialiseIonicSvelte } from "./services/IonicSvelte";
+
+initialiseIonicSvelte();
 
 const app = new App({
-	target: document.body,
-	props: {
-		routes
-	}
-});
+  target: document.getElementById('app')
+})
 
-export default app;
+export default app
+
+
