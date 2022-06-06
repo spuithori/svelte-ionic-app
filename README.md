@@ -20,12 +20,14 @@ Hint: try reactivity of the app by using various devices or the Chrome developer
 If you want to run it locally:
 
 ```bash
-npm install -g degit
-degit Tommertom/svelte-ionic-app svelte-ionic-app
+npx degit Tommertom/svelte-ionic-app svelte-ionic-app
 cd svelte-ionic-app
 npm i
 npm run dev
 ```
+
+REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
+These are Ionic 4 components only.
 
 # How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
