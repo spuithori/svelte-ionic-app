@@ -1,3 +1,17 @@
+<script lang="ts">
+  import { arrowDownCircle } from "ionicons/icons";
+
+  let stateAccordion;
+
+  const logAccordionValue = () => {
+    console.log("stateAccordion.value", stateAccordion.value);
+  };
+
+  const closeAccordions = () => {
+    stateAccordion.value = undefined;
+  };
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Accordion</title>
 </svelte:head>
@@ -72,7 +86,7 @@
   <ion-list inset="true">
     <ion-list-header>Custom Icon</ion-list-header>
     <ion-accordion-group>
-      <ion-accordion value="colors">
+      <ion-accordion value="colors" toggle-icon={arrowDownCircle}>
         <ion-item slot="header">
           <ion-label>Colors</ion-label>
         </ion-item>
@@ -89,7 +103,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="shapes">
+      <ion-accordion value="shapes" toggle-icon={arrowDownCircle}>
         <ion-item slot="header">
           <ion-label>Shapes</ion-label>
         </ion-item>
@@ -106,7 +120,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="numbers">
+      <ion-accordion value="numbers" toggle-icon={arrowDownCircle}>
         <ion-item slot="header">
           <ion-label>Numbers</ion-label>
         </ion-item>
@@ -242,7 +256,7 @@
 
   <ion-list inset="true">
     <ion-list-header>Managing State</ion-list-header>
-    <ion-accordion-group id="state" value="numbers">
+    <ion-accordion-group id="state" value="numbers" bind:this={stateAccordion}>
       <ion-accordion value="colors">
         <ion-item slot="header">
           <ion-label>Colors</ion-label>
@@ -296,6 +310,9 @@
       </ion-accordion>
     </ion-accordion-group>
   </ion-list>
+
+  <ion-button on:click={logAccordionValue}>Log Value of Accordion Group</ion-button>
+  <ion-button on:click={closeAccordions}>Close All Accordions</ion-button>
 </ion-content>
 
 <style>

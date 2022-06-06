@@ -1,3 +1,7 @@
+<script>
+  import "./../lib/Stuff.svelte";
+</script>
+
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -8,5 +12,9 @@
 </ion-header>
 
 <ion-content>
-  <main>Check menu for all Ionic options</main>
+  <main>
+    Check menu for all Ionic options
+
+    <my-clock />
+  </main>
 </ion-content>

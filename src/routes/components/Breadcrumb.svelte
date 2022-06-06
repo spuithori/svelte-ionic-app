@@ -1,21 +1,23 @@
 <script lang="ts">
   import { arrowForward, home, folder } from "ionicons/icons";
 
-  /*
+  import { onMount } from "svelte";
 
-  const expandBreadcrumb = document.querySelector('#expand');
-      const popoverBreadcrumb = document.querySelector('#popover');
-      const popover = document.querySelector('ion-popover');
+  let expandBreadcrumb;
+  let popoverBreadcrumb;
+  let popover;
 
-      expandBreadcrumb.maxItems = 4;
-      expandBreadcrumb.addEventListener('ionCollapsedClick', () => {
-        expandBreadcrumb.maxItems = undefined;
-      });
+  onMount(() => {
+    expandBreadcrumb.maxItems = 4;
+  });
 
-      popoverBreadcrumb.addEventListener('ionCollapsedClick', (ev) => {
-        popover.present(ev);
-      });
-  */
+  const expandCollapsedClick = (ev) => {
+    expandBreadcrumb.maxItems = undefined;
+  };
+
+  const popoverCollapsedClick = (ev) => {
+    popover.present(ev);
+  };
 </script>
 
 <ion-header translucent="true">
@@ -147,7 +149,11 @@
 
   <ion-list inset="true">
     <ion-list-header>Expand on Collapsed Indicator Click</ion-list-header>
-    <ion-breadcrumbs id="expand">
+    <ion-breadcrumbs
+      id="expand"
+      bind:this={expandBreadcrumb}
+      on:ionCollapsedClick={expandCollapsedClick}
+    >
       <ion-breadcrumb href="#"> Home </ion-breadcrumb>
       <ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
       <ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>
@@ -156,7 +162,7 @@
       <ion-breadcrumb> 35 mm </ion-breadcrumb>
     </ion-breadcrumbs>
 
-    <ion-popover alignment="center">
+    <ion-popover alignment="center" bind:this={popover}>
       <ion-content>
         <ion-list>
           <ion-item href="#electronics">
@@ -178,7 +184,12 @@
 
   <ion-list inset="true">
     <ion-list-header>Popover on Collapsed Indicator Click</ion-list-header>
-    <ion-breadcrumbs max-items="4" id="popover">
+    <ion-breadcrumbs
+      max-items="4"
+      id="popover"
+      bind:this={popoverBreadcrumb}
+      on:ionCollapsedClick={popoverCollapsedClick}
+    >
       <ion-breadcrumb href="#"> Home </ion-breadcrumb>
       <ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
       <ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>

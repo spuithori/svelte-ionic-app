@@ -16,20 +16,21 @@ Implementing Ionic 6 in Svelte Vite!
 
 Status - currently working on initialiseIonicSvelte - see issues & todo
 
+Some things learned
+- Vue implementation resembles most what needed in Svelte
+- 
 
 # Issues
 - Ion Icons implementation will not support md and ios specific icons etc
 - Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there
-- Accordion - toggle-icon property won't work - because of the Ionic Icons implementation 
 - Tab bar -> does not move to default selected
+- TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content)
 
 # Todo
-- Breadcrumbs - add script code from example
-- Accordion
 - Slides
 - Controller - Card modal
 - Ion Back Button - testing if it works
-- Work on outstanding items - Nav, Tab 
+- Work on outstanding items - Nav
 - Platform? - testing if works
 - Gestures?Animations?
 -- compare with Vue & React add-on functions (on top of core)
