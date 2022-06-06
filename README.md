@@ -1,25 +1,50 @@
-# Svelte + TS + Vite + Ionic 6 + PWA
-Implementing Ionic 6 in Svelte Vite!
+# Ionic Svelte UI demo
+A showcase app for all Ionic UI elements - up to Ionic 5!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
-Using https://vite-plugin-pwa.netlify.app/guide/
+Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app.
 
+Design objectives
+- Use all Ionic 6 UI elements
+- Fast bundler using VITE
+- Ease PWA configuration with good documentation - using zero-config Vite (https://vite-plugin-pwa.netlify.app/)
+- Deployable as PWA
 
+As far as I can see now, the current new version is getting there pretty closely. 
 
-# Steps performed
+Nevertheless, there are known and unknown issues.
+
+Published as web app: https://ionicsvelte.firebaseapp.com
+
+Hint: try reactivity of the app by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
+
+If you want to run it locally:
+
+```bash
+npm install -g degit
+degit Tommertom/svelte-ionic-app svelte-ionic-app
+cd svelte-ionic-app
+npm i
+npm run dev
+```
+
+# How I got started with this rebuild: the basic steps performed
+In pseudo code - this is what I did
 - npm create vite@latest (config - Svelte, TS)
 - npm i @ionic/core  sass
 - install roxy router run-all
 - package.json scripts changed
 - package.json configured routify routes directory
 - remove public folder
-- created static
+- created static folder as static dir
 - config vite -> to include static dir for assets etc
-- added initialise function (initialiseIonicSvelte)
+- added initialise function for Ionic UI stuff(initialiseIonicSvelte)
 - main.ts -> refer to initialiseIonicSvelte
 - App.svelte -> include ion-app 
 
-Status - currently working on initialiseIonicSvelte - see issues & todo
- 
+As of this step, the hard work started getting all UI components working... and still work to be done
+
+PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa.netlify.app!!
+
 
 # Issues (work in progress)
 - Ion Icons implementation will not support md and ios specific icons etc 
@@ -29,7 +54,6 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - unused styles warning - what is happening?
 - item sliding npt working (Item)
 - Need a timeout to get proper style value even though I am using onMount?? (Gesture)
-
 
 # Todo
 - Controller - Card modal
@@ -48,12 +72,3 @@ Status - currently working on initialiseIonicSvelte - see issues & todo
 - page lifecycles
 - Datetime popover
 
-# Icons issue - how to resolve?
-
-Alternative 1 - use CDN
-Icons - <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-Alternative 2 - implement like Vue (or even with Vue)
-https://github.com/ionic-team/ionic-framework/blob/main/packages/vue/src/components/IonIcon.ts
-
-Alternative 3 - IonSvelte component
