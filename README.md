@@ -25,9 +25,11 @@ Some things learned
 - Modal and Popover not working - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Alterantive - only using Inline modals and embedding the component in there
 - Tab bar -> does not move to default selected
 - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content)
+- unused styles warning - what is happening?
+- item sliding npt working
+
 
 # Todo
-- Slides
 - Controller - Card modal
 - Ion Back Button - testing if it works
 - Work on outstanding items - Nav
@@ -39,6 +41,7 @@ Some things learned
 - index.html compare and prepare for PWA (PWA Vite)
 - Remove capacitor for clipboard
 - Unresolved routes to /
+- Home screen
 
 # Icons issue - how to resolve?
 

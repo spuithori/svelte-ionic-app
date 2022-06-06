@@ -1,10 +1,33 @@
+<script lang="ts">
+  import { pin, wifi, wine, warning, walk, logoIonic } from "ionicons/icons";
+
+  let itemSlidingStart;
+  let itemSlidingEnd;
+
+  const animateSliding = () => {
+    if (itemSlidingEnd && itemSlidingStart) {
+      setTimeout(() => {
+        itemSlidingStart.open("start");
+        itemSlidingEnd.open("end");
+        setTimeout(() => {
+          itemSlidingStart.close();
+          itemSlidingEnd.close();
+          animateSliding();
+        }, 2000);
+      }, 2000);
+    }
+  };
+
+  animateSliding();
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Items</title>
 </svelte:head>
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
     </ion-buttons>
     <ion-title>Item</ion-title>
   </ion-toolbar>
@@ -12,13 +35,45 @@
 
 <ion-content fullscreen class="ion-padding">
   <ion-list>
+    <ion-list-header> Sliding Item </ion-list-header>
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>New Message - THIS IS NOT SLIDING!!!</ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option color="primary">Mark Unread</ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>New Message</ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option color="primary">Mark Unread</ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
     <ion-list-header>Items with Labels</ion-list-header>
     <ion-item class="grey-item">
       <ion-label>Label</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="end" name="logo-ionic"></ion-icon>
+      <ion-icon slot="end" icon={logoIonic} />
       <ion-label>Label with Icon</ion-label>
     </ion-item>
   </ion-list>
@@ -87,7 +142,7 @@
   <ion-list>
     <ion-list-header>Sliding Item</ion-list-header>
 
-    <ion-item-sliding bind:this="{itemSlidingStart}">
+    <ion-item-sliding bind:this={itemSlidingStart}>
       <ion-item class="blue-item">
         <ion-label>New Message</ion-label>
       </ion-item>
@@ -101,7 +156,7 @@
       </ion-item-options>
     </ion-item-sliding>
 
-    <ion-item-sliding bind:this="{itemSlidingEnd}">
+    <ion-item-sliding bind:this={itemSlidingEnd}>
       <ion-item>
         <ion-label>New Message</ion-label>
       </ion-item>
@@ -151,28 +206,7 @@
 </ion-content>
 
 <style>
-.blue-item {
-  --background: blue;
-}
-</style>
-
-<script>
-let itemSlidingStart;
-let itemSlidingEnd;
-
-const animateSliding = () => {
-  if (itemSlidingEnd && itemSlidingStart) {
-    setTimeout(() => {
-      itemSlidingStart.open("start");
-      itemSlidingEnd.open("end");
-      setTimeout(() => {
-        itemSlidingStart.close();
-        itemSlidingEnd.close();
-        animateSliding();
-      }, 2000);
-    }, 2000);
+  .blue-item {
+    --background: blue;
   }
-};
-
-animateSliding();
-</script>
+</style>

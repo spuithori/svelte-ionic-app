@@ -45,6 +45,7 @@ import { IonInput } from "@ionic/core/components/ion-input";
 import { IonItem } from "@ionic/core/components/ion-item";
 import { IonItemDivider } from "@ionic/core/components/ion-item-divider";
 import { IonItemGroup } from "@ionic/core/components/ion-item-group";
+import { IonItemOption } from "@ionic/core/components/ion-item-option";
 import { IonItemOptions } from "@ionic/core/components/ion-item-options";
 import { IonItemSliding } from "@ionic/core/components/ion-item-sliding";
 import { IonLabel } from "@ionic/core/components/ion-label";
@@ -179,6 +180,7 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     defineComponent("ion-item", IonItem);
     defineComponent("ion-item-divider", IonItemDivider);
     defineComponent("ion-item-group", IonItemGroup);
+    defineComponent("ion-item-option", IonItemOption);
     defineComponent("ion-item-options", IonItemOptions);
     defineComponent("ion-item-sliding", IonItemSliding);
     defineComponent("ion-label", IonLabel);

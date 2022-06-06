@@ -8,8 +8,8 @@
     $goto(url);
   }
 
-  const continueToTab = () => {
-    navigate("/ionic/tabs/movies");
+  const continueToHome = () => {
+    navigate("/");
   };
 
   const flipMenuOnOff = () => {
@@ -71,8 +71,8 @@
       Check out
       <ion-icon icon={menu} />
       to look at UI examples. <br />
-      <ion-button fill="clear" on:click={continueToTab}>
-        Continue to tabs demo
+      <ion-button fill="clear" on:click={continueToHome}>
+        Continue
         <ion-icon slot="end" icon={arrowForward} />
       </ion-button>
       <br />
@@ -87,7 +87,6 @@
     --ion-safe-area-top: 20px;
     --ion-safe-area-bottom: 22px;
   }
-
   ion-slide {
     display: block;
   }

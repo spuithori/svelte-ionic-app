@@ -7,7 +7,7 @@
   let infiniteScroll;
 
   onMount(() => {
-    appendItems(10);
+    appendItems(20);
   });
 
   const infiniteAction = async () => {
