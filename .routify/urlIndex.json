@@ -20,6 +20,7 @@
   "/components/List",
   "/components/Nav",
   "/components/Note",
+  "/components/Platform",
   "/components/ProgressBar",
   "/components/Radio",
   "/components/Range",

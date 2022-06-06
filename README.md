@@ -34,15 +34,15 @@ Some things learned
 - Controller - Card modal
 - Ion Back Button - testing if it works
 - Work on outstanding items - Nav
-- Platform? - testing if works
 -- compare with Vue & React add-on functions (on top of core)
 - Sourceviewer
 - Splash
 - index.html compare and prepare for PWA (PWA Vite)
-- Remove capacitor for clipboard
+- Copy/paste (ionicons testing)
 - Unresolved routes to /
 - Home screen
 - Research if ion-router and such need to be built
+- Maybe add some platform goodies from Angular's implementation
 
 # Icons issue - how to resolve?
 
