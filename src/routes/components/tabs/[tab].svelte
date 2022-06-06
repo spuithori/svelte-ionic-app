@@ -3,7 +3,7 @@
 
   import Controllers from "../Controllers.svelte";
   import Music from "../../../components/Music.svelte";
-  import Games from "../../../components/Games.svelte";
+  import Splash from "../../../components/SomeOtherTab.svelte";
 
   export let tab = "music";
 
@@ -16,10 +16,10 @@
     { label: "Contollers", icon: "videocam", tab: "movies", component: Controllers },
     { label: "Music", icon: "musicalNote", tab: "music", component: Music },
     {
-      label: "Nothing",
+      label: "Splash",
       icon: "pin",
       tab: "games",
-      component: Games,
+      component: Splash,
     },
   ];
 

@@ -35,7 +35,7 @@ In pseudo code - this is what I did
 - npm i @ionic/core  sass
 - install roxy router run-all
 - package.json scripts changed
-- package.json configured routify routes directory
+- changes pages folder to routes folder (routify config in package.json)
 - remove public folder
 - created static folder as static dir
 - config vite -> to include static dir for assets etc
@@ -60,17 +60,10 @@ PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa
 # Todo
 - Controller - Card modal
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
-- Work on outstanding items - Nav
--- compare with Vue & React add-on functions (on top of core)
-- Sourceviewer
-- Splash
-- index.html compare and prepare for PWA (PWA Vite)
-- Unresolved routes to /
-- Home screen
 - Research if ion-router and such need to be built
-- Maybe add some platform goodies from Angular's implementation
 - Deal with missing Nav
-
 - page lifecycles
 - Datetime popover
-
+- Page transitions
+- make it an npm package or lib?
+- add utilities such as shown in Angalur's integration (isRTL etc)
