@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Mon Jun 06 2022 11:45:26 GMT+0200 (Central European Summer Time)
+ * File generated Mon Jun 06 2022 17:30:18 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-06T09:45:26.231Z"
+export const __timestamp = "2022-06-06T15:30:18.114Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -24,6 +24,31 @@ export const _tree = {
   "ownMeta": {},
   "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/_layout.svelte",
   "children": [
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "_fallback.svelte",
+      "filepath": "/_fallback.svelte",
+      "name": "_fallback",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/_fallback.svelte",
+      "importPath": "../src/routes/_fallback.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": true,
+      "isPage": false,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/_fallback",
+      "id": "__fallback",
+      "component": () => import('../src/routes/_fallback.svelte').then(m => m.default)
+    },
     {
       "isFile": false,
       "isDir": true,
@@ -512,31 +537,6 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "Nav.svelte",
-          "filepath": "/components/Nav.svelte",
-          "name": "Nav",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Nav.svelte",
-          "importPath": "../src/routes/components/Nav.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": false,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/components/Nav",
-          "id": "_components_Nav",
-          "component": () => import('../src/routes/components/Nav.svelte').then(m => m.default)
-        },
-        {
-          "isFile": true,
-          "isDir": false,
           "file": "Note.svelte",
           "filepath": "/components/Note.svelte",
           "name": "Note",
@@ -858,6 +858,31 @@ export const _tree = {
           "path": "/components/Spinner",
           "id": "_components_Spinner",
           "component": () => import('../src/routes/components/Spinner.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Splash.svelte",
+          "filepath": "/components/Splash.svelte",
+          "name": "Splash",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Splash.svelte",
+          "importPath": "../src/routes/components/Splash.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Splash",
+          "id": "_components_Splash",
+          "component": () => import('../src/routes/components/Splash.svelte').then(m => m.default)
         },
         {
           "isFile": false,

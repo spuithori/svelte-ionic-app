@@ -15,10 +15,7 @@ Implementing Ionic 6 in Svelte Vite!
 - App.svelte -> include ion-app 
 
 Status - currently working on initialiseIonicSvelte - see issues & todo
-
-Some things learned
-- Vue implementation resembles most what needed in Svelte
-- 
+ 
 
 # Issues (work in progress)
 - Ion Icons implementation will not support md and ios specific icons etc 
@@ -38,11 +35,12 @@ Some things learned
 - Sourceviewer
 - Splash
 - index.html compare and prepare for PWA (PWA Vite)
-- Copy/paste (ionicons testing)
 - Unresolved routes to /
 - Home screen
 - Research if ion-router and such need to be built
 - Maybe add some platform goodies from Angular's implementation
+- Deal with missing Nav
+
 - page lifecycles
 - Datetime popover
 

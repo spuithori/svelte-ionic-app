@@ -25,15 +25,7 @@
     return items[Math.floor(Math.random() * items.length)];
   };
 
-  const excludedPaths = [
-    // "AltDetails",
-    //  "ModalExtra",
-    //  "NavDetail",
-    //  "NavList",
-    //  "Games",
-    //  "Music",
-    // "PopoverExtra",
-  ];
+  const excludedPaths = ["Splash"];
 
   // let's use the generated routes for making the menu items
   // and skip a few ones for the menu
@@ -122,10 +114,6 @@
           </ion-item>
         {/each}
         <ion-item />
-        <ion-item on:click={goToReview}>
-          <ion-icon icon={allIonicIcons["star"]} slot="start" />
-          <ion-label>Rate this app</ion-label>
-        </ion-item>
         <ion-item
           on:click={() => {
             window.open("https://github.com/Tommertom/svelte-ionic-app", "_blank");

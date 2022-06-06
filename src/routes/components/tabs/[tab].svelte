@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import IonTab from "../../../components/IonTab.svelte";
 
   import Controllers from "../Controllers.svelte";

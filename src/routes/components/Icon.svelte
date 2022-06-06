@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import * as allIonicIcons from "ionicons/icons";
 
   import { toastController } from "./../../services/IonicSvelte";

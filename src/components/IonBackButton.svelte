@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const nav = document.querySelector("ion-nav");
 
   export let color = undefined;

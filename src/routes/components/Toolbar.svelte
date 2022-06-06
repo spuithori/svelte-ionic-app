@@ -1,5 +1,5 @@
-<script>
-  const clickAction = event => {
+<script lang="ts">
+  const clickAction = (event) => {
     console.log("You clicked me!!", event);
   };
 </script>

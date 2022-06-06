@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import AltDetails from "./AltDetails.svelte";
   import { onMount } from "svelte";
   import { techs } from "../services/techs.js";

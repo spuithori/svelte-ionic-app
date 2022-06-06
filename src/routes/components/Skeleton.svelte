@@ -1,20 +1,27 @@
+<script lang="ts">
+  export let toggle = false;
+  const toggleSkeleton = () => {
+    toggle = !toggle;
+  };
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Skeleton</title>
 </svelte:head>
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
     </ion-buttons>
     <ion-title>Skeleton Text</ion-title>
     <ion-buttons slot="primary">
-      <ion-button on:click="{toggleSkeleton}">Toggle</ion-button>
+      <ion-button on:click={toggleSkeleton}>Toggle</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list class:show="{toggle}" class:hide="{!toggle}">
+  <ion-list class:show={toggle} class:hide={!toggle}>
     <ion-list-header>Albums</ion-list-header>
     <ion-item>
       <ion-thumbnail slot="start">
@@ -97,135 +104,135 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  <ion-list class:show="{!toggle}" class:hide="{toggle}">
+  <ion-list class:show={!toggle} class:hide={toggle}>
     <ion-list-header>
-      <ion-skeleton-text animated style="width: 80px"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 80px" />
     </ion-list-header>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text />
       </ion-thumbnail>
       <ion-label>
         <h3>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80%" />
         </h3>
         <p>
-          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 60%" />
         </p>
         <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%" />
         </p>
       </ion-label>
     </ion-item>
@@ -233,18 +240,11 @@
 </ion-content>
 
 <style>
-.show {
-  display: block;
-}
+  .show {
+    display: block;
+  }
 
-.hide {
-  display: none;
-}
+  .hide {
+    display: none;
+  }
 </style>
-
-<script>
-export let toggle = false;
-const toggleSkeleton = () => {
-  toggle = !toggle;
-};
-</script>

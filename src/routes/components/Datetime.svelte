@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const changeValue = (event) => {
     console.log("Change of value", event.detail);
   };

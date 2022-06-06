@@ -1,5 +1,5 @@
-<script>
-  const toggleAction = event => {
+<script lang="ts">
+  const toggleAction = (event) => {
     console.log("Toggle action", event.detail, event.srcElement.name);
   };
 </script>
@@ -17,71 +17,37 @@
   <ion-list>
     <ion-item>
       <ion-label>Blueberry</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="blueberry"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="blueberry" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Apple</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="apple"
-        color="secondary"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="apple" color="secondary" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Grape</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="grape"
-        color="tertiary"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="grape" color="tertiary" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Kiwi</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="kiwi"
-        color="success"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="kiwi" color="success" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Orange</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="banana"
-        color="warning"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="banana" color="warning" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Cherry</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="cherry"
-        color="danger"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="cherry" color="danger" checked />
     </ion-item>
 
     <ion-item>
       <ion-label>Banana</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="banana"
-        color="light"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="banana" color="light" checked />
     </ion-item>
 
     <ion-item>
@@ -91,17 +57,13 @@
         slot="start"
         name="cantaloupe"
         color="medium"
-        checked />
+        checked
+      />
     </ion-item>
 
     <ion-item>
       <ion-label>Blackberry</ion-label>
-      <ion-toggle
-        on:ionChange={toggleAction}
-        slot="start"
-        name="blackberry"
-        color="dark"
-        checked />
+      <ion-toggle on:ionChange={toggleAction} slot="start" name="blackberry" color="dark" checked />
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,25 +1,24 @@
 <script lang="ts">
-  import { menu, arrowForward } from "ionicons/icons";
+  import { menu } from "ionicons/icons";
 
   import { getIonicMenu } from "../../services/IonicSvelte";
-  import { goto } from "@roxi/routify";
 
-  function navigate(url) {
-    $goto(url);
-  }
-
-  const continueToHome = () => {
-    navigate("/");
-  };
+  let menuIconClicked = false;
 
   const flipMenuOnOff = () => {
-    console.log("flipMenuOnOff");
     setTimeout(() => {
       getIonicMenu("mainmenu").open(true);
-      setTimeout(() => {
-        getIonicMenu("mainmenu").close(true);
-      }, 2000);
+      if (!menuIconClicked) {
+        setTimeout(() => {
+          getIonicMenu("mainmenu").close(true);
+        }, 2000);
+      }
     }, 2000);
+  };
+
+  const flipMenuOn = () => {
+    menuIconClicked = true;
+    getIonicMenu("mainmenu").open(true);
   };
 </script>
 
@@ -69,12 +68,8 @@
       <img src="../assets/img/slides/slide-4.png" alt="pict" />
       <h2>Ready to Play?</h2>
       Check out
-      <ion-icon icon={menu} />
+      <ion-icon icon={menu} on:click={flipMenuOn} />
       to look at UI examples. <br />
-      <ion-button fill="clear" on:click={continueToHome}>
-        Continue
-        <ion-icon slot="end" icon={arrowForward} />
-      </ion-button>
       <br />
       <br />
       <br />
