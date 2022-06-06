@@ -32,7 +32,7 @@ Some things learned
 
 # Todo
 - Controller - Card modal
-- Ion Back Button - testing if it works
+- Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
 - Work on outstanding items - Nav
 -- compare with Vue & React add-on functions (on top of core)
 - Sourceviewer
@@ -43,6 +43,7 @@ Some things learned
 - Home screen
 - Research if ion-router and such need to be built
 - Maybe add some platform goodies from Angular's implementation
+- page lifecycles
 
 # Icons issue - how to resolve?
 
