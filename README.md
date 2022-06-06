@@ -1,5 +1,9 @@
-# Svelte + TS + Vite + Ionic 6
+# Svelte + TS + Vite + Ionic 6 + PWA
 Implementing Ionic 6 in Svelte Vite!
+
+Using https://vite-plugin-pwa.netlify.app/guide/
+
+
 
 # Steps performed
 - npm create vite@latest (config - Svelte, TS)

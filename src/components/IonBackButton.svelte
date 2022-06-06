@@ -5,7 +5,7 @@
   export let disabled = false;
   export let icon = undefined;
   export let text = undefined;
-
+  /*
   const isMd = document.querySelector("html").className.includes("md");
   if (!icon) {
     icon = isMd ? "arrow-back" : "arrow-back";
@@ -28,8 +28,9 @@
       }
     }
   };
+*/
 </script>
 
 <ion-button on:click={popWindow}>
-  <ion-icon name={icon} {color} />
+  <in-icon name={icon} {color} />
 </ion-button>

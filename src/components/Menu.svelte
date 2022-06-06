@@ -29,6 +29,11 @@
 
   // let's use the generated routes for making the menu items
   // and skip a few ones for the menu
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   let menuItems: Array<{ url: string; label: string; icon: any }> = routes
     .filter((route) => route.path.includes("components"))
     .filter((route) => {
@@ -39,12 +44,15 @@
       return !found;
     })
     .map((route) => {
-      if (route.name.includes("[tab]")) {
-        route.name = "Tab";
+      let label = "";
+      if (route.path.includes("tabs")) {
+        label = "Tab";
+      } else {
+        label = route.shortPath.replace("/components/", "");
       }
       return {
         url: route.path,
-        label: route.name.replace("ionic/", ""),
+        label: capitalizeFirstLetter(label),
         icon: allIonicIcons["home"],
       };
     })
