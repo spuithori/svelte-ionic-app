@@ -2,10 +2,10 @@ import { writable } from 'svelte/store';
 
 // export const ionPageEvent = writable({ ev: '', comp: '' });
 
-export const onionViewWillEnterStore = writable('');
-export const onionViewDidEnterStore = writable('');
-export const onionViewWillLeaveStore = writable('');
-export const onionViewDidLeaveStore = writable('');
+export const onIonViewWillEnterStore = writable('');
+export const onIonViewDidEnterStore = writable('');
+export const onIonViewWillLeaveStore = writable('');
+export const onIonViewDidLeaveStore = writable('');
 
 
 

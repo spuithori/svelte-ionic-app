@@ -26,8 +26,8 @@
   function setComponent(node) {
     // IonSvelte code - if statement
     if (node.isPage) {
-      onionViewWillEnterStore.set(node.path)
-      onionViewWillLeaveStore.set(prevNode?.path)
+      onIonViewWillEnterStore.set(node.path)
+      onIonViewWillLeaveStore.set(prevNode?.path)
     }
 
     // original code in Route.svelte
@@ -38,11 +38,18 @@
 
     // IonSvelte code - if statement
     if (node.isPage) {
-      onionViewDidLeaveStore.set(prevNode?.path)
-      onionViewDidEnterStore.set(node.path)
+      onIonViewDidLeaveStore.set(prevNode?.path)
+      onIonViewDidEnterStore.set(node.path)
       prevNode = node
     }
   `;
+
+  const ionPageSyntax = `<IonPage
+  route="/components/Page"
+  onIonViewWillEnter={onIonViewWillEnter}
+  onIonViewDidEnter={onIonViewDidEnter}
+  onIonViewWillLeave={onIonViewWillLeave}
+  onIonViewDidLeave={onIonViewDidLeave}>`;
 </script>
 
 <svelte:head>
@@ -51,10 +58,10 @@
 
 <IonPage
   route="/components/Page"
-  onionViewWillEnter={onIonViewWillEnter}
-  onionViewDidEnter={onIonViewDidEnter}
-  onionViewWillLeave={onIonViewWillLeave}
-  onionViewDidLeave={onIonViewDidLeave}
+  {onIonViewWillEnter}
+  {onIonViewDidEnter}
+  {onIonViewWillLeave}
+  {onIonViewDidLeave}
 >
   <ion-header translucent="true">
     <ion-toolbar>
@@ -70,13 +77,19 @@
       This intends to show the working of the IonPage component. This holds the lifecycle hooks:
       <br />
       <pre>
-  onionViewWillEnter
-  onionViewDidEnter
-  onionViewWillLeave
-  onionViewDidLeave
+  ionViewWillEnter
+  ionViewDidEnter
+  ionViewWillLeave
+  ionViewDidLeave
 </pre>
-      Unfortunately (for now) IonNav requires that your tell it its corresponding route, in order for
-      it to know which events belongs to that specific page.
+
+      Syntax:
+      <pre>
+  {ionPageSyntax}
+</pre>
+
+      Unfortunately (for now) this IonPage implementation requires that your tell it its
+      corresponding route, in order for it to know which events belongs to that specific page.
       <br /><br />
       It's work in progess to figure out of we can derive the route to this component automatically.
       <br /><br />

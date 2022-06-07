@@ -3,31 +3,31 @@
 
   import { onDestroy } from "svelte";
 
-  import { onionViewWillEnterStore } from "../services/ion-route-store";
-  import { onionViewDidEnterStore } from "../services/ion-route-store";
-  import { onionViewWillLeaveStore } from "../services/ion-route-store";
-  import { onionViewDidLeaveStore } from "../services/ion-route-store";
+  import { onIonViewWillEnterStore } from "../services/ion-route-store";
+  import { onIonViewDidEnterStore } from "../services/ion-route-store";
+  import { onIonViewWillLeaveStore } from "../services/ion-route-store";
+  import { onIonViewDidLeaveStore } from "../services/ion-route-store";
 
-  export let onionViewWillEnter = () => {};
-  export let onionViewDidEnter = () => {};
-  export let onionViewWillLeave = () => {};
-  export let onionViewDidLeave = () => {};
+  export let onIonViewWillEnter = () => {};
+  export let onIonViewDidEnter = () => {};
+  export let onIonViewWillLeave = () => {};
+  export let onIonViewDidLeave = () => {};
 
   export let route;
 
-  const unsubscribeA = onionViewWillEnterStore.subscribe((value) => {
-    if (value === route) onionViewWillEnter();
+  const unsubscribeA = onIonViewWillEnterStore.subscribe((value) => {
+    if (value === route) onIonViewWillEnter();
   });
-  const unsubscribeB = onionViewDidEnterStore.subscribe((value) => {
-    if (value === route) onionViewDidEnter();
-  });
-
-  const unsubscribeC = onionViewWillLeaveStore.subscribe((value) => {
-    if (value === route) onionViewWillLeave();
+  const unsubscribeB = onIonViewDidEnterStore.subscribe((value) => {
+    if (value === route) onIonViewDidEnter();
   });
 
-  const unsubscribeD = onionViewDidLeaveStore.subscribe((value) => {
-    if (value === route) onionViewDidLeave();
+  const unsubscribeC = onIonViewWillLeaveStore.subscribe((value) => {
+    if (value === route) onIonViewWillLeave();
+  });
+
+  const unsubscribeD = onIonViewDidLeaveStore.subscribe((value) => {
+    if (value === route) onIonViewDidLeave();
   });
 
   onDestroy(() => {

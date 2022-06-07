@@ -55,15 +55,15 @@ PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa
 - Tab bar -> does not move to default selected (IonTab.svelte)
 - Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content)
 - unused styles warning - what is happening?
-- item sliding npt working (Item)
+- item sliding npt working (Item) - seems to work on ios??
 - Need a timeout to get proper style value even though I am using onMount?? (Gesture)
+- IonPage - are the lifecycle hooks well implemented? Can I make this a webcomponent?
 
 # Todo
 - Controller - Card modal
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
 - Research if ion-router and such need to be built
 - Deal with missing Nav
-- page lifecycles
 - Datetime popover
 - Page transitions
 - make it an npm package or lib?

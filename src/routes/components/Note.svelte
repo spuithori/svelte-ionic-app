@@ -23,10 +23,10 @@
 </svelte:head>
 <IonPage
   route="/components/Note"
-  onionViewWillEnter={onIonViewWillEnter}
-  onionViewDidEnter={onIonViewDidEnter}
-  onionViewWillLeave={onIonViewWillLeave}
-  onionViewDidLeave={onIonViewDidLeave}
+  {onIonViewWillEnter}
+  {onIonViewDidEnter}
+  {onIonViewWillLeave}
+  {onIonViewDidLeave}
 >
   <ion-header translucent="true">
     <ion-toolbar>
