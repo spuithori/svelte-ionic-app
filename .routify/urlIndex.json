@@ -19,6 +19,7 @@
   "/components/Item",
   "/components/List",
   "/components/Note",
+  "/components/Page",
   "/components/Platform",
   "/components/ProgressBar",
   "/components/Radio",

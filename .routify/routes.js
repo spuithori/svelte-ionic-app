@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.7
- * File generated Mon Jun 06 2022 20:04:06 GMT+0200 (Central European Summer Time)
+ * File generated Tue Jun 07 2022 22:26:59 GMT+0200 (Central European Summer Time)
  */
 
 export const __version = "2.18.7"
-export const __timestamp = "2022-06-06T18:04:06.091Z"
+export const __timestamp = "2022-06-07T20:26:59.768Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -558,6 +558,31 @@ export const _tree = {
           "path": "/components/Note",
           "id": "_components_Note",
           "component": () => import('../src/routes/components/Note.svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "Page.svelte",
+          "filepath": "/components/Page.svelte",
+          "name": "Page",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "C:/Data/src/svelte-ionic-app/src/routes/components/Page.svelte",
+          "importPath": "../src/routes/components/Page.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/components/Page",
+          "id": "_components_Page",
+          "component": () => import('../src/routes/components/Page.svelte').then(m => m.default)
         },
         {
           "isFile": true,

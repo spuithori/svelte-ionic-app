@@ -116,7 +116,6 @@
 
 <ion-content fullscreen class="ion-padding">
   <ion-card>
-    This one is not working
     <div class="moveTrack" bind:this={moveTrack}>
       <div class="square" bind:this={movableSquare} />
     </div>
