@@ -54,7 +54,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       manifest: pwaManifest,
-      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'assets/*'],
     }),
     svelte(svelteWebcomponentConfig),
     svelte(svelteNonWebcomponentConfig),

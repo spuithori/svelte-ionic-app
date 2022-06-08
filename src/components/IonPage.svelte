@@ -36,8 +36,10 @@
     unsubscribeC();
     unsubscribeD();
   });
+
+  //out:fly={{ x: 200, duration: 250 }}
 </script>
 
-<main in:fly={{ x: 200, duration: 250 }} out:fly={{ x: 200, duration: 250 }}>
+<main in:fly={{ x: 200, duration: 250 }} >
   <slot />
 </main>

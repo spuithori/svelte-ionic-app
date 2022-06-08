@@ -7,6 +7,13 @@ export const onIonViewDidEnterStore = writable('');
 export const onIonViewWillLeaveStore = writable('');
 export const onIonViewDidLeaveStore = writable('');
 
+const pageHooks = {}
+
+const onIonViewWillEnter = (hookFn, path) => {
+    pageHooks[path] = hookFn;
+}
+
+
 
 
 /*
