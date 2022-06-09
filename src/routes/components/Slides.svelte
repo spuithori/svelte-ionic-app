@@ -1,7 +1,7 @@
 <script lang="ts">
   import { menu } from "ionicons/icons";
 
-  import { getIonicMenu } from "../../services/IonicSvelte";
+  import { getIonicMenu } from "$ionic/svelte";
 
   let menuIconClicked = false;
 

@@ -1,8 +1,8 @@
 <svelte:options tag="ion-stuff" />
 
 <script lang="ts">
-  // import { fly } from "svelte/transition";
-  import { fly } from "@auroratide/svelte-custom-element-transitions";
+  import { fly } from "svelte/transition";
+
   import { onDestroy, onMount } from "svelte";
 
   import { onIonViewWillEnterStore } from "../services/ion-route-store";

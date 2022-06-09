@@ -1,14 +1,14 @@
-<svelte:options tag="ion-page2" />
-
 <script lang="ts">
   import { fly } from "svelte/transition";
 
   import { onDestroy } from "svelte";
 
-  import { onIonViewWillEnterStore } from "../services/ion-route-store";
-  import { onIonViewDidEnterStore } from "../services/ion-route-store";
-  import { onIonViewWillLeaveStore } from "../services/ion-route-store";
-  import { onIonViewDidLeaveStore } from "../services/ion-route-store";
+  import {
+    onIonViewWillEnterStore,
+    onIonViewDidEnterStore,
+    onIonViewWillLeaveStore,
+    onIonViewDidLeaveStore,
+  } from "$ionic/svelte/ion-route-store";
 
   export let onIonViewWillEnter = () => {};
   export let onIonViewDidEnter = () => {};
@@ -38,6 +38,8 @@
     unsubscribeC();
     unsubscribeD();
   });
+
+  //out:fly={{ x: 200, duration: 250 }}
 </script>
 
 <main in:fly={{ x: 200, duration: 250 }}>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ModalExtra from "../../components/ModalExtra.svelte";
-  import PopoverExtra from "../../components/PopoverExtra.svelte";
+  import ModalExtra from "$components/ModalExtra.svelte";
+  import PopoverExtra from "$components/PopoverExtra.svelte";
   import {
     alertController,
     loadingController,
@@ -9,9 +9,9 @@
     actionSheetController,
     presentModal,
     presentPopover,
-  } from "./../../services/IonicSvelte";
+  } from "$ionic/svelte";
 
-  import Music from "../../components/Music.svelte";
+  import Music from "$components/Music.svelte";
 
   let inlineModalOpen = false;
   let breakpoints = [0, 0.5, 1];

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import IonTab from "../../../components/IonTab.svelte";
+  import IonTab from "$ionic/svelte/components/IonTab.svelte";
 
   import Controllers from "../Controllers.svelte";
-  import Music from "../../../components/Music.svelte";
-  import Splash from "../../../components/SomeOtherTab.svelte";
+  import Music from "$components/Music.svelte";
+  import Splash from "$components/SomeOtherTab.svelte";
 
   export let tab = "music";
 

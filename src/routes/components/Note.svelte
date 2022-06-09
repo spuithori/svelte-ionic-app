@@ -1,5 +1,5 @@
 <script>
-  import IonPage from "../../components/IonPage.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const onIonViewWillEnter = () => {
     console.log("Note:onIonViewWillEnter");

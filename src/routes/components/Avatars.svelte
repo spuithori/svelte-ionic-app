@@ -1,8 +1,5 @@
 <script>
-  import IonPage from "../../components/IonPage.svelte";
-  import "../../lib/Stuff.svelte";
-
-  // import "../../lib/IonPage.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const onIonViewDidEnter = () => {
     console.log("Avatar:onIonViewWillEnter");
@@ -13,7 +10,7 @@
   <title>Ionic Companion - Avatars</title>
 </svelte:head>
 
-<ion-stuff {onIonViewDidEnter} route="'/components/Avatars'">
+<IonPage {onIonViewDidEnter} route="'/components/Avatars'">
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -89,4 +86,4 @@
       </ion-item>
     </ion-list>
   </ion-content>
-</ion-stuff>
+</IonPage>

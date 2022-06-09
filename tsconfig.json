@@ -17,7 +17,30 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "$lib/*": [
+        "src/lib/*"
+      ],
+      "$static/*": [
+        "src/static/*"
+      ],
+      "$routes/*": [
+        "src/routes/*"
+      ],
+      "$components/*": [
+        "src/components/*"
+      ],
+      "$services/*": [
+        "src/services/*"
+      ],
+      "$ionic/*": [
+        "src/lib/ionic/*"
+      ],
+      "$theme/*": [
+        "src/theme/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.d.ts",

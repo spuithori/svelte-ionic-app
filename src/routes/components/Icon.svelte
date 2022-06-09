@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as allIonicIcons from "ionicons/icons";
 
-  import { toastController } from "./../../services/IonicSvelte";
+  import { toastController } from "$ionic/svelte";
 
   let icons = Object.keys(allIonicIcons);
   let list = [];

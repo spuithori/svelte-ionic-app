@@ -17,7 +17,7 @@ console.log('UpdateSW', updateSW);
 
 import App from './App.svelte'
 
-import { initialiseIonicSvelte } from "./services/IonicSvelte";
+import { initialiseIonicSvelte } from "$ionic/svelte";
 
 initialiseIonicSvelte();
 

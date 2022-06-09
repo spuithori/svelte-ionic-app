@@ -32,22 +32,30 @@ These are Ionic 4 components only.
 
 # How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
+
+Scaffold the Svelte app
 - npm create vite@latest (config - Svelte, TS)
-- npm i @ionic/core  sass
+
+Svelte router steps
 - install roxy router run-all
-- package.json scripts changed
-- changes pages folder to routes folder (routify config in package.json)
+- package.json scripts changed to router build scripts
+- changes pages folder to routes folder (routify config in package.json) - I like it a bit more
+
+Configuring Svelte workspace to my liking
 - remove public folder
 - created static folder as static dir
 - config vite -> to include static dir for assets etc
+- add aliases using $ sign (in vite.config as well as tsconfig) - https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck
+
+PWA steps:
+Follow the documentation in vite-plugin-pwa.netlify.app!! VERRRRRY easy
+
+Ionic related steps
+- npm i @ionic/core  sass
 - added initialise function for Ionic UI stuff(initialiseIonicSvelte)
 - main.ts -> refer to initialiseIonicSvelte
 - App.svelte -> include ion-app 
-
 As of this step, the hard work started getting all UI components working... and still work to be done
-
-PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa.netlify.app!!
-
 
 # Issues (work in progress)
 - Ion Icons implementation will not support md and ios specific icons etc 
@@ -66,6 +74,5 @@ PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa
 - Research if ion-router and such need to be built
 - Deal with missing Nav
 - Datetime popover
-- Page transitions
-- make it an npm package or lib?
+- make it an npm package - already in a lib style
 - add utilities such as shown in Angalur's integration (isRTL etc)

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IonPage from "../../components/IonPage.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import { route } from "@roxi/routify";
 
   const onIonViewWillEnter = () => {

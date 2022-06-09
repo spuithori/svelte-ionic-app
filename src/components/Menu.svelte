@@ -1,7 +1,7 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
   import { goto } from "@roxi/routify";
-  import { getIonicMenu } from "../services/IonicSvelte";
+  import { getIonicMenu } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
 
