@@ -27,6 +27,7 @@
     "vite-plugin-pwa": "^0.12.0"
   },
   "dependencies": {
+    "@auroratide/svelte-custom-element-transitions": "^0.1.1",
     "@ionic/core": "^6.1.8"
   },
   "routify": {

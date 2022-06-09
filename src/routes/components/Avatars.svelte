@@ -1,5 +1,6 @@
 <script>
   import IonPage from "../../components/IonPage.svelte";
+  import "../../lib/Stuff.svelte";
 
   // import "../../lib/IonPage.svelte";
 
@@ -12,7 +13,7 @@
   <title>Ionic Companion - Avatars</title>
 </svelte:head>
 
-<IonPage {onIonViewDidEnter} route="'/components/Avatars'">
+<ion-stuff {onIonViewDidEnter} route="'/components/Avatars'">
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -88,4 +89,4 @@
       </ion-item>
     </ion-list>
   </ion-content>
-</IonPage>
+</ion-stuff>

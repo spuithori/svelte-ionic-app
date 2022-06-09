@@ -99,7 +99,7 @@
   // hack because of visibility of menu in Chrome/Windows
   setTimeout(() => {
     hideMenu = false;
-  }, 1000);
+  }, 100);
 </script>
 
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>

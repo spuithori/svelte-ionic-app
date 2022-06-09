@@ -1,9 +1,9 @@
-<svelte:options tag="ion-page2" />
+<svelte:options tag="ion-stuff" />
 
 <script lang="ts">
-  import { fly } from "svelte/transition";
-
-  import { onDestroy } from "svelte";
+  // import { fly } from "svelte/transition";
+  import { fly } from "@auroratide/svelte-custom-element-transitions";
+  import { onDestroy, onMount } from "svelte";
 
   import { onIonViewWillEnterStore } from "../services/ion-route-store";
   import { onIonViewDidEnterStore } from "../services/ion-route-store";
@@ -38,8 +38,12 @@
     unsubscribeC();
     unsubscribeD();
   });
+
+  onMount(() => {
+    console.log("Route", route);
+  });
 </script>
 
-<main in:fly={{ x: 200, duration: 250 }}>
+<main in:fly={{ x: 200, duration: 250000 }} out:fly={{ x: 200, duration: 250 }}>
   <slot />
 </main>

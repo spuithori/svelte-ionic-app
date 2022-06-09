@@ -105,10 +105,7 @@ export {
     modalController, pickerController, popoverController, toastController
 } from "@ionic/core";
 
-import {
-    actionSheetController, alertController, loadingController, menuController,
-    modalController, pickerController, popoverController, toastController
-} from "@ionic/core";
+import { modalController, popoverController } from "@ionic/core";
 
 /* Theme variables */
 import "../theme/variables.css";
@@ -238,11 +235,6 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
     defineComponent("ion-toast", IonToast);
 
     // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
-    // (window as any).alertController = alertController;
-    // (window as any).menuController = menuController;
-
-    //    actionSheetController, alertController, loadingController, menuController,
-    //    modalController, pickerController, popoverController, toastController
 
     document.documentElement.classList.add("ion-ce");
 }
@@ -265,6 +257,7 @@ export const getIonicMenu = (menuId): MenuI => {
     return document.querySelector(query) as unknown as MenuI;
 }
 
+// TODO - try with adding IonModal and then bootstrap the component 
 export const presentModal = async (
     selector: string,
     component: new (...args: any) => SvelteComponent,

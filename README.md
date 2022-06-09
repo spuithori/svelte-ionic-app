@@ -57,7 +57,8 @@ PWA steps (done in separate branch): follow the documentation in vite-plugin-pwa
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios??
 - Need a timeout to get proper style value even though I am using onMount?? (Gesture)
-- IonPage - are the lifecycle hooks well implemented? Can I make this a webcomponent?
+- IonPage - are the lifecycle hooks well implemented? 
+- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions)
 
 # Todo
 - Controller - Card modal
