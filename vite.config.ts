@@ -44,7 +44,7 @@ const svelteWebcomponentConfig = {
 }
 
 const svelteNonWebcomponentConfig = {
-  exclude: ['./src/lib/*.svelte']
+  // exclude: ['./src/lib/*.svelte']
 }
 
 
@@ -56,7 +56,7 @@ export default defineConfig({
       manifest: pwaManifest,
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'assets/*'],
     }),
-    svelte(svelteWebcomponentConfig),
+    //  svelte(svelteWebcomponentConfig),
     svelte(svelteNonWebcomponentConfig),
   ],
   publicDir: "src/static",

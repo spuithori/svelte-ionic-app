@@ -8,7 +8,7 @@
     onIonViewDidEnterStore,
     onIonViewWillLeaveStore,
     onIonViewDidLeaveStore,
-  } from "$lib/ionic/svelte/router-runtime/ion-router-store";
+  } from "$ionic/svelte";
 
   export let onIonViewWillEnter = () => {};
   export let onIonViewDidEnter = () => {};
@@ -38,8 +38,6 @@
     unsubscribeC();
     unsubscribeD();
   });
-
-  //out:fly={{ x: 200, duration: 250 }}
 </script>
 
 <main in:fly={{ x: 200, duration: 250 }}>

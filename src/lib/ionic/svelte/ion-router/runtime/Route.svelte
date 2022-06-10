@@ -11,23 +11,27 @@
    * @prop {HTMLElement} parentNode
    * */
 
-  import { suppressComponentWarnings } from "@roxi/routify/runtime/utils";
-  import Noop from "@roxi/routify/runtime/decorators/Noop.svelte";
-  // import "../typedef.js";
-  import "@roxi/routify/typedef.js";
+  import { suppressComponentWarnings } from "./utils";
+  import Noop from "./decorators/Noop.svelte";
+  import "../typedef.js";
   import { getContext, setContext, tick } from "svelte";
   import { writable } from "svelte/store";
-  import { metatags, afterPageLoad } from "@roxi/routify/runtime/helpers.js";
-  import { route, routes, rootContext } from "@roxi/routify/runtime/store";
-  import { handleScroll } from "@roxi/routify/runtime/utils";
-  import { onPageLoaded } from "@roxi/routify/runtime/utils/onPageLoaded.js";
+  import { metatags, afterPageLoad } from "./helpers.js";
+  import { route, routes, rootContext } from "./store";
+  import { handleScroll } from "./utils";
+  import { onPageLoaded } from "./utils/onPageLoaded.js";
 
+  // Ionic part
   import {
     onIonViewWillEnterStore,
     onIonViewDidEnterStore,
     onIonViewWillLeaveStore,
     onIonViewDidLeaveStore,
-  } from "./ion-router-store.js";
+    pageHooks_onIonViewWillEnter,
+    pageHooks_onIonViewDidEnter,
+    pageHooks_onIonViewWillLeave,
+    pageHooks_onIonViewDidLeave,
+  } from "./ion-router-store";
   let prevComponent = null;
 
   /** @type {LayoutOrDecorator[]} */
@@ -58,20 +62,29 @@
 
   /**  @param {LayoutOrDecorator} node */
   function setComponent(node) {
-    // ionic parts
+    // Ionic part
     if (node.isPage) {
       onIonViewWillEnterStore.set(node.path);
       onIonViewWillLeaveStore.set(prevComponent?.path);
+
+      if (pageHooks_onIonViewWillEnter[node.path]) pageHooks_onIonViewWillEnter[node.path]();
+      if (prevComponent?.path && pageHooks_onIonViewWillLeave[prevComponent.path])
+        pageHooks_onIonViewWillLeave[prevComponent.path]();
     }
 
     let PendingComponent = node.component();
     if (PendingComponent instanceof Promise) PendingComponent.then(onComponentLoaded);
     else onComponentLoaded(PendingComponent);
 
-    // ionic parts
+    // Ionic part
     if (node.isPage) {
-      onIonViewDidLeaveStore.set(prevNode?.path);
+      onIonViewDidLeaveStore.set(prevComponent?.path);
       onIonViewDidEnterStore.set(node.path);
+
+      if (prevComponent?.path && pageHooks_onIonViewDidLeave[prevComponent.path])
+        pageHooks_onIonViewDidLeave[prevComponent.path]();
+      if (pageHooks_onIonViewDidEnter[node.path]) pageHooks_onIonViewDidEnter[node.path]();
+
       prevComponent = node;
     }
   }

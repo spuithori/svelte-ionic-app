@@ -1,6 +1,12 @@
 <script lang="ts">
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
-  import { route } from "@roxi/routify";
+
+  import {
+    onIonViewWillEnter as onIonViewWillEnterFn,
+    onIonViewDidEnter as onIonViewDidEnterFn,
+    onIonViewWillLeave as onIonViewWillLeaveFn,
+    onIonViewDidLeave as onIonViewDidLeaveFn,
+  } from "$ionic/svelte";
 
   const onIonViewWillEnter = () => {
     console.log("Page:onIonViewWillEnter");
@@ -50,6 +56,22 @@
   onIonViewDidEnter={onIonViewDidEnter}
   onIonViewWillLeave={onIonViewWillLeave}
   onIonViewDidLeave={onIonViewDidLeave}>`;
+
+  onIonViewWillEnterFn("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewWillEnter hook");
+  });
+
+  onIonViewDidEnterFn("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewDidEnter hook");
+  });
+
+  onIonViewWillLeaveFn("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewWillLeave hook");
+  });
+
+  onIonViewDidLeaveFn("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewDidLeave hook");
+  });
 </script>
 
 <svelte:head>
