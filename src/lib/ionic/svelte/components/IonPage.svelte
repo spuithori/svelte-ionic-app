@@ -8,7 +8,7 @@
     onIonViewDidEnterStore,
     onIonViewWillLeaveStore,
     onIonViewDidLeaveStore,
-  } from "$ionic/svelte/ion-route-store";
+  } from "$lib/ionic/svelte/router-runtime/ion-router-store";
 
   export let onIonViewWillEnter = () => {};
   export let onIonViewDidEnter = () => {};
