@@ -30,8 +30,7 @@ const pwaManifest = {
 
 
 /* 
-
-  experimenting with webcomponents 
+  experimenting with webcomponents in svelte 
   great guide: 
     https://www.thisdot.co/blog/web-components-with-svelte
     https://dev.to/tnzk/svelte-for-web-components-development-pitfalls-and-workarounds-as-of-july-2021-3lii
@@ -56,7 +55,9 @@ export default defineConfig({
       manifest: pwaManifest,
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'assets/*'],
     }),
+
     //  svelte(svelteWebcomponentConfig),
+
     svelte(svelteNonWebcomponentConfig),
   ],
   publicDir: "src/static",
