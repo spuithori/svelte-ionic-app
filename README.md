@@ -11,6 +11,7 @@ Design objectives
 - Ease PWA configuration with good documentation - using zero-config Vite (https://vite-plugin-pwa.netlify.app/)
 - Deployable as PWA
 - File based router (using Roxy/Routify)
+- aligned as much as possible to the Ionic documentation for other integrations (Vue mostly)
 
 As far as I can see now, the current new version is getting there pretty closely. 
 
@@ -18,7 +19,7 @@ Nevertheless, there are known and unknown issues.
 
 Published as web app: https://ionicsvelte.firebaseapp.com
 
-Hint: try reactivity of the app by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
+Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
 
 If you want to run it locally:
 
@@ -50,7 +51,7 @@ Configuring Svelte workspace to my liking
 - add aliases using $ sign (in vite.config as well as tsconfig) - https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck
 
 PWA steps:
-Follow the documentation in vite-plugin-pwa.netlify.app!! VERRRRRY easy
+Follow the documentation on vite-plugin-pwa.netlify.app!! VERRRRRY easy
 
 Ionic related steps
 - npm i @ionic/core  sass
@@ -63,23 +64,27 @@ As of this step, the hard work started. Getting all UI components working...
 
 Much realised and still work to be done
 
-# Issues (work in progress)
-- Ion Icons implementation will not support md and ios specific icons etc (yet)
+But, the highlights for now:
+- Ion page events - as prop but also on-function (like onMount) !!!
+- Lib structure of all Ionic related stuff - so easy to drop in your own project
+
+# Issues - work in progress
+- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
 - Modal and Popover not working via Controller - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Inline modals and embedding the component in there is working nicely (see Components.svelte)
 - Tab bar -> does not move to default selected at start (IonTab.svelte)
-- Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue?
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
-- Need a timeout to get proper style value even though I am using onMount?? (only with Gesture)
-- IonPage - are the lifecycle hooks well implemented? 
-- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
+- Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
 # Todo
 - Controller - implement Card modal
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
-- Research if ion-router and such need to be built
 - Deal with missing Nav
 - Datetime popover
-- Router events 
 - make it an npm package - already in a lib style
 - add utilities such as shown in Angalur's integration (isRTL etc)
+
+# Issues - need help
+- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
+
+- Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
