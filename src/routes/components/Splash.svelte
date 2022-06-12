@@ -3,11 +3,9 @@
   import { elasticInOut } from "svelte/easing";
 
   import { goto } from "@roxi/routify";
-  import { prefetch } from "@roxi/routify";
 
   import { onMount } from "svelte";
 
-  prefetch("/components/Slides", {});
 
   let splitpane;
   onMount(() => {

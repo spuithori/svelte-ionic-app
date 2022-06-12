@@ -4,17 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "run-p routify:dev vite:dev",
-    "routify:dev": "routify",
-    "vite:dev": "vite",
-    "build": "routify -b && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "routes": "routify"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
-    "@roxi/routify": "^2.18.7",
+    "@roxi/routify": "^3.0.0-next.93",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@tsconfig/svelte": "^2.0.1",
     "npm-run-all": "^4.1.5",
