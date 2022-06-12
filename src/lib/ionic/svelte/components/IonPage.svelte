@@ -8,28 +8,28 @@
     onIonViewDidEnterStore,
     onIonViewWillLeaveStore,
     onIonViewDidLeaveStore,
-  } from "$lib/ionic/svelte/router-runtime/ion-router-store";
+  } from "$ionic/svelte";
 
   export let onIonViewWillEnter = () => {};
   export let onIonViewDidEnter = () => {};
   export let onIonViewWillLeave = () => {};
   export let onIonViewDidLeave = () => {};
 
-  export let route;
+  export let route = undefined;
 
   const unsubscribeA = onIonViewWillEnterStore.subscribe((value) => {
-    if (value === route) onIonViewWillEnter();
+    if (route && value === route) onIonViewWillEnter();
   });
   const unsubscribeB = onIonViewDidEnterStore.subscribe((value) => {
-    if (value === route) onIonViewDidEnter();
+    if (route && value === route) onIonViewDidEnter();
   });
 
   const unsubscribeC = onIonViewWillLeaveStore.subscribe((value) => {
-    if (value === route) onIonViewWillLeave();
+    if (route && value === route) onIonViewWillLeave();
   });
 
   const unsubscribeD = onIonViewDidLeaveStore.subscribe((value) => {
-    if (value === route) onIonViewDidLeave();
+    if (route && value === route) onIonViewDidLeave();
   });
 
   onDestroy(() => {
@@ -38,10 +38,8 @@
     unsubscribeC();
     unsubscribeD();
   });
-
-  //out:fly={{ x: 200, duration: 250 }}
 </script>
 
-<main in:fly={{ x: 200, duration: 250 }}>
+<main in:fly={{ x: 100, duration: 250 }}>
   <slot />
 </main>

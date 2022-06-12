@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import routify from '@roxi/routify/vite-plugin'
 import { VitePWA } from 'vite-plugin-pwa'
-import { resolve } from "path";
+import { resolve } from 'path'
+import { readFileSync } from 'fs'
 
 const pwaManifest = {
   name: 'Name of your app',
@@ -30,8 +32,7 @@ const pwaManifest = {
 
 
 /* 
-
-  experimenting with webcomponents 
+  experimenting with webcomponents in svelte 
   great guide: 
     https://www.thisdot.co/blog/web-components-with-svelte
     https://dev.to/tnzk/svelte-for-web-components-development-pitfalls-and-workarounds-as-of-july-2021-3lii
@@ -44,19 +45,28 @@ const svelteWebcomponentConfig = {
 }
 
 const svelteNonWebcomponentConfig = {
-  exclude: ['./src/lib/*.svelte']
+  // exclude: ['./src/lib/*.svelte']
 }
 
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-
+    { config: () => ({ ssr: { noExternal: true } }) },
+    routify({
+      ssr: {
+        spank: {
+          sitemap: readFileSync('./.routify/sitemap.default.txt', 'utf8').split('\n'),
+        },
+      },
+    }),
     VitePWA({
       manifest: pwaManifest,
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'assets/*'],
     }),
-    svelte(svelteWebcomponentConfig),
+
+    //  svelte(svelteWebcomponentConfig),
+
     svelte(svelteNonWebcomponentConfig),
   ],
   publicDir: "src/static",

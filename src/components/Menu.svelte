@@ -1,11 +1,9 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
-  import { goto } from "@roxi/routify";
+  import { goto, node } from "@roxi/routify";
   import { getIonicMenu } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
-
-  import { routes } from "../../.routify/routes";
 
   let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
@@ -25,7 +23,6 @@
     return items[Math.floor(Math.random() * items.length)];
   };
 
-  const excludedPaths = ["Splash"];
 
   // let's use the generated routes for making the menu items
   // and skip a few ones for the menu
@@ -34,41 +31,12 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  let menuItems: Array<{ url: string; label: string; icon: any }> = routes
-    .filter((route) => route.path.includes("components"))
-    .filter((route) => {
-      let found = false;
-      excludedPaths.forEach((exclude) => {
-        found = found || route.path.includes(exclude);
-      });
-      return !found;
-    })
-    .map((route) => {
-      let label = "";
-      if (route.path.includes("tabs")) {
-        label = "Tab";
-      } else {
-        label = route.shortPath.replace("/components/", "");
-      }
-      return {
+  let menuItems: Array<{ url: string; label: string; icon: any }> = $node.traverse('/components').children
+    .map((route) => ({
         url: route.path,
-        label: capitalizeFirstLetter(label),
+        label: capitalizeFirstLetter(route.name),
         icon: allIonicIcons["home"],
-      };
-    })
-    .sort(function (a, b) {
-      var nameA = a.label.toUpperCase(); // ignore upper and lowercase
-      var nameB = b.label.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
+    }))
 
   // Randomize the icons
   const icons = Object.keys(allIonicIcons);

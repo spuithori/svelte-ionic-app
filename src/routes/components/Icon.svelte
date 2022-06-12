@@ -19,11 +19,6 @@
       `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`
     );
 
-    /*
-    Clipboard.write({
-      string: `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`,
-    });
-*/
     const toast = await toastController.create({
       color: "dark",
       duration: 3000,
