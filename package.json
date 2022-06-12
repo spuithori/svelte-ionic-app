@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@ionic/core": "^6.1.8",
-    "spank": "^2.0.0-4"
+    "spank": "^2.0.0-5"
   },
   "routify": {
     "pages": "./src/routes"
