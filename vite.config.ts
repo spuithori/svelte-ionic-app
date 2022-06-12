@@ -56,7 +56,7 @@ export default defineConfig({
     routify({
       ssr: {
         spank: {
-          sitemap: readFileSync('./.routify/sitemap.default.txt', 'utf8').split('\n'),
+          sitemap: '.routify/sitemap.default.txt',
         },
       },
     }),
