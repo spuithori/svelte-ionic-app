@@ -3,14 +3,6 @@
 export default {
   "meta": {},
   "id": "_default",
-<<<<<<< HEAD
-  "file": {
-    "path": "src/routes",
-    "dir": "src",
-    "base": "routes",
-    "ext": "",
-    "name": "routes"
-=======
   "module": () => import('../src/routes/_module.svelte'),
   "file": {
     "path": "src/routes/_module.svelte",
@@ -18,40 +10,12 @@ export default {
     "base": "_module.svelte",
     "ext": ".svelte",
     "name": "_module"
->>>>>>> roxy3
   },
   "rootName": "default",
   "routifyDir": import.meta.url,
   "children": [
     {
       "meta": {
-<<<<<<< HEAD
-        "fallback": true
-      },
-      "id": "_default__fallback_svelte",
-      "name": "_fallback",
-      "module": () => import('../src/routes/_fallback.svelte'),
-      "file": {
-        "path": "src/routes/_fallback.svelte",
-        "dir": "src/routes",
-        "base": "_fallback.svelte",
-        "ext": ".svelte",
-        "name": "_fallback"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
-      "id": "_default__layout_svelte",
-      "name": "_layout",
-      "module": () => import('../src/routes/_layout.svelte'),
-      "file": {
-        "path": "src/routes/_layout.svelte",
-        "dir": "src/routes",
-        "base": "_layout.svelte",
-        "ext": ".svelte",
-        "name": "_layout"
-=======
         "dynamic": true
       },
       "id": "_default_____fallback__svelte",
@@ -63,7 +27,6 @@ export default {
         "base": "[...fallback].svelte",
         "ext": ".svelte",
         "name": "[...fallback]"
->>>>>>> roxy3
       },
       "children": []
     },
@@ -376,7 +339,6 @@ export default {
         },
         {
           "meta": {},
-<<<<<<< HEAD
           "id": "_default_components_Platform_svelte",
           "name": "Platform",
           "module": () => import('../src/routes/components/Platform.svelte'),
@@ -391,8 +353,6 @@ export default {
         },
         {
           "meta": {},
-=======
->>>>>>> roxy3
           "id": "_default_components_ProgressBar_svelte",
           "name": "ProgressBar",
           "module": () => import('../src/routes/components/ProgressBar.svelte'),
@@ -546,7 +506,9 @@ export default {
           "children": []
         },
         {
-          "meta": {},
+          "meta": {
+            "draft": true
+          },
           "id": "_default_components_Splash_svelte",
           "name": "Splash",
           "module": () => import('../src/routes/components/Splash.svelte'),
@@ -617,23 +579,6 @@ export default {
         },
         {
           "meta": {},
-<<<<<<< HEAD
-=======
-          "id": "_default_components__Platform_svelte",
-          "name": "_Platform",
-          "module": () => import('../src/routes/components/_Platform.svelte'),
-          "file": {
-            "path": "src/routes/components/_Platform.svelte",
-            "dir": "src/routes/components",
-            "base": "_Platform.svelte",
-            "ext": ".svelte",
-            "name": "_Platform"
-          },
-          "children": []
-        },
-        {
-          "meta": {},
->>>>>>> roxy3
           "id": "_default_components_tabs",
           "name": "tabs",
           "module": false,

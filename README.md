@@ -77,7 +77,9 @@ But, the highlights for now:
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
-- Modal is not working (via controller - dismiss handler fails)
+- Opening the modal via Controller and then seeing the component animate
+- SSR build will fail on Platform.svelte due to window object not present (use by ionic/core) - can be avoided
+- lifecycle events need to be hook-up again in IonPage - now we migrated from Routify 2 to 3
 
 # Todo
 - Controller - implement Card modal
@@ -91,3 +93,5 @@ But, the highlights for now:
 - Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
 
 - Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
+
+- Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?

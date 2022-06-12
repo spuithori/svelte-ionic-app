@@ -1,8 +1,8 @@
 <script lang="ts">
   import { getPlatforms, isPlatform } from "@ionic/core";
 
-  let platforms: string[]; //  = getPlatforms();
-  let isOnIOS = true; // isPlatform("ios");
+  let platforms: string[] = getPlatforms();
+  let isOnIOS = isPlatform("ios");
   //  console.log("asdas", getPlatforms(), isPlatform("ios"));
 </script>
 

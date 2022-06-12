@@ -6,8 +6,8 @@
 
   import { onMount } from "svelte";
 
-  let splitpane;
   onMount(() => {
+    let splitpane;
     splitpane = document.querySelector("ion-split-pane");
     splitpane.disabled = true;
 
@@ -23,6 +23,7 @@
   }
 </script>
 
+<!-- routify:meta draft=true -->
 <ion-content>
   <br />
   <br />

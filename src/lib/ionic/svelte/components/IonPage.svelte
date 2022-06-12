@@ -1,7 +1,8 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
 
-  import { onDestroy } from "svelte";
+  import { onDestroy, onMount } from "svelte";
+  import { beforeUrlChange } from "@roxi/routify";
 
   import {
     onIonViewWillEnterStore,
@@ -15,7 +16,29 @@
   export let onIonViewWillLeave = () => {};
   export let onIonViewDidLeave = () => {};
 
-  export let route = undefined;
+  export let route;
+
+  $: if (route) onIonViewWillEnterStore.set(route);
+
+  $beforeUrlChange(() => {
+    // console.log("beforeUrlChange", route);
+    if (route) onIonViewWillLeaveStore.set(route);
+    return true;
+  });
+
+  onMount(() => {
+    //  console.log("onMount", route);
+    if (route) onIonViewDidEnterStore.set(route);
+  });
+
+  onDestroy(() => {
+    // console.log("onDestroy", route);
+    if (route) onIonViewDidLeaveStore.set(route);
+    unsubscribeA();
+    unsubscribeB();
+    unsubscribeC();
+    unsubscribeD();
+  });
 
   const unsubscribeA = onIonViewWillEnterStore.subscribe((value) => {
     if (route && value === route) onIonViewWillEnter();
@@ -30,13 +53,6 @@
 
   const unsubscribeD = onIonViewDidLeaveStore.subscribe((value) => {
     if (route && value === route) onIonViewDidLeave();
-  });
-
-  onDestroy(() => {
-    unsubscribeA();
-    unsubscribeB();
-    unsubscribeC();
-    unsubscribeD();
   });
 </script>
 
