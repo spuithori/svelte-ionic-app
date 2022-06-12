@@ -3,6 +3,7 @@
   import PopoverExtra from "$components/PopoverExtra.svelte";
   import {
     alertController,
+    modalController,
     loadingController,
     toastController,
     pickerController,
@@ -12,6 +13,7 @@
   } from "$ionic/svelte";
 
   import Music from "$components/Music.svelte";
+  import type { ComponentRef } from "@ionic/core";
 
   let inlineModalOpen = false;
   let breakpoints = [0, 0.5, 1];
@@ -364,6 +366,23 @@
 
     actionsheet.present();
   };
+
+  const experimentModal = async () => {
+    let modalContent = document.createElement("div");
+    const contentID = "id" + Date.now();
+    modalContent.id = contentID;
+
+    const stuff = new ModalExtra({ target: modalContent });
+
+    const modal = await modalController.create({
+      component: stuff as unknown as ComponentRef,
+      cssClass: "my-custom-class",
+      componentProps: {
+        title: "New Title",
+      },
+    });
+    return modal.present();
+  };
 </script>
 
 <svelte:head>
@@ -384,7 +403,7 @@
   <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
   <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
   <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
-  <ion-button expand="block" on:click={showModal}>Show Modal</ion-button>
+  <ion-button expand="block" on:click={showModal}>Show Modal - via Controller</ion-button>
   <ion-button
     expand="block"
     on:click={() => {
@@ -395,6 +414,7 @@
   <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
   <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
   <ion-button expand="block" on:click={showToast}>Show Toast</ion-button>
+  <ion-button expand="block" on:click={experimentModal}>Show Experimental modal</ion-button>
   <ion-modal
     is-open={inlineModalOpen}
     initial-breakpoint="0.5"

@@ -5,6 +5,8 @@ Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharg
 
 Published as web app: https://ionicsvelte.firebaseapp.com
 
+*Open developer tools to see developer info in the console.log*
+
 Design objectives
 - Use all Ionic 6 UI elements
 - Fast bundler using VITE
@@ -75,6 +77,7 @@ But, the highlights for now:
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
+- Modal is not working (via controller - dismiss handler fails)
 
 # Todo
 - Controller - implement Card modal

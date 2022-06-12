@@ -1,7 +1,7 @@
 
 import type {
   // TYPES
-  MenuI,
+  MenuI, ModalOptions,
 } from "@ionic/core";
 
 import type { SvelteComponent } from "svelte/internal";
@@ -266,12 +266,15 @@ export const getIonicMenu = (menuId): MenuI => {
   return document.querySelector(query) as unknown as MenuI;
 };
 
-// TODO - try with adding IonModal and then bootstrap the component
+// Taken from https://github.com/raymondboswel/ionic-modal-reproduction
 export const presentModal = async (
   selector: string,
   component: new (...args: any) => SvelteComponent,
   componentPropsReceived: any
 ) => {
+
+  console.log('Presenting modal - having a delay because of the way the component is added')
+
   const modal = await modalController.create({
     component: selector,
     componentProps: componentPropsReceived,
@@ -286,6 +289,30 @@ export const presentModal = async (
 
   return res;
 };
+
+
+export const createModal = (modalOptions: ModalOptions) => {
+
+  if (modalOptions && !modalOptions.component) return;
+
+  let modalWrapper = document.createElement("ion-modal");
+  let modalContent = document.createElement("div");
+  const contentID = 'id' + Date.now();
+  modalContent.id = contentID;
+
+  let body = document.getElementsByTagName("body")[0];
+  body.appendChild(modalWrapper);
+
+  // const app = new App(modalOptions.component)
+  //    target: document.getElementById('app')
+  //  })
+
+
+
+}
+
+
+
 
 export const presentPopover = async (
   selector: string,

@@ -1,9 +1,8 @@
 <script lang="ts">
-  let overlayElement = document.querySelector("ion-modal");
-  console.log(overlayElement.componentProps);
+  import { modalController } from "$ionic/svelte";
 
   const closeOverlay = () => {
-    overlayElement.dismiss({ data: Date.now() });
+    modalController.dismiss({ data: Date.now() });
   };
 </script>
 
