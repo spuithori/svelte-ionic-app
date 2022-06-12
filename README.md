@@ -69,6 +69,7 @@ Much realised and still work to be done
 But, the highlights for now:
 - Ion page events - as prop but also on-function (like onMount) !!!
 - Lib structure of all Ionic related stuff - so easy to drop in your own project
+- Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte)
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
@@ -79,7 +80,6 @@ But, the highlights for now:
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 - Opening the modal via Controller and then seeing the component animate
 - SSR build will fail on Platform.svelte due to window object not present (use by ionic/core) - can be avoided
-- lifecycle events need to be hook-up again in IonPage - now we migrated from Routify 2 to 3
 
 # Todo
 - Controller - implement Card modal

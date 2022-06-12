@@ -144,7 +144,7 @@ export {
   getTimeGivenProgression,
 } from "@ionic/core/components";
 
-export * from "./ion-router/runtime/ion-router-store.js";
+export * from "./ion-router/ion-router-store.js";
 
 
 export const initialiseIonicSvelte = (config?: IonicConfig) => {
