@@ -339,20 +339,6 @@ export default {
         },
         {
           "meta": {},
-          "id": "_default_components_Platform_svelte",
-          "name": "Platform",
-          "module": () => import('../src/routes/components/Platform.svelte'),
-          "file": {
-            "path": "src/routes/components/Platform.svelte",
-            "dir": "src/routes/components",
-            "base": "Platform.svelte",
-            "ext": ".svelte",
-            "name": "Platform"
-          },
-          "children": []
-        },
-        {
-          "meta": {},
           "id": "_default_components_ProgressBar_svelte",
           "name": "ProgressBar",
           "module": () => import('../src/routes/components/ProgressBar.svelte'),
@@ -572,6 +558,20 @@ export default {
             "base": "Toolbar.svelte",
             "ext": ".svelte",
             "name": "Toolbar"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components__Platform_svelte",
+          "name": "_Platform",
+          "module": () => import('../src/routes/components/_Platform.svelte'),
+          "file": {
+            "path": "src/routes/components/_Platform.svelte",
+            "dir": "src/routes/components",
+            "base": "_Platform.svelte",
+            "ext": ".svelte",
+            "name": "_Platform"
           },
           "children": []
         },

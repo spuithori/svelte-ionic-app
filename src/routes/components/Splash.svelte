@@ -6,22 +6,21 @@
 
   import { onMount } from "svelte";
 
-
   let splitpane;
   onMount(() => {
     splitpane = document.querySelector("ion-split-pane");
     splitpane.disabled = true;
+
+    setTimeout(() => {
+      splitpane.disabled = false;
+      navigate("/components/Slides");
+    }, 4000);
   });
 
   function navigate(url) {
     console.log("Navigate url", url);
     $goto(url);
   }
-
-  setTimeout(() => {
-    splitpane.disabled = false;
-    navigate("/components/Slides");
-  }, 4000);
 </script>
 
 <ion-content>
