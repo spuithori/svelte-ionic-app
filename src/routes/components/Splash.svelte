@@ -3,27 +3,24 @@
   import { elasticInOut } from "svelte/easing";
 
   import { goto } from "@roxi/routify";
-  import { prefetch } from "@roxi/routify";
 
   import { onMount } from "svelte";
-
-  prefetch("/components/Slides", {});
 
   let splitpane;
   onMount(() => {
     splitpane = document.querySelector("ion-split-pane");
     splitpane.disabled = true;
+
+    setTimeout(() => {
+      splitpane.disabled = false;
+      navigate("/components/Slides");
+    }, 4000);
   });
 
   function navigate(url) {
     console.log("Navigate url", url);
     $goto(url);
   }
-
-  setTimeout(() => {
-    splitpane.disabled = false;
-    navigate("/components/Slides");
-  }, 4000);
 </script>
 
 <ion-content>
