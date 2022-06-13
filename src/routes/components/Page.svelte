@@ -49,12 +49,18 @@
   });
   `;
 
-  const ionPageSyntax = `<IonPage
-  route="/components/Page"
-  ionViewWillEnter={onIonViewWillEnter}
-  ionViewDidEnter={onIonViewDidEnter}
-  ionViewWillLeave={onIonViewWillLeave}
-  ionViewDidLeave={onIonViewDidLeave}>`;
+  const ionPageSyntax = `...
+  const ionViewWillEnter=
+        ionViewDidEnter=
+        ionViewWillLeave=
+        ionViewDidLeave=console.log('We got an event!') 
+  
+
+  <IonPage route="/components/Page"
+    {ionViewWillEnter}
+    {ionViewDidEnter}
+    {ionViewWillLeave}
+    {ionViewDidLeave}>`;
 
   onIonViewWillEnterFn("/components/Page", () => {
     console.log("Page:the on-function as onIonViewWillEnter hook");
@@ -120,8 +126,6 @@
       You can attach hooks using properties, or using similar syntax as onMount or onDestroy.
 
       <ion-card>
-        <br />
-        Code inserted:
         <pre>
   {codeSnippet}
 </pre>
@@ -129,6 +133,6 @@
         The first argument is the route, the second the hook to be called. Only one hook can be
         attached to one specific route.
       </ion-card>
-    </ion-card></ion-content
-  >
+    </ion-card>
+  </ion-content>
 </IonPage>
