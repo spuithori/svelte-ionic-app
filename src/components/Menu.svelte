@@ -52,9 +52,6 @@
     // path.set(url);
     $goto(url);
 
-    menuController.close("mainmenu").then((x) => {
-      console.log("sadasd", x);
-    });
     getIonicMenu("mainmenu")
       .close(true)
       .then(() => {});

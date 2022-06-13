@@ -74,7 +74,7 @@ But, the highlights for now:
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Tab bar -> does not move to default selected at start (IonTab.svelte)
+- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
@@ -82,12 +82,12 @@ But, the highlights for now:
 
 # Todo
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
-- Deal with missing Nav
+- Deal with missing Nav component
 - Datetime popover
 - make it an npm package - already in a lib style
 - add utilities such as shown in Angalur's integration (isRTL etc)
-- making npm package of it
 - svelte-add integration?
+- work on menu controller
 - typescript improvements here and there?
 
 # Issues - need help
