@@ -1,5 +1,7 @@
 import { config } from '@ionic/core/dist/collection/global/config'
 
+let _win: Window;
+let _doc: Document;
 
 export type Platforms = keyof typeof PLATFORMS_MAP;
 
@@ -26,6 +28,11 @@ export const setupPlatforms = (win: any) => { // = window
     // to support SSR we need to wrap window and not initialise as default
     if (typeof window !== 'undefined') {
         win = window;
+        _win = window;
+    }
+
+    if (typeof document !== 'undefined') {
+        _doc = document;
     }
 
     if (typeof win === 'undefined') {
@@ -132,4 +139,72 @@ const PLATFORMS_MAP = {
     mobileweb: isMobileWeb,
     desktop: isDesktop,
     hybrid: isHybrid,
+};
+
+
+// taken from Angular's platform service
+/*
+
+const proxyEvent = <T>(emitter: Subject<T>, el: EventTarget, eventName: string) => {
+  if (el as any) {
+    el.addEventListener(eventName, (ev: Event | undefined | null) => {
+      // ?? cordova might emit "null" events
+      emitter.next(ev != null ? ((ev as any).detail as T) : undefined);
+    });
+  }
+};
+
+
+   proxyEvent(this.pause, doc, 'pause');
+      proxyEvent(this.resume, doc, 'resume');
+      proxyEvent(this.backButton, doc, 'ionBackButton');
+      proxyEvent(this.resize, this.win, 'resize');
+      proxyEvent(this.keyboardDidShow, this.win, 'ionKeyboardDidShow');
+      proxyEvent(this.keyboardDidHide, this.win, 'ionKeyboardDidHide');
+
+*/
+
+export const height = (): number => {
+    if (_win) return _win.innerHeight;
+    return 0;
+}
+
+export const width = (): number => {
+    if (_win) return _win.innerWidth;
+    return 0;
+}
+
+export const url = (): string => {
+    if (_win) return _win.location.href;
+    return '';
+}
+
+export const isPortrait = (): boolean => {
+    if (_win) return _win.matchMedia?.('(orientation: portrait)').matches;
+    return false;
+}
+
+export const isLandscape = (): boolean => {
+    return !isPortrait();;
+}
+
+export const getQueryParam = (key: string): string | null => {
+    if (_win) return readQueryParam(_win.location.href, key);
+    return null;
+}
+
+export const isRTL = (): boolean => {
+    if (_doc) return _doc.dir === 'rtl';
+}
+
+export const is = (platformName: Platforms): boolean => {
+    if (_win) return isPlatform(_win, platformName);
+    return false;
+}
+
+const readQueryParam = (url: string, key: string) => {
+    key = key.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+    const regex = new RegExp('[\\?&]' + key + '=([^&#]*)');
+    const results = regex.exec(url);
+    return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
 };

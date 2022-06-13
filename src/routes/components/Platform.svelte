@@ -1,9 +1,36 @@
 <script lang="ts">
-  import { getPlatforms, isPlatform } from "$ionic/svelte";
+  import {
+    getPlatforms,
+    isPlatform,
+    height,
+    width,
+    isRTL,
+    is,
+    url,
+    isPortrait,
+    isLandscape,
+    getQueryParam,
+  } from "$ionic/svelte";
 
   let platforms: string[] = getPlatforms();
-  let isOnIOS = isPlatform("ios");
-  console.log("asdas", getPlatforms(), isPlatform("ios"));
+
+  const platformItems = {
+    height: height(),
+    width: width(),
+    url: url(),
+    isRTL: isRTL(),
+    isPortrait: isPortrait(),
+    isLandscape: isLandscape(),
+    is_ios: is("ios"),
+    getQueryParam_stuff: getQueryParam("stuff"),
+  };
+
+  const platformItemKeys = Object.keys(platformItems);
+
+  const getRandomAvatar = () => {
+    const ran = Date.now();
+    return `https://www.gravatar.com/avatar/${ran}?d=monsterid&f=y`;
+  };
 </script>
 
 <svelte:head>
@@ -20,14 +47,26 @@
 
 <ion-content fullscreen>
   <h1>Your platforms</h1>
-  {#each platforms as xxx}
+  {#each platforms as platform}
     <ion-item>
-      Platform : {xxx}
+      Platform : {platform}
     </ion-item>
   {/each}
 
-  <h1>You are on iOS?</h1>
-  <ion-item>
-    {isOnIOS ? "yes" : "no"}
-  </ion-item>
+  <h1>Platform methods</h1>
+  {#each platformItemKeys as platformItemKey}
+    <ion-item>
+      <ion-avatar slot="start">
+        <img alt="avatar" src={getRandomAvatar()} />
+      </ion-avatar>
+      <ion-label>
+        <h2>{platformItemKey}</h2>
+        <p>{platformItems[platformItemKey]}</p>
+      </ion-label>
+    </ion-item>
+  {/each}
+
+  Want to test query parameters?<br /><br /> Add
+  <pre>&stuff=whatever</pre>
+  to the url and then see the result!
 </ion-content>
