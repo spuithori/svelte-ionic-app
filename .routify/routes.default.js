@@ -608,17 +608,32 @@ export default {
               "meta": {
                 "dynamic": true
               },
-              "id": "_default_components_tabs__tab__svelte",
+              "id": "_default_components_tabs__tab_",
               "name": "[tab]",
-              "module": () => import('../src/routes/components/tabs/[tab].svelte'),
+              "module": false,
               "file": {
-                "path": "src/routes/components/tabs/[tab].svelte",
+                "path": "src/routes/components/tabs/[tab]",
                 "dir": "src/routes/components/tabs",
-                "base": "[tab].svelte",
-                "ext": ".svelte",
+                "base": "[tab]",
+                "ext": "",
                 "name": "[tab]"
               },
-              "children": []
+              "children": [
+                {
+                  "meta": {},
+                  "id": "_default_components_tabs__tab__index_svelte",
+                  "name": "index",
+                  "module": () => import('../src/routes/components/tabs/[tab]/index.svelte'),
+                  "file": {
+                    "path": "src/routes/components/tabs/[tab]/index.svelte",
+                    "dir": "src/routes/components/tabs/[tab]",
+                    "base": "index.svelte",
+                    "ext": ".svelte",
+                    "name": "index"
+                  },
+                  "children": []
+                }
+              ]
             }
           ]
         }

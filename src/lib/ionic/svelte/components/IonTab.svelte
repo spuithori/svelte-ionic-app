@@ -3,53 +3,56 @@
 
   import * as ionIcons from "ionicons/icons";
 
+  let ionTabBarElement;
+
   export let tabs;
-  export let selected;
+  export let selected = undefined;
+  export let ionTabsDidChange = (event) => {};
+  export let ionNavWillLoad = (event) => {};
+  export let ionTabsWillChange = (event) => {};
 
   console.log("Init IonTabs", tabs, selected);
 
   // ugly implmentation - to avoid present method not present
   // selected-tab does not seem to work
-  let tries = 0;
-  const selectTab = () => {
-    const controller = document.querySelector("ion-tabs");
+  // and select also does not
+  const selectTab = async () => {
+    // const controller = document.querySelector("ion-tabs") as HTMLIonTabsElement;
+    let tries = 0;
+    const controller = ionTabBarElement;
     if (controller && controller.select) {
       controller.select(selected);
+      controller.setActive(selected);
     } else if (tries < 300) {
       setTimeout(() => {
         tries++;
         selectTab();
-      }, 1);
+      }, 10);
     }
   };
 
   onMount(() => {
     if (selected) {
-      selectTab();
+      setTimeout(() => {
+        // console.log("asdasdsa", selected);
+        selectTab();
+      }, 4000);
     }
   });
-
-  const tabsChange = (event) => {
-    console.log("Tabs change", event.detail.tab);
-
-    // to support back button - some tries
-    //  history.pushState(
-    //    event.detail,
-    //    event.detail.tab,
-    //    "tabs/" + event.detail.tab
-    //  );
-    // console.log("History", window.history);
-  };
 </script>
 
-<ion-tabs on:ionTabsDidChange={tabsChange}>
+<ion-tabs
+  on:ionTabsDidChange={ionTabsDidChange}
+  on:ionNavWillLoad={ionNavWillLoad}
+  on:ionTabsWillChange={ionTabsWillChange}
+>
   {#each tabs as tab}
     <ion-tab tab={tab.tab}>
       <svelte:component this={tab.component} />
     </ion-tab>
   {/each}
 
-  <ion-tab-bar slot="bottom" selected-tab={selected}>
+  <ion-tab-bar slot="bottom" selected-tab={selected} bind:this={ionTabBarElement}>
     {#each tabs as tab}
       <ion-tab-button tab={tab.tab}>
         <ion-label>{tab.label}</ion-label>

@@ -6,9 +6,7 @@ import type {
 
 
 
-/* Ionic initialisation */
 import { IonicConfig, initialize } from "@ionic/core/components";
-
 import { defineIonComponents } from "./components/defineComponents.js";
 
 // all exports
@@ -143,11 +141,14 @@ export * from "./ion-router/ion-router-hooks.js";
 
 export * from "./controllers";
 
-// todo - check the ones by Vue and so on
 export const setupIoncSvelte = async (config?: IonicConfig) => {
+  /* Ionic initialisation */
   initialize(config);
+
+  /* Loading webcomponents en styles */
   defineIonComponents();
 
+  /* something else needed */
   if (typeof (document as any) !== 'undefined') {
     document.documentElement.classList.add('ion-ce');
   }

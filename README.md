@@ -75,7 +75,7 @@ But, the highlights for now:
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken
+- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 

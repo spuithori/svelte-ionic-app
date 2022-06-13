@@ -54,26 +54,6 @@ export const modalController = {
     }
 }
 
-export const presentPopover = async (
-    selector: string,
-    component: new (...args: any) => SvelteComponent,
-    componentPropsReceived: any
-) => {
-    const popover = await popoverController.create({
-        component: selector,
-        componentProps: componentPropsReceived,
-    });
-    await popover.present();
-    let elem = document.getElementsByTagName(selector)[0];
-    let svelteComponent = new component({ target: elem, props: componentPropsReceived });
-
-    let res = await popover.onWillDismiss();
-    svelteComponent.$destroy();
-    elem.remove();
-
-    return res;
-};
-
 export const popoverController = {
     create: (popoverOptions: any): Promise<HTMLIonPopoverElement> => { // needs to be typed to PopoverOptions (Partial or so?)
         return Promise.resolve(popoverController.__create(popoverOptions.component, popoverOptions)) as Promise<HTMLIonPopoverElement>
