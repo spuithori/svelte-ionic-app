@@ -1,3 +1,7 @@
+<script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Grid</title>
 </svelte:head>
@@ -5,7 +9,10 @@
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Grid</ion-title>
   </ion-toolbar>
@@ -87,13 +94,13 @@
 </ion-content>
 
 <style>
-:root {
-  --ion-safe-area-top: 20px;
-  --ion-safe-area-bottom: 22px;
-}
-ion-col > div {
-  background-color: #f7f7f7;
-  border: solid 1px #ddd;
-  padding: 10px;
-}
+  :root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+  ion-col > div {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+    padding: 10px;
+  }
 </style>

@@ -11,6 +11,8 @@
     popoverController,
   } from "$ionic/svelte";
 
+  import SourceButton from "$components/SourceButton.svelte";
+
   import Music from "$components/Music.svelte";
 
   let inlineModalOpen = false;
@@ -394,6 +396,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Controllers</ion-title>
   </ion-toolbar>

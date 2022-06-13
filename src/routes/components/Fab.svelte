@@ -1,5 +1,6 @@
 <script lang="ts">
   import { add, logoFacebook, logoTwitter, logoVimeo, logoGoogle, share } from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
 </script>
 
 <svelte:head>
@@ -10,6 +11,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Fab</ion-title>
   </ion-toolbar>

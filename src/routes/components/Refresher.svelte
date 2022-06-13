@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import SourceButton from "$components/SourceButton.svelte";
+
   const names = [
     "Burt Bear",
     "Charlie Cheetah",
@@ -69,6 +71,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Pull to refresh</ion-title>
   </ion-toolbar>

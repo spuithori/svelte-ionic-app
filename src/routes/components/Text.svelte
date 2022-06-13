@@ -1,13 +1,14 @@
-<style>
-  h1 {
-    margin-top: 0;
-  }
-</style>
+<script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+</script>
 
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Text</ion-title>
   </ion-toolbar>
@@ -31,10 +32,7 @@
   </ion-text>
 
   <ion-text color="warning">
-    <h5>
-      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-      cubilia Curae;
-    </h5>
+    <h5>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</h5>
   </ion-text>
 
   <ion-text color="danger">
@@ -51,3 +49,9 @@
     id pharetra et, cursus at lectus.
   </p>
 </ion-content>
+
+<style>
+  h1 {
+    margin-top: 0;
+  }
+</style>

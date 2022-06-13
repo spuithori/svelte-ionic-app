@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import SourceButton from "$components/SourceButton.svelte";
 
   let listElement;
   let items;
@@ -27,6 +28,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Searchbar</ion-title>
   </ion-toolbar>

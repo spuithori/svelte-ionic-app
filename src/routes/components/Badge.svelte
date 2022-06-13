@@ -1,5 +1,6 @@
 <script>
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
+  import SourceButton from "$components/SourceButton.svelte";
   import { onIonViewDidEnter } from "$ionic/svelte";
 
   onIonViewDidEnter("/components/Badge", () => {
@@ -7,11 +8,14 @@
   });
 </script>
 
-<IonPage>
+<IonPage route="/compontents/badge">
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Platform" />
       </ion-buttons>
       <ion-title>Badges</ion-title>
     </ion-toolbar>

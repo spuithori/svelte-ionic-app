@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+
   const changeValue = (event) => {
     console.log("Change of value", event.detail);
   };
@@ -12,6 +14,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>DateTime</ion-title>
   </ion-toolbar>

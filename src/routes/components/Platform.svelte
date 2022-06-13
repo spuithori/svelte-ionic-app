@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+
   import {
     getPlatforms,
     isPlatform,
@@ -10,6 +12,7 @@
     isPortrait,
     isLandscape,
     getQueryParam,
+    modalController,
   } from "$ionic/svelte";
 
   let platforms: string[] = getPlatforms();
@@ -22,6 +25,7 @@
     isPortrait: isPortrait(),
     isLandscape: isLandscape(),
     is_ios: is("ios"),
+    isPlatform_ios: isPlatform("ios"),
     getQueryParam_stuff: getQueryParam("stuff"),
   };
 
@@ -40,6 +44,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Platform</ion-title>
   </ion-toolbar>

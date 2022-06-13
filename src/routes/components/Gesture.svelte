@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createAnimation, createGesture } from "@ionic/core";
   import { onMount } from "svelte";
+  import SourceButton from "$components/SourceButton.svelte";
 
   let animation;
   let gesture;
@@ -109,6 +110,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Gesture</ion-title>
   </ion-toolbar>

@@ -1,5 +1,7 @@
 <script>
+  import SourceButton from "$components/SourceButton.svelte";
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
+
   const onIonViewDidEnter = () => {
     console.log("Avatar:onIonViewWillEnter");
   };
@@ -14,6 +16,9 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Platform" />
       </ion-buttons>
       <ion-title>Avatar</ion-title>
     </ion-toolbar>

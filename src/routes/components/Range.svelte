@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { sunny, brush, thermometer, contrast } from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
 
   let dualRange;
 
@@ -16,6 +17,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Range</ion-title>
   </ion-toolbar>

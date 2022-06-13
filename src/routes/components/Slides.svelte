@@ -1,6 +1,6 @@
 <script lang="ts">
   import { menu } from "ionicons/icons";
-
+  import SourceButton from "$components/SourceButton.svelte";
   import { getIonicMenu } from "$ionic/svelte";
 
   let menuIconClicked = false;
@@ -29,6 +29,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Slides</ion-title>
   </ion-toolbar>

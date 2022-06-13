@@ -1,6 +1,8 @@
 <script lang="ts">
   import { logoIonic, star, fingerPrint, ellipsisVertical } from "ionicons/icons";
-
+  import SourceButton from "$components/SourceButton.svelte";
+  `
+  `;
   const clickAction = (event) => {
     console.log("You clicked me!!", event.detail);
   };
@@ -10,6 +12,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-buttons slot="secondary">
       <ion-button on:click={clickAction}>

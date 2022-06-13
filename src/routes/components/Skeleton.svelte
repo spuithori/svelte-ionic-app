@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+
   export let toggle = false;
   const toggleSkeleton = () => {
     toggle = !toggle;
@@ -12,6 +14,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Skeleton Text</ion-title>
     <ion-buttons slot="primary">

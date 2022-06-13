@@ -1,5 +1,6 @@
 <script lang="ts">
   import { repeat } from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
 
   // code taken from https://petercoding.com/ionic/2019/05/06/implementing-reorder-in-ionic4/
   let reorderGroup;
@@ -26,6 +27,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Reorder</ion-title>
     <ion-buttons slot="primary">

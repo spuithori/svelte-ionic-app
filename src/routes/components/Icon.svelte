@@ -1,5 +1,6 @@
 <script lang="ts">
   import * as allIonicIcons from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
 
   import { toastController } from "$ionic/svelte";
 
@@ -15,9 +16,10 @@
   const iconClicked = async (icon) => {
     console.log("Icon clicked", icon);
 
-    navigator.clipboard.writeText(
-      `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`
-    );
+    if (navigator && navigator.clipboard)
+      navigator.clipboard.writeText(
+        `  import {${icon}} from "ionicons/icons"; \n <ion-icon icon={${icon}}></ion-icon>`
+      );
 
     const toast = await toastController.create({
       color: "dark",
@@ -66,6 +68,9 @@
     <ion-title>Icons</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>

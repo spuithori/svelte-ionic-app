@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { pin, wifi, wine, warning, walk, logoIonic } from "ionicons/icons";
+  import { logoIonic } from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
 
   let itemSlidingStart;
   let itemSlidingEnd;
@@ -28,6 +29,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Item</ion-title>
   </ion-toolbar>

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+
   const selectChange = (event) => {
     console.log("Select change ", event.detail);
   };
@@ -11,6 +13,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Select</ion-title>
   </ion-toolbar>

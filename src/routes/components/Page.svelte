@@ -1,5 +1,6 @@
 <script lang="ts">
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
+  import SourceButton from "$components/SourceButton.svelte";
 
   import {
     onIonViewWillEnter as onIonViewWillEnterFn,
@@ -87,6 +88,9 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Platform" />
       </ion-buttons>
       <ion-title>Page</ion-title>
     </ion-toolbar>

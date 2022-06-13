@@ -1,5 +1,6 @@
 <script>
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
+  import SourceButton from "$components/SourceButton.svelte";
 
   const onIonViewWillEnter = () => {
     console.log("Note:onIonViewWillEnter");
@@ -32,6 +33,9 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Platform" />
       </ion-buttons>
       <ion-title>Note</ion-title>
     </ion-toolbar>

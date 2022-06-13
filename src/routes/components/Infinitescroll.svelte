@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { users } from "../../services/users";
 
+  import SourceButton from "$components/SourceButton.svelte";
+
   let length = 0;
   let list;
   let infiniteScroll;
@@ -47,7 +49,7 @@
   function wait(time) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve();
+        resolve(undefined);
       }, time);
     });
   }
@@ -61,6 +63,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Accounts - Scroll down to see it work!</ion-title>
   </ion-toolbar>

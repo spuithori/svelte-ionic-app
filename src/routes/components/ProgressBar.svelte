@@ -1,3 +1,7 @@
+<script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Progressbar</title>
 </svelte:head>
@@ -6,6 +10,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Progress Bar</ion-title>
   </ion-toolbar>

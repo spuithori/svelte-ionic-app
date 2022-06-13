@@ -1,7 +1,14 @@
+<script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+</script>
+
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>Thumbails</ion-title>
   </ion-toolbar>

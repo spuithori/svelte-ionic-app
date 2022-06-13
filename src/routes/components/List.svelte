@@ -1,3 +1,7 @@
+<script lang="ts">
+  import SourceButton from "$components/SourceButton.svelte";
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Lists</title>
 </svelte:head>
@@ -5,7 +9,10 @@
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <SourceButton name="Platform" />
     </ion-buttons>
     <ion-title>List</ion-title>
   </ion-toolbar>
