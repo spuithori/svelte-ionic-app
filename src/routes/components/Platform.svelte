@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getPlatforms, isPlatform } from "@ionic/core";
+  import { getPlatforms, isPlatform } from "$ionic/svelte";
 
   let platforms: string[] = getPlatforms();
   let isOnIOS = isPlatform("ios");

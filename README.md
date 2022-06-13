@@ -78,7 +78,6 @@ But, the highlights for now:
 - Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
-- Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 - SSR build will fail on Platform.svelte due to window object not present (use by ionic/core) - can be avoided
 
 # Todo
@@ -87,7 +86,6 @@ But, the highlights for now:
 - Datetime popover
 - make it an npm package - already in a lib style
 - add utilities such as shown in Angalur's integration (isRTL etc)
-- svelte-add integration?
 - work on menu controller
 - typescript improvements here and there?
 - test ssr setup
@@ -99,3 +97,10 @@ But, the highlights for now:
 - Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
 
 - Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?
+
+- Gestures: Need a timeout to get proper style value even though I am using onMount?? 
+
+# Wishlist
+- svelte-add integration?
+- Tailwind in separate branch?
+- Bundle optimisation using router bundling?

@@ -141,6 +141,8 @@ export * from "./ion-router/ion-router-hooks.js";
 
 export * from "./controllers";
 
+export * from "./platform";
+
 export const setupIoncSvelte = async (config?: IonicConfig) => {
   /* Ionic initialisation */
   initialize(config);

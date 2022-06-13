@@ -579,20 +579,6 @@ export default {
         },
         {
           "meta": {},
-          "id": "_default_components__AAA_svelte",
-          "name": "_AAA",
-          "module": () => import('../src/routes/components/_AAA.svelte'),
-          "file": {
-            "path": "src/routes/components/_AAA.svelte",
-            "dir": "src/routes/components",
-            "base": "_AAA.svelte",
-            "ext": ".svelte",
-            "name": "_AAA"
-          },
-          "children": []
-        },
-        {
-          "meta": {},
           "id": "_default_components_tabs",
           "name": "tabs",
           "module": false,
@@ -604,6 +590,22 @@ export default {
             "name": "tabs"
           },
           "children": [
+            {
+              "meta": {
+                "dynamic": true
+              },
+              "id": "_default_components_tabs_____fallback__svelte",
+              "name": "[...fallback]",
+              "module": () => import('../src/routes/components/tabs/[...fallback].svelte'),
+              "file": {
+                "path": "src/routes/components/tabs/[...fallback].svelte",
+                "dir": "src/routes/components/tabs",
+                "base": "[...fallback].svelte",
+                "ext": ".svelte",
+                "name": "[...fallback]"
+              },
+              "children": []
+            },
             {
               "meta": {
                 "dynamic": true

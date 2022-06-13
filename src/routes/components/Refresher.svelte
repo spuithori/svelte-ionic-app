@@ -31,6 +31,7 @@
     appendMessages(5, false);
   });
 
+  // This needs to be done in svelte-way, not javascript dom manipulation!
   function chooseRandomName() {
     return names[Math.floor(Math.random() * names.length)];
   }
@@ -88,23 +89,5 @@
   }
   ion-content {
     user-select: none;
-  }
-  ion-item {
-    --padding-start: 8px;
-  }
-  .unread {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: #3684ff;
-    margin-top: 15px;
-    margin-right: 8px;
-    align-self: start;
-  }
-  ion-item h2 {
-    font-weight: 500 !important;
-  }
-  ion-item h3 {
-    color: #777;
   }
 </style>
