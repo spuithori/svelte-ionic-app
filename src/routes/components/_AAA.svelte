@@ -15,7 +15,7 @@
   onMount(() => {
     const p = document.getElementById("slider") as HTMLIonItemSlidingElement;
     console.log("aasdsa", IonItemSliding, slidingElement, slidingElement.open, p);
-    console.log("asdasd", p, p.open("start"), p.ionDrag);
+    console.log("asdasd", p, p.open("start"));
     p.open("start").then((x) => {
       console.log("sssss", x);
     });
