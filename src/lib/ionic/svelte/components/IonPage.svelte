@@ -11,31 +11,31 @@
     pageHooks_onIonViewDidLeave,
   } from "$ionic/svelte";
 
-  export let onIonViewWillEnter = () => {};
-  export let onIonViewDidEnter = () => {};
-  export let onIonViewWillLeave = () => {};
-  export let onIonViewDidLeave = () => {};
+  export let ionViewWillEnter = () => {};
+  export let ionViewDidEnter = () => {};
+  export let ionViewWillLeave = () => {};
+  export let ionViewDidLeave = () => {};
 
   export let route;
 
   $: if (route) {
-    onIonViewWillEnter();
+    ionViewWillEnter();
     if (pageHooks_onIonViewWillEnter[route]) pageHooks_onIonViewWillEnter[route]();
   }
 
   $beforeUrlChange(() => {
-    onIonViewWillLeave();
+    ionViewWillLeave();
     if (pageHooks_onIonViewWillLeave[route]) pageHooks_onIonViewWillLeave[route]();
     return true;
   });
 
   onMount(() => {
-    onIonViewDidEnter();
+    ionViewDidEnter();
     if (pageHooks_onIonViewDidEnter[route]) pageHooks_onIonViewDidEnter[route]();
   });
 
   onDestroy(() => {
-    onIonViewDidLeave();
+    ionViewDidLeave();
     if (pageHooks_onIonViewDidLeave[route]) pageHooks_onIonViewDidLeave[route]();
   });
 </script>

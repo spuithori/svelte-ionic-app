@@ -31,6 +31,7 @@ export const setupPlatforms = (win: any) => { // = window
         _win = window;
     }
 
+    // we need the document object later on as well - if possible
     if (typeof document !== 'undefined') {
         _doc = document;
     }
@@ -197,6 +198,7 @@ export const isRTL = (): boolean => {
     if (_doc) return _doc.dir === 'rtl';
 }
 
+/* redundant addition */
 export const is = (platformName: Platforms): boolean => {
     if (_win) return isPlatform(_win, platformName);
     return false;

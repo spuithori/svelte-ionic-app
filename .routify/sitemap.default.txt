@@ -38,7 +38,6 @@
 /components/Thumbnails
 /components/Toggle
 /components/Toolbar
-/components/_AAA
 /components/tabs
 /components/tabs/[tab]/index
 /index

@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { add, logoFacebook, logoTwitter, logoVimeo, logoGoogle, share } from "ionicons/icons";
+  import {
+    add,
+    logoFacebook,
+    logoTwitter,
+    code,
+    logoVimeo,
+    logoGoogle,
+    share,
+  } from "ionicons/icons";
   import { modalController } from "$ionic/svelte";
   import SourceViewer from "$components/SourceViewer.svelte";
 
@@ -14,7 +22,7 @@
 </script>
 
 <div on:click={showSource}>
-  SOURCE <ion-icon icon={logoTwitter} />
+  <ion-icon icon={code} />
 </div>
 
 <style>

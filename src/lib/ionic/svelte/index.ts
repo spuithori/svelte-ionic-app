@@ -4,8 +4,6 @@ import type {
   MenuI, ModalOptions,
 } from "@ionic/core";
 
-
-
 import { IonicConfig, initialize } from "@ionic/core/components";
 import { defineIonComponents } from "./components/defineComponents.js";
 
@@ -74,6 +72,7 @@ export type {
   LoadingOptions,
 
   MenuCustomEvent,
+  MenuI,
 
   ModalOptions,
 

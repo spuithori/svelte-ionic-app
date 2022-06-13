@@ -52,8 +52,6 @@ I*/
   // }
 
   // generate the name to source file
-  name = name.replace("ionic/", "");
-  name = name.substr(1);
   name = name.charAt(0).toUpperCase() + name.slice(1);
   if (name.length == 0) {
     name = "Splash";

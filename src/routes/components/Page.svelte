@@ -51,10 +51,10 @@
 
   const ionPageSyntax = `<IonPage
   route="/components/Page"
-  onIonViewWillEnter={onIonViewWillEnter}
-  onIonViewDidEnter={onIonViewDidEnter}
-  onIonViewWillLeave={onIonViewWillLeave}
-  onIonViewDidLeave={onIonViewDidLeave}>`;
+  ionViewWillEnter={onIonViewWillEnter}
+  ionViewDidEnter={onIonViewDidEnter}
+  ionViewWillLeave={onIonViewWillLeave}
+  ionViewDidLeave={onIonViewDidLeave}>`;
 
   onIonViewWillEnterFn("/components/Page", () => {
     console.log("Page:the on-function as onIonViewWillEnter hook");
@@ -79,10 +79,10 @@
 
 <IonPage
   route="/components/Page"
-  {onIonViewWillEnter}
-  {onIonViewDidEnter}
-  {onIonViewWillLeave}
-  {onIonViewDidLeave}
+  ionViewWillEnter={onIonViewWillEnter}
+  ionViewDidEnter={onIonViewDidEnter}
+  ionViewWillLeave={onIonViewWillLeave}
+  ionViewDidLeave={onIonViewDidLeave}
 >
   <ion-header translucent="true">
     <ion-toolbar>
