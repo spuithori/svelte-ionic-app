@@ -106,13 +106,11 @@ export {
   alertController,
   loadingController,
   menuController,
-  modalController,
+  // modalController,
   pickerController,
-  popoverController,
+  // popoverController,
   toastController,
 } from "@ionic/core";
-
-import { modalController, popoverController } from "@ionic/core";
 
 /* Theme variables */
 import "$theme/variables.css";
@@ -144,10 +142,11 @@ export {
   getTimeGivenProgression,
 } from "@ionic/core/components";
 
-export * from "./ion-router/ion-router-store.js";
+export * from "./ion-router/ion-router-hooks.js";
 
+export * from "./controllers";
 
-export const initialiseIonicSvelte = (config?: IonicConfig) => {
+export const initialiseIonicSvelte = async (config?: IonicConfig) => {
   initialize(config);
 
   defineComponent("ion-accordion", IonAccordion);
@@ -244,6 +243,7 @@ export const initialiseIonicSvelte = (config?: IonicConfig) => {
   defineComponent("ion-toast", IonToast);
 
   // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
+  // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
 
   document.documentElement.classList.add("ion-ce");
 };
@@ -264,72 +264,4 @@ export const getIonicNav = () => {
 export const getIonicMenu = (menuId): MenuI => {
   const query = "ion-menu[menu-id='" + menuId + "']";
   return document.querySelector(query) as unknown as MenuI;
-};
-
-// Taken from https://github.com/raymondboswel/ionic-modal-reproduction
-export const presentModal = async (
-  selector: string,
-  component: new (...args: any) => SvelteComponent,
-  componentPropsReceived: any
-) => {
-
-  console.log('Presenting modal - having a delay because of the way the component is added')
-
-  const modal = await modalController.create({
-    component: selector,
-    componentProps: componentPropsReceived,
-  });
-  await modal.present();
-  let elem = document.getElementsByTagName(selector)[0];
-  let svelteComponent = new component({ target: elem, props: componentPropsReceived });
-
-  let res = await modal.onWillDismiss();
-  svelteComponent.$destroy();
-  elem.remove();
-
-  return res;
-};
-
-
-export const createModal = (modalOptions: ModalOptions) => {
-
-  if (modalOptions && !modalOptions.component) return;
-
-  let modalWrapper = document.createElement("ion-modal");
-  let modalContent = document.createElement("div");
-  const contentID = 'id' + Date.now();
-  modalContent.id = contentID;
-
-  let body = document.getElementsByTagName("body")[0];
-  body.appendChild(modalWrapper);
-
-  // const app = new App(modalOptions.component)
-  //    target: document.getElementById('app')
-  //  })
-
-
-
-}
-
-
-
-
-export const presentPopover = async (
-  selector: string,
-  component: new (...args: any) => SvelteComponent,
-  componentPropsReceived: any
-) => {
-  const popover = await popoverController.create({
-    component: selector,
-    componentProps: componentPropsReceived,
-  });
-  await popover.present();
-  let elem = document.getElementsByTagName(selector)[0];
-  let svelteComponent = new component({ target: elem, props: componentPropsReceived });
-
-  let res = await popover.onWillDismiss();
-  svelteComponent.$destroy();
-  elem.remove();
-
-  return res;
 };

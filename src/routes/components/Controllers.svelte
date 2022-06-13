@@ -8,12 +8,11 @@
     toastController,
     pickerController,
     actionSheetController,
-    presentModal,
     presentPopover,
+    popoverController,
   } from "$ionic/svelte";
 
   import Music from "$components/Music.svelte";
-  import type { ComponentRef } from "@ionic/core";
 
   let inlineModalOpen = false;
   let breakpoints = [0, 0.5, 1];
@@ -22,22 +21,23 @@
     inlineModalOpen = false;
   };
 
-  const showModal = async () => {
-    const s = await presentModal("modal-extra", ModalExtra, {
-      firstName: "Douglas",
-      lastName: "Adams",
-      middleInitial: "N",
-    });
-
-    console.log("Resulting value", s);
-  };
-
   const showPopover = async (event) => {
-    await presentPopover("popover-extra", PopoverExtra, {
-      firstName: "Douglas",
-      lastName: "Adams",
-      middleInitial: "N",
+    const popover = await popoverController.create({
+      component: PopoverExtra,
+      componentProps: {
+        firstName: "Douglas",
+        lastName: "Adams",
+        middleInitial: "N",
+      },
+      event,
     });
+
+    popover.onDidDismiss().then((value) => {
+      console.log("Dismissed the popover", value);
+      if (value.role === "backdrop") console.log("Backdrop clicked");
+    });
+
+    await popover.present();
   };
 
   const showLoading = async () => {
@@ -367,21 +367,24 @@
     actionsheet.present();
   };
 
-  const experimentModal = async () => {
-    let modalContent = document.createElement("div");
-    const contentID = "id" + Date.now();
-    modalContent.id = contentID;
-
-    const stuff = new ModalExtra({ target: modalContent });
-
+  const showModalController = async () => {
     const modal = await modalController.create({
-      component: stuff as unknown as ComponentRef,
-      cssClass: "my-custom-class",
+      component: ModalExtra,
       componentProps: {
-        title: "New Title",
+        firstName: "Douglas",
+        lastName: "Adams",
+        middleInitial: "N",
       },
+      showBackdrop: true,
+      backdropDismiss: false,
     });
-    return modal.present();
+
+    modal.onDidDismiss().then((value) => {
+      console.log("Dismissed the modal", value);
+      if (value.role === "backdrop") console.log("Backdrop clicked");
+    });
+
+    await modal.present();
   };
 </script>
 
@@ -403,18 +406,19 @@
   <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
   <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
   <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
-  <ion-button expand="block" on:click={showModal}>Show Modal - via Controller</ion-button>
+
+  <ion-button expand="block" on:click={showModalController}>Show modal - via controller</ion-button>
   <ion-button
     expand="block"
     on:click={() => {
       inlineModalOpen = true;
-    }}>Show Inline Modal with Breakpoints</ion-button
+    }}>Show modal - via inline & as sheet</ion-button
   >
   <ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
   <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
   <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
   <ion-button expand="block" on:click={showToast}>Show Toast</ion-button>
-  <ion-button expand="block" on:click={experimentModal}>Show Experimental modal</ion-button>
+
   <ion-modal
     is-open={inlineModalOpen}
     initial-breakpoint="0.5"

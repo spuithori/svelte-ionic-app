@@ -5,10 +5,14 @@
   import { beforeUrlChange } from "@roxi/routify";
 
   import {
-    onIonViewWillEnterStore,
-    onIonViewDidEnterStore,
-    onIonViewWillLeaveStore,
-    onIonViewDidLeaveStore,
+    //  onIonViewWillEnterStore,
+    //  onIonViewDidEnterStore,
+    //  onIonViewWillLeaveStore,
+    //  onIonViewDidLeaveStore,
+    pageHooks_onIonViewWillEnter,
+    pageHooks_onIonViewDidEnter,
+    pageHooks_onIonViewWillLeave,
+    pageHooks_onIonViewDidLeave,
   } from "$ionic/svelte";
 
   export let onIonViewWillEnter = () => {};
@@ -18,41 +22,25 @@
 
   export let route;
 
-  $: if (route) onIonViewWillEnterStore.set(route);
+  $: if (route) {
+    onIonViewWillEnter();
+    if (pageHooks_onIonViewWillEnter[route]) pageHooks_onIonViewWillEnter[route]();
+  }
 
   $beforeUrlChange(() => {
-    // console.log("beforeUrlChange", route);
-    if (route) onIonViewWillLeaveStore.set(route);
+    onIonViewWillLeave();
+    if (pageHooks_onIonViewWillLeave[route]) pageHooks_onIonViewWillLeave[route]();
     return true;
   });
 
   onMount(() => {
-    //  console.log("onMount", route);
-    if (route) onIonViewDidEnterStore.set(route);
+    onIonViewDidEnter();
+    if (pageHooks_onIonViewDidEnter[route]) pageHooks_onIonViewDidEnter[route]();
   });
 
   onDestroy(() => {
-    // console.log("onDestroy", route);
-    if (route) onIonViewDidLeaveStore.set(route);
-    unsubscribeA();
-    unsubscribeB();
-    unsubscribeC();
-    unsubscribeD();
-  });
-
-  const unsubscribeA = onIonViewWillEnterStore.subscribe((value) => {
-    if (route && value === route) onIonViewWillEnter();
-  });
-  const unsubscribeB = onIonViewDidEnterStore.subscribe((value) => {
-    if (route && value === route) onIonViewDidEnter();
-  });
-
-  const unsubscribeC = onIonViewWillLeaveStore.subscribe((value) => {
-    if (route && value === route) onIonViewWillLeave();
-  });
-
-  const unsubscribeD = onIonViewDidLeaveStore.subscribe((value) => {
-    if (route && value === route) onIonViewDidLeave();
+    onIonViewDidLeave();
+    if (pageHooks_onIonViewDidLeave[route]) pageHooks_onIonViewDidLeave[route]();
   });
 </script>
 

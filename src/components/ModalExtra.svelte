@@ -1,6 +1,12 @@
 <script lang="ts">
   import { modalController } from "$ionic/svelte";
 
+  export let firstName = undefined;
+  export let lastName = undefined;
+  export let middleInitial = undefined;
+
+  console.log("Received props", firstName, lastName, middleInitial);
+
   const closeOverlay = () => {
     modalController.dismiss({ data: Date.now() });
   };

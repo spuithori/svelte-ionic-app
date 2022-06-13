@@ -24,30 +24,28 @@
     console.log("Page:onIonViewDidLeave");
   };
 
-  const codeSnippet = `
-  // IonSvelte code - 1 line
-  let prevNode = null
+  const codeSnippet = `import {
+    onIonViewWillEnter,
+    onIonViewDidEnter,
+    onIonViewWillLeave,
+    onIonViewDidLeave,
+  } from "$ionic/svelte";
 
-  /**  @param {LayoutOrDecorator} node */
-  function setComponent(node) {
-    // IonSvelte code - if statement
-    if (node.isPage) {
-      onIonViewWillEnterStore.set(node.path)
-      onIonViewWillLeaveStore.set(prevNode?.path)
-    }
+  onIonViewWillEnter("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewWillEnter hook");
+  });
 
-    // original code in Route.svelte
-    let PendingComponent = node.component()
-    if (PendingComponent instanceof Promise)
-      PendingComponent.then(onComponentLoaded)
-    else onComponentLoaded(PendingComponent)
+  onIonViewDidEnter("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewDidEnter hook");
+  });
 
-    // IonSvelte code - if statement
-    if (node.isPage) {
-      onIonViewDidLeaveStore.set(prevNode?.path)
-      onIonViewDidEnterStore.set(node.path)
-      prevNode = node
-    }
+  onIonViewWillLeave("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewWillLeave hook");
+  });
+
+  onIonViewDidLeave("/components/Page", () => {
+    console.log("Page:the on-function as onIonViewDidLeave hook");
+  });
   `;
 
   const ionPageSyntax = `<IonPage
@@ -111,28 +109,22 @@
 </pre>
 
       Unfortunately (for now) this IonPage implementation requires that your tell it its
-      corresponding route, in order for it to know which events belongs to that specific page.
+      corresponding route, this to make sure the ionWillEnter event will fire. All other IonPage
+      lifecycle events work using router hooks and/or svelte mount/destroy hooks.
       <br /><br />
-      It's work in progess to figure out of we can derive the route to this component automatically.
-      <br /><br />
-      Secondly, it might be that the events are not fire in the proper place by the router. For instance,
-      will they fire after completion of the animation? Not now!
-      <br /><br />
-      Thirdly, the animations are not triggered after a second load - this is also an issue to resolve.
-    </ion-card>
 
-    <ion-card>
-      To get this working, I had to change Route.svelte from the roxi/routify library. Which of
-      course, is not ideal. But, looking at the vue/react implementation of routing, I see there is
-      lots of coding going on to make it work.
-      <br />
-      So likely there needs to be a custom Router and Route component deployed with the future IonicSvelte
-      library.
-      <br />
-      Code inserted:
-      <pre>
+      You can attach hooks using properties, or using similar syntax as onMount or onDestroy.
+
+      <ion-card>
+        <br />
+        Code inserted:
+        <pre>
   {codeSnippet}
 </pre>
-    </ion-card>
-  </ion-content>
+
+        The first argument is the route, the second the hook to be called. Only one hook can be
+        attached to one specific route.
+      </ion-card>
+    </ion-card></ion-content
+  >
 </IonPage>

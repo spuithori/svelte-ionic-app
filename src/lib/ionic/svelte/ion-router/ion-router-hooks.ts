@@ -1,11 +1,11 @@
-import { writable } from 'svelte/store';
+// import { writable } from 'svelte/store';
 
-// todo - maybe place somewhere else
-
+/*
 export const onIonViewWillEnterStore = writable('');
 export const onIonViewDidEnterStore = writable('');
 export const onIonViewWillLeaveStore = writable('');
 export const onIonViewDidLeaveStore = writable('');
+*/
 
 export const pageHooks_onIonViewWillEnter: { [path: string]: () => any } = {}
 export const pageHooks_onIonViewDidEnter: { [path: string]: () => any } = {}

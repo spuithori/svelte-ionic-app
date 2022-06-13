@@ -52,8 +52,11 @@ const svelteNonWebcomponentConfig = {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    // @ts-ignore
     { config: () => ({ ssr: { noExternal: true } }) },
+
     routify({
+      // @ts-ignore
       ssr: {
         spank: {
           sitemap: '.routify/sitemap.default.txt',

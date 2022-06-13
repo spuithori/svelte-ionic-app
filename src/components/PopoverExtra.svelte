@@ -1,7 +1,15 @@
 <script lang="ts">
-  let overlayElement = document.querySelector("ion-popover");
+  import { popoverController } from "$ionic/svelte";
+
+  export let firstName = undefined;
+  export let lastName = undefined;
+  export let middleInitial = undefined;
+
+  console.log("Received props", firstName, lastName, middleInitial);
+
   const closeOverlay = (data) => {
-    overlayElement.dismiss(data);
+    console.log("dasd", data);
+    popoverController.dismiss(data);
   };
 </script>
 
