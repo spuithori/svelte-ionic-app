@@ -15,7 +15,7 @@ Design objectives
 - File based router (using Roxy/Routify)
 - aligned as much as possible to the Ionic documentation for other integrations (Vue mostly)
 
-As far as I can see now, the current new version is getting there pretty closely. 
+As far as I can see now, the current new version is getting there pretty close! 
 
 Nevertheless, there are known and unknown issues.
 
@@ -62,32 +62,33 @@ Ionic related steps
 - main.ts -> refer to initialiseIonicSvelte
 - App.svelte -> include ion-app 
 
-As of this step, the hard work started. Getting all UI components working... 
+Then......
+As of this step, the hard work started. Getting all UI components working, aligning with the Ionic documentation... 
 
-Much realised and still work to be done
+Much has been realised and still lots of work to be done
 
 But, the highlights for now:
-- Ion page events - as prop but also on-function (like onMount) !!!
-- Lib structure of all Ionic related stuff - so easy to drop in your own project
-- Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte)
+- This project has all Ionic related stuff in a lib structure - so easy to drop in your own project
+- Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
+- modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Modal and Popover not working via Controller - there is a way, but it delays the content (modal) - and there is a warning on componentProps - so have to check how to get it to work with passing data and its properties. Inline modals and embedding the component in there is working nicely (see Components.svelte)
 - Tab bar -> does not move to default selected at start (IonTab.svelte)
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
-- Opening the modal via Controller and then seeing the component animate
 - SSR build will fail on Platform.svelte due to window object not present (use by ionic/core) - can be avoided
 
 # Todo
-- Controller - implement Card modal
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
 - Deal with missing Nav
 - Datetime popover
 - make it an npm package - already in a lib style
 - add utilities such as shown in Angalur's integration (isRTL etc)
+- making npm package of it
+- svelte-add integration?
+- typescript improvements here and there?
 
 # Issues - need help
 - Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.

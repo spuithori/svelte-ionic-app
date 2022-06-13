@@ -5,10 +5,6 @@
   import { beforeUrlChange } from "@roxi/routify";
 
   import {
-    //  onIonViewWillEnterStore,
-    //  onIonViewDidEnterStore,
-    //  onIonViewWillLeaveStore,
-    //  onIonViewDidLeaveStore,
     pageHooks_onIonViewWillEnter,
     pageHooks_onIonViewDidEnter,
     pageHooks_onIonViewWillLeave,

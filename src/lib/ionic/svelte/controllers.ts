@@ -75,7 +75,7 @@ export const presentPopover = async (
 };
 
 export const popoverController = {
-    create: (popoverOptions: any): Promise<HTMLIonPopoverElement> => { // needs to be typed to ModalOptions (Partial or so?)
+    create: (popoverOptions: any): Promise<HTMLIonPopoverElement> => { // needs to be typed to PopoverOptions (Partial or so?)
         return Promise.resolve(popoverController.__create(popoverOptions.component, popoverOptions)) as Promise<HTMLIonPopoverElement>
     },
 

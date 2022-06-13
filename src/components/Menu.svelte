@@ -1,7 +1,7 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
   import { goto, node } from "@roxi/routify";
-  import { getIonicMenu } from "$ionic/svelte";
+  import { getIonicMenu, menuController } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
 
@@ -23,7 +23,6 @@
     return items[Math.floor(Math.random() * items.length)];
   };
 
-
   // let's use the generated routes for making the menu items
   // and skip a few ones for the menu
 
@@ -31,12 +30,13 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  let menuItems: Array<{ url: string; label: string; icon: any }> = $node.traverse('/components').children
-    .map((route) => ({
-        url: route.path,
-        label: capitalizeFirstLetter(route.name),
-        icon: allIonicIcons["home"],
-    }))
+  let menuItems: Array<{ url: string; label: string; icon: any }> = $node
+    .traverse("/components")
+    .children.map((route) => ({
+      url: route.path,
+      label: capitalizeFirstLetter(route.name),
+      icon: allIonicIcons["home"],
+    }));
 
   // Randomize the icons
   const icons = Object.keys(allIonicIcons);
@@ -52,13 +52,9 @@
     // path.set(url);
     $goto(url);
 
-    getIonicMenu("mainmenu")
-      .close(true)
-      .then(() => {});
-  };
-
-  const goToReview = () => {
-    //  path.set("/RateMe");
+    menuController.close("mainmenu").then((x) => {
+      console.log("sadasd", x);
+    });
     getIonicMenu("mainmenu")
       .close(true)
       .then(() => {});

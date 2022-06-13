@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { logoIonic, star, fingerPrint, ellipsisVertical } from "ionicons/icons";
+
   const clickAction = (event) => {
-    console.log("You clicked me!!", event);
+    console.log("You clicked me!!", event.detail);
   };
 </script>
 
@@ -11,7 +13,7 @@
     </ion-buttons>
     <ion-buttons slot="secondary">
       <ion-button on:click={clickAction}>
-        <ion-icon slot="icon-only" name="logo-ionic" />
+        <ion-icon slot="icon-only" icon={logoIonic} />
       </ion-button>
     </ion-buttons>
 
@@ -19,7 +21,7 @@
 
     <ion-buttons slot="primary">
       <ion-button on:click={clickAction}>
-        <ion-icon slot="icon-only" name="star" />
+        <ion-icon slot="icon-only" icon={star} />
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -71,7 +73,7 @@
   <ion-toolbar>
     <ion-buttons slot="secondary">
       <ion-button on:click={clickAction}>
-        <ion-icon slot="icon-only" name="finger-print" />
+        <ion-icon slot="icon-only" icon={fingerPrint} />
       </ion-button>
     </ion-buttons>
 
@@ -79,7 +81,7 @@
 
     <ion-buttons slot="primary">
       <ion-button on:click={clickAction}>
-        <ion-icon slot="icon-only" name="more" />
+        <ion-icon slot="icon-only" icon={ellipsisVertical} />
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

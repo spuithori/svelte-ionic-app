@@ -8,7 +8,6 @@
     toastController,
     pickerController,
     actionSheetController,
-    presentPopover,
     popoverController,
   } from "$ionic/svelte";
 
