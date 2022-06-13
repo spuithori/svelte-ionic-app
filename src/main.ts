@@ -17,9 +17,9 @@ console.log('UpdateSW', updateSW);
 
 import App from './App.svelte'
 
-import { initialiseIonicSvelte } from "$ionic/svelte";
+import { setupIoncSvelte } from "$ionic/svelte";
 
-initialiseIonicSvelte();
+setupIoncSvelte();
 
 // if the page was prerendered, we want to remove the prerendered html
 document.querySelector('[data-routify]')?.remove()

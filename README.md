@@ -71,6 +71,7 @@ But, the highlights for now:
 - This project has all Ionic related stuff in a lib structure - so easy to drop in your own project
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
+- Using Routify it is easy to make it an SSR project (Platforms.svelte has issue related to window object)
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
@@ -89,6 +90,8 @@ But, the highlights for now:
 - svelte-add integration?
 - work on menu controller
 - typescript improvements here and there?
+- test ssr setup
+- compare with setupIonicReact and setupIonicVue - anything missing which is not contained in core?
 
 # Issues - need help
 - Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
