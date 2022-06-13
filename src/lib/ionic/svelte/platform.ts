@@ -22,12 +22,15 @@ export const isPlatform: IsPlatformSignature = (
 };
 
 export const setupPlatforms = (win: any) => { // = window
+
+    // to support SSR we need to wrap window and not initialise as default
+    if (typeof window !== 'undefined') {
+        win = window;
+    }
+
     if (typeof win === 'undefined') {
         return [];
     }
-
-    console.log('CONFIG', config)
-
     win.Ionic = win.Ionic || {};
 
     let platforms: Platforms[] | undefined | null = win.Ionic.platforms;

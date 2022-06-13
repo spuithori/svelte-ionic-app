@@ -3,7 +3,7 @@
 
   let platforms: string[] = getPlatforms();
   let isOnIOS = isPlatform("ios");
-  //  console.log("asdas", getPlatforms(), isPlatform("ios"));
+  console.log("asdas", getPlatforms(), isPlatform("ios"));
 </script>
 
 <svelte:head>
