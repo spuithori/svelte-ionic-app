@@ -38,8 +38,8 @@ export const modalController = {
         const svelteComponent = new component({ target: modalContent, props: modalOptions.componentProps });
 
         modalWrapper.onDidDismiss().then(() => {
-            divWrapper.remove();
             svelteComponent.$destroy();
+            divWrapper.remove();
         });
 
         return modalWrapper;
@@ -84,8 +84,8 @@ export const popoverController = {
         const svelteComponent = new component({ target: modalContent, props: popoverOptions.componentProps });
 
         popoverWrapper.onDidDismiss().then(() => {
-            divWrapper.remove();
             svelteComponent.$destroy();
+            divWrapper.remove();
         });
 
         return popoverWrapper;

@@ -594,48 +594,17 @@ export default {
               "meta": {
                 "dynamic": true
               },
-              "id": "_default_components_tabs_____fallback__svelte",
-              "name": "[...fallback]",
-              "module": () => import('../src/routes/components/tabs/[...fallback].svelte'),
+              "id": "_default_components_tabs_____tabs__svelte",
+              "name": "[...tabs]",
+              "module": () => import('../src/routes/components/tabs/[...tabs].svelte'),
               "file": {
-                "path": "src/routes/components/tabs/[...fallback].svelte",
+                "path": "src/routes/components/tabs/[...tabs].svelte",
                 "dir": "src/routes/components/tabs",
-                "base": "[...fallback].svelte",
+                "base": "[...tabs].svelte",
                 "ext": ".svelte",
-                "name": "[...fallback]"
+                "name": "[...tabs]"
               },
               "children": []
-            },
-            {
-              "meta": {
-                "dynamic": true
-              },
-              "id": "_default_components_tabs__tab_",
-              "name": "[tab]",
-              "module": false,
-              "file": {
-                "path": "src/routes/components/tabs/[tab]",
-                "dir": "src/routes/components/tabs",
-                "base": "[tab]",
-                "ext": "",
-                "name": "[tab]"
-              },
-              "children": [
-                {
-                  "meta": {},
-                  "id": "_default_components_tabs__tab__index_svelte",
-                  "name": "index",
-                  "module": () => import('../src/routes/components/tabs/[tab]/index.svelte'),
-                  "file": {
-                    "path": "src/routes/components/tabs/[tab]/index.svelte",
-                    "dir": "src/routes/components/tabs/[tab]",
-                    "base": "index.svelte",
-                    "ext": ".svelte",
-                    "name": "index"
-                  },
-                  "children": []
-                }
-              ]
             }
           ]
         }

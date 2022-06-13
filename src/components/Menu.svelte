@@ -23,9 +23,6 @@
     return items[Math.floor(Math.random() * items.length)];
   };
 
-  // let's use the generated routes for making the menu items
-  // and skip a few ones for the menu
-
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -33,11 +30,9 @@
   let menuItems: Array<{ url: string; label: string; icon: any }> = $node
     .traverse("/components")
     .children.map((route) => {
-      //   console.log("adsadasd", route.name, route.name === "tabs");
       let url = route.path;
-      if (route.name === "tabs") {
-        //  url = "/components/tabs/music";
-      }
+
+      console.log("Route", url, capitalizeFirstLetter(route.name));
 
       return {
         url,
@@ -55,6 +50,7 @@
   menuItems = [...menuItems];
 
   const closeAndNavigate = (url) => {
+    // url = "/components/tabs/blabla";
     console.log("Navigate url", url);
 
     // path.set(url);

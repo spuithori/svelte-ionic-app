@@ -78,7 +78,6 @@ But, the highlights for now:
 - Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation
 - unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
-- SourceViewer is not showing source - checking if we can get this from github directly
 
 # Todo
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions

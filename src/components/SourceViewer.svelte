@@ -1,55 +1,18 @@
 <script lang="ts">
-  // import { Plugins } from "@capacitor/core";
-  // import { fromFetch } from "rxjs/fetch";
-  //  import { IonicShowToast } from "../services/IonicControllers";
-
-  // import localforage from "localforage";
-
-  //  import firebase from "firebase/app";
-
-  // const { Clipboard } = Plugins;
-
   import { modalController, toastController } from "$ionic/svelte";
   import { close } from "ionicons/icons";
 
-  // const { componentProps } = document.querySelector("ion-modal");
-
+  export let name = "/";
   let REPLlink;
+
   let APIlink;
   let codeLanguage = "svelte";
-  let sourceCode = "Loading....Lorem Ipsum Dolorem";
   let sources = {};
   let languages = ["svelte"];
   languages.forEach((lang) => {
     sources[lang] = "Loading " + lang + "....";
   });
-
-  /*
-  localforage.getItem("source-language").then((value: string) => {
-    if (value) {
-      codeLanguage = value;
-      sourceCode = sources[codeLanguage];
-    }
-  });
-
-  <ion-segment value={codeLanguage} on:ionChange={segmentChange} scrollable>
-    <ion-segment-button value="svelte">
-      <ion-label>Svelte</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="js">
-      <ion-label>Javascript</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  
-I*/
-  // we want to measure some stuff
-
-  // probably can be done in easier way, but I am lazy
-  export let name = "/";
-  //  if (componentProps.name) {
-  //   name = componentProps.name;
-  // }
+  let sourceCode = sources[codeLanguage];
 
   // generate the name to source file
   name = name.charAt(0).toUpperCase() + name.slice(1);
@@ -60,22 +23,12 @@ I*/
     name = "tabs";
   }
 
-  console.log("Svelte name to load", name);
-
-  // try to generate the url to the api docs
-  // if (apiName.charAt(apiName.length - 1) == "s") {
-  //  apiName = apiName.slice(0, -1);
-  // }
-
   let apiName = name.toLowerCase();
-  console.log("Raw APINAME", apiName);
 
   // do a mapping for some exceptions
   apiName = apiName.replace("/", "");
   fetch("/assets/json/api-mappings.json")
     .then((response) => {
-      console.log("sss", response);
-
       if (response.ok) {
         response.json().then((json) => {
           let url = "https://ionicframework.com/docs/api/";
@@ -102,15 +55,15 @@ I*/
   if (name == "tabs") {
     name = "tabs/[tab]";
   }
-  fetch("/assets/src/svelte/" + name + ".svelte").then((response) => {
+  fetch(`/assets/src/components/${name}.svelte`).then((response) => {
     response
       .text()
       .then((txt) => {
         if (txt.search("<!DOCTYPE html>") > -1) {
-          sources["svelte"] = `No svelte file found for ${name}. Please check github repo.`;
+          sources["svelte"] = `No svelte file found for ${name}.`;
         } else {
           sources["svelte"] = txt;
-          // sourceCode = sources[codeLanguage];
+          sourceCode = sources[codeLanguage];
         }
       })
       .catch((err) => {
@@ -118,49 +71,43 @@ I*/
       });
   });
 
-  /*
+  fetch("/assets/json/repls.json").then((response) => {
+    response.json().then((json) => {
+      const url = json[name.toLowerCase()];
+      if (url) {
+        REPLlink = url;
+      } else {
+        REPLlink = undefined;
+      }
+    });
+  });
 
-   <ion-segment value={codeLanguage} on:ionChange={segmentChange} scrollable>
-    <ion-segment-button value="svelte">
-      <ion-label>Svelte</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="js">
-      <ion-label>Javascript</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-
-  const segmentChange = (value) => {
-    codeLanguage = value.detail.value;
-    // localforage.setItem("source-language", codeLanguage);
-    sourceCode = sources[codeLanguage];
-  };
-*/
   const closeOverlay = () => {
     modalController.dismiss();
   };
 
   // somehow does not fly on iOS?
   const copySource = async () => {
-    if (navigator && navigator.clipboard) navigator.clipboard.writeText(sourceCode);
-    const toast = await toastController.create({
-      color: "dark",
-      duration: 2000,
-      message: "Copied...",
-      //  showCloseButton: true,
-    });
-    await toast.present();
-
-    /*
-      .catch((message) => {
-        IonicShowToast({
-          color: "danger",
-          duration: 2000,
-          message,
-          showCloseButton: true,
+    if (navigator && navigator.clipboard)
+      navigator.clipboard
+        .writeText(sourceCode)
+        .then(async () => {
+          const toast = await toastController.create({
+            color: "dark",
+            duration: 2000,
+            message: "Copied...",
+          });
+          await toast.present();
+        })
+        .catch(async (message) => {
+          const toast = await toastController.create({
+            color: "danger",
+            duration: 2000,
+            message,
+          });
+          await toast.present();
         });
-      });
-*/
+
     setTimeout(closeOverlay, 1000);
   };
 </script>
@@ -171,6 +118,17 @@ I*/
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="end">
+      {#if REPLlink}
+        <ion-button
+          on:click={() => {
+            if (REPLlink.length > 1) {
+              window.open(REPLlink, "_blank");
+            }
+          }}
+        >
+          REPL
+        </ion-button>
+      {/if}
       <ion-button
         on:click={() => {
           window.open(APIlink, "_blank");
@@ -189,7 +147,7 @@ I*/
   </ion-toolbar>
 </ion-header>
 
-<ion-content scroll-x="true" style="--padding-start: 15px;--padding-end: 15px;">
+<ion-content scroll-x="true" style="--padding-start: 15px;--padding-end: 15px;" fullscreen>
   <pre
     style="-webkit-user-select: text; /* Chrome 49+ */
   -moz-user-select: text; /* Firefox 43+ */

@@ -2,11 +2,12 @@
   import IonTab from "$ionic/svelte/components/IonTab.svelte";
   import { params } from "@roxi/routify";
 
-  import Controllers from "../../Controllers.svelte";
+  import Controllers from "../Controllers.svelte";
   import Music from "$components/Music.svelte";
   import TabsExplain from "$components/TabsExplain.svelte";
 
-  export let tab = $params.tab;
+  let tabs = $params.tabs;
+  let tab = tabs[0];
 
   const myTabs = [
     {
