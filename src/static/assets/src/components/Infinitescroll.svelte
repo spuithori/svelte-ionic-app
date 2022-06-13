@@ -5,8 +5,8 @@
   import SourceButton from "$components/SourceButton.svelte";
 
   let length = 0;
-  let list;
   let infiniteScroll;
+  let itemList = [];
 
   onMount(() => {
     appendItems(20);
@@ -29,19 +29,14 @@
     console.log("length is", length);
     const originalLength = length;
 
-    // todo: replace with array and binding in each
-    for (var i = 0; i < number; i++) {
-      const el = document.createElement("ion-item");
-      el.innerHTML = `
-          <ion-avatar slot="start">
-            <img src="https://www.gravatar.com/avatar/${i + originalLength}?d=monsterid&f=y">
-          </ion-avatar>
-          <ion-label>
-            <h2>${users[i + originalLength].name}</h2>
-            <p>Created ${users[i + originalLength].created}</p>
-          </ion-label>
-        `;
-      if (list) list.appendChild(el);
+    for (let i = 0; i < number; i++) {
+      const newItem = {
+        name: users[i + originalLength].name,
+        avatar: `https://www.gravatar.com/avatar/${i + originalLength}?d=monsterid&f=y`,
+        created: users[i + originalLength].created,
+      };
+
+      itemList = [newItem, ...itemList];
       length++;
     }
   }
@@ -72,7 +67,19 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-list bind:this={list} />
+  <ion-list>
+    {#each itemList as item}
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src={item.avatar} alt={item.name} />
+        </ion-avatar>
+        <ion-label>
+          <h2>{item.name}</h2>
+          <p>Created {item.created}</p>
+        </ion-label>
+      </ion-item>
+    {/each}
+  </ion-list>
 
   <ion-infinite-scroll on:ionInfinite={infiniteAction} threshold="100px" bind:this={infiniteScroll}>
     <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data..." />

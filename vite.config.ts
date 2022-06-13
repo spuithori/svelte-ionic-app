@@ -80,8 +80,7 @@ export default defineConfig({
       $services: resolve('./src/services'),
       $routes: resolve('./src/routes'),
       $static: resolve('./src/static'),
-      $ionic: resolve('./src/lib/ionic'),
-      $theme: resolve('./src/theme'),
+      $ionic: resolve('./src/lib/ionic')
     }
   }
 })

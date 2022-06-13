@@ -36,9 +36,6 @@
       ],
       "$ionic/*": [
         "src/lib/ionic/*"
-      ],
-      "$theme/*": [
-        "src/theme/*"
       ]
     }
   },

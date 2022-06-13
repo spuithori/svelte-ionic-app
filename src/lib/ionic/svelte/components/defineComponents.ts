@@ -1,6 +1,6 @@
 
 /* Theme variables */
-import "$theme/variables.css";
+import "../../../../theme/variables.css";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/core/css/core.css";

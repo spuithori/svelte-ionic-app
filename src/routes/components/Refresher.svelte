@@ -18,8 +18,8 @@
     "Ted Turtle",
   ];
 
-  let list;
   let refresher;
+  let itemList = [];
 
   const refreshAction = () => {
     console.log("Refresh action");
@@ -34,34 +34,32 @@
   });
 
   // This needs to be done in svelte-way, not javascript dom manipulation!
-  function chooseRandomName() {
+  const chooseRandomName = () => {
     return names[Math.floor(Math.random() * names.length)];
-  }
-  function appendMessages(numMessages = 1, unread) {
+  };
+
+  const createMessage = (i, unread) => {
+    return {
+      avatar: `https://www.gravatar.com/avatar/${i}?d=monsterid&f=y`,
+      unread,
+    };
+  };
+
+  const appendMessages = (numMessages = 1, unread) => {
     for (let i = 0; i < numMessages; i++) {
-      list.appendChild(createMessage(unread, i));
+      const newItem = createMessage(i, unread);
+      itemList = [newItem, ...itemList];
     }
-  }
-  function prependMessages(numMessages = 1, unread) {
+  };
+
+  const prependMessages = (numMessages = 1, unread) => {
+    let prependList = [];
     for (let i = 0; i < numMessages; i++) {
-      list.insertBefore(createMessage(unread, i), list.firstChild);
+      const newItem = createMessage(i, unread);
+      prependList = [newItem, ...prependList];
     }
-  }
-  function createMessage(unread = false, i = 1) {
-    let item = document.createElement("ion-item");
-    const ran = i;
-    item.innerHTML = `
-        <div slot="start" class="${unread ? "unread" : "read"}"></div>
-        <ion-avatar slot="start">
-            <img src="https://www.gravatar.com/avatar/${ran}?d=monsterid&f=y">
-          </ion-avatar>
-        <ion-label class="ion-text-wrap">
-          <h2>${chooseRandomName()}</h2>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        </ion-label>
-      `;
-    return item;
-  }
+    itemList = itemList.concat(prependList);
+  };
 </script>
 
 <svelte:head>
@@ -84,7 +82,19 @@
     <ion-refresher-content />
   </ion-refresher>
 
-  <ion-list bind:this={list} />
+  <ion-list>
+    {#each itemList as item}
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src={item.avatar} alt={item.avatar} />
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+          <h2>{chooseRandomName()}</h2>
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+        </ion-label>
+      </ion-item>
+    {/each}
+  </ion-list>
 </ion-content>
 
 <style>
