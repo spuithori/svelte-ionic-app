@@ -73,7 +73,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Refresher" />
     </ion-buttons>
     <ion-title>Pull to refresh</ion-title>
   </ion-toolbar>

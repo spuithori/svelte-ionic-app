@@ -12,7 +12,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Spinner" />
     </ion-buttons>
     <ion-title>Spinner</ion-title>
   </ion-toolbar>

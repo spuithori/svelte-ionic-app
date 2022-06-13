@@ -12,7 +12,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="ProgressBar" />
     </ion-buttons>
     <ion-title>Progress Bar</ion-title>
   </ion-toolbar>

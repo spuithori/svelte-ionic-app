@@ -70,7 +70,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Icon" />
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>

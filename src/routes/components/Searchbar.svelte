@@ -30,7 +30,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Searchbar" />
     </ion-buttons>
     <ion-title>Searchbar</ion-title>
   </ion-toolbar>

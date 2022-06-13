@@ -15,7 +15,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Segment" />
     </ion-buttons>
     <ion-title>Segment</ion-title>
   </ion-toolbar>

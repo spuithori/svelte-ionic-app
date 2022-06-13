@@ -31,7 +31,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Item" />
     </ion-buttons>
     <ion-title>Item</ion-title>
   </ion-toolbar>

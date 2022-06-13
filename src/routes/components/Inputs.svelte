@@ -41,7 +41,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Inputs" />
     </ion-buttons>
     <ion-title>Create Account</ion-title>
   </ion-toolbar>

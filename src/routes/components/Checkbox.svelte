@@ -21,7 +21,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Checkbox" />
     </ion-buttons>
     <ion-title>Checkbox</ion-title>
   </ion-toolbar>

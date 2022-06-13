@@ -8,7 +8,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Text" />
     </ion-buttons>
     <ion-title>Text</ion-title>
   </ion-toolbar>

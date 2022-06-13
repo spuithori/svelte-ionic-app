@@ -16,7 +16,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Skeleton" />
     </ion-buttons>
     <ion-title>Skeleton Text</ion-title>
     <ion-buttons slot="primary">

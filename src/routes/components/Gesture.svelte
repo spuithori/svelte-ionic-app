@@ -112,7 +112,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Gesture" />
     </ion-buttons>
     <ion-title>Gesture</ion-title>
   </ion-toolbar>

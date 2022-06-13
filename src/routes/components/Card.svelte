@@ -13,7 +13,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Card" />
     </ion-buttons>
     <ion-title>Card</ion-title>
   </ion-toolbar>

@@ -398,7 +398,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Controllers" />
     </ion-buttons>
     <ion-title>Controllers</ion-title>
   </ion-toolbar>

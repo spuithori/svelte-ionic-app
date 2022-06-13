@@ -14,7 +14,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Toolbar" />
     </ion-buttons>
     <ion-buttons slot="secondary">
       <ion-button on:click={clickAction}>

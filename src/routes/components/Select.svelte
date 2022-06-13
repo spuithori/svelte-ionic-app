@@ -15,7 +15,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Select" />
     </ion-buttons>
     <ion-title>Select</ion-title>
   </ion-toolbar>

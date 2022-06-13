@@ -15,7 +15,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Radio" />
     </ion-buttons>
     <ion-title>Radio</ion-title>
   </ion-toolbar>

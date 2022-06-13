@@ -65,7 +65,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Infinitescroll" />
     </ion-buttons>
     <ion-title>Accounts - Scroll down to see it work!</ion-title>
   </ion-toolbar>

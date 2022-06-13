@@ -90,7 +90,7 @@
         <ion-menu-button />
       </ion-buttons>
       <ion-buttons slot="end">
-        <SourceButton name="Platform" />
+        <SourceButton name="Page" />
       </ion-buttons>
       <ion-title>Page</ion-title>
     </ion-toolbar>

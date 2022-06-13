@@ -24,7 +24,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Accordion" />
     </ion-buttons>
     <ion-title>Accordion</ion-title>
   </ion-toolbar>

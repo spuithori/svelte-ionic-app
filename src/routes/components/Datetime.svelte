@@ -16,7 +16,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Datetime" />
     </ion-buttons>
     <ion-title>DateTime</ion-title>
   </ion-toolbar>

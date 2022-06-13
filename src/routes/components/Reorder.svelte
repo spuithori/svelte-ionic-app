@@ -29,7 +29,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Reorder" />
     </ion-buttons>
     <ion-title>Reorder</ion-title>
     <ion-buttons slot="primary">

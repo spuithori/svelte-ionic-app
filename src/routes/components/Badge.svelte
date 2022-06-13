@@ -15,7 +15,7 @@
         <ion-menu-button />
       </ion-buttons>
       <ion-buttons slot="end">
-        <SourceButton name="Platform" />
+        <SourceButton name="Badge" />
       </ion-buttons>
       <ion-title>Badges</ion-title>
     </ion-toolbar>

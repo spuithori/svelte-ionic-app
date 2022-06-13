@@ -19,7 +19,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Range" />
     </ion-buttons>
     <ion-title>Range</ion-title>
   </ion-toolbar>

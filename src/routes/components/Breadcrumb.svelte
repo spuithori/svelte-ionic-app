@@ -27,7 +27,7 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-buttons slot="end">
-      <SourceButton name="Platform" />
+      <SourceButton name="Breadcrumb" />
     </ion-buttons>
     <ion-title>Breadcrumb</ion-title>
   </ion-toolbar>
