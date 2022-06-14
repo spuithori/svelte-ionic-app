@@ -44,11 +44,6 @@ const svelteWebcomponentConfig = {
   }
 }
 
-const svelteNonWebcomponentConfig = {
-  // exclude: ['./src/lib/*.svelte']
-}
-
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -68,9 +63,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'assets/*'],
     }),
 
-    //  svelte(svelteWebcomponentConfig),
-
-    svelte(svelteNonWebcomponentConfig),
+    svelte(),
   ],
   publicDir: "src/static",
   resolve: {

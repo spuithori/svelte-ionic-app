@@ -19,6 +19,7 @@
     }
   };
 
+  // not working
   animateSliding();
 </script>
 

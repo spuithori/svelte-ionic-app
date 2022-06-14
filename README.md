@@ -76,7 +76,6 @@ But, the highlights for now:
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
 - Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation
-- unused styles warning - what is happening?
 - item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
 
 # Todo
@@ -89,6 +88,7 @@ But, the highlights for now:
 - test ssr setup
 - compare with setupIonicReact and setupIonicVue - anything missing which is not contained in core?
 - backbutton events etc (see platform setup)
+- dark mode
 
 # Issues - need help
 - Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
@@ -98,6 +98,8 @@ But, the highlights for now:
 - Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
+
+- Some styles are unused - related to md and ios options?
 
 # Wishlist
 - svelte-add integration?

@@ -1,5 +1,7 @@
+import App from './App.svelte'
 // @ts-ignore
 import { registerSW } from 'virtual:pwa-register'
+import { setupIonicSvelte } from "$ionic/svelte";
 
 const updateSW = registerSW({
   onNeedRefresh() {
@@ -15,11 +17,7 @@ const updateSW = registerSW({
 
 console.log('UpdateSW', updateSW);
 
-import App from './App.svelte'
-
-import { setupIoncSvelte } from "$ionic/svelte";
-
-setupIoncSvelte();
+setupIonicSvelte();
 
 // if the page was prerendered, we want to remove the prerendered html
 document.querySelector('[data-routify]')?.remove()

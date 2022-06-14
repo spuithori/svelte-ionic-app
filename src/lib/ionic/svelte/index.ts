@@ -142,7 +142,7 @@ export * from "./controllers";
 
 export * from "./platform";
 
-export const setupIoncSvelte = async (config?: IonicConfig) => {
+export const setupIonicSvelte = async (config?: IonicConfig) => {
   /* Ionic initialisation */
   initialize(config);
 

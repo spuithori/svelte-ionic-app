@@ -36,7 +36,7 @@
         created: users[i + originalLength].created,
       };
 
-      itemList = [newItem, ...itemList];
+      itemList = [...itemList, newItem];
       length++;
     }
   }
