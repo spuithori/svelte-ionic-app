@@ -12,7 +12,8 @@
     isPortrait,
     isLandscape,
     getQueryParam,
-    modalController,
+    toggleDarkTheme,
+    prefersDark,
   } from "$ionic/svelte";
 
   let platforms: string[] = getPlatforms();
@@ -27,7 +28,10 @@
     is_ios: is("ios"),
     isPlatform_ios: isPlatform("ios"),
     getQueryParam_stuff: getQueryParam("stuff"),
+    prefersDark: $prefersDark,
   };
+
+  $: platformItems.prefersDark = $prefersDark;
 
   const platformItemKeys = Object.keys(platformItems);
 
@@ -35,6 +39,11 @@
     const ran = Date.now();
     return `https://www.gravatar.com/avatar/${ran}?d=monsterid&f=y`;
   };
+
+  // not working  <ion-button on:click={toggleDark}>asdsads</ion-button>
+  function toggleDark() {
+    toggleDarkTheme(true);
+  }
 </script>
 
 <svelte:head>

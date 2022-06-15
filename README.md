@@ -93,15 +93,15 @@ https://ionicsvelte.firebaseapp.com/components/tabs/blabla
 - dark mode
 
 # Issues - need help
-- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though.
+- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
-- Sometimes occuring - TypeError - happening - ypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
+- Sometimes occuring - TypeError - happening - TypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
 
 - Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
-- Some styles are unused - related to md and ios options?
+- Some styles are unused - related to md and ios options for webcomponents?
 
 # Wishlist
 - svelte-add integration?

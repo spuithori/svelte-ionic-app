@@ -26,13 +26,6 @@
   const logStuff = (event) => {
     console.log(">", event?.detail?.tab, event?.type);
   };
-
-  /*
-  ionTabsWillChange={logStuff}
-  ionNavWillLoad={logStuff}
-  ionTabsDidChange={logStuff}
-
-  */
 </script>
 
 <IonTab
