@@ -1,6 +1,6 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
-  import { goto, node } from "@roxi/routify";
+  import { goto, node, url } from "@roxi/routify";
   import { getIonicMenu, menuController } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
@@ -32,7 +32,7 @@
     .children.map((route) => {
       let url = route.path;
 
-      console.log("Route", url, capitalizeFirstLetter(route.name));
+      //  console.log("Route", url, capitalizeFirstLetter(route.name));
 
       return {
         url,
@@ -86,7 +86,17 @@
             <ion-label>{menuItem.label}</ion-label>
           </ion-item>
         {/each}
+
+        <ion-item
+          on:click={() => {
+            $goto("/components/tabs/blabla");
+          }}
+        >
+          <ion-icon icon={allIonicIcons["star"]} slot="start" />
+          <ion-label>TEST GOTO fails</ion-label>
+        </ion-item>
         <ion-item />
+
         <ion-item
           on:click={() => {
             window.open("https://github.com/Tommertom/svelte-ionic-app", "_blank");
