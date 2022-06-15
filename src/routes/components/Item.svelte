@@ -2,6 +2,8 @@
   import { logoIonic } from "ionicons/icons";
   import SourceButton from "$components/SourceButton.svelte";
 
+  import { onMount } from "svelte";
+
   let itemSlidingStart;
   let itemSlidingEnd;
 
@@ -20,7 +22,9 @@
   };
 
   // not working
-  animateSliding();
+  onMount(() => {
+    animateSliding();
+  });
 </script>
 
 <svelte:head>
@@ -44,7 +48,7 @@
 
     <ion-item-sliding>
       <ion-item>
-        <ion-label>New Message - THIS IS NOT SLIDING!!!</ion-label>
+        <ion-label>New Message</ion-label>
       </ion-item>
 
       <ion-item-options side="start">

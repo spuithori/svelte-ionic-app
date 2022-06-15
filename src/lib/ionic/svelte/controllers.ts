@@ -9,7 +9,8 @@ import {
 import type { SvelteComponent } from "svelte";
 
 export const modalController = {
-    create: (modalOptions: any): Promise<HTMLIonModalElement> => { // needs to be typed to ModalOptions (Partial or so?)
+    create: (modalOptions: ModalOptions): Promise<HTMLIonModalElement> => { // needs to be typed to ModalOptions (Partial or so?)
+        // @ts-ignore - issue with modalOptions.component not matching
         return Promise.resolve(modalController.__create(modalOptions.component, modalOptions)) as Promise<HTMLIonModalElement>
     },
     __create: (
@@ -24,7 +25,7 @@ export const modalController = {
         const modalWrapper = document.createElement("ion-modal") as HTMLIonModalElement;
         let modalContent = document.createElement("div");
 
-        /* assign properties - maybe use hasOwnProperties or so? */
+        /* assign properties */
         Object.keys(modalOptions)
             .filter(key => !['component', 'componentProps'].includes(key))
             .forEach(key => {
@@ -55,7 +56,8 @@ export const modalController = {
 }
 
 export const popoverController = {
-    create: (popoverOptions: any): Promise<HTMLIonPopoverElement> => { // needs to be typed to PopoverOptions (Partial or so?)
+    create: (popoverOptions: PopoverOptions): Promise<HTMLIonPopoverElement> => {
+        // @ts-ignore - issue with popoverOptions.component not matching
         return Promise.resolve(popoverController.__create(popoverOptions.component, popoverOptions)) as Promise<HTMLIonPopoverElement>
     },
 
@@ -70,7 +72,7 @@ export const popoverController = {
         const popoverWrapper = document.createElement("ion-popover") as HTMLIonPopoverElement;
         let modalContent = document.createElement("div");
 
-        /* assign properties - maybe use hasOwnProperties or so? */
+        /* assign properties */
         Object.keys(popoverOptions)
             .filter(key => !['component', 'componentProps'].includes(key))
             .forEach(key => {

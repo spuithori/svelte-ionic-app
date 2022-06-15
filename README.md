@@ -54,6 +54,7 @@ Configuring Svelte workspace to my liking
 
 PWA steps:
 Follow the documentation on vite-plugin-pwa.netlify.app!! VERRRRRY easy
+Changed some stuff in index.html, including adding base-href and some meta stuff
 
 Ionic related steps
 - npm i @ionic/core  sass
@@ -75,8 +76,9 @@ But, the highlights for now:
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation
-- item sliding npt working (Item) - seems to work on ios?? But not on browser (chrome w10)
+- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation - use a direct url to access Tabs:
+https://ionicsvelte.firebaseapp.com/components/tabs/blabla
+- Tabs - default selected Tab does not yield result 
 
 # Todo
 - Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
