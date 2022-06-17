@@ -6,10 +6,10 @@ import { resolve } from 'path'
 import { readFileSync } from 'fs'
 
 const pwaManifest = {
-  name: 'Name of your app',
-  short_name: 'Short name of your app',
-  description: 'Description of your app',
-  theme_color: '#ffffff',
+  name: 'Ionic Svelte',
+  short_name: 'A really cool app',
+  description: 'Coolness in Vite Svelte and Ionic',
+  theme_color: '#000000',
   icons: [
     {
       src: '/assets/img/great-success.png',

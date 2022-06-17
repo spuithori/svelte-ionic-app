@@ -605,6 +605,20 @@ export default {
                 "name": "[...tabs]"
               },
               "children": []
+            },
+            {
+              "meta": {},
+              "id": "_default_components_tabs_index_svelte",
+              "name": "index",
+              "module": () => import('../src/routes/components/tabs/index.svelte'),
+              "file": {
+                "path": "src/routes/components/tabs/index.svelte",
+                "dir": "src/routes/components/tabs",
+                "base": "index.svelte",
+                "ext": ".svelte",
+                "name": "index"
+              },
+              "children": []
             }
           ]
         }

@@ -7,7 +7,7 @@ const updateSW = registerSW({
   onNeedRefresh() {
     console.log('PWA App needs refresh - will do so in 5 secs');
     setTimeout(() => {
-      updateSW()
+      updateSW(); 
     }, 5000);
   },
   onOfflineReady() { console.log('PWA Offline ready') },
