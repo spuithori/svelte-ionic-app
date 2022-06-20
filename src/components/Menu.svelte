@@ -1,7 +1,7 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
   import { goto, node, url } from "@roxi/routify";
-  import { getIonicMenu, menuController } from "$ionic/svelte";
+  import { getIonicMenu, height, menuController, width } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
 
@@ -27,20 +27,12 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  console.log(
-    "SDASDAS",
-    $node,
-    $node.traverse("/"),
-    $node.traverse("/components"),
-    $node.traverse("/components/tabs")
-  );
-
   let menuItems: Array<{ url: string; label: string; icon: any }> = $node
     .traverse("/components")
     .children.map((route) => {
       let url = route.path;
 
-      console.log("Route", url, capitalizeFirstLetter(route.name));
+      //  console.log("Route", url, capitalizeFirstLetter(route.name));
 
       const label = capitalizeFirstLetter(route.name);
       if (label === "Tabs") url = "/components/tabs/[...tabs]";

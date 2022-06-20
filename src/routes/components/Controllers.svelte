@@ -18,7 +18,8 @@
   let inlineModalOpen = false;
   let breakpoints = [0, 0.5, 1];
 
-  const inlineModalDismissed = () => {
+  const inlineModalDismissed = (val) => {
+    console.log("inlineModalDismissed dismissed", val);
     inlineModalOpen = false;
   };
 

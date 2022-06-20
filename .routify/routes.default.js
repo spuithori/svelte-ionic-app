@@ -311,6 +311,20 @@ export default {
         },
         {
           "meta": {},
+          "id": "_default_components_Nav_svelte",
+          "name": "Nav",
+          "module": () => import('../src/routes/components/Nav.svelte'),
+          "file": {
+            "path": "src/routes/components/Nav.svelte",
+            "dir": "src/routes/components",
+            "base": "Nav.svelte",
+            "ext": ".svelte",
+            "name": "Nav"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
           "id": "_default_components_Note_svelte",
           "name": "Note",
           "module": () => import('../src/routes/components/Note.svelte'),

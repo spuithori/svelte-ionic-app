@@ -76,21 +76,14 @@ But, the highlights for now:
 
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Tab bar -> does not move to default selected at start (IonTab.svelte) - broken navigation - use a direct url to access Tabs:
-https://ionicsvelte.firebaseapp.com/components/tabs/blabla
-- Tabs - default selected Tab does not yield result 
+- Tab bar -> does not move to default selected at start (IonTab.svelte) even though it is in the route
+- A IonFooter in a Modal gives weird layout
+
 
 # Todo
-- Ion Back Button - testing if it works - https://ionicframework.com/docs/vue/utility-functions
-- Deal with missing Nav component
-- Datetime popover
-- make it an npm package - already in a lib style
-- work on menu controller
-- typescript improvements here and there?
-- test ssr setup
-- compare with setupIonicReact and setupIonicVue - anything missing which is not contained in core?
-- backbutton events etc (see platform setup)
-- dark mode
+- Ion Back Button - does not show nor work
+- Nav component - works, but implementation is dirty (leaking DOM elements). ion-nav-link not implemented.
+- Menu controller - getMenu needed to get menu, not menucontroller 
 
 # Issues - need help
 - Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
@@ -107,3 +100,6 @@ https://ionicsvelte.firebaseapp.com/components/tabs/blabla
 - svelte-add integration?
 - Tailwind in separate branch?
 - Bundle optimisation using router bundling?
+- make it an npm package - already in a lib style
+- test ssr setup
+- dark mode

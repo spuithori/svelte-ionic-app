@@ -14,6 +14,8 @@
     getQueryParam,
     toggleDarkTheme,
     prefersDark,
+    keydown,
+    resize,
   } from "$ionic/svelte";
 
   let platforms: string[] = getPlatforms();
@@ -36,7 +38,7 @@
   const platformItemKeys = Object.keys(platformItems);
 
   const getRandomAvatar = () => {
-    const ran = Date.now();
+    const ran = Math.round(Date.now() * Math.random());
     return `https://www.gravatar.com/avatar/${ran}?d=monsterid&f=y`;
   };
 
@@ -61,7 +63,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="ion-padding">
   <h1>Your platforms</h1>
   {#each platforms as platform}
     <ion-item>
@@ -82,7 +84,47 @@
     </ion-item>
   {/each}
 
-  Want to test query parameters?<br /><br /> Add
-  <pre>&stuff=whatever</pre>
-  to the url and then see the result!
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src={getRandomAvatar()} />
+    </ion-avatar>
+    <ion-label>
+      <h2>Want to test query parameters?</h2>
+      <p>Add</p>
+      <pre>&stuff=whatever</pre>
+      <p>to the url and then see the result!.</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src={getRandomAvatar()} />
+    </ion-avatar>
+    <ion-label>
+      <h2>Event handler: keydown</h2>
+      <p>Press some keys and see result:{$keydown}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src={getRandomAvatar()} />
+    </ion-avatar>
+    <ion-label>
+      <h2>Event handler: reisze</h2>
+      <p>Resize the window - timestamp: {$resize}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="avatar" src={getRandomAvatar()} />
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        Please check platform.ts for other methods and stuff in there. There are readable stores for
+        some key events on document and window (resize, pause, resume etc).
+      </h2>
+    </ion-label>
+  </ion-item>
 </ion-content>

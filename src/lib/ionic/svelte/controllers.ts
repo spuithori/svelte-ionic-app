@@ -70,7 +70,7 @@ export const popoverController = {
         divWrapper.id = contentID;
 
         const popoverWrapper = document.createElement("ion-popover") as HTMLIonPopoverElement;
-        let modalContent = document.createElement("div");
+        let popoverContent = document.createElement("div");
 
         /* assign properties */
         Object.keys(popoverOptions)
@@ -80,10 +80,10 @@ export const popoverController = {
             })
 
         divWrapper.appendChild(popoverWrapper);
-        popoverWrapper.appendChild(modalContent);
+        popoverWrapper.appendChild(popoverContent);
         document.body.appendChild(divWrapper);
 
-        const svelteComponent = new component({ target: modalContent, props: popoverOptions.componentProps });
+        const svelteComponent = new component({ target: popoverContent, props: popoverOptions.componentProps });
 
         popoverWrapper.onDidDismiss().then(() => {
             svelteComponent.$destroy();

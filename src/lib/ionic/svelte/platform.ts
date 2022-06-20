@@ -1,4 +1,5 @@
 import { config } from '@ionic/core/dist/collection/global/config'
+import { readable, derived } from 'svelte/store';
 
 let _win: Window;
 let _doc: Document;
@@ -143,26 +144,70 @@ const PLATFORMS_MAP = {
 };
 
 
+export const networkStatus = readable((window.navigator.onLine ? 'on' : 'off') + 'line',
+    (set) => {
+        const eventFunction = () => {
+            set((window.navigator.onLine ? 'on' : 'off') + 'line');
+        }
+
+        window.addEventListener('offline', eventFunction);
+        window.addEventListener('online', eventFunction);
+
+        return () => {
+            window.removeEventListener('offline', eventFunction);
+            window.removeEventListener('online', eventFunction);
+        }
+    }
+)
+
 // taken from Angular's platform service
+const readableEventFactory = (args: { defaultvalue: any, event: string, eventAttr: string, listenerComponent: Window | Document }) => {
+    const { defaultvalue, event, eventAttr, listenerComponent } = args;
+    return readable(defaultvalue,
+        (set) => {
+            const eventFunction = (event) => {
+                if (eventAttr) set(event[eventAttr])
+                else set(event);
+            }
+            listenerComponent.addEventListener(event, eventFunction);
+            return () => {
+                listenerComponent.removeEventListener(event, eventFunction);
+            }
+        })
+}
+
+
+// SSR friendly
+export let resize = readable('', (set) => { return () => { } });
+export let keyboardDidShow = readable('', (set) => { return () => { } });
+export let keyboardDidHide = readable('', (set) => { return () => { } });
+if (typeof window !== 'undefined') {
+    resize = readableEventFactory({ defaultvalue: '', event: 'resize', eventAttr: 'timeStamp', listenerComponent: window });
+    keyboardDidShow = readableEventFactory({ defaultvalue: '', event: 'ionKeyboardDidShow', eventAttr: undefined, listenerComponent: window });
+    keyboardDidHide = readableEventFactory({ defaultvalue: '', event: 'ionKeyboardDidHide', eventAttr: undefined, listenerComponent: window });
+}
+
+export let resume = readable('', (set) => { return () => { } });
+export let pause = readable('', (set) => { return () => { } });
+export let backButton = readable('', (set) => { return () => { } });
+export let keydown = readable('', (set) => { return () => { } });
+if (typeof document !== 'undefined') {
+    resume = readableEventFactory({ defaultvalue: '', event: 'resume', eventAttr: undefined, listenerComponent: document });
+    pause = readableEventFactory({ defaultvalue: '', event: 'pause', eventAttr: undefined, listenerComponent: document });
+    backButton = readableEventFactory({ defaultvalue: '', event: 'ionBackButton', eventAttr: undefined, listenerComponent: document });
+    keydown = readableEventFactory({ defaultvalue: '', event: 'keydown', eventAttr: 'key', listenerComponent: document });
+}
+
+//export const backButtonSubscribeWithPriority= (handler:()=>{}) =>{
+//     
+//}
+// derived(backButton)
 /*
-
-const proxyEvent = <T>(emitter: Subject<T>, el: EventTarget, eventName: string) => {
-  if (el as any) {
-    el.addEventListener(eventName, (ev: Event | undefined | null) => {
-      // ?? cordova might emit "null" events
-      emitter.next(ev != null ? ((ev as any).detail as T) : undefined);
+document.addEventListener('ionBackButton', (ev) => {
+    ev.detail.register(10, () => {
+      console.log('Handler was called!');
     });
-  }
-};
-
-
-   proxyEvent(this.pause, doc, 'pause');
-      proxyEvent(this.resume, doc, 'resume');
-      proxyEvent(this.backButton, doc, 'ionBackButton');
-      proxyEvent(this.resize, this.win, 'resize');
-      proxyEvent(this.keyboardDidShow, this.win, 'ionKeyboardDidShow');
-      proxyEvent(this.keyboardDidHide, this.win, 'ionKeyboardDidHide');
-
+  });
 */
 
 export const height = (): number => {
@@ -180,11 +225,14 @@ export const url = (): string => {
     return '';
 }
 
+// make this in a readable - problem is that iOS does not support https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation 
 export const isPortrait = (): boolean => {
     if (_win) return _win.matchMedia?.('(orientation: portrait)').matches;
     return false;
 }
 
+
+// make this in a derived
 export const isLandscape = (): boolean => {
     return !isPortrait();;
 }

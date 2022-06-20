@@ -5,6 +5,7 @@ import type {
 } from "@ionic/core";
 
 import { IonicConfig, initialize } from "@ionic/core/components";
+import type { SvelteComponent } from "svelte";
 import { defineIonComponents } from "./components/defineComponents.js";
 
 // all exports
@@ -163,3 +164,4 @@ export const getIonicMenu = (menuId): MenuI => {
   const query = "ion-menu[menu-id='" + menuId + "']";
   return document.querySelector(query) as unknown as MenuI;
 };
+

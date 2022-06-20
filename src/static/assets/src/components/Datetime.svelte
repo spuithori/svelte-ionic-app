@@ -1,6 +1,8 @@
 <script lang="ts">
   import SourceButton from "$components/SourceButton.svelte";
 
+  let modalOpen = false;
+
   const changeValue = (event) => {
     console.log("Change of value", event.detail);
   };
@@ -23,15 +25,24 @@
 </ion-header>
 
 <ion-content fullscreen>
-  Todo - modal datetime
+  <ion-button
+    expand="block"
+    on:click={() => {
+      modalOpen = true;
+    }}>Open Datetime Modal</ion-button
+  >
+  <ion-modal is-open={modalOpen}>
+    <ion-content force-overscroll="false">
+      <ion-datetime />
+      <ion-button
+        expand="block"
+        on:click={() => {
+          modalOpen = false;
+        }}>Close</ion-button
+      >
+    </ion-content>
+  </ion-modal>
   <ion-list>
-    <ion-item>
-      <ion-input placeholder="Title" />
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Location" />
-    </ion-item>
-    <ion-item-divider />
     <ion-item>
       <ion-label>Start Date</ion-label>
       <ion-datetime on:ionChange={changeValue} value="1990-02-19" placeholder="Select Date" />
