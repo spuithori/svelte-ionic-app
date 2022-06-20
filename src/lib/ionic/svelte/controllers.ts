@@ -8,6 +8,29 @@ import {
 
 import type { SvelteComponent } from "svelte";
 
+
+
+/*
+TODO - interface needs to translate SvelteComponent type into ComponentRef 
+Now we have to do this:
+
+const openModal = async (modalComponent: SvelteComponent, formData: {}) => {
+    const popover = await modalController.create({
+      component: modalComponent as unknown as ComponentRef, // ModalOptions does not eat SvelteComponent
+      componentProps: {
+        formData,
+      },
+    });
+
+    popover.onDidDismiss().then((value) => {
+      console.log("Dismissed the popover", value);
+      if (value.role === "backdrop") console.log("Backdrop clicked");
+    });
+
+    await popover.present();
+  };
+*/
+
 export const modalController = {
     create: (modalOptions: ModalOptions): Promise<HTMLIonModalElement> => { // needs to be typed to ModalOptions (Partial or so?)
         // @ts-ignore - issue with modalOptions.component not matching

@@ -10,6 +10,13 @@
   const closeOverlay = () => {
     modalController.dismiss({ data: Date.now() });
   };
+
+  import { logoIonic, star, fingerPrint, ellipsisVertical } from "ionicons/icons";
+  import SourceButton from "$components/SourceButton.svelte";
+
+  const clickAction = (event) => {
+    console.log("You clicked me!!", event.detail);
+  };
 </script>
 
 <svelte:head>
@@ -54,3 +61,21 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button on:click={clickAction}>
+        <ion-icon slot="icon-only" icon={fingerPrint} />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Footer</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button on:click={clickAction}>
+        <ion-icon slot="icon-only" icon={ellipsisVertical} />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

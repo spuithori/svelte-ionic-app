@@ -28,6 +28,7 @@
 </script>
 
 <IonTab
+  slot="bottom"
   tabs={myTabs}
   selected={tab}
   ionTabsWillChange={logStuff}

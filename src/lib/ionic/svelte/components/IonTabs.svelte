@@ -10,33 +10,32 @@
   export let ionTabsDidChange = (event) => {};
   export let ionNavWillLoad = (event) => {};
   export let ionTabsWillChange = (event) => {};
+  export let slot = "bottom";
 
-  console.log("Init IonTabs", tabs, selected);
-
-  // ugly implmentation - to avoid present method not present
-  // selected-tab does not seem to work
-  // and select also does not
+  // selected-tab does not seem to work - so we brute force it into the right method
+  // https://github.com/ionic-team/ionic-framework/issues/20060
+  let tries = 0;
+  let controller;
   const selectTab = async () => {
-    // const controller = document.querySelector("ion-tabs") as HTMLIonTabsElement;
-    let tries = 0;
-    const controller = ionTabBarElement;
     if (controller && controller.select) {
-      controller.select(selected);
-      controller.setActive(selected);
-    } else if (tries < 300) {
+      controller.select(selected).then(async (x) => {
+        const y = await controller.getSelected();
+      });
+    }
+
+    // somehow the tabs-present method does not run well on the first time, even though it gives positive response
+    if (tries < 5) {
       setTimeout(() => {
         tries++;
         selectTab();
-      }, 10);
+      }, 5);
     }
   };
 
   onMount(() => {
+    controller = ionTabBarElement;
     if (selected) {
-      setTimeout(() => {
-        // console.log("asdasdsa", selected);
-        selectTab();
-      }, 4000);
+      selectTab();
     }
   });
 </script>
@@ -45,6 +44,7 @@
   on:ionTabsDidChange={ionTabsDidChange}
   on:ionNavWillLoad={ionNavWillLoad}
   on:ionTabsWillChange={ionTabsWillChange}
+  bind:this={ionTabBarElement}
 >
   {#each tabs as tab}
     <ion-tab tab={tab.tab}>
@@ -52,12 +52,25 @@
     </ion-tab>
   {/each}
 
-  <ion-tab-bar slot="bottom" selected-tab={selected} bind:this={ionTabBarElement}>
-    {#each tabs as tab}
-      <ion-tab-button tab={tab.tab}>
-        <ion-label>{tab.label}</ion-label>
-        <ion-icon icon={ionIcons[tab.icon]} />
-      </ion-tab-button>
-    {/each}
-  </ion-tab-bar>
+  {#if slot === "bottom" || slot === ""}
+    <ion-tab-bar slot="bottom" selected-tab={selected}>
+      {#each tabs as tab}
+        <ion-tab-button tab={tab.tab}>
+          <ion-label>{tab.label}</ion-label>
+          <ion-icon icon={ionIcons[tab.icon]} />
+        </ion-tab-button>
+      {/each}
+    </ion-tab-bar>
+  {/if}
+
+  {#if slot === "top"}
+    <ion-tab-bar slot="top" selected-tab={selected}>
+      {#each tabs as tab}
+        <ion-tab-button tab={tab.tab}>
+          <ion-label>{tab.label}</ion-label>
+          <ion-icon icon={ionIcons[tab.icon]} />
+        </ion-tab-button>
+      {/each}
+    </ion-tab-bar>
+  {/if}
 </ion-tabs>

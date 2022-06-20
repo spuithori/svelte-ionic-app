@@ -72,17 +72,15 @@ But, the highlights for now:
 - This project has all Ionic related stuff in a lib structure - so easy to drop in your own project
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
-- Using Routify it is easy to make it an SSR project (Platforms.svelte has issue related to window object)
+- Using Routify it is easy to make it an SSR project (Platforms.svelte has issue related to window object - need to fix this)
 
 # Issues - work in progress
-- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React
-- Tab bar -> does not move to default selected at start (IonTab.svelte) even though it is in the route
-- A IonFooter in a Modal gives weird layout
-
+- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check)
+- A IonFooter in a Modal gives weird layout - not happening in Angular, so a thing related to this implementation
 
 # Todo
 - Ion Back Button - does not show nor work
-- Nav component - works, but implementation is dirty (leaking DOM elements). ion-nav-link not implemented.
+- Nav component - works, but implementation might be dirty (leaking DOM elements). ion-nav-link not implemented.
 - Menu controller - getMenu needed to get menu, not menucontroller 
 
 # Issues - need help
@@ -95,6 +93,10 @@ But, the highlights for now:
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
 - Some styles are unused - related to md and ios options for webcomponents?
+
+- IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff
+
+- IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab.
 
 # Wishlist
 - svelte-add integration?
