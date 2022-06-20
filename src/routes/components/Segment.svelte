@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { pin, heart, call } from "ionicons/icons";
+  import { pin, heart, call, logoIonic, logoTwitter, logoFacebook } from "ionicons/icons";
   import SourceButton from "$components/SourceButton.svelte";
 
   const segmentChange = console.log;
@@ -97,6 +97,18 @@
     <ion-segment-button layout="icon-start">
       <ion-label>Map</ion-label>
       <ion-icon icon={pin} />
+    </ion-segment-button>
+    <ion-segment-button layout="icon-start">
+      <ion-label>Map</ion-label>
+      <ion-icon icon={logoIonic} />
+    </ion-segment-button>
+    <ion-segment-button layout="icon-start">
+      <ion-label>Map</ion-label>
+      <ion-icon icon={logoTwitter} />
+    </ion-segment-button>
+    <ion-segment-button layout="icon-start">
+      <ion-label>Map</ion-label>
+      <ion-icon icon={logoFacebook} />
     </ion-segment-button>
   </ion-segment>
 

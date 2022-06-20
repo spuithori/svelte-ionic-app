@@ -22,7 +22,6 @@
 
   console.log("Tabs", tab, myTabs);
 
-  //
   const logStuff = (event) => {
     console.log(">", event?.detail?.tab, event?.type);
   };

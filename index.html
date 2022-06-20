@@ -24,12 +24,24 @@
 
   <title>Ionic + Svelte + TS + Vite App</title>
   <!--ssr:head-->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNGFLY1HYH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NNGFLY1HYH');
+  </script>
+
 </head>
 
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
   <!--ssr:html-->
+
 </body>
 
 </html>

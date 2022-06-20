@@ -27,16 +27,28 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  console.log(
+    "SDASDAS",
+    $node,
+    $node.traverse("/"),
+    $node.traverse("/components"),
+    $node.traverse("/components/tabs")
+  );
+
   let menuItems: Array<{ url: string; label: string; icon: any }> = $node
     .traverse("/components")
     .children.map((route) => {
       let url = route.path;
 
-      //  console.log("Route", url, capitalizeFirstLetter(route.name));
+      console.log("Route", url, capitalizeFirstLetter(route.name));
+
+      const label = capitalizeFirstLetter(route.name);
+      if (label === "Tabs") url = "/components/tabs/[...tabs]";
+      // console.log("Route", url, capitalizeFirstLetter(route.name));
 
       return {
         url,
-        label: capitalizeFirstLetter(route.name),
+        label,
         icon: allIonicIcons["home"],
       };
     });
@@ -87,14 +99,6 @@
           </ion-item>
         {/each}
 
-        <ion-item
-          on:click={() => {
-            $goto("/components/tabs/blabla");
-          }}
-        >
-          <ion-icon icon={allIonicIcons["star"]} slot="start" />
-          <ion-label>TEST GOTO fails</ion-label>
-        </ion-item>
         <ion-item />
 
         <ion-item
