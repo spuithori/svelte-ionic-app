@@ -84,19 +84,18 @@ But, the highlights for now:
 - Menu controller - getMenu needed to get menu, not menucontroller 
 
 # Issues - need help
-- Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
+- TOP PRIORITY - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
-- Sometimes occuring - TypeError - happening - TypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related?
+- IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab. Might need to look into the angular/react/vue way as these packages don't have this issue. Probably tabs is wired up in the router. 
+
+- Sometimes occuring - TypeError - happening - TypeError: Cannot read properties of null (reading 'offsetHeight') (ion-content) - webcomponent issue? maybe HMR related? No need to figure out, if you ask me.
 
 - Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
-- Some styles are unused - related to md and ios options for webcomponents?
+- Some styles are unused - related to md and ios options for webcomponents? Or need to be discarded.
 
-- IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff
-
-- IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab.
 
 # Wishlist
 - svelte-add integration?
@@ -105,3 +104,4 @@ But, the highlights for now:
 - make it an npm package - already in a lib style
 - test ssr setup
 - dark mode
+
