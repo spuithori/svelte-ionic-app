@@ -46,6 +46,17 @@ export const modalController = {
         divWrapper.id = contentID;
 
         const modalWrapper = document.createElement("ion-modal") as HTMLIonModalElement;
+        // console.log('ADDING CSS', modalOptions.cssClass);
+        // this part is not working 
+        if (modalOptions.cssClass) {
+            if (Array.isArray(modalOptions.cssClass)) {
+                modalOptions.cssClass.forEach(cssClass => {
+                    modalWrapper.classList.add(cssClass);
+                })
+            } else modalWrapper.classList.add(modalOptions.cssClass)
+
+        };
+
         let modalContent = document.createElement("div");
 
         /* assign properties */
@@ -93,6 +104,19 @@ export const popoverController = {
         divWrapper.id = contentID;
 
         const popoverWrapper = document.createElement("ion-popover") as HTMLIonPopoverElement;
+
+
+        // console.log('ADDING CSS', modalOptions.cssClass);
+        // this part is not working 
+        if (popoverOptions.cssClass) {
+            if (Array.isArray(popoverOptions.cssClass)) {
+                popoverOptions.cssClass.forEach(cssClass => {
+                    popoverWrapper.classList.add(cssClass);
+                })
+            } else popoverWrapper.classList.add(popoverOptions.cssClass)
+
+        };
+
         let popoverContent = document.createElement("div");
 
         /* assign properties */

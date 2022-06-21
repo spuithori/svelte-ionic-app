@@ -74,9 +74,24 @@ But, the highlights for now:
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 - Using Routify it is easy to make it an SSR project (Platforms.svelte has issue related to window object - need to fix this)
 
+# PWA Interface - easing the PWA work in your app
+To help you managing state of the service worker and the various events, a simple svelte store is provided for (`lib/pwa.ts`). This store wraps the various events of the service worker in a readable store and a number of derived stores so you can easily listen to various events.
+
+The following derived stores are implemented:
+- `needRefresh` - a `boolean` telling you if there is an update available
+- `updateObject` - `undefined|UpdateObject`. When UpdateObject is provided, you can call `UpdateObject.update()` to update the app
+- `offlineReady` - a `boolean` telling you all offline assets have been loaded
+- `registerError` - the error message when the registration of the service worker failed
+- `registration` - `undefined|ServiceWorkerRegistration` - the service worker registration object, in case the registration succeeded
+- `beforeInstallPrompt` - `undefined|BeforeInstallPromptEvent` - which you can use to fire the `.prompt()` method to invoke the install prompt. N.B. this needs to happen right after an userevent (like button press)!
+
+All these props are also available via the `pwaStatusStream` readable store.
+
+
 # Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check)
 - A IonFooter in a Modal gives weird layout - not happening in Angular, so a thing related to this implementation
+- Adding custom class to Modal/Popover does not work (using controller) - using inline is probably better
 
 # Todo
 - Ion Back Button - does not show nor work
