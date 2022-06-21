@@ -79,7 +79,7 @@ To help you managing state of the service worker and the various events, a simpl
 
 The following derived stores are implemented:
 - `needRefresh` - a `boolean` telling you if there is an update available
-- `updateObject` - `undefined|UpdateObject`. When UpdateObject is provided, you can call `UpdateObject.update()` to update the app
+- `updateObject` - `undefined|UpdateObject`. When UpdateObject is provided, you can call `UpdateObject.updateSWObject()` to update the app
 - `offlineReady` - a `boolean` telling you all offline assets have been loaded
 - `registerError` - the error message when the registration of the service worker failed
 - `registration` - `undefined|ServiceWorkerRegistration` - the service worker registration object, in case the registration succeeded
