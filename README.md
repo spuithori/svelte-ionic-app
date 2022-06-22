@@ -1,8 +1,6 @@
 # Ionic Svelte UI demo
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
-Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
-
 Published as web app: https://ionicsvelte.firebaseapp.com
 
 *Open developer tools to see developer info in the console.log*
@@ -17,11 +15,14 @@ Design objectives
 
 As far as I can see now, the current new version is getting there pretty close! 
 
-Nevertheless, there are known and unknown issues.
-
-Published as web app: https://ionicsvelte.firebaseapp.com
 
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
+
+
+Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
+
+Other versions available
+* Ionic's blank starter - on branch 1.BlankStarter - https://github.com/Tommertom/svelte-ionic-app/tree/1.BlankStarter
 
 If you want to run it locally:
 
@@ -120,4 +121,3 @@ But, the highlights for now:
 - make it an npm package - already in a lib style
 - test ssr setup
 - dark mode
-
