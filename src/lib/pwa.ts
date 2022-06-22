@@ -6,7 +6,7 @@ interface PWAStatus {
     offlineReady: boolean;
     registerError: any
     registration: ServiceWorkerRegistration;
-    beforeInstallPrompt: Event; // BeforeInstallPromptEvent ??
+    beforeInstallPrompt: any; // BeforeInstallPromptEvent ??
     updateObject: any;
 }
 

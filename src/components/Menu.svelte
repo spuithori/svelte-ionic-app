@@ -4,6 +4,7 @@
   import { getIonicMenu, height, menuController, width } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
+  import { pwaBeforeInstallPrompt } from "$lib/pwa";
 
   let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
@@ -92,6 +93,18 @@
         {/each}
 
         <ion-item />
+
+        {#if $pwaBeforeInstallPrompt}
+          <ion-item
+            on:click={() => {
+              const prompt = $pwaBeforeInstallPrompt;
+              prompt.prompt();
+            }}
+          >
+            <ion-icon icon={allIonicIcons["download"]} slot="start" />
+            <ion-label>Install this app as PWA</ion-label>
+          </ion-item>
+        {/if}
 
         <ion-item
           on:click={() => {

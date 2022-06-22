@@ -15,9 +15,7 @@ Design objectives
 
 As far as I can see now, the current new version is getting there pretty close! 
 
-
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
-
 
 Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
 
@@ -35,7 +33,6 @@ npm run dev
 
 REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
 These are Ionic 4 components only.
-
 
 # PWA Interface - easing the PWA work in your app
 To help you managing state of the service worker and the various events, a simple svelte store is provided for (`lib/pwa.ts`). This store wraps the various events of the service worker in a readable store and a number of derived stores so you can easily listen to various events.
@@ -121,3 +118,4 @@ But, the highlights for now:
 - make it an npm package - already in a lib style
 - test ssr setup
 - dark mode
+- Ionic demos as branches
