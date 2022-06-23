@@ -21,6 +21,7 @@ Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharg
 
 Other versions available
 * Ionic's blank starter - https://github.com/Tommertom/svelte-ionic-app/tree/1.BlankStarter
+* Ionic List starter - https://github.com/Tommertom/svelte-ionic-app/tree/2.ListStarter
 
 If you want to run it locally:
 
