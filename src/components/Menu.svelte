@@ -59,6 +59,7 @@
     console.log("Navigate url", url);
 
     // path.set(url);
+    console.log("Test", url);
     $goto(url);
 
     getIonicMenu("mainmenu")
