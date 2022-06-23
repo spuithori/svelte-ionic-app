@@ -1,13 +1,13 @@
 import { readable, derived } from 'svelte/store';
 import { registerSW } from 'virtual:pwa-register'
 
-interface PWAStatus {
+export interface PWAStatus {
     needRefresh: boolean;
     offlineReady: boolean;
     registerError: any
     registration: ServiceWorkerRegistration;
     beforeInstallPrompt: any; // BeforeInstallPromptEvent ??
-    updateObject: any;
+    updateFunction: any;
 }
 
 const emptyStatus: PWAStatus = {
@@ -16,7 +16,7 @@ const emptyStatus: PWAStatus = {
     registerError: undefined,
     registration: undefined,
     beforeInstallPrompt: undefined,
-    updateObject: undefined
+    updateFunction: undefined
 }
 
 export const pwaStatusStream = readable(emptyStatus, (set) => {
@@ -26,7 +26,7 @@ export const pwaStatusStream = readable(emptyStatus, (set) => {
         onNeedRefresh() {
             //    console.log('PWA App needs refresh');
             status.needRefresh = true;
-            status.updateObject = updateSWObject;  // we are pretty sure we have the update object now and we need it now too
+            status.updateFunction = updateSWObject;  // use updateFunction() to update
             set(status);
         },
         onOfflineReady() {
@@ -63,3 +63,4 @@ export const pwaRegisterError = derived(pwaStatusStream, (updateObject) => updat
 export const pwaRegistration = derived(pwaStatusStream, (updateObject) => updateObject.registration);
 export const pwaBeforeInstallPrompt = derived(pwaStatusStream, (updateObject) => updateObject.beforeInstallPrompt);
 export const pwaUpdateObject = derived(pwaStatusStream, (updateObject) => updateObject.updateObject);
+export const pwaHasUpdate = derived(pwaStatusStream, (updateObject) => updateObject.updateObject !== undefined);

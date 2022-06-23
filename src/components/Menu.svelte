@@ -104,6 +104,7 @@
             <ion-icon icon={allIonicIcons["download"]} slot="start" />
             <ion-label>Install this app as PWA</ion-label>
           </ion-item>
+          <ion-item />
         {/if}
 
         <ion-item

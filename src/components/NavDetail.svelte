@@ -17,6 +17,9 @@
     <ion-buttons slot="start" on:click={popNav}>
       <ion-icon icon={chevronBackOutline} /> Back
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button text="Volver" defaultHref="/" color="danger" />
+    </ion-buttons>
     <ion-title>{tech.title}</ion-title>
   </ion-toolbar>
 </ion-header>

@@ -93,8 +93,8 @@ But, the highlights for now:
 - Adding custom class to Modal/Popover does not work (using controller) - using inline is probably better
 
 # Todo
-- Ion Back Button - does not show nor work
-- Nav component - works, but implementation might be dirty (leaking DOM elements). ion-nav-link not implemented.
+- Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
+- Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 - Menu controller - getMenu needed to get menu, not menucontroller 
 
 # Issues - need help
