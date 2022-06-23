@@ -20,7 +20,7 @@ Hint: try responsive design of the app and ionic UI magic by using various devic
 Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
 
 Other versions available
-* Ionic's blank starter - on branch 1.BlankStarter - https://github.com/Tommertom/svelte-ionic-app/tree/1.BlankStarter
+* Ionic's blank starter - https://github.com/Tommertom/svelte-ionic-app/tree/1.BlankStarter
 
 If you want to run it locally:
 
@@ -84,7 +84,6 @@ But, the highlights for now:
 - This project has all Ionic related stuff in a lib structure - so easy to drop in your own project
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
-- Using Routify it is easy to make it an SSR project (Platforms.svelte has issue related to window object - need to fix this)
 
 
 # Issues - work in progress
