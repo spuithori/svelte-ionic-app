@@ -62,5 +62,5 @@ export const pwaOfflineReady = derived(pwaStatusStream, (updateObject) => update
 export const pwaRegisterError = derived(pwaStatusStream, (updateObject) => updateObject.registerError);
 export const pwaRegistration = derived(pwaStatusStream, (updateObject) => updateObject.registration);
 export const pwaBeforeInstallPrompt = derived(pwaStatusStream, (updateObject) => updateObject.beforeInstallPrompt);
-export const pwaUpdateObject = derived(pwaStatusStream, (updateObject) => updateObject.updateObject);
-export const pwaHasUpdate = derived(pwaStatusStream, (updateObject) => updateObject.updateObject !== undefined);
+export const pwaUpdateObject = derived(pwaStatusStream, (updateObject) => updateObject.updateFunction);
+export const pwaHasUpdate = derived(pwaStatusStream, (updateObject) => updateObject.updateFunction !== undefined);
