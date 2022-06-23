@@ -32,6 +32,34 @@ export default {
     },
     {
       "meta": {},
+      "id": "_default_account",
+      "name": "account",
+      "module": false,
+      "file": {
+        "path": "src/routes/account",
+        "dir": "src/routes",
+        "base": "account",
+        "ext": "",
+        "name": "account"
+      },
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_app",
+      "name": "app",
+      "module": false,
+      "file": {
+        "path": "src/routes/app",
+        "dir": "src/routes",
+        "base": "app",
+        "ext": "",
+        "name": "app"
+      },
+      "children": []
+    },
+    {
+      "meta": {},
       "id": "_default_components",
       "name": "components",
       "module": false,
@@ -649,6 +677,48 @@ export default {
         "base": "index.svelte",
         "ext": ".svelte",
         "name": "index"
+      },
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_signup",
+      "name": "signup",
+      "module": false,
+      "file": {
+        "path": "src/routes/signup",
+        "dir": "src/routes",
+        "base": "signup",
+        "ext": "",
+        "name": "signup"
+      },
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_support",
+      "name": "support",
+      "module": false,
+      "file": {
+        "path": "src/routes/support",
+        "dir": "src/routes",
+        "base": "support",
+        "ext": "",
+        "name": "support"
+      },
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_tutorial",
+      "name": "tutorial",
+      "module": false,
+      "file": {
+        "path": "src/routes/tutorial",
+        "dir": "src/routes",
+        "base": "tutorial",
+        "ext": "",
+        "name": "tutorial"
       },
       "children": []
     }
