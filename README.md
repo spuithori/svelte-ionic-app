@@ -1,3 +1,21 @@
+
+<h1 align="center"> Ionic Svelte Demo </h1> <br>
+<p align="center">
+  <a href="https://gitpoint.co/">
+    <img alt="GitPoint" title="GitPoint" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/great-success.png" width="150">
+  </a>
+</p>
+
+<p align="center">
+  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite
+</p>
+
+<p align="center">
+  <a href="https://itunes.apple.com/us/app/gitpoint/id1251245162?mt=8">
+    <img alt="Download as PWA" title="App Store" src="http://i.imgur.com/0n2zqHD.png" width="140">
+  </a>
+
+
 # Ionic Svelte UI demo
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
@@ -116,7 +134,7 @@ But, the highlights for now:
 - svelte-add integration?
 - Tailwind in separate branch?
 - Bundle optimisation using router bundling?
-- make it an npm package - already in a lib style
+- make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - test ssr setup
 - dark mode
 - Ionic demos as branches
