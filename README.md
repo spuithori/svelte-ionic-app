@@ -135,6 +135,9 @@ But, the highlights for now:
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 - Menu controller - getMenu needed to get menu, not menucontroller 
+- Some styles are unused - related to md and ios options for webcomponents? Or need to be discarded.
+- Place all controllers in separate Menu item
+- Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
 
 # Issues - need help
 - TOP PRIORITY - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
@@ -147,8 +150,7 @@ But, the highlights for now:
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
-- Some styles are unused - related to md and ios options for webcomponents? Or need to be discarded.
-
+- Ion Footer in Modal looks not ok
 
 # Wishlist
 - svelte-add integration?
@@ -161,5 +163,10 @@ But, the highlights for now:
 
 
 # Acknowledgements
-https://github.com/gitpoint/git-point/blob/master/README.md
-https://github.com/webmaxru/progressive-web-apps-logo
+Ionic UI code: https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api
+
+README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
+
+PWA logo: https://github.com/webmaxru/progressive-web-apps-logo
+
+Borat logo:https://sapper.svelte.dev/
