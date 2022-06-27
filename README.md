@@ -11,9 +11,29 @@
 </p>
 
 <p align="center">
-  <a href="https://itunes.apple.com/us/app/gitpoint/id1251245162?mt=8">
-    <img alt="Download as PWA" title="App Store" src="http://i.imgur.com/0n2zqHD.png" width="140">
-  </a>
+
+<a href="https://ionicsvelte.firebaseapp.com" target="_blank"><img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/pwa-download.png" width="140"></a>
+</p>
+
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+</p>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Ionic Svelte UI demo](#ionic-svelte-ui-demo)
+- [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
+- [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
+- [Issues - work in progress](#issues---work-in-progress)
+- [Todo](#todo)
+- [Issues - need help](#issues---need-help)
+- [Wishlist](#wishlist)
+- [Acknowledgements](#acknowledgements)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Ionic Svelte UI demo
@@ -138,3 +158,8 @@ But, the highlights for now:
 - test ssr setup
 - dark mode
 - Ionic demos as branches
+
+
+# Acknowledgements
+https://github.com/gitpoint/git-point/blob/master/README.md
+https://github.com/webmaxru/progressive-web-apps-logo
