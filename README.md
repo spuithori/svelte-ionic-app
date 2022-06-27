@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-
-<a href="https://ionicsvelte.firebaseapp.com" target="_blank"><img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/pwa-download.png" width="140"></a>
+  <a href="https://ionicsvelte.firebaseapp.com">
+    <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/pwa-download.png" width="140"  target="_blank">
+  </a>
 </p>
-
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -24,7 +24,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Ionic Svelte UI demo](#ionic-svelte-ui-demo)
+- [Introduction](#introduction)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
 - [Issues - work in progress](#issues---work-in-progress)
@@ -36,7 +36,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Ionic Svelte UI demo
+# Introduction
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
 Published as web app: https://ionicsvelte.firebaseapp.com
