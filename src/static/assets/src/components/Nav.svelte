@@ -4,7 +4,10 @@
 
   let ionNav: HTMLIonNavElement;
 
-  const _create = (component: new (...args: any) => SvelteComponent, componentProps: {}) => {
+  const createHTMLCompFromSvelte = (
+    component: new (...args: any) => SvelteComponent,
+    componentProps: {}
+  ) => {
     const divWrapper = document.createElement("div");
     const contentID = "id" + Date.now();
     divWrapper.id = contentID;
@@ -27,8 +30,10 @@
     return divWrapper;
   };
 
+  let root;
+
   onMount(() => {
-    ionNav.setRoot(_create(NavHome, {}));
+    root = createHTMLCompFromSvelte(NavHome, {});
   });
 </script>
 
@@ -36,4 +41,4 @@
   <title>Ionic Companion - Nav</title>
 </svelte:head>
 
-<ion-nav bind:this={ionNav} />
+<ion-nav bind:this={ionNav} {root} />

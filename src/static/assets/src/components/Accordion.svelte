@@ -91,7 +91,7 @@
   <ion-list inset="true">
     <ion-list-header>Custom Icon</ion-list-header>
     <ion-accordion-group>
-      <ion-accordion value="colors" toggle-icon={arrowDownCircle}>
+      <ion-accordion value="colors" toggle-icon={arrowDownCircle} toggle-icon-slot="start">
         <ion-item slot="header">
           <ion-label>Colors</ion-label>
         </ion-item>
@@ -108,7 +108,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="shapes" toggle-icon={arrowDownCircle}>
+      <ion-accordion value="shapes" toggle-icon={arrowDownCircle} toggle-icon-slot="start">
         <ion-item slot="header">
           <ion-label>Shapes</ion-label>
         </ion-item>
@@ -125,7 +125,7 @@
           </ion-item>
         </ion-list>
       </ion-accordion>
-      <ion-accordion value="numbers" toggle-icon={arrowDownCircle}>
+      <ion-accordion value="numbers" toggle-icon={arrowDownCircle} toggle-icon-slot="start">
         <ion-item slot="header">
           <ion-label>Numbers</ion-label>
         </ion-item>
