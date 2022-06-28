@@ -406,6 +406,7 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
+  <h1>All controllers in one page</h1>
   <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
   <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
   <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>

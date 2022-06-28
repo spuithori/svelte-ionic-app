@@ -32,34 +32,6 @@ export default {
     },
     {
       "meta": {},
-      "id": "_default_account",
-      "name": "account",
-      "module": false,
-      "file": {
-        "path": "src/routes/account",
-        "dir": "src/routes",
-        "base": "account",
-        "ext": "",
-        "name": "account"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
-      "id": "_default_app",
-      "name": "app",
-      "module": false,
-      "file": {
-        "path": "src/routes/app",
-        "dir": "src/routes",
-        "base": "app",
-        "ext": "",
-        "name": "app"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
       "id": "_default_components",
       "name": "components",
       "module": false,
@@ -82,6 +54,34 @@ export default {
             "base": "Accordion.svelte",
             "ext": ".svelte",
             "name": "Accordion"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_Actionsheet_svelte",
+          "name": "Actionsheet",
+          "module": () => import('../src/routes/components/Actionsheet.svelte'),
+          "file": {
+            "path": "src/routes/components/Actionsheet.svelte",
+            "dir": "src/routes/components",
+            "base": "Actionsheet.svelte",
+            "ext": ".svelte",
+            "name": "Actionsheet"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_Alert_svelte",
+          "name": "Alert",
+          "module": () => import('../src/routes/components/Alert.svelte'),
+          "file": {
+            "path": "src/routes/components/Alert.svelte",
+            "dir": "src/routes/components",
+            "base": "Alert.svelte",
+            "ext": ".svelte",
+            "name": "Alert"
           },
           "children": []
         },
@@ -339,6 +339,34 @@ export default {
         },
         {
           "meta": {},
+          "id": "_default_components_Loading_svelte",
+          "name": "Loading",
+          "module": () => import('../src/routes/components/Loading.svelte'),
+          "file": {
+            "path": "src/routes/components/Loading.svelte",
+            "dir": "src/routes/components",
+            "base": "Loading.svelte",
+            "ext": ".svelte",
+            "name": "Loading"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_Modal_svelte",
+          "name": "Modal",
+          "module": () => import('../src/routes/components/Modal.svelte'),
+          "file": {
+            "path": "src/routes/components/Modal.svelte",
+            "dir": "src/routes/components",
+            "base": "Modal.svelte",
+            "ext": ".svelte",
+            "name": "Modal"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
           "id": "_default_components_Nav_svelte",
           "name": "Nav",
           "module": () => import('../src/routes/components/Nav.svelte'),
@@ -381,6 +409,20 @@ export default {
         },
         {
           "meta": {},
+          "id": "_default_components_Picker_svelte",
+          "name": "Picker",
+          "module": () => import('../src/routes/components/Picker.svelte'),
+          "file": {
+            "path": "src/routes/components/Picker.svelte",
+            "dir": "src/routes/components",
+            "base": "Picker.svelte",
+            "ext": ".svelte",
+            "name": "Picker"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
           "id": "_default_components_Platform_svelte",
           "name": "Platform",
           "module": () => import('../src/routes/components/Platform.svelte'),
@@ -390,6 +432,20 @@ export default {
             "base": "Platform.svelte",
             "ext": ".svelte",
             "name": "Platform"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_Popover_svelte",
+          "name": "Popover",
+          "module": () => import('../src/routes/components/Popover.svelte'),
+          "file": {
+            "path": "src/routes/components/Popover.svelte",
+            "dir": "src/routes/components",
+            "base": "Popover.svelte",
+            "ext": ".svelte",
+            "name": "Popover"
           },
           "children": []
         },
@@ -593,6 +649,20 @@ export default {
         },
         {
           "meta": {},
+          "id": "_default_components_Toast_svelte",
+          "name": "Toast",
+          "module": () => import('../src/routes/components/Toast.svelte'),
+          "file": {
+            "path": "src/routes/components/Toast.svelte",
+            "dir": "src/routes/components",
+            "base": "Toast.svelte",
+            "ext": ".svelte",
+            "name": "Toast"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
           "id": "_default_components_Toggle_svelte",
           "name": "Toggle",
           "module": () => import('../src/routes/components/Toggle.svelte'),
@@ -677,48 +747,6 @@ export default {
         "base": "index.svelte",
         "ext": ".svelte",
         "name": "index"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
-      "id": "_default_signup",
-      "name": "signup",
-      "module": false,
-      "file": {
-        "path": "src/routes/signup",
-        "dir": "src/routes",
-        "base": "signup",
-        "ext": "",
-        "name": "signup"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
-      "id": "_default_support",
-      "name": "support",
-      "module": false,
-      "file": {
-        "path": "src/routes/support",
-        "dir": "src/routes",
-        "base": "support",
-        "ext": "",
-        "name": "support"
-      },
-      "children": []
-    },
-    {
-      "meta": {},
-      "id": "_default_tutorial",
-      "name": "tutorial",
-      "module": false,
-      "file": {
-        "path": "src/routes/tutorial",
-        "dir": "src/routes",
-        "base": "tutorial",
-        "ext": "",
-        "name": "tutorial"
       },
       "children": []
     }

@@ -6,5 +6,6 @@
     "skeleton": "skeleton-text",
     "progressbar": "progress-bar",
     "splash": "https://www.youtube.com/watch?v=QTmkibc3WcI",
-    "controller": "https://ionicframework.com/docs/api"
+    "controller": "https://ionicframework.com/docs/api",
+    "actionsheet": "action-sheet"
 }
