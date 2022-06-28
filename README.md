@@ -1,20 +1,21 @@
 
 <h1 align="center"> Ionic Svelte Demo </h1> <br>
 <p align="center">
-  <a href="https://gitpoint.co/">
-    <img alt="GitPoint" title="GitPoint" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/great-success.png" width="150">
+  <a href="https://ionicsvelte.firebaseapp.com">
+    <img alt="IonicSvelte" title="IonicSvelte" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/ionicsvelte_logo.png" width="350">
   </a>
 </p>
-
+<br>
 <p align="center">
   A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite
 </p>
-
+<br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
     <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/pwa-download.png" width="140"  target="_blank">
   </a>
 </p>
+<br>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -25,6 +26,8 @@
 
 
 - [Introduction](#introduction)
+- [All starters](#all-starters)
+- [REPLS](#repls)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
 - [Issues - work in progress](#issues---work-in-progress)
@@ -36,7 +39,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Introduction
+## Introduction
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
 Published as web app: https://ionicsvelte.firebaseapp.com
@@ -57,11 +60,6 @@ Hint: try responsive design of the app and ionic UI magic by using various devic
 
 Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
 
-Other versions available
-* Ionic's blank starter - https://github.com/Tommertom/svelte-ionic-app/tree/1.BlankStarter
-* Ionic's List starter - https://github.com/Tommertom/svelte-ionic-app/tree/2.ListStarter 
-* Ionic's Sidemenu starter - https://github.com/Tommertom/svelte-ionic-app/tree/3.SidemenuStarter (has issue with router)
-
 If you want to run it locally:
 
 ```bash
@@ -71,10 +69,19 @@ npm i
 npm run dev
 ```
 
+## All starters
+* Blank demo - https://github.com/Tommertom/svelte-ionic-blank-demo
+* Tabs demo - https://github.com/Tommertom/svelte-ionic-tabs-demo
+* Sidemenu demo - https://github.com/Tommertom/svelte-ionic-sidemenu-demo
+* Mystarter demo - taking photo with Capacitor - https://github.com/Tommertom/svelte-ionic-mystarter-demo
+* List demo - https://github.com/Tommertom/svelte-ionic-list-demo
+* Conference demo - https://github.com/Tommertom/svelte-ionic-conference-demo
+
+## REPLS
 REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
 These are Ionic 4 components only.
 
-# PWA Interface - easing the PWA work in your app
+## PWA Interface - easing the PWA work in your app
 To help you managing state of the service worker and the various events, a simple svelte store is provided for (`lib/pwa.ts`). This store wraps the various events of the service worker in a readable store and a number of derived stores so you can easily listen to various events.
 
 The following derived stores are implemented:
@@ -87,7 +94,7 @@ The following derived stores are implemented:
 
 All these props are also available via the `pwaStatusStream` readable store.
 
-# How I got started with this rebuild: the basic steps performed
+## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
 
 Scaffold the Svelte app
@@ -126,12 +133,12 @@ But, the highlights for now:
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
 
-# Issues - work in progress
+## Issues - work in progress
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check)
 - A IonFooter in a Modal gives weird layout - not happening in Angular, so a thing related to this implementation
 - Adding custom class to Modal/Popover does not work (using controller) - using inline is probably better
 
-# Todo
+## Todo
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 - Menu controller - getMenu needed to get menu, not menucontroller 
@@ -139,7 +146,7 @@ But, the highlights for now:
 - Place all controllers in separate Menu item
 - Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
 
-# Issues - need help
+## Issues - need help
 - TOP PRIORITY - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
 - IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab. Might need to look into the angular/react/vue way as these packages don't have this issue. Probably tabs is wired up in the router. 
@@ -152,7 +159,7 @@ But, the highlights for now:
 
 - Ion Footer in Modal looks not ok
 
-# Wishlist
+## Wishlist
 - svelte-add integration?
 - Tailwind in separate branch?
 - Bundle optimisation using router bundling?
@@ -162,7 +169,7 @@ But, the highlights for now:
 - Ionic demos as branches
 
 
-# Acknowledgements
+## Acknowledgements
 Ionic UI code: https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api
 
 README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
