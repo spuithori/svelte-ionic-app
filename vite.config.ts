@@ -12,17 +12,17 @@ const pwaManifest = {
   theme_color: '#000000',
   icons: [
     {
-      src: '/assets/img/great-success.png',
+      src: '/assets/svelte-ionic-vite.png',
       sizes: '192x192',
       type: 'image/png',
     },
     {
-      src: '/assets/img/great-success.png',
+      src: '/assets/svelte-ionic-vite.png',
       sizes: '512x512',
       type: 'image/png',
     },
     {
-      src: '/assets/img/great-success.png',
+      src: '/assets/svelte-ionic-vite.png',
       sizes: '512x512',
       type: 'image/png',
       purpose: 'any maskable',
