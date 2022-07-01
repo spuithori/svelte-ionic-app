@@ -17,9 +17,14 @@
 </p>
 <br>
 
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+<p align="center">
+  <a href="https://ionicsvelte.firebaseapp.com">
+    <img alt="Contributors" title="Contributors" src="https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square" width="140"  target="_blank">
+  </a>
+   <a href="https://ionicsvelte.firebaseapp.com">
+    <img alt="PR welcome" title="PR welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" width="140"  target="_blank">
+  </a>
+</p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -57,15 +62,6 @@ As far as I can see now, the current new version is getting there pretty close!
 
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
 
-If you want to run it locally:
-
-```bash
-npx degit Tommertom/svelte-ionic-app svelte-ionic-app
-cd svelte-ionic-app
-npm i
-npm run dev
-```
-
 ## All starters - quickstart
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
 
@@ -75,6 +71,15 @@ If you want to get started with Ionic, Svelte and Vite, just use one of the star
 * Mystarter demo - taking photo with Capacitor - https://github.com/Tommertom/svelte-ionic-mystarter-demo
 * List demo - https://github.com/Tommertom/svelte-ionic-list-demo
 * Conference demo - https://github.com/Tommertom/svelte-ionic-conference-demo
+
+Or clone this repo and remove whateveer you don't need:
+
+```bash
+npx degit Tommertom/svelte-ionic-app svelte-ionic-app
+cd svelte-ionic-app
+npm i
+npm run dev
+```
 
 ## REPLS
 REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
