@@ -17,14 +17,9 @@
 </p>
 <br>
 
-<p align="center">
-  <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="Contributors" title="Contributors" src="https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square" width="140"  target="_blank">
-  </a>
-   <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="PR welcome" title="PR welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" width="140"  target="_blank">
-  </a>
-</p>
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome]()](http://makeapullrequest.com)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
