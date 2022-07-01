@@ -26,7 +26,7 @@
 
 
 - [Introduction](#introduction)
-- [All starters](#all-starters)
+- [All starters - quickstart](#all-starters---quickstart)
 - [REPLS](#repls)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
@@ -37,7 +37,6 @@
 - [Acknowledgements](#acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 ## Introduction
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
@@ -58,8 +57,6 @@ As far as I can see now, the current new version is getting there pretty close!
 
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
 
-Secondly, it is a boilerplate to start developing an Ionic/Svelte/PWA supercharged app. Easy to remove the stuff specific to this app and continue working for your own great app!
-
 If you want to run it locally:
 
 ```bash
@@ -69,7 +66,9 @@ npm i
 npm run dev
 ```
 
-## All starters
+## All starters - quickstart
+If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
+
 * Blank demo - https://github.com/Tommertom/svelte-ionic-blank-demo
 * Tabs demo - https://github.com/Tommertom/svelte-ionic-tabs-demo
 * Sidemenu demo - https://github.com/Tommertom/svelte-ionic-sidemenu-demo
@@ -137,6 +136,7 @@ But, the highlights for now:
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check)
 - A IonFooter in a Modal gives weird layout - not happening in Angular, so a thing related to this implementation
 - Adding custom class to Modal/Popover does not work (using controller) - using inline is probably better
+- Routerlink and similar props are untested and also likely do not work. Also href needs a bit of testing
 
 ## Todo
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
@@ -157,16 +157,16 @@ But, the highlights for now:
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
-- Ion Footer in Modal looks not ok
+- Ion Footer in Modal looks not ok - need to test in inline modal as well. 
 
 ## Wishlist
 - svelte-add integration?
-- Tailwind in separate branch?
+- Tailwind in separate repo?
 - Bundle optimisation using router bundling?
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - test ssr setup
 - dark mode
-- Ionic demos as branches
+- add other code languages from Ionic's API docs  
 
 
 ## Acknowledgements
