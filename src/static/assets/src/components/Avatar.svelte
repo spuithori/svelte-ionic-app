@@ -18,7 +18,7 @@
         <ion-menu-button />
       </ion-buttons>
       <ion-buttons slot="end">
-        <SourceButton name="Avatars" />
+        <SourceButton name="Avatar" />
       </ion-buttons>
       <ion-title>Avatar</ion-title>
     </ion-toolbar>

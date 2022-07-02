@@ -11,14 +11,14 @@
   <title>Ionic Companion - Avatars</title>
 </svelte:head>
 
-<IonPage {onIonViewDidEnter} route="/components/Avatars">
+<IonPage {onIonViewDidEnter} route="/components/Avatar">
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button />
       </ion-buttons>
       <ion-buttons slot="end">
-        <SourceButton name="Avatars" />
+        <SourceButton name="Avatar" />
       </ion-buttons>
       <ion-title>Avatar</ion-title>
     </ion-toolbar>

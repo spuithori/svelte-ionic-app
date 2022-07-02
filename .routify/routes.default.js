@@ -101,15 +101,15 @@ export default {
         },
         {
           "meta": {},
-          "id": "_default_components_Avatars_svelte",
-          "name": "Avatars",
-          "module": () => import('../src/routes/components/Avatars.svelte'),
+          "id": "_default_components_Avatar_svelte",
+          "name": "Avatar",
+          "module": () => import('../src/routes/components/Avatar.svelte'),
           "file": {
-            "path": "src/routes/components/Avatars.svelte",
+            "path": "src/routes/components/Avatar.svelte",
             "dir": "src/routes/components",
-            "base": "Avatars.svelte",
+            "base": "Avatar.svelte",
             "ext": ".svelte",
-            "name": "Avatars"
+            "name": "Avatar"
           },
           "children": []
         },

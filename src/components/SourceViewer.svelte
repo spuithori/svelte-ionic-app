@@ -71,6 +71,21 @@
       });
   });
 
+  // https://github.com/ionic-team/ionic-docs/blob/main/docs/api/accordion.md
+  // https://stackoverflow.com/questions/7167279/regex-select-all-text-between-tags
+  fetch(`/assets/src/ionic-docs/api/${name}.md`.toLowerCase()).then((s) => {
+    s.text().then((s) => {
+      console.log("sdasdasdsa", s);
+      const nr = /<head>(.*?)<\/head>/g.exec(s);
+      console.log(nr);
+      /*
+const a = "Hello, <num>22</num>";
+<pre>(.*?)<\/pre>
+
+      */
+    });
+  });
+
   fetch("/assets/json/repls.json").then((response) => {
     response.json().then((json) => {
       const url = json[name.toLowerCase()];
