@@ -111,6 +111,8 @@ The following derived stores are implemented:
 
 All these props are also available via the `pwaStatusStream` readable store.
 
+Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
+
 ## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
 
