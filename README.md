@@ -139,12 +139,13 @@ Ionic related steps
 Then......
 As of this step, the hard work started. Getting all UI components working, aligning with the Ionic documentation... 
 
-Much has been realised and still lots of work to be done
+Much has been realised and the issue list shows the hard stuff getting the integration almost completely aligned with the docs (or some stuff working at all).
 
 But, the highlights for now:
 - This project has all Ionic related stuff in a lib structure - so easy to drop in your own project
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
+- other controllers work perfectly - menu has a minor workaround
 
 ## REPLS
 REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
