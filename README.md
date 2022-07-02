@@ -180,6 +180,8 @@ But, the highlights for now:
 
 - Adding custom class to Modal/Popover does not work (using controller) - using inline Modal/Popover is probably better anyway
 
+- In some cases IonPage clips the content enclosed - then you need to remove main tags in IonTabs
+
 ## Wishlist
 - Tailwind in separate repo?
 - Bundle optimisation using router bundling?

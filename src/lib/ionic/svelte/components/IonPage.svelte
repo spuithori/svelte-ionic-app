@@ -48,4 +48,6 @@ This clips the content - found when migrating Conference starter.
   */
 </script>
 
-<slot />
+<main in:fly={{ x: 100, duration: 250 }}>
+  <slot />
+</main>
