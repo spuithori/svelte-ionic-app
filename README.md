@@ -34,6 +34,7 @@
 - [Todo](#todo)
 - [Issues - need help](#issues---need-help)
 - [Wishlist](#wishlist)
+- [Things not being implemented - and likely not happening on the short run](#things-not-being-implemented---and-likely-not-happening-on-the-short-run)
 - [Acknowledgements](#acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -149,7 +150,6 @@ But, the highlights for now:
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
 ## Issues - work in progress
-
 - Routerlink and similar props are untested and also likely do not work. Also href needs a bit of testing
 
 ## Todo
@@ -189,6 +189,11 @@ But, the highlights for now:
 - test ssr setup
 - dark mode
 - add other code languages from Ionic's API docs  
+
+## Things not being implemented - and likely not happening on the short run
+`ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolve because of usage of the router in this project.
+
+`ion-nav-link` - not sure why not, but haven't used it yet in a project. Maybe my bad. What do you think?
 
 ## Acknowledgements
 Ionic UI code: https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api
