@@ -143,23 +143,27 @@ const PLATFORMS_MAP = {
     hybrid: isHybrid,
 };
 
-/* if (import.meta.env.SSR) {
-export const networkStatus = readable((window.navigator.onLine ? 'on' : 'off') + 'line',
+// SSR proof
+export const networkStatus = readable(typeof window !== "undefined" ? (window.navigator.onLine ? 'on' : 'off') + 'line' : '',
     (set) => {
         const eventFunction = () => {
-            set((window.navigator.onLine ? 'on' : 'off') + 'line');
+            if (typeof window !== "undefined") set((window.navigator.onLine ? 'on' : 'off') + 'line');
         }
 
-        window.addEventListener('offline', eventFunction);
-        window.addEventListener('online', eventFunction);
-
+        if (typeof window !== "undefined") {
+            window.addEventListener('offline', eventFunction);
+            window.addEventListener('online', eventFunction);
+        }
         return () => {
-            window.removeEventListener('offline', eventFunction);
-            window.removeEventListener('online', eventFunction);
+            if (typeof window !== "undefined") {
+                window.removeEventListener('offline', eventFunction);
+                window.removeEventListener('online', eventFunction);
+            }
         }
     }
 )
-*/
+
+
 // taken from Angular's platform service
 const readableEventFactory = (args: { defaultvalue: any, event: string, eventAttr: string, listenerComponent: Window | Document }) => {
     const { defaultvalue, event, eventAttr, listenerComponent } = args;
@@ -198,17 +202,14 @@ if (typeof document !== 'undefined') {
     keydown = readableEventFactory({ defaultvalue: '', event: 'keydown', eventAttr: 'key', listenerComponent: document });
 }
 
-//export const backButtonSubscribeWithPriority= (handler:()=>{}) =>{
-//     
-//}
-// derived(backButton)
-/*
-document.addEventListener('ionBackButton', (ev) => {
-    ev.detail.register(10, () => {
-      console.log('Handler was called!');
+export const backButtonSubscribeWithPriority = (handler: () => {}, priority: number = 10) => {
+    if (typeof document !== "undefined") document.addEventListener('ionBackButton', (ev: any) => {
+        ev.detail.register(priority, () => {
+            handler();
+            console.log('Handler was called!');
+        });
     });
-  });
-*/
+}
 
 export const height = (): number => {
     if (_win) return _win.innerHeight;
