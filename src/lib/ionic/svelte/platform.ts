@@ -143,9 +143,7 @@ const PLATFORMS_MAP = {
     hybrid: isHybrid,
 };
 
-
-
-/* not SSR safe
+/* if (import.meta.env.SSR) {
 export const networkStatus = readable((window.navigator.onLine ? 'on' : 'off') + 'line',
     (set) => {
         const eventFunction = () => {
