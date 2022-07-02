@@ -27,11 +27,11 @@
 
 - [Introduction](#introduction)
 - [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
-- [REPLS](#repls)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
+- [REPLS](#repls)
 - [Todo](#todo)
-- [Issues - need help](#issues---need-help)
+- [Issues - help needed/workaround provided](#issues---help-neededworkaround-provided)
 - [Things to do maybe one day...](#things-to-do-maybe-one-day)
 - [Things not being implemented](#things-not-being-implemented)
 - [Acknowledgements](#acknowledgements)
@@ -93,10 +93,6 @@ npm i
 npm run dev
 ```
 
-## REPLS
-REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
-These are Ionic 4 components only.
-
 ## PWA Interface - easing the PWA work in your app
 To help you managing state of the service worker and the various events, a simple svelte store is provided for (`lib/pwa.ts`). This store wraps the various events of the service worker in a readable store and a number of derived stores so you can easily listen to various events.
 
@@ -150,11 +146,15 @@ But, the highlights for now:
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
+## REPLS
+REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
+These are Ionic 4 components only.
+
 ## Todo
 - Get many to test and use Svelte, Ionic and Vite :)
 
-## Issues - need help
-- TOP PRIORITY - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
+## Issues - help needed/workaround provided
+- IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
 
@@ -170,7 +170,7 @@ But, the highlights for now:
 
 - Add IonPage, IonTabs and IonBackButton are not part of the default export - these are svelte components, so index.ts cannot handle these (?) 
 
-- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check)
+- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check) - solution could be to make a svelte IonIcon component, but that will likely import all icons in a non-tree-shakable way?
 
 - Adding custom class to Modal/Popover does not work (using controller) - using inline Modal/Popover is probably better anyway
 
@@ -182,12 +182,14 @@ But, the highlights for now:
 
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 
+- IonPage sometimes clips the content - then you need to remove main tags in IonPage.svelte
+
 ## Things to do maybe one day...
 - Tailwind in separate repo?
 - Bundle optimisation using router bundling?
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - test ssr setup
-- dark mode
+- dark mode selector
 - Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
 - Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else
 
