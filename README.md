@@ -191,7 +191,7 @@ But, the highlights for now:
 - add other code languages from Ionic's API docs  
 
 ## Things not being implemented - and likely not happening on the short run
-`ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolve because of usage of the router in this project.
+`ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolete because of usage of the router in this project. But tell me if I am wrong here!
 
 `ion-nav-link` - not sure why not, but haven't used it yet in a project. Maybe my bad. What do you think?
 
