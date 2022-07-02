@@ -6,13 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:client": "vite build --ssrManifest",
+    "build:client": "vite build",
     "build:server": "vite build  --ssr",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "routes": "routify",
-    "doctoc": "doctoc README.md",
-    "ssr": "vite build --outDir dist/server --ssr ./server.js "
+    "doctoc": "doctoc README.md"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
