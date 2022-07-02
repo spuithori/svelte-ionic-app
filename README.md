@@ -151,9 +151,7 @@ But, the highlights for now:
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
 ## Todo
-- Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
-- Menu controller - getMenu needed to get menu, not menucontroller 
-- Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
+- Get many to test and use Svelte, Ionic and Vite :)
 
 ## Issues - need help
 - TOP PRIORITY - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
@@ -161,8 +159,6 @@ But, the highlights for now:
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
 
 - IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab. Might need to look into the angular/react/vue way as these packages don't have this issue. Probably tabs is wired up in the router. 
-
-- Will this work on SvelteKit? I had some issues before and thought, let's skip it again. But if it works on sveltekit, why not use that one?
 
 - Gestures: Need a timeout to get proper style value even though I am using onMount?? 
 
@@ -182,6 +178,9 @@ But, the highlights for now:
 
 - Routerlink, href and similar props on components like ion-item do not work properly, but I wonder if support is needed
 
+- Menucontroller does not see the menu by default - you need to register the menu item manually - extra function added to help you with that (`registerMenu(menu-id:string)`) - `<ion-menu {side} content-id="main" menu-id="mainmenu">`see Menu.svelte with working example
+
+- Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 
 ## Things to do maybe one day...
 - Tailwind in separate repo?
@@ -189,7 +188,8 @@ But, the highlights for now:
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - test ssr setup
 - dark mode
-- add other code languages from Ionic's API docs  
+- Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
+- Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else
 
 ## Things not being implemented
 `ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolete because of usage of the router in this project. But tell me if I am wrong here!

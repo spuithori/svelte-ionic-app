@@ -1,10 +1,11 @@
 <script lang="ts">
   // import { fromFetch } from "rxjs/fetch";
   import { goto, node, url } from "@roxi/routify";
-  import { getIonicMenu, height, menuController, width } from "$ionic/svelte";
+  import { height, menuController, registerMenu, width } from "$ionic/svelte";
 
   import * as allIonicIcons from "ionicons/icons";
   import { pwaBeforeInstallPrompt } from "$lib/pwa";
+  import { onMount } from "svelte";
 
   let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
@@ -23,6 +24,11 @@
     ];
     return items[Math.floor(Math.random() * items.length)];
   };
+
+  // this is unfortunately needed in order to have the menuController API function properly
+  onMount(() => {
+    registerMenu("mainmenu");
+  });
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -54,7 +60,7 @@
   });
   menuItems = [...menuItems];
 
-  const closeAndNavigate = (url) => {
+  const closeAndNavigate = async (url) => {
     // url = "/components/tabs/blabla";
     console.log("Navigate url", url);
 
@@ -62,9 +68,7 @@
     console.log("Test", url);
     $goto(url);
 
-    getIonicMenu("mainmenu")
-      .close(true)
-      .then(() => {});
+    menuController.close("mainmenu");
   };
 
   // hack because of visibility of menu in Chrome/Windows
