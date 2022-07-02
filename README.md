@@ -30,10 +30,9 @@
 - [REPLS](#repls)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
-- [Issues - work in progress](#issues---work-in-progress)
 - [Todo](#todo)
 - [Issues - need help](#issues---need-help)
-- [Wishlist](#wishlist)
+- [Things to do maybe one day...](#things-to-do-maybe-one-day)
 - [Things not being implemented](#things-not-being-implemented)
 - [Acknowledgements](#acknowledgements)
 
@@ -151,9 +150,6 @@ But, the highlights for now:
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 
-## Issues - work in progress
-- Routerlink and similar props are untested and also likely do not work. Also href needs a bit of testing
-
 ## Todo
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 - Menu controller - getMenu needed to get menu, not menucontroller 
@@ -184,7 +180,10 @@ But, the highlights for now:
 
 - In some cases IonPage clips the content enclosed - then you need to remove main tags in IonTabs
 
-## Wishlist
+- Routerlink, href and similar props on components like ion-item do not work properly, but I wonder if support is needed
+
+
+## Things to do maybe one day...
 - Tailwind in separate repo?
 - Bundle optimisation using router bundling?
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
