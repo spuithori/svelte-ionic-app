@@ -144,6 +144,8 @@ const PLATFORMS_MAP = {
 };
 
 
+
+/* not SSR safe
 export const networkStatus = readable((window.navigator.onLine ? 'on' : 'off') + 'line',
     (set) => {
         const eventFunction = () => {
@@ -159,7 +161,7 @@ export const networkStatus = readable((window.navigator.onLine ? 'on' : 'off') +
         }
     }
 )
-
+*/
 // taken from Angular's platform service
 const readableEventFactory = (args: { defaultvalue: any, event: string, eventAttr: string, listenerComponent: Window | Document }) => {
     const { defaultvalue, event, eventAttr, listenerComponent } = args;
@@ -262,10 +264,11 @@ const readQueryParam = (url: string, key: string) => {
 
 // todo - implement toggle for dark mode https://ionicframework.com/docs/theming/dark-mode
 import { writable } from 'svelte/store';
-export const prefersDark = writable(window && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+export const prefersDark = writable(
+    typeof window !== "undefined" ? window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches : '');
+if (typeof window !== "undefined") window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     prefersDark.set(e.matches ? true : false);
 });
 export const toggleDarkTheme = (shouldAdd) => {
-    document.body.classList.toggle('dark', shouldAdd);
+    if (_doc) document.body.classList.toggle('dark', shouldAdd);
 }

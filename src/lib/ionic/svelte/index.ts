@@ -157,22 +157,13 @@ export const setupIonicSvelte = async (config?: IonicConfig) => {
   }
 };
 
-export const getIonicNav = () => {
-  return document.querySelector("ion-nav");
-};
-
-
 export const registerMenu = (menuId: string): boolean => {
-  const menu = getIonicMenu(menuId);
+  const query = "ion-menu[menu-id='" + menuId + "']";
+  const menu = document.querySelector(query) as unknown as MenuI;
+
   if (menu) {
     menuController._register(menu);
   }
   return !!menu;
 }
-
-// old code
-const getIonicMenu = (menuId): MenuI => {
-  const query = "ion-menu[menu-id='" + menuId + "']";
-  return document.querySelector(query) as unknown as MenuI;
-};
 
