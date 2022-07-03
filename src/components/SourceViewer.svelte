@@ -146,7 +146,7 @@
           const toast = await toastController.create({
             color: "dark",
             duration: 2000,
-            message: `Copied ${selectedCodeLanguage} code for ${name}...,`,
+            message: `Copied ${selectedCodeLanguage} code for ${name.toLowerCase()}...`,
           });
           await toast.present();
         })
