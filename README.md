@@ -249,3 +249,4 @@ README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
 PWA logo: https://github.com/webmaxru/progressive-web-apps-logo
 
 Borat logo:https://sapper.svelte.dev/
+
