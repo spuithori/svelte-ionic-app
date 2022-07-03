@@ -202,8 +202,8 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar>
-    {#if languages.length > 1}
+  {#if languages.length > 1}
+    <ion-toolbar>
       <ion-segment value={selectedCodeLanguage} on:ionChange={languageChange} scrollable>
         {#each languages as language}
           <ion-segment-button value={language}>
@@ -211,8 +211,8 @@
           </ion-segment-button>
         {/each}
       </ion-segment>
-    {/if}
-  </ion-toolbar>
+    </ion-toolbar>
+  {/if}
 </ion-header>
 
 <ion-content scroll-x="true" style="--padding-start: 15px;--padding-end: 15px;" fullscreen>

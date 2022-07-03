@@ -26,13 +26,6 @@
 <!-- routify:meta draft=true -->
 <ion-content>
   <br />
-  <br />
-  <br />
-  <br />
-
-  <br /> <br />
-  <br />
-  <br />
   <br /> <br />
   <br />
   <br />

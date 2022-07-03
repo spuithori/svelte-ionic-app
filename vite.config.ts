@@ -9,7 +9,7 @@ const pwaManifest = {
   name: 'Ionic Svelte',
   short_name: 'Ionic Svelte Demo',
   description: 'Coolness in Vite Svelte and Ionic',
-  theme_color: '#000000',
+  theme_color: '#ffffff',
   icons: [
     {
       src: '/assets/svelte-ionic-vite.png',
