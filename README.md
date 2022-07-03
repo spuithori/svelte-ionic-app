@@ -61,7 +61,8 @@ Design objectives
 - Ease PWA configuration with good documentation - using zero-config Vite (https://vite-plugin-pwa.netlify.app/)
 - Deployable as PWA
 - File based router (using Roxy/Routify)
-- aligned as much as possible to the Ionic documentation for other integrations (Vue mostly)
+- aligned as much as possible to the Ionic documentation for other integrations
+- supporting other framework developers through source-code viewing
 
 As far as I can see now, the current new version is getting there pretty close! 
 
