@@ -1,18 +1,22 @@
 <script lang="ts">
   import { modalController, toastController } from "$ionic/svelte";
   import { close } from "ionicons/icons";
+  import localForage from "localforage";
 
   export let name = "/";
-  let REPLlink;
 
+  const LASTLANGSELECTEDKEY = "lastLangSelected";
+  let REPLlink;
   let APIlink;
-  let codeLanguage = "svelte";
+  let selectedCodeLanguage = "svelte";
   let sources = {};
   let languages = ["svelte"];
+
+  // a bit obsolete maybe..
   languages.forEach((lang) => {
     sources[lang] = "Loading " + lang + "....";
   });
-  let sourceCode = sources[codeLanguage];
+  let sourceCode = sources[selectedCodeLanguage];
 
   // generate the name to source file
   name = name.charAt(0).toUpperCase() + name.slice(1);
@@ -63,7 +67,7 @@
           sources["svelte"] = `No svelte file found for ${name}.`;
         } else {
           sources["svelte"] = txt;
-          sourceCode = sources[codeLanguage];
+          sourceCode = sources[selectedCodeLanguage];
         }
       })
       .catch((err) => {
@@ -71,18 +75,48 @@
       });
   });
 
-  // https://github.com/ionic-team/ionic-docs/blob/main/docs/api/accordion.md
-  // https://stackoverflow.com/questions/7167279/regex-select-all-text-between-tags
-  fetch(`/assets/src/ionic-docs/api/${name}.md`.toLowerCase()).then((s) => {
-    s.text().then((s) => {
-      console.log("sdasdasdsa", s);
-      const nr = /<head>(.*?)<\/head>/g.exec(s);
-      console.log(nr);
-      /*
-const a = "Hello, <num>22</num>";
-<pre>(.*?)<\/pre>
+  // Sample code documentation - https://github.com/ionic-team/ionic-docs/blob/main/docs/api/accordion.md
+  fetch(`/assets/src/ionic-docs/api/${name}.md`.toLowerCase()).then((response) => {
+    response.text().then(async (responseText) => {
+      const lines = responseText.split("\n");
 
-      */
+      // Maybe very tedious way to parse code, but I am not getting regex properly done
+      let inTag = false;
+      let foundLang = "";
+      let codeBody = "";
+      lines.forEach((line) => {
+        const scanLine = line
+          .replace("```html", "")
+          .replace("```tsx", "")
+          .replace("```", "")
+          .replace("\r", "\n");
+
+        if (scanLine.includes("</TabItem>")) {
+          inTag = false;
+          sources[foundLang] = codeBody.replace("\n\n", "");
+          codeBody = "";
+        }
+
+        if (inTag) {
+          codeBody += scanLine;
+        }
+
+        if (scanLine.includes("<TabItem")) {
+          inTag = true;
+          foundLang = scanLine.replace('<TabItem value="', "").replace('">', "").replace("\n", "");
+          languages = [...languages, foundLang].sort();
+          // console.log("FOUND lang", foundLang);
+        }
+      });
+
+      //      console.log("CODE STUFF", sources, Object.keys(sources));
+
+      // change to the last one selected, but only if found
+      const lastSelected = (await localForage.getItem(LASTLANGSELECTEDKEY)) as string;
+      if (languages.includes(lastSelected))
+        languageChange({
+          detail: { value: lastSelected },
+        });
     });
   });
 
@@ -125,6 +159,12 @@ const a = "Hello, <num>22</num>";
 
     setTimeout(closeOverlay, 1000);
   };
+
+  const languageChange = (event) => {
+    selectedCodeLanguage = event.detail.value;
+    sourceCode = sources[selectedCodeLanguage];
+    localForage.setItem(LASTLANGSELECTEDKEY, selectedCodeLanguage);
+  };
 </script>
 
 <svelte:head>
@@ -159,6 +199,17 @@ const a = "Hello, <num>22</num>";
         <ion-icon icon={close} />
       </ion-button>
     </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    {#if languages.length > 1}
+      <ion-segment value={selectedCodeLanguage} on:ionChange={languageChange} scrollable>
+        {#each languages as language}
+          <ion-segment-button value={language}>
+            <ion-label>{language}</ion-label>
+          </ion-segment-button>
+        {/each}
+      </ion-segment>
+    {/if}
   </ion-toolbar>
 </ion-header>
 

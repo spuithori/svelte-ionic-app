@@ -7,7 +7,10 @@
 </p>
 <br>
 <p align="center">
-  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite
+  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite.
+</p>
+<p align="center">
+  With handy tool to see the actual code in all popular frameworks - Svelte, Vue, React, Stencil and even Angular!
 </p>
 <br>
 <p align="center">
@@ -183,6 +186,7 @@ But, the highlights for now:
 - Ionic lifecycle hooks implemented - see Page.svelte and Note.svelte (and IonPage.svelte) - also in onMount/onDestroy style
 - modal and popover controllers work via inline and programmatically - was quite a search to get this done!!
 - other controllers work perfectly - menu has a minor workaround
+- shows source code for all documented APIs - Vue, Angular, Javascript and Stencil. Next to Svelte!!
 
 ## REPLS
 REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
@@ -226,9 +230,8 @@ These are Ionic 4 components only.
 - Tailwind in separate repo?
 - Bundle optimisation using router bundling?
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
-- test ssr setup
+- test ssr setup - compiling SSR runs ok - but, need to figure out how to serve
 - dark mode selector
-- Create link to source code for other code - https://github.com/ionic-team/ionic-docs/tree/main/docs/api
 - Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else
 
 ## Things not being implemented
