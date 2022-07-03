@@ -108,6 +108,29 @@ All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
 
+## Screenshots
+Some highlights:
+<table>
+  <tr>
+    <th>Intro</th>
+    <th>Component menu</th>
+    <th>Sourcecode</th>
+<th>Progress bar</th>
+<th>Icons</th>
+  </tr>
+  <tr>
+    <td>
+<img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE).png" width="65%" ></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
+     <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE).png" width="45%"></td>
+     
+  </tr> 
+</table>
+
+More screens: https://ionicsvelte.firebaseapp.com
+
 ## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
 

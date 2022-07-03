@@ -102,9 +102,7 @@ const a = "Hello, <num>22</num>";
   };
 
   // somehow does not fly on iOS?
-
   const copySource = async () => {
-    /*
     if (navigator && navigator.clipboard)
       navigator.clipboard
         .writeText(sourceCode)
@@ -124,7 +122,7 @@ const a = "Hello, <num>22</num>";
           });
           await toast.present();
         });
-*/
+
     setTimeout(closeOverlay, 1000);
   };
 </script>
