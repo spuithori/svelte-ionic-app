@@ -199,6 +199,8 @@ These are Ionic 4 components only.
 - Get many to test and use Svelte, Ionic and Vite :)
 
 ## Issues - help needed/workaround provided
+- A nicer logo for this app - anyone can help?
+
 - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
 - Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
