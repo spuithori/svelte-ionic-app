@@ -65,17 +65,25 @@ Some highlights:
     <th>Intro</th>
     <th>Component menu</th>
     <th>Sourcecode</th>
-<th>Progress bar</th>
-<th>Icons</th>
   </tr>
   <tr>
     <td>
 <img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE).png" width="65%" ></td>
     <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (1).png" width="45%"></td>
     <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
-    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
+    </tr> 
+</table>
+
+<table>
+  <tr>
+<th>Progress bar</th>
+<th>Icons</th>
+<th>PWA IOS install</th>
+  </tr>
+  <tr>
+       <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
      <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE).png" width="45%"></td>
-     
+       <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Badge(iPhone XR).png" width="45%"></td>
   </tr> 
 </table>
 

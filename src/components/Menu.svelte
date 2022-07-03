@@ -1,11 +1,11 @@
 <script lang="ts">
-  // import { fromFetch } from "rxjs/fetch";
-  import { goto, node, url } from "@roxi/routify";
-  import { height, menuController, registerMenu, width } from "$ionic/svelte";
-
+  import { goto, node } from "@roxi/routify";
+  import { menuController, modalController, registerMenu } from "$ionic/svelte";
   import * as allIonicIcons from "ionicons/icons";
   import { pwaBeforeInstallPrompt } from "$lib/pwa";
   import { onMount } from "svelte";
+  import IOSInstall from "$components/IOSInstall.svelte";
+  import { isPlatform } from "@ionic/core";
 
   let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
@@ -39,11 +39,8 @@
     .children.map((route) => {
       let url = route.path;
 
-      //  console.log("Route", url, capitalizeFirstLetter(route.name));
-
       const label = capitalizeFirstLetter(route.name);
       if (label === "Tabs") url = "/components/tabs/[...tabs]";
-      // console.log("Route", url, capitalizeFirstLetter(route.name));
 
       return {
         url,
@@ -61,10 +58,7 @@
   menuItems = [...menuItems];
 
   const closeAndNavigate = async (url) => {
-    // url = "/components/tabs/blabla";
     console.log("Navigate url", url);
-
-    // path.set(url);
     console.log("Test", url);
     $goto(url);
 
@@ -75,6 +69,24 @@
   setTimeout(() => {
     hideMenu = false;
   }, 100);
+
+  let iosInstall = isPlatform("ios") && !isPlatform("pwa");
+
+  const showIOSinstall = async () => {
+    const modal = await modalController.create({
+      component: IOSInstall,
+      componentProps: {},
+      showBackdrop: true,
+      backdropDismiss: false,
+    });
+
+    modal.onDidDismiss().then((value) => {
+      console.log("Dismissed the modal", value);
+      if (value.role === "backdrop") console.log("Backdrop clicked");
+    });
+
+    await modal.present();
+  };
 </script>
 
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
@@ -98,7 +110,13 @@
         {/each}
 
         <ion-item />
-
+        {#if iosInstall}
+          <ion-item on:click={showIOSinstall}>
+            <ion-icon icon={allIonicIcons["download"]} slot="start" />
+            <ion-label>Install this app as PWA</ion-label>
+          </ion-item>
+          <ion-item />
+        {/if}
         {#if $pwaBeforeInstallPrompt}
           <ion-item
             on:click={() => {

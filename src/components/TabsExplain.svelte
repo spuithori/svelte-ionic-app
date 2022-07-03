@@ -13,13 +13,13 @@
 
 <ion-content fullscreen class="ion-padding">
   <h1>Explanation of TABS</h1>
-  <p>So, ionic tabs are working fairly ok.</p>
+  <p>So, ionic tabs are working pretty ok.</p>
   <p>
-    There are now two issues: you have to use IonTabs component to render tab interface. This seems
-    doable, but not according to Ionic docs.
+    There are now two non-blocking issues: you have to use IonTabs component to render tab
+    interface. This seems doable, but not according to Ionic docs.
   </p>
   <p>
-    Second issue is that the selected-tab property does not yield results, nor the method to call
-    the specific default button
+    Second issue is that the selected-tab property does not work out-of-the box. A workaround is
+    implemented which requires an Ionic update. So out of control for me.
   </p>
 </ion-content>
