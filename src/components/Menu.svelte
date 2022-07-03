@@ -2,7 +2,7 @@
   import { goto, node } from "@roxi/routify";
   import { menuController, modalController, registerMenu } from "$ionic/svelte";
   import * as allIonicIcons from "ionicons/icons";
-  import { pwaBeforeInstallPrompt } from "$lib/pwa";
+  import { pwaBeforeInstallPrompt, canInstall } from "$lib/pwa";
   import { onMount } from "svelte";
   import IOSInstall from "$components/IOSInstall.svelte";
   import { isPlatform } from "@ionic/core";
@@ -117,7 +117,7 @@
           </ion-item>
           <ion-item />
         {/if}
-        {#if $pwaBeforeInstallPrompt}
+        {#if $canInstall}
           <ion-item
             on:click={() => {
               const prompt = $pwaBeforeInstallPrompt;

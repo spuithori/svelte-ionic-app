@@ -7,7 +7,7 @@ import { readFileSync } from 'fs'
 
 const pwaManifest = {
   name: 'Ionic Svelte',
-  short_name: 'A really cool app',
+  short_name: 'Ionic Svelte Demo',
   description: 'Coolness in Vite Svelte and Ionic',
   theme_color: '#000000',
   icons: [
