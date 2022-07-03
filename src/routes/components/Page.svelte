@@ -104,35 +104,34 @@
 
   <ion-content fullscreen>
     <ion-card>
-      This intends to show the working of the IonPage component. This holds the lifecycle hooks:
-      <br />
-      <pre>
+      <ion-card-header><h1>API specs for IonPage</h1></ion-card-header>
+      <ion-card-content>
+        This intends to show the working of the IonPage component. This components the lifecycle
+        hooks and proper animation for a page shown in your app. The following lifecycle hooks are
+        provided for:
+        <br />
+        <pre>
   ionViewWillEnter
   ionViewDidEnter
   ionViewWillLeave
   ionViewDidLeave
 </pre>
-
-      Syntax:
-      <pre>
+        The first way is to bind the function to the dom-element. This seems the easiest way to me, as
+        you simply give the function the same name as the event and then bind it using brackets. Providing
+        a route is optional for this way of binding lifecycle hooks.
+        <pre>
   {ionPageSyntax}
 </pre>
 
-      Unfortunately (for now) this IonPage implementation requires that your tell it its
-      corresponding route, this to make sure the ionWillEnter event will fire. All other IonPage
-      lifecycle events work using router hooks and/or svelte mount/destroy hooks.
-      <br /><br />
+        The other way is similar to the `onMount()` way of working in svelte:
 
-      You can attach hooks using properties, or using similar syntax as onMount or onDestroy.
-
-      <ion-card>
         <pre>
   {codeSnippet}
 </pre>
-
-        The first argument is the route, the second the hook to be called. Only one hook can be
-        attached to one specific route.
-      </ion-card>
+        In support of this way of working, it is required to provide a route to IonPage. The first argument
+        is the route, the second the hook to be called. Only one hook can be attached to one specific
+        route.
+      </ion-card-content>
     </ion-card>
   </ion-content>
 </IonPage>

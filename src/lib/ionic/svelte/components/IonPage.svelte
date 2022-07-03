@@ -16,7 +16,7 @@
   export let ionViewWillLeave = () => {};
   export let ionViewDidLeave = () => {};
 
-  export let route;
+  export let route = "___none";
 
   $: if (route) {
     ionViewWillEnter();
