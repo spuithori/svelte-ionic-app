@@ -124,7 +124,9 @@ If you want to get started with Ionic, Svelte and Vite, just use one of the star
   - https://github.com/Tommertom/svelte-ionic-conference-demo
   - `npx degit Tommertom/svelte-ionic-conference-demo svelte-ionic-conference-demo`
 
-Or clone the repo of the full-demo-app and remove whatever you don't need:
+Would you like to start any of the above in your favorite framework (React, Vue or Angular), just use the Ionic CLI to start the app: `ionic start --type=angular|vue|react`. Ionic CLI is easy to install: `npm i -g @ionic/cli`. https://ionicframework.com/docs/cli/commands/start.
+
+Or clone the repo of the full-demo-app to play with its code:
 
 ```bash
 npx degit Tommertom/svelte-ionic-app svelte-ionic-app
