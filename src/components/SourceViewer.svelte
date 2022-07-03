@@ -87,6 +87,8 @@
       lines.forEach((line) => {
         const scanLine = line
           .replace("```html", "")
+          .replace("```javascript", "")
+          .replace("```typescript", "")
           .replace("```tsx", "")
           .replace("```", "")
           .replace("\r", "\n");
@@ -109,7 +111,7 @@
         }
       });
 
-      //      console.log("CODE STUFF", sources, Object.keys(sources));
+      console.log("CODE STUFF", responseText, sources, Object.keys(sources));
 
       // change to the last one selected, but only if found
       const lastSelected = (await localForage.getItem(LASTLANGSELECTEDKEY)) as string;
