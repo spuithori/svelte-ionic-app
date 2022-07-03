@@ -59,7 +59,6 @@ As far as I can see now, the current new version is getting there pretty close!
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
 
 ## Screenshots
-Some highlights:
 <table>
   <tr>
     <th>Intro</th>
@@ -81,7 +80,7 @@ Some highlights:
 <th>PWA IOS install</th>
   </tr>
   <tr>
-       <td style="text-align: center"><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
+       <td align="center"><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
      <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE).png" width="45%"></td>
        <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Badge(iPhone XR).png" width="45%"></td>
   </tr> 
