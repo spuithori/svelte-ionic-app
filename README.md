@@ -26,6 +26,7 @@
 
 
 - [Introduction](#introduction)
+- [Screenshots](#screenshots)
 - [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
@@ -56,6 +57,29 @@ Design objectives
 As far as I can see now, the current new version is getting there pretty close! 
 
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
+
+## Screenshots
+Some highlights:
+<table>
+  <tr>
+    <th>Intro</th>
+    <th>Component menu</th>
+    <th>Sourcecode</th>
+<th>Progress bar</th>
+<th>Icons</th>
+  </tr>
+  <tr>
+    <td>
+<img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE).png" width="65%" ></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
+    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
+     <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE).png" width="45%"></td>
+     
+  </tr> 
+</table>
+
+More screens: https://ionicsvelte.firebaseapp.com
 
 ## All starters - how to get started quickly!
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
@@ -107,29 +131,6 @@ The following derived stores are implemented:
 All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
-
-## Screenshots
-Some highlights:
-<table>
-  <tr>
-    <th>Intro</th>
-    <th>Component menu</th>
-    <th>Sourcecode</th>
-<th>Progress bar</th>
-<th>Icons</th>
-  </tr>
-  <tr>
-    <td>
-<img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE).png" width="65%" ></td>
-    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
-    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_folder_Inbox(iPhone SE) (2).png" width="45%"></td>
-    <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE) (1).png" width="45%"></td>
-     <td><img alt="IonicSvelte" title="IonicSvelte" src="screenshots/localhost_3000_components_Card(iPhone SE).png" width="45%"></td>
-     
-  </tr> 
-</table>
-
-More screens: https://ionicsvelte.firebaseapp.com
 
 ## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
