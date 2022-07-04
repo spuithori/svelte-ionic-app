@@ -2,8 +2,8 @@
   import SourceButton from "$components/SourceButton.svelte";
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
-  const onIonViewDidEnter = () => {
-    console.log("Avatar:onIonViewWillEnter");
+  const ionViewDidEnter = () => {
+    console.log("Avatar:ionViewDidEnter");
   };
 </script>
 
@@ -11,7 +11,7 @@
   <title>Ionic Companion - Avatars</title>
 </svelte:head>
 
-<IonPage {onIonViewDidEnter} route="/components/Avatar">
+<IonPage {ionViewDidEnter}>
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">

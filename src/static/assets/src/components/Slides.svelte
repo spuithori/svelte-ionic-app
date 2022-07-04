@@ -1,16 +1,16 @@
 <script lang="ts">
   import { menu } from "ionicons/icons";
   import SourceButton from "$components/SourceButton.svelte";
-  import { getIonicMenu } from "$ionic/svelte";
+  import { menuController } from "$ionic/svelte";
 
   let menuIconClicked = false;
 
   const flipMenuOnOff = () => {
     setTimeout(() => {
-      getIonicMenu("mainmenu").open(true);
+      menuController.open("mainmenu");
       if (!menuIconClicked) {
         setTimeout(() => {
-          getIonicMenu("mainmenu").close(true);
+          menuController.close("mainmenu");
         }, 2000);
       }
     }, 2000);
@@ -18,7 +18,7 @@
 
   const flipMenuOn = () => {
     menuIconClicked = true;
-    getIonicMenu("mainmenu").open(true);
+    menuController.open("mainmenu");
   };
 </script>
 

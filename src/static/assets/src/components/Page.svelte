@@ -2,52 +2,21 @@
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import SourceButton from "$components/SourceButton.svelte";
 
-  import {
-    onIonViewWillEnter as onIonViewWillEnterFn,
-    onIonViewDidEnter as onIonViewDidEnterFn,
-    onIonViewWillLeave as onIonViewWillLeaveFn,
-    onIonViewDidLeave as onIonViewDidLeaveFn,
-  } from "$ionic/svelte";
-
-  const onIonViewWillEnter = () => {
-    console.log("Page:onIonViewWillEnter");
+  const ionViewWillEnter = () => {
+    console.log("Page:ionViewWillEnter");
   };
 
-  const onIonViewDidEnter = () => {
-    console.log("Page:onIonViewDidEnter");
+  const ionViewDidEnter = () => {
+    console.log("Page:ionViewDidEnter");
   };
 
-  const onIonViewWillLeave = () => {
-    console.log("Page:onIonViewWillLeave");
+  const ionViewWillLeave = () => {
+    console.log("Page:ionViewWillLeave");
   };
 
-  const onIonViewDidLeave = () => {
-    console.log("Page:onIonViewDidLeave");
+  const ionViewDidLeave = () => {
+    console.log("Page:ionViewDidLeave");
   };
-
-  const codeSnippet = `import {
-    onIonViewWillEnter,
-    onIonViewDidEnter,
-    onIonViewWillLeave,
-    onIonViewDidLeave,
-  } from "$ionic/svelte";
-
-  onIonViewWillEnter("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillEnter hook");
-  });
-
-  onIonViewDidEnter("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidEnter hook");
-  });
-
-  onIonViewWillLeave("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillLeave hook");
-  });
-
-  onIonViewDidLeave("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidLeave hook");
-  });
-  `;
 
   const ionPageSyntax = `...
   const ionViewWillEnter=
@@ -55,41 +24,14 @@
         ionViewWillLeave=
         ionViewDidLeave=console.log('We got an event!') 
   
-
-  <IonPage route="/components/Page"
-    {ionViewWillEnter}
-    {ionViewDidEnter}
-    {ionViewWillLeave}
-    {ionViewDidLeave}>`;
-
-  onIonViewWillEnterFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillEnter hook");
-  });
-
-  onIonViewDidEnterFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidEnter hook");
-  });
-
-  onIonViewWillLeaveFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillLeave hook");
-  });
-
-  onIonViewDidLeaveFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidLeave hook");
-  });
+  <IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>`;
 </script>
 
 <svelte:head>
   <title>Ionic Companion - Page</title>
 </svelte:head>
 
-<IonPage
-  route="/components/Page"
-  ionViewWillEnter={onIonViewWillEnter}
-  ionViewDidEnter={onIonViewDidEnter}
-  ionViewWillLeave={onIonViewWillLeave}
-  ionViewDidLeave={onIonViewDidLeave}
->
+<IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -102,37 +44,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content fullscreen>
+  <ion-content fullscreen class="ion-padding">
     <ion-card>
-      This intends to show the working of the IonPage component. This holds the lifecycle hooks:
-      <br />
-      <pre>
+      <ion-card-header><h1>API specs for IonPage</h1></ion-card-header>
+      <ion-card-content>
+        This intends to show the working of the IonPage component. This components the lifecycle
+        hooks and proper animation for a page shown in your app. The following lifecycle hooks are
+        provided for:
+        <br />
+        <pre>
   ionViewWillEnter
   ionViewDidEnter
   ionViewWillLeave
   ionViewDidLeave
 </pre>
-
-      Syntax:
-      <pre>
+        You can bind the hook using simple function binding.
+        <pre>
   {ionPageSyntax}
 </pre>
 
-      Unfortunately (for now) this IonPage implementation requires that your tell it its
-      corresponding route, this to make sure the ionWillEnter event will fire. All other IonPage
-      lifecycle events work using router hooks and/or svelte mount/destroy hooks.
-      <br /><br />
-
-      You can attach hooks using properties, or using similar syntax as onMount or onDestroy.
-
-      <ion-card>
-        <pre>
-  {codeSnippet}
-</pre>
-
-        The first argument is the route, the second the hook to be called. Only one hook can be
-        attached to one specific route.
-      </ion-card>
+        Easy does it!
+      </ion-card-content>
     </ion-card>
   </ion-content>
 </IonPage>

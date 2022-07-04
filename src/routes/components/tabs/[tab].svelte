@@ -6,8 +6,7 @@
   import Music from "$components/Music.svelte";
   import TabsExplain from "$components/TabsExplain.svelte";
 
-  let tabs = $params.tabs;
-  let tab = tabs[0];
+  let tab = $params.tab;
 
   const myTabs = [
     {

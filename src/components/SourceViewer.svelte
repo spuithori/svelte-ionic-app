@@ -23,9 +23,6 @@
   if (name.length == 0) {
     name = "Splash";
   }
-  if (name.toLowerCase().includes("tabs")) {
-    name = "tabs";
-  }
 
   let apiName = name.toLowerCase();
 
@@ -107,11 +104,10 @@
           inTag = true;
           foundLang = scanLine.replace('<TabItem value="', "").replace('">', "").replace("\n", "");
           languages = [...languages, foundLang].sort();
-          // console.log("FOUND lang", foundLang);
         }
       });
 
-      console.log("CODE STUFF", responseText, sources, Object.keys(sources));
+      //  console.log("CODE STUFF", responseText, sources, Object.keys(sources));
 
       // change to the last one selected, but only if found
       const lastSelected = (await localForage.getItem(LASTLANGSELECTEDKEY)) as string;

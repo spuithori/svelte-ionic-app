@@ -2,52 +2,21 @@
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import SourceButton from "$components/SourceButton.svelte";
 
-  import {
-    onIonViewWillEnter as onIonViewWillEnterFn,
-    onIonViewDidEnter as onIonViewDidEnterFn,
-    onIonViewWillLeave as onIonViewWillLeaveFn,
-    onIonViewDidLeave as onIonViewDidLeaveFn,
-  } from "$ionic/svelte";
-
-  const onIonViewWillEnter = () => {
-    console.log("Page:onIonViewWillEnter");
+  const ionViewWillEnter = () => {
+    console.log("Page:ionViewWillEnter");
   };
 
-  const onIonViewDidEnter = () => {
-    console.log("Page:onIonViewDidEnter");
+  const ionViewDidEnter = () => {
+    console.log("Page:ionViewDidEnter");
   };
 
-  const onIonViewWillLeave = () => {
-    console.log("Page:onIonViewWillLeave");
+  const ionViewWillLeave = () => {
+    console.log("Page:ionViewWillLeave");
   };
 
-  const onIonViewDidLeave = () => {
-    console.log("Page:onIonViewDidLeave");
+  const ionViewDidLeave = () => {
+    console.log("Page:ionViewDidLeave");
   };
-
-  const codeSnippet = `import {
-    onIonViewWillEnter,
-    onIonViewDidEnter,
-    onIonViewWillLeave,
-    onIonViewDidLeave,
-  } from "$ionic/svelte";
-
-  onIonViewWillEnter("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillEnter hook");
-  });
-
-  onIonViewDidEnter("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidEnter hook");
-  });
-
-  onIonViewWillLeave("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillLeave hook");
-  });
-
-  onIonViewDidLeave("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidLeave hook");
-  });
-  `;
 
   const ionPageSyntax = `...
   const ionViewWillEnter=
@@ -55,41 +24,16 @@
         ionViewWillLeave=
         ionViewDidLeave=console.log('We got an event!') 
   
-
-  <IonPage route="/components/Page"
-    {ionViewWillEnter}
-    {ionViewDidEnter}
-    {ionViewWillLeave}
-    {ionViewDidLeave}>`;
-
-  onIonViewWillEnterFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillEnter hook");
-  });
-
-  onIonViewDidEnterFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidEnter hook");
-  });
-
-  onIonViewWillLeaveFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewWillLeave hook");
-  });
-
-  onIonViewDidLeaveFn("/components/Page", () => {
-    console.log("Page:the on-function as onIonViewDidLeave hook");
-  });
+  <IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>
+  
+  `;
 </script>
 
 <svelte:head>
   <title>Ionic Companion - Page</title>
 </svelte:head>
 
-<IonPage
-  route="/components/Page"
-  ionViewWillEnter={onIonViewWillEnter}
-  ionViewDidEnter={onIonViewDidEnter}
-  ionViewWillLeave={onIonViewWillLeave}
-  ionViewDidLeave={onIonViewDidLeave}
->
+<IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -102,7 +46,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content fullscreen>
+  <ion-content fullscreen class="ion-padding">
     <ion-card>
       <ion-card-header><h1>API specs for IonPage</h1></ion-card-header>
       <ion-card-content>
@@ -116,21 +60,12 @@
   ionViewWillLeave
   ionViewDidLeave
 </pre>
-        The first way is to bind the function to the dom-element. This seems the easiest way to me, as
-        you simply give the function the same name as the event and then bind it using brackets. Providing
-        a route is optional for this way of binding lifecycle hooks.
+        You can bind the hook using simple function binding.
         <pre>
   {ionPageSyntax}
 </pre>
 
-        The other way is similar to the `onMount()` way of working in svelte:
-
-        <pre>
-  {codeSnippet}
-</pre>
-        In support of this way of working, it is required to provide a route to IonPage. The first argument
-        is the route, the second the hook to be called. Only one hook can be attached to one specific
-        route.
+        Easy does it!
       </ion-card-content>
     </ion-card>
   </ion-content>

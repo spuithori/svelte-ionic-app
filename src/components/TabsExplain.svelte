@@ -1,3 +1,7 @@
+<script>
+  import SourceButton from "./SourceButton.svelte";
+</script>
+
 <svelte:head>
   <title>Ionic Companion - Tabs Explain</title>
 </svelte:head>
@@ -8,6 +12,9 @@
       <ion-menu-button />
     </ion-buttons>
     <ion-title>Explanation</ion-title>
+    <ion-buttons slot="end">
+      <SourceButton name="tabs" />
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

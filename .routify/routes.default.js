@@ -706,15 +706,15 @@ export default {
               "meta": {
                 "dynamic": true
               },
-              "id": "_default_components_tabs_____tabs__svelte",
-              "name": "[...tabs]",
-              "module": () => import('../src/routes/components/tabs/[...tabs].svelte'),
+              "id": "_default_components_tabs__tab__svelte",
+              "name": "[tab]",
+              "module": () => import('../src/routes/components/tabs/[tab].svelte'),
               "file": {
-                "path": "src/routes/components/tabs/[...tabs].svelte",
+                "path": "src/routes/components/tabs/[tab].svelte",
                 "dir": "src/routes/components/tabs",
-                "base": "[...tabs].svelte",
+                "base": "[tab].svelte",
                 "ext": ".svelte",
-                "name": "[...tabs]"
+                "name": "[tab]"
               },
               "children": []
             },

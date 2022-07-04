@@ -40,7 +40,7 @@
       let url = route.path;
 
       const label = capitalizeFirstLetter(route.name);
-      if (label === "Tabs") url = "/components/tabs/[...tabs]";
+      if (label === "Tabs") url = "/components/tabs/[tab]";
 
       return {
         url,

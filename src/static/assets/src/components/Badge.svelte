@@ -1,14 +1,9 @@
 <script>
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import SourceButton from "$components/SourceButton.svelte";
-  import { onIonViewDidEnter } from "$ionic/svelte";
-
-  onIonViewDidEnter("/components/Badge", () => {
-    console.log("Badge:onIonViewWillEnter");
-  });
 </script>
 
-<IonPage route="/compontents/badge">
+<IonPage>
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">

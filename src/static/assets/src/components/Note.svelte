@@ -2,33 +2,28 @@
   import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import SourceButton from "$components/SourceButton.svelte";
 
-  const onIonViewWillEnter = () => {
-    console.log("Note:onIonViewWillEnter");
+  const ionViewWillEnter = () => {
+    console.log("Note:ionViewWillEnter");
   };
 
-  const onIonViewDidEnter = () => {
-    console.log("Note:onIonViewDidEnter");
+  const ionViewDidEnter = () => {
+    console.log("Note:ionViewDidEnter");
   };
 
-  const onIonViewWillLeave = () => {
-    console.log("Note:onIonViewWillLeave");
+  const ionViewWillLeave = () => {
+    console.log("Note:ionViewWillLeave");
   };
 
-  const onIonViewDidLeave = () => {
-    console.log("Note:onIonViewDidLeave");
+  const ionViewDidLeave = () => {
+    console.log("Note:ionViewDidLeave");
   };
 </script>
 
 <svelte:head>
   <title>Ionic Companion - Notes</title>
 </svelte:head>
-<IonPage
-  route="/components/Note"
-  ionViewWillEnter={onIonViewWillEnter}
-  ionViewDidEnter={onIonViewDidEnter}
-  ionViewWillLeave={onIonViewWillLeave}
-  ionViewDidLeave={onIonViewDidLeave}
->
+
+<IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>
   <ion-header translucent="true">
     <ion-toolbar>
       <ion-buttons slot="start">

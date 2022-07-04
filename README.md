@@ -221,7 +221,7 @@ These are Ionic 4 components only.
 
 - Adding custom class to Modal/Popover does not work (using controller) - using inline Modal/Popover is probably better anyway
 
-- In some cases IonPage clips the content enclosed - then you need to remove main tags in IonTabs
+- In some cases IonPage clips the content enclosed - then you need to remove main tags in IonPage
 
 - Routerlink, href and similar props on components like ion-item do not work properly, but I wonder if support is needed
 
