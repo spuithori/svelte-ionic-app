@@ -2,7 +2,7 @@
 <h1 align="center"> Ionic Svelte Demo </h1> <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="IonicSvelte" title="IonicSvelte" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/svelte-ionic-vite.png" width="350">
+    <img alt="IonicSvelte" title="IonicSvelte" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/src/static/assets/svelte-ionic-vite.png" width="350">
   </a>
 </p>
 <br>
@@ -15,7 +15,7 @@
 <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/master/src/static/assets/img/pwa-download.png" width="140"  target="_blank">
+    <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/src/static/assets/img/pwa-download.png" width="140"  target="_blank">
   </a>
 </p>
 <br>
