@@ -192,7 +192,7 @@ But, the highlights for now:
 - shows source code for all documented APIs - Vue, Angular, Javascript and Stencil. Next to Svelte!!
 
 ## REPLS
-REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/master/REPLS.md
+REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/main/REPLS.md
 These are Ionic 4 components only.
 
 ## Todo
