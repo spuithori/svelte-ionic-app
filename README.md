@@ -104,26 +104,34 @@ If you want to get started with Ionic, Svelte and Vite, just use one of the star
 * Blank demo 
   - https://github.com/Tommertom/svelte-ionic-blank-demo
   - `npx degit Tommertom/svelte-ionic-blank-demo svelte-ionic-blank-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-blank-demo
 
 * Tabs demo 
   - https://github.com/Tommertom/svelte-ionic-tabs-demo
   - `npx degit Tommertom/svelte-ionic-tabs-demo svelte-ionic-tabs-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-tabs-demo
 
 * Sidemenu demo 
   - https://github.com/Tommertom/svelte-ionic-sidemenu-demo
   - `npx degit Tommertom/svelte-ionic-sidemenu-demo svelte-ionic-sidemenu-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-sidemenu-demo
 
 * Mystarter demo - taking photo with Capacitor 
   - https://github.com/Tommertom/svelte-ionic-mystarter-demo
   - `npx degit Tommertom/svelte-ionic-mystarter-demo svelte-ionic-mystarter-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-mystarter-demo
 
 * List demo 
   - https://github.com/Tommertom/svelte-ionic-list-demo
   - `npx degit Tommertom/svelte-ionic-list-demo svelte-ionic-list-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-list-demo
 
 * Conference demo - (sort of...check its README) 
   - https://github.com/Tommertom/svelte-ionic-conference-demo
   - `npx degit Tommertom/svelte-ionic-conference-demo svelte-ionic-conference-demo`
+  - Online playground - https://codesandbox.io/s/github/Tommertom/svelte-ionic-conference-demo
+
+When using the online playground - make sure you pop-out the render window to see the demo in full size.
 
 Would you like to start any of the above in your favorite framework (React, Vue or Angular), just use the Ionic CLI to start the app: `ionic start --type=angular|vue|react`. Ionic CLI is easy to install: `npm i -g @ionic/cli`. https://ionicframework.com/docs/cli/commands/start.
 
@@ -196,6 +204,7 @@ REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/main/REPLS.
 These are Ionic 4 components only.
 
 ## Todo
+- Investigate why ripple effect does not work on click of ion-item
 - Get many to test and use Svelte, Ionic and Vite :)
 
 ## Issues - help needed/workaround provided
@@ -251,5 +260,8 @@ README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
 
 PWA logo: https://github.com/webmaxru/progressive-web-apps-logo
 
-Borat logo:https://sapper.svelte.dev/
+Borat logo: https://sapper.svelte.dev/
 
+Roxi Routify router:  https://v3.ci.routify.dev/docs#
+
+Raymondboswel's repo: https://github.com/raymondboswel/ionic-svelte-example
