@@ -24,7 +24,9 @@
         ionViewWillLeave=
         ionViewDidLeave=console.log('We got an event!') 
   
-  <IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>`;
+  <IonPage {ionViewWillEnter} {ionViewDidEnter} {ionViewWillLeave} {ionViewDidLeave}>
+  
+  `;
 </script>
 
 <svelte:head>

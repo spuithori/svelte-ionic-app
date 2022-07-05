@@ -1,5 +1,6 @@
 <script lang="ts">
   import Menu from "$components/Menu.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 </script>
 
 <ion-app>

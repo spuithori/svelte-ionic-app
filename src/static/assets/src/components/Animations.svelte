@@ -1,5 +1,6 @@
 <script lang="ts">
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   import { createAnimation } from "@ionic/core";
   import { onMount } from "svelte";
@@ -55,27 +56,30 @@
 <svelte:head>
   <title>Ionic Companion - Animations</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Animations" />
-    </ion-buttons>
-    <ion-title>Animations</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <div class="square" bind:this={squareA} />
-  <div class="square" bind:this={squareB} />
-  <div class="square" bind:this={squareC} />
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Animations" />
+      </ion-buttons>
+      <ion-title>Animations</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-button on:click={play}>Play</ion-button>
-  <ion-button on:click={pause}>Pause</ion-button>
-  <ion-button on:click={stop}>Stop</ion-button>
-</ion-content>
+  <ion-content fullscreen class="ion-padding">
+    <div class="square" bind:this={squareA} />
+    <div class="square" bind:this={squareB} />
+    <div class="square" bind:this={squareC} />
+
+    <ion-button on:click={play}>Play</ion-button>
+    <ion-button on:click={pause}>Pause</ion-button>
+    <ion-button on:click={stop}>Stop</ion-button>
+  </ion-content>
+</IonPage>
 
 <style>
   .square {

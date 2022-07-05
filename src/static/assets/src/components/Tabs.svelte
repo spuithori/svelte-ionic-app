@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IonTab from "$lib/ionic/svelte/components/IonTabs.svelte";
+  import IonTab from "$ionic/svelte/components/IonTabs.svelte";
   import { params } from "@roxi/routify";
 
   import Controllers from "../Controllers.svelte";

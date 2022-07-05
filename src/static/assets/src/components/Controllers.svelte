@@ -14,6 +14,7 @@
   import SourceButton from "$components/SourceButton.svelte";
 
   import Music from "$components/Music.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   let inlineModalOpen = false;
   let breakpoints = [0, 0.5, 1];
@@ -393,55 +394,60 @@
 <svelte:head>
   <title>Ionic Companion - Controllers</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Controllers" />
-    </ion-buttons>
-    <ion-title>Controllers</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <h1>All controllers in one page</h1>
-  <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
-  <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
-  <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
-  <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
-  <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Controllers" />
+      </ion-buttons>
+      <ion-title>Controllers</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-button expand="block" on:click={showModalController}>Show modal - via controller</ion-button>
-  <ion-button
-    expand="block"
-    on:click={() => {
-      inlineModalOpen = true;
-    }}>Show modal - via inline & as sheet</ion-button
-  >
-  <ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
-  <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
-  <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
-  <ion-button expand="block" on:click={showToast}>Show Toast</ion-button>
+  <ion-content fullscreen class="ion-padding">
+    <h1>All controllers in one page</h1>
+    <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
+    <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
+    <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
+    <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
+    <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
 
-  <ion-modal
-    is-open={inlineModalOpen}
-    initial-breakpoint="0.5"
-    {breakpoints}
-    on:ionModalDidDismiss={inlineModalDismissed}
-  >
-    <ion-content>
-      <br /><br /><br />
-      <ion-button
-        expand="block"
-        on:click={() => {
-          inlineModalOpen = false;
-        }}
-      >
-        Close modal
-      </ion-button>
-      <Music />
-    </ion-content>
-  </ion-modal>
-</ion-content>
+    <ion-button expand="block" on:click={showModalController}
+      >Show modal - via controller</ion-button
+    >
+    <ion-button
+      expand="block"
+      on:click={() => {
+        inlineModalOpen = true;
+      }}>Show modal - via inline & as sheet</ion-button
+    >
+    <ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
+    <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
+    <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
+    <ion-button expand="block" on:click={showToast}>Show Toast</ion-button>
+
+    <ion-modal
+      is-open={inlineModalOpen}
+      initial-breakpoint="0.5"
+      {breakpoints}
+      on:ionModalDidDismiss={inlineModalDismissed}
+    >
+      <ion-content>
+        <br /><br /><br />
+        <ion-button
+          expand="block"
+          on:click={() => {
+            inlineModalOpen = false;
+          }}
+        >
+          Close modal
+        </ion-button>
+        <Music />
+      </ion-content>
+    </ion-modal>
+  </ion-content>
+</IonPage>

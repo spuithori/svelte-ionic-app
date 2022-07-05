@@ -2,6 +2,7 @@
   import { createAnimation, createGesture } from "@ionic/core";
   import { onMount } from "svelte";
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   let animation;
   let gesture;
@@ -106,35 +107,38 @@
 <svelte:head>
   <title>Ionic Companion - Gesture</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Gesture" />
-    </ion-buttons>
-    <ion-title>Gesture</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <ion-card>
-    <div class="moveTrack" bind:this={moveTrack}>
-      <div class="square" bind:this={movableSquare} />
-    </div>
-    <p>Drag the square along the track.</p>
-  </ion-card>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Gesture" />
+      </ion-buttons>
+      <ion-title>Gesture</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-card>
-    <div class="rectangle" bind:this={swipeTrack} />
-    <p>Swipe to start tracking</p>
-    <div>Type: {gestureType}</div>
-    <div>Current X: {currentX}</div>
-    <div>Delta X: {deltaX}</div>
-    <div>Velocity X: {velocityX}</div>
-  </ion-card>
-</ion-content>
+  <ion-content fullscreen class="ion-padding">
+    <ion-card>
+      <div class="moveTrack" bind:this={moveTrack}>
+        <div class="square" bind:this={movableSquare} />
+      </div>
+      <p>Drag the square along the track.</p>
+    </ion-card>
+
+    <ion-card>
+      <div class="rectangle" bind:this={swipeTrack} />
+      <p>Swipe to start tracking</p>
+      <div>Type: {gestureType}</div>
+      <div>Current X: {currentX}</div>
+      <div>Delta X: {deltaX}</div>
+      <div>Velocity X: {velocityX}</div>
+    </ion-card>
+  </ion-content>
+</IonPage>
 
 <style>
   .square {

@@ -2,6 +2,7 @@
   import { pickerController } from "$ionic/svelte";
 
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const showPicker = async () => {
     const defaultColumnOptions = [["Dog", "Cat", "Bird", "Lizard", "Chinchilla"]];
@@ -62,18 +63,21 @@
 <svelte:head>
   <title>Ionic Companion - Picker</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Picker" />
-    </ion-buttons>
-    <ion-title>Picker</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
-</ion-content>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Picker" />
+      </ion-buttons>
+      <ion-title>Picker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
+  </ion-content>
+</IonPage>

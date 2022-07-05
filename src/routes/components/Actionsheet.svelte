@@ -12,6 +12,7 @@
   } from "$ionic/svelte";
 
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const showActionSheet = async () => {
     const options = {
@@ -60,18 +61,21 @@
 <svelte:head>
   <title>Ionic Companion - Action Sheet</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Actionsheet" />
-    </ion-buttons>
-    <ion-title>Action sheet</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
-</ion-content>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Actionsheet" />
+      </ion-buttons>
+      <ion-title>Action sheet</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block" on:click={showActionSheet}> Action Sheet </ion-button>
+  </ion-content>
+</IonPage>

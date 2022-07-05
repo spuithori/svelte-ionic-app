@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const names = [
     "Burt Bear",
@@ -65,37 +66,40 @@
 <svelte:head>
   <title>Ionic Companion - Refresher</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Refresher" />
-    </ion-buttons>
-    <ion-title>Pull to refresh</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <ion-refresher slot="fixed" bind:this={refresher} on:ionRefresh={refreshAction}>
-    <ion-refresher-content />
-  </ion-refresher>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Refresher" />
+      </ion-buttons>
+      <ion-title>Pull to refresh</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-list>
-    {#each itemList as item}
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src={item.avatar} alt={item.avatar} />
-        </ion-avatar>
-        <ion-label class="ion-text-wrap">
-          <h2>{chooseRandomName()}</h2>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        </ion-label>
-      </ion-item>
-    {/each}
-  </ion-list>
-</ion-content>
+  <ion-content>
+    <ion-refresher slot="fixed" bind:this={refresher} on:ionRefresh={refreshAction}>
+      <ion-refresher-content />
+    </ion-refresher>
+
+    <ion-list>
+      {#each itemList as item}
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src={item.avatar} alt={item.avatar} />
+          </ion-avatar>
+          <ion-label class="ion-text-wrap">
+            <h2>{chooseRandomName()}</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          </ion-label>
+        </ion-item>
+      {/each}
+    </ion-list>
+  </ion-content>
+</IonPage>
 
 <style>
   :root {

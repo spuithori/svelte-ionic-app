@@ -2,6 +2,7 @@
   import { loadingController } from "$ionic/svelte";
 
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const showLoading = async () => {
     const options = {
@@ -21,18 +22,21 @@
 <svelte:head>
   <title>Ionic Companion - Loading</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Loading" />
-    </ion-buttons>
-    <ion-title>Loading</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
-</ion-content>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Loading" />
+      </ion-buttons>
+      <ion-title>Loading</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
+  </ion-content>
+</IonPage>

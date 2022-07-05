@@ -2,6 +2,7 @@
   import { alertController } from "$ionic/svelte";
 
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   const showAlert = async (options) => {
     const alert = await alertController.create(options);
@@ -211,21 +212,24 @@
 <svelte:head>
   <title>Ionic Companion - Alerts</title>
 </svelte:head>
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Alert" />
-    </ion-buttons>
-    <ion-title>Alerts</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content fullscreen class="ion-padding">
-  <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
-  <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
-  <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
-  <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
-</ion-content>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Alert" />
+      </ion-buttons>
+      <ion-title>Alerts</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block" on:click={showSimpleAlert}> Show Simple Alert </ion-button>
+    <ion-button expand="block" on:click={showRadioAlert}> Show Radio Alert </ion-button>
+    <ion-button expand="block" on:click={showCheckboxAlert}> Show Checkbox Alert </ion-button>
+    <ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
+  </ion-content>
+</IonPage>

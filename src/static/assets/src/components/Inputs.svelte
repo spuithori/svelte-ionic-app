@@ -1,5 +1,6 @@
 <script lang="ts">
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   let controller;
   let firstName, lastName;
@@ -35,62 +36,64 @@
   <title>Ionic Companion - Inputs</title>
 </svelte:head>
 
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Inputs" />
-    </ion-buttons>
-    <ion-title>Create Account</ion-title>
-  </ion-toolbar>
-</ion-header>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Inputs" />
+      </ion-buttons>
+      <ion-title>Create Account</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content fullscreen>
-  <form>
-    <ion-list lines="full" class="ion-no-margin ion-no-padding">
-      <ion-item>
-        <ion-label position="stacked">
-          First Name
-          <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input on:ionChange={handleFirstNameValue} required type="text" />
-      </ion-item>
+  <ion-content fullscreen>
+    <form>
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-label position="stacked">
+            First Name
+            <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input on:ionChange={handleFirstNameValue} required type="text" />
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">
-          Last Name
-          <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input on:ionChange={handleLastNameValue} required type="text" />
-      </ion-item>
+        <ion-item>
+          <ion-label position="stacked">
+            Last Name
+            <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input on:ionChange={handleLastNameValue} required type="text" />
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Title</ion-label>
-        <ion-input on:ionChange={changeValue} />
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Title</ion-label>
+          <ion-input on:ionChange={changeValue} />
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Address</ion-label>
-        <ion-input placeholder="Address Line 1" on:ionChange={changeValue} />
-        <ion-input placeholder="Address Line 2" on:ionChange={changeValue} />
-        <ion-input placeholder="City" on:ionChange={changeValue} />
-        <ion-input placeholder="State" on:ionChange={changeValue} />
-        <ion-input placeholder="Zip Code" on:ionChange={changeValue} />
-      </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Address</ion-label>
+          <ion-input placeholder="Address Line 1" on:ionChange={changeValue} />
+          <ion-input placeholder="Address Line 2" on:ionChange={changeValue} />
+          <ion-input placeholder="City" on:ionChange={changeValue} />
+          <ion-input placeholder="State" on:ionChange={changeValue} />
+          <ion-input placeholder="Zip Code" on:ionChange={changeValue} />
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Notes</ion-label>
-        <ion-textarea on:ionChange={changeValue} />
-      </ion-item>
-    </ion-list>
+        <ion-item>
+          <ion-label position="stacked">Notes</ion-label>
+          <ion-textarea on:ionChange={changeValue} />
+        </ion-item>
+      </ion-list>
 
-    <div class="ion-padding">
-      <ion-button expand="block" on:click={processForm} class="ion-no-margin">
-        Create account
-      </ion-button>
-    </div>
-  </form>
-</ion-content>
-<ion-alert-controller bind:this={controller} />
+      <div class="ion-padding">
+        <ion-button expand="block" on:click={processForm} class="ion-no-margin">
+          Create account
+        </ion-button>
+      </div>
+    </form>
+  </ion-content>
+  <ion-alert-controller bind:this={controller} />
+</IonPage>

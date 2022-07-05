@@ -1,10 +1,11 @@
 <script lang="ts">
-  import IonTab from "$lib/ionic/svelte/components/IonTabs.svelte";
+  import IonTab from "$ionic/svelte/components/IonTabs.svelte";
   import { params } from "@roxi/routify";
 
   import Controllers from "../Controllers.svelte";
   import Music from "$components/Music.svelte";
   import TabsExplain from "$components/TabsExplain.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   let tab = $params.tab;
 

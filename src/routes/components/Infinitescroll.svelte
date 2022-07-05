@@ -3,6 +3,7 @@
   import { users } from "../../services/users";
 
   import SourceButton from "$components/SourceButton.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
 
   let length = 0;
   let infiniteScroll;
@@ -54,34 +55,40 @@
   <title>Ionic Companion - Infinitescroll</title>
 </svelte:head>
 
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button />
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <SourceButton name="Infinitescroll" />
-    </ion-buttons>
-    <ion-title>Accounts - Scroll down to see it work!</ion-title>
-  </ion-toolbar>
-</ion-header>
+<IonPage>
+  <ion-header translucent="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button />
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <SourceButton name="Infinitescroll" />
+      </ion-buttons>
+      <ion-title>Accounts - Scroll down to see it work!</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content fullscreen>
-  <ion-list>
-    {#each itemList as item}
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src={item.avatar} alt={item.name} />
-        </ion-avatar>
-        <ion-label>
-          <h2>{item.name}</h2>
-          <p>Created {item.created}</p>
-        </ion-label>
-      </ion-item>
-    {/each}
-  </ion-list>
+  <ion-content fullscreen>
+    <ion-list>
+      {#each itemList as item}
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src={item.avatar} alt={item.name} />
+          </ion-avatar>
+          <ion-label>
+            <h2>{item.name}</h2>
+            <p>Created {item.created}</p>
+          </ion-label>
+        </ion-item>
+      {/each}
+    </ion-list>
 
-  <ion-infinite-scroll on:ionInfinite={infiniteAction} threshold="100px" bind:this={infiniteScroll}>
-    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data..." />
-  </ion-infinite-scroll>
-</ion-content>
+    <ion-infinite-scroll
+      on:ionInfinite={infiniteAction}
+      threshold="100px"
+      bind:this={infiniteScroll}
+    >
+      <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data..." />
+    </ion-infinite-scroll>
+  </ion-content>
+</IonPage>

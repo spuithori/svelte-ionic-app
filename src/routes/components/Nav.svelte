@@ -1,5 +1,6 @@
 <script lang="ts">
   import NavHome from "$components/NavHome.svelte";
+  import IonPage from "$ionic/svelte/components/IonPage.svelte";
   import { onMount, SvelteComponent } from "svelte";
 
   let ionNav: HTMLIonNavElement;
@@ -41,4 +42,6 @@
   <title>Ionic Companion - Nav</title>
 </svelte:head>
 
-<ion-nav bind:this={ionNav} {root} />
+<IonPage>
+  <ion-nav bind:this={ionNav} {root} />
+</IonPage>
