@@ -254,6 +254,8 @@ These are Ionic 4 components only.
 `ion-nav-link` - not sure why not, but haven't used it yet in a project. Maybe my bad. What do you think?
 
 ## Acknowledgements
+Logo by Brett Peary: https://brettpeary.com/
+
 Ionic UI code: https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api
 
 README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
@@ -265,3 +267,4 @@ Borat logo: https://sapper.svelte.dev/
 Roxi Routify router:  https://v3.ci.routify.dev/docs#
 
 Raymondboswel's repo: https://github.com/raymondboswel/ionic-svelte-example
+
