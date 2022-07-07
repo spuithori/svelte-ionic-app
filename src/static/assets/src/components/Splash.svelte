@@ -35,7 +35,7 @@
   <br />
   <div class="ion-text-center">
     <img
-      src="/assets/svelte-ionic-vite.png"
+      src="/assets/svelte-ionic-logo.png"
       alt="Great success"
       in:scale={{ duration: 1900, easing: elasticInOut }}
     />
