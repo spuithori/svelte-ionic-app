@@ -37,6 +37,6 @@
   </ion-header>
 
   <ion-content fullscreen class="ion-padding">
-    <ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
+    <ion-button expand="block" on:click={showLoading}>Click me!</ion-button>
   </ion-content>
 </IonPage>

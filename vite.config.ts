@@ -12,20 +12,14 @@ const pwaManifest = {
   theme_color: '#ffffff',
   icons: [
     {
-      src: '/assets/svelte-ionic-logo.png',
-      sizes: '192x192',
-      type: 'image/png',
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      src: '/assets/svelte-ionic-logo.png',
-      sizes: '512x512',
-      type: 'image/png',
-    },
-    {
-      src: '/assets/svelte-ionic-logo.png',
-      sizes: '512x512',
-      type: 'image/png',
-      purpose: 'any maskable',
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
