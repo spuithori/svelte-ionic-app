@@ -107,6 +107,8 @@ import { IonPopover } from "@ionic/core/components/ion-popover";
 import { IonSelectPopover } from "@ionic/core/components/ion-select-popover";
 import { IonToast } from "@ionic/core/components/ion-toast";
 
+import './stuff.js';
+
 // taken from Vue implementation of ionic
 const defineComponent = (tagName: string, customElement: any) => {
     if (typeof customElements === "undefined") return;
@@ -117,7 +119,6 @@ const defineComponent = (tagName: string, customElement: any) => {
 };
 
 export const defineIonComponents = () => {
-
     defineComponent("ion-accordion", IonAccordion);
     defineComponent("ion-accordion-group", IonAccordionGroup);
     defineComponent("ion-app", IonApp);
