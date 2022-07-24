@@ -210,11 +210,9 @@ These are Ionic 4 components only.
 - Get many to test and use Svelte, Ionic and Vite :)
 
 ## Issues - help needed/workaround provided
-- A nicer logo for this app (touch- & fav-icon) - anyone can help?
-
 - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?
 
-- Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx
+- Ion Back Button - does not show nor work - rebuild using https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/back-button/back-button.tsx - you can also make your own and do a history.back?
 
 - IonTabs needs to manually call the select method of ion-tabs to ensure the selectedTab prop is really acted upon. Issue known: https://github.com/ionic-team/ionic-framework/issues/20060. Gives a brief undesireable view on the wrong tab. Might need to look into the angular/react/vue way as these packages don't have this issue. Probably tabs is wired up in the router. 
 
@@ -222,7 +220,7 @@ These are Ionic 4 components only.
 
 - Ion Footer in Modal looks not ok - need to test in inline modal as well. 
 
-- bind:value does not seem to work on input and other form elements, so a click handler is needed - which is cumbersome - https://github.com/sveltejs/svelte/issues/892 - so probably not solvable without support by Ionic or Svelte
+- bind:value does not seem to work on input and other form elements, so a click handler is needed - which is cumbersome - https://github.com/sveltejs/svelte/issues/892 - so probably not solvable without support by Ionic or Svelte - or we need to create wrappers for all elements - which is quite some work and you will be required to manually import all elements you use per page (like with Vue and React) - which seems a drag to me?
 
 - Some styles are unused - related to md and ios options for webcomponents? Or need to be discarded. Probably issue with webcomponents and the nature of Ionic being sensitive to md or ios style (as part of its config)
 
@@ -240,15 +238,12 @@ These are Ionic 4 components only.
 
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 
-- IonPage sometimes clips the content - then you need to remove main tags in IonPage.svelte
 
 ## Things to do maybe one day...
-- Tailwind in separate repo?
-- Bundle optimisation using router bundling?
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - test ssr setup - compiling SSR runs ok - but, need to figure out how to serve
 - dark mode selector
-- Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else
+- Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else = https://github.com/sveltejs/kit/issues/5143
 
 ## Things not being implemented
 `ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolete because of usage of the router in this project. But tell me if I am wrong here!
