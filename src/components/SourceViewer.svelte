@@ -42,6 +42,11 @@
           } else {
             url += apiName;
           }
+
+          // svelte override
+          if (apiName.includes("svelte"))
+            url = "https://svelte.dev/tutorial/" + apiName.replace("svelte", "");
+
           APIlink = url;
         });
       }
@@ -182,15 +187,15 @@
           REPL
         </ion-button>
       {/if}
-      {#if !APIlink.includes("svelte")}
-        <ion-button
-          on:click={() => {
-            window.open(APIlink, "_blank");
-          }}
-        >
-          API
-        </ion-button>
-      {/if}
+
+      <ion-button
+        on:click={() => {
+          window.open(APIlink, "_blank");
+        }}
+      >
+        API
+      </ion-button>
+
       {#if sourceCode.length > 5}
         <ion-button on:click={copySource}>COPY</ion-button>
       {/if}

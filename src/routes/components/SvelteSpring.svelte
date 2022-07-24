@@ -25,7 +25,7 @@
         <ion-menu-button />
       </ion-buttons>
       <ion-buttons slot="end">
-        <SourceButton name="SvelteTweened" />
+        <SourceButton name="SvelteSpring" />
       </ion-buttons>
       <ion-title>Svelte Spring </ion-title>
     </ion-toolbar>
