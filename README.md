@@ -19,6 +19,7 @@
     <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/src/static/assets/img/pwa-download.png" width="140"  target="_blank">
   </a>
 </p>
+Click the PWA Launch button to see this app live in action - and install as PWA on your desktop or mobile!
 <br>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)

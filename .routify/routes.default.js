@@ -621,6 +621,62 @@ export default {
         },
         {
           "meta": {},
+          "id": "_default_components_SvelteAnimate_svelte",
+          "name": "SvelteAnimate",
+          "module": () => import('../src/routes/components/SvelteAnimate.svelte'),
+          "file": {
+            "path": "src/routes/components/SvelteAnimate.svelte",
+            "dir": "src/routes/components",
+            "base": "SvelteAnimate.svelte",
+            "ext": ".svelte",
+            "name": "SvelteAnimate"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_SvelteSpring_svelte",
+          "name": "SvelteSpring",
+          "module": () => import('../src/routes/components/SvelteSpring.svelte'),
+          "file": {
+            "path": "src/routes/components/SvelteSpring.svelte",
+            "dir": "src/routes/components",
+            "base": "SvelteSpring.svelte",
+            "ext": ".svelte",
+            "name": "SvelteSpring"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_SvelteTransition_svelte",
+          "name": "SvelteTransition",
+          "module": () => import('../src/routes/components/SvelteTransition.svelte'),
+          "file": {
+            "path": "src/routes/components/SvelteTransition.svelte",
+            "dir": "src/routes/components",
+            "base": "SvelteTransition.svelte",
+            "ext": ".svelte",
+            "name": "SvelteTransition"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
+          "id": "_default_components_SvelteTweened_svelte",
+          "name": "SvelteTweened",
+          "module": () => import('../src/routes/components/SvelteTweened.svelte'),
+          "file": {
+            "path": "src/routes/components/SvelteTweened.svelte",
+            "dir": "src/routes/components",
+            "base": "SvelteTweened.svelte",
+            "ext": ".svelte",
+            "name": "SvelteTweened"
+          },
+          "children": []
+        },
+        {
+          "meta": {},
           "id": "_default_components_Text_svelte",
           "name": "Text",
           "module": () => import('../src/routes/components/Text.svelte'),

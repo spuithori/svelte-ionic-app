@@ -6,8 +6,8 @@
   export let name = "/";
 
   const LASTLANGSELECTEDKEY = "lastLangSelected";
-  let REPLlink;
-  let APIlink;
+  let REPLlink: string;
+  let APIlink: string = "";
   let selectedCodeLanguage = "svelte";
   let sources = {};
   let languages = ["svelte"];
@@ -182,14 +182,15 @@
           REPL
         </ion-button>
       {/if}
-      <ion-button
-        on:click={() => {
-          window.open(APIlink, "_blank");
-        }}
-      >
-        API
-      </ion-button>
-
+      {#if !APIlink.includes("svelte")}
+        <ion-button
+          on:click={() => {
+            window.open(APIlink, "_blank");
+          }}
+        >
+          API
+        </ion-button>
+      {/if}
       {#if sourceCode.length > 5}
         <ion-button on:click={copySource}>COPY</ion-button>
       {/if}

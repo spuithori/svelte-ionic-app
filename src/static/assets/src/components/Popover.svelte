@@ -43,6 +43,6 @@
   </ion-header>
 
   <ion-content fullscreen class="ion-padding">
-    <ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
+    <ion-button expand="block" on:click={showPopover}>Click me!</ion-button>
   </ion-content>
 </IonPage>

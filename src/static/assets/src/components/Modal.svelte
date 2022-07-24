@@ -55,6 +55,7 @@
   </ion-header>
 
   <ion-content fullscreen class="ion-padding">
+    <h1>Click me stuff below!</h1>
     <ion-button expand="block" on:click={showModalController}
       >Show modal - via controller</ion-button
     >

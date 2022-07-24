@@ -30,6 +30,8 @@
   const changeValue = (event) => {
     console.log("Change of value", event.detail);
   };
+
+  let stuff = "";
 </script>
 
 <svelte:head>
@@ -49,7 +51,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content fullscreen>
+  <ion-content fullscreen class="ion-padding">
     <form>
       <ion-list lines="full" class="ion-no-margin ion-no-padding">
         <ion-item>
