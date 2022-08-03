@@ -50,6 +50,32 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+# PLEASE NOTE - MIGRATION PLANNED
+I am planning to migrate this project to SvelteKit SPA mode (so no SSR). This I will complete once the big new release of sveltekit is completed: https://github.com/sveltejs/kit/discussions/5748
+
+What does this mean for you if you have existing projects? It depends, as it is perfectly cool to stay on Svelte/Vite/Routify. 
+
+So why change? Well, reduce the number of dependencies (Routify) and taking the developer experience closer to all the developments by the Svelte team - as they do see Sveltekit as the way to go. And first tests also show that the build bundling is more spread out to the loading is even a bit faster!
+
+If you want to move your existing project (Vite/Svelte/Routify) to Sveltekit, I recommend scaffolding a clean sveltekit project (this or future version). The steps I had to go through so far:
+
+Configure as SPA only:
+  * Static adapter in svelte.config.js, with configuration of a fallback
+  * hooks.js - ` return resolve(event, { ssr: false });` as handle function
+
+Path aliases:
+* vite.config.js - adding the path aliases (does not work as per tutorials/docs in svelte.config.js)
+* tsconfig.json - add path aliases
+
+PWA (untested)
+* add vite pwa plugin
+* follow the sveltekit workaround on vite site
+* fix error in pwa.js: https://github.com/antfu/vite-plugin-pwa/issues/293
+
+Replace Routify with Sveltekit router - in your own components as well as the $ionic/svelte components
+* $goto will become goto - second argument is different - check documentation on $app/navigation https://kit.svelte.dev/docs/modules#$app-navigation
+* use beforeNavigate hook for ionViewWillLeave event in IonPage. 
+
 ## Introduction
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
