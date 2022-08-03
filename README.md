@@ -76,6 +76,8 @@ Replace Routify with Sveltekit router - in your own components as well as the $i
 * $goto will become goto - second argument is different - check documentation on $app/navigation https://kit.svelte.dev/docs/modules#$app-navigation
 * use beforeNavigate hook for ionViewWillLeave event in IonPage. 
 
+The Svelte-Vite-Routify repo will continue to exist as separate branch once the migration is completed. But I don't think I will upgrade things anymore.
+
 ## Introduction
 A showcase app for all Ionic UI elements - up to Ionic 6!!! Use this app to try-out the elements you like for your app, and then navigate directly to the API docs or the source code.
 
