@@ -11,7 +11,7 @@
   A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite.
 </p>
 <p align="center">
-  With handy tool to see the actual code in all popular frameworks - Svelte, Vue, React, Stencil and even Angular!
+  With handy tool to see the actual code in all popular frameworks - Svelte, Vue, React, Stencil, VanillaJS and even Angular!
 </p>
 <br>
 <p align="center">
@@ -162,6 +162,16 @@ All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
 
+## How to contribute?
+Would you like to contribute to this project? Great!
+
+What is there to do
+- EASY - fix typos (also great for your Github online profile - there are many), add examples for components
+- MEDIUM - fix some minor bugs ( e.g. SvelteSpring), improve layout of pages (e.g. SvelteTransition) 
+- HARD - look at the open issues below
+
+When you do a PR, make sure you explain what you did and why!
+
 ## PLEASE NOTE - MIGRATION PLANNED
 I am planning to migrate this project to SvelteKit SPA mode (so no SSR). This I will complete once the big new release of sveltekit is completed: https://github.com/sveltejs/kit/discussions/5748
 
@@ -241,6 +251,8 @@ These are Ionic 4 components only.
 
 ## Todo
 - Get many to test and use Svelte, Ionic and Vite :)
+- Ionic 6.2 minor changes
+- migration to SvelteKit (SPA mode) once the major update is there from their end
 - put 	`const createHTMLCompFromSvelte = ( from NavHome` into $ionic/svelte
 
 ## Issues - help needed/workaround provided
@@ -277,9 +289,7 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 
 ## Things to do maybe one day...
 - make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
-- test ssr setup - compiling SSR runs ok - but, need to figure out how to serve
 - dark mode selector
-- Sveltekit testing - but already know that SSR isn't ok and the integration with the router is something else = https://github.com/sveltejs/kit/issues/5143
 
 ## Things not being implemented
 `ion-router-link`, `ion-router`,`ion-route`, `ion-route-redirect` and `ion-router-outlet` - these are imho obsolete because of usage of the router in this project. But tell me if I am wrong here!
