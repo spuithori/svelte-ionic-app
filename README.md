@@ -21,7 +21,7 @@
 </p>
 Click the PWA Launch button to see this app live in action - and install as PWA on your desktop or mobile!
 <br>
-
+<br><br>
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![MIT license](https://img.shields.io/greasyfork/l/407466?style=flat-square)](./LICENSE.md)
@@ -161,7 +161,6 @@ All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
 
-
 # PLEASE NOTE - MIGRATION PLANNED
 I am planning to migrate this project to SvelteKit SPA mode (so no SSR). This I will complete once the big new release of sveltekit is completed: https://github.com/sveltejs/kit/discussions/5748
 
@@ -187,6 +186,10 @@ PWA (untested)
 Replace Routify with Sveltekit router - in your own components as well as the $ionic/svelte components
 * $goto will become goto - second argument is different - check documentation on $app/navigation https://kit.svelte.dev/docs/modules#$app-navigation
 * use beforeNavigate hook for ionViewWillLeave event in IonPage. 
+
+Make the app more Ionic
+* put stuff into index.html
+* put App.svelte stuff into __layout.svelte (ion-app wrapper etc)
 
 The Svelte-Vite-Routify repo will continue to exist as separate branch once the migration is completed. But I don't think I will upgrade things anymore.
 
@@ -236,8 +239,8 @@ REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/main/REPLS.
 These are Ionic 4 components only.
 
 ## Todo
-- Investigate why ripple effect does not work on click of ion-item
 - Get many to test and use Svelte, Ionic and Vite :)
+- put 	`const createHTMLCompFromSvelte = ( from NavHome` into $ionic/svelte
 
 ## Issues - help needed/workaround provided
 - IonTabs and IonPage have their own implementation only accessible as Svelte component, not web component. Need to figure out how to wrap them into a webcomponent, without loosing animation stuff. Webcomponent of ion-page gives known issue on transition (https://github.com/Auroratide/svelte-custom-element-transitions). So no webcomponent of ion-page available for now. IonPage does seem to work nicely though. Later I might try wrapping the ion-nav in other element and see if that makes the animation go?

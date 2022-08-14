@@ -2,7 +2,7 @@
   import * as allIonicIcons from "ionicons/icons";
   import NavDetail from "./NavDetail.svelte";
   import SourceButton from "$components/SourceButton.svelte";
-  import { Tech, techs } from "$services/techs";
+  import { type Tech, techs } from "$services/techs";
   import type { SvelteComponent } from "svelte";
 
   export let ionNav: HTMLIonNavElement;
