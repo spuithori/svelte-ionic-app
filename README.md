@@ -36,18 +36,18 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-  - [Introduction](#introduction)
-  - [Screenshots](#screenshots)
-  - [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
-  - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
+- [Introduction](#introduction)
+- [Screenshots](#screenshots)
+- [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
+- [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [PLEASE NOTE - MIGRATION PLANNED](#please-note---migration-planned)
-  - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
-  - [REPLS](#repls)
-  - [Todo](#todo)
-  - [Issues - help needed/workaround provided](#issues---help-neededworkaround-provided)
-  - [Things to do maybe one day...](#things-to-do-maybe-one-day)
-  - [Things not being implemented](#things-not-being-implemented)
-  - [Acknowledgements](#acknowledgements)
+- [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
+- [REPLS](#repls)
+- [Todo](#todo)
+- [Issues - help needed/workaround provided](#issues---help-neededworkaround-provided)
+- [Things to do maybe one day...](#things-to-do-maybe-one-day)
+- [Things not being implemented](#things-not-being-implemented)
+- [Acknowledgements](#acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -162,7 +162,7 @@ All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
 
-# PLEASE NOTE - MIGRATION PLANNED
+## PLEASE NOTE - MIGRATION PLANNED
 I am planning to migrate this project to SvelteKit SPA mode (so no SSR). This I will complete once the big new release of sveltekit is completed: https://github.com/sveltejs/kit/discussions/5748
 
 What does this mean for you if you have existing projects? It depends, as it is perfectly cool to stay on Svelte/Vite/Routify.  And if you are new to this repo - not to worry, you can still do cool coding with this!
