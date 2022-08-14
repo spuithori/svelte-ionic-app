@@ -40,6 +40,7 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 - [Screenshots](#screenshots)
 - [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
+- [How to contribute?](#how-to-contribute)
 - [PLEASE NOTE - MIGRATION PLANNED](#please-note---migration-planned)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
 - [REPLS](#repls)
