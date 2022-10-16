@@ -8,7 +8,7 @@
 </p>
 <br>
 <p align="center">
-  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite.
+  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite - no, not SvelteKit, see below.
 </p>
 <p align="center">
   With handy tool to see the actual code in all popular frameworks - Svelte, Vue, React, Stencil, VanillaJS and even Angular!
@@ -174,37 +174,15 @@ What is there to do
 When you do a PR, make sure you explain what you did and why!
 
 ## PLEASE NOTE - MIGRATION PLANNED
-I am planning to migrate this project to SvelteKit SPA mode (so no SSR). This I will complete once the big new release of sveltekit is completed: https://github.com/sveltejs/kit/discussions/5748
+I am planning to migrate this project to SvelteKit SPA mode (so no SSR). 
+
+See ongoing work on - https://github.com/Tommertom/kitrcionictest. Also with the steps to setup the Kit project and Ionic (see README)
 
 What does this mean for you if you have existing projects? It depends, as it is perfectly cool to stay on Svelte/Vite/Routify.  And if you are new to this repo - not to worry, you can still do cool coding with this!
 
 So why change? Well, reduce the number of dependencies (Routify) and taking the developer experience closer to all the developments by the Svelte team - as they do see Sveltekit as the way to go. And first tests also show that the build bundling is more spread out to the loading is even a bit faster!
 
-If you want to move your existing project (Vite/Svelte/Routify) to Sveltekit, I recommend scaffolding a clean sveltekit project (this or future version). The steps I had to go through so far:
-
-Configure as SPA only:
-  * Static adapter in svelte.config.js, with configuration of a fallback
-  * hooks.js - ` return resolve(event, { ssr: false });` as handle function
-
-Path aliases:
-* vite.config.js - adding the path aliases (does not work as per tutorials/docs in svelte.config.js)
-* tsconfig.json - add path aliases
-
-PWA (untested)
-* add vite pwa plugin
-* follow the sveltekit workaround on vite site
-* fix error in pwa.js: https://github.com/antfu/vite-plugin-pwa/issues/293
-
-Replace Routify with Sveltekit router - in your own components as well as the $ionic/svelte components
-* $goto will become goto - second argument is different - check documentation on $app/navigation https://kit.svelte.dev/docs/modules#$app-navigation
-* use beforeNavigate hook for ionViewWillLeave event in IonPage. 
-
-Make the app more Ionic
-* put stuff into index.html
-* put App.svelte stuff into __layout.svelte (ion-app wrapper etc)
-
 The Svelte-Vite-Routify repo will continue to exist as separate branch once the migration is completed. But I don't think I will upgrade things anymore.
-
 
 ## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
@@ -252,8 +230,8 @@ These are Ionic 4 components only.
 
 ## Todo
 - Get many to test and use Svelte, Ionic and Vite :)
-- Ionic 6.2 minor changes
-- migration to SvelteKit (SPA mode) once the major update is there from their end
+- Ionic 6.2 and Ionic 6.3
+- migration to SvelteKit (SPA mode) once the major update is there from their end - Work in Progress - https://github.com/Tommertom/kitrcionictest
 - put 	`const createHTMLCompFromSvelte = ( from NavHome` into $ionic/svelte
 
 ## Issues - help needed/workaround provided

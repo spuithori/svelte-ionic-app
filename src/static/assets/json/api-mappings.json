@@ -2,6 +2,7 @@
     "checkbox": "checkbox",
     "infinitescroll": "infinite-scroll",
     "slide": "slides",
+    "inputs":"input",
     "icon": "https://ionicons.com/",
     "skeleton": "skeleton-text",
     "progressbar": "progress-bar",
