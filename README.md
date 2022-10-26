@@ -204,16 +204,8 @@ adapter: adapter({
 ```
 - By default no ssr as it is a SPA - create file  `src/routes/+layout.ts` and add `export const ssr = false;`
 
-Svelte router steps
-- install roxy router run-all
-- package.json scripts changed to router build scripts
-- changes pages folder to routes folder (routify config in package.json) - I like it a bit more
-
 Configuring Svelte workspace to my liking
-- remove public folder
-- created static folder as static dir
-- config vite -> to include static dir for assets etc
-- add aliases using $ sign (in vite.config as well as tsconfig) - https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck
+- added `'$ionic': 'src/lib/ionic'` alias to svelte.config.js
 
 PWA steps:
 Follow the documentation on vite-plugin-pwa.netlify.app!! 
