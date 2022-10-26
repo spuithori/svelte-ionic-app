@@ -1,14 +1,14 @@
 
-<h1 align="center"> Ionic Svelte Demo </h1> <br>
+<h1 align="center"> Ionic SvelteKit Demo </h1> <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="IonicSvelte" title="IonicSvelte" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/src/static/assets/svelte-ionic-logo.png" width="350">
+    <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/src/static/assets/svelte-ionic-logo.png" width="350">
   </a>
   
 </p>
 <br>
 <p align="center">
-  A showcase app for all Ionic UI elements. Supercharged by Svelte and Vite - no, not SvelteKit, see below.
+  A showcase app for all Ionic UI elements. Supercharged by SvelteKit
 </p>
 <p align="center">
   With handy tool to see the actual code in all popular frameworks - Svelte, Vue, React, Stencil, VanillaJS and even Angular!
@@ -41,7 +41,6 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 - [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How to contribute?](#how-to-contribute)
-- [PLEASE NOTE - MIGRATION PLANNED](#please-note---migration-planned)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
 - [REPLS](#repls)
 - [Todo](#todo)
@@ -61,14 +60,16 @@ Published as web app: https://ionicsvelte.firebaseapp.com
 
 Design objectives
 - Use all Ionic 6 UI elements
-- Fast bundler using VITE
+- Integration with SvelteKit as framework (n.b. only SPA mode works, SSR won't fly with Ionic)
 - Ease PWA configuration with good documentation - using zero-config Vite (https://vite-plugin-pwa.netlify.app/)
 - Deployable as PWA
-- File based router (using Roxy/Routify)
+- File based router (using SvelteKit's router)
 - aligned as much as possible to the Ionic documentation for other integrations
 - supporting other framework developers through source-code viewing
 
 As far as I can see now, the current new version is getting there pretty close! 
+
+The original Svelte-Vite-Routify repo will continue to exist as separate branch (ViteSvelteIonic6) once the migration is completed. But I don't think I will upgrade that one anymore.
 
 Hint: try responsive design of the app and ionic UI magic by using various devices or the Chrome developer view: iOS, Android's material design and fullscreen desktop responsiveness guaranteed!
 
@@ -104,6 +105,8 @@ More screens: https://ionicsvelte.firebaseapp.com
 
 ## All starters - how to get started quickly!
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
+
+**PLEASE NOTE - THESE ARE NOT YET IN SVELTEKIT, BUT IN SVELTE+VITE+ROUTIFY**
 
 * Blank demo 
   - https://github.com/Tommertom/svelte-ionic-blank-demo
@@ -163,6 +166,8 @@ All these props are also available via the `pwaStatusStream` readable store.
 
 Vite has its own svelte version for integration - https://vite-plugin-pwa.netlify.app/frameworks/svelte.html
 
+And I have opted to create my own version and deviate from the SvelteKit generation routine as documented in Vite. I think the PWA part in SvelteKit and Vite may need a bit of better understanding on my end (or better documentation on their end?) - at least, the PWA implementation and generation works on this end - as far as I can see.
+
 ## How to contribute?
 Would you like to contribute to this project? Great!
 
@@ -173,22 +178,31 @@ What is there to do
 
 When you do a PR, make sure you explain what you did and why!
 
-## PLEASE NOTE - MIGRATION PLANNED
-I am planning to migrate this project to SvelteKit SPA mode (so no SSR). 
-
-See ongoing work on - https://github.com/Tommertom/kitrcionictest. Also with the steps to setup the Kit project and Ionic (see README)
-
-What does this mean for you if you have existing projects? It depends, as it is perfectly cool to stay on Svelte/Vite/Routify.  And if you are new to this repo - not to worry, you can still do cool coding with this!
-
-So why change? Well, reduce the number of dependencies (Routify) and taking the developer experience closer to all the developments by the Svelte team - as they do see Sveltekit as the way to go. And first tests also show that the build bundling is more spread out to the loading is even a bit faster!
-
-The Svelte-Vite-Routify repo will continue to exist as separate branch once the migration is completed. But I don't think I will upgrade things anymore.
-
 ## How I got started with this rebuild: the basic steps performed
 In pseudo code - this is what I did
 
-Scaffold the Svelte app
-- npm create vite@latest (config - Svelte, TS)
+Start a new SvelteKit project
+```
+npm create svelte@latest my-app
+cd my-app
+npm install
+```
+
+Make it a SPA:
+- npm i -D @sveltejs/adapter-static
+- import adapter from '@sveltejs/adapter-static' in svelte.config.js
+- npm remove @sveltejs/adapter-auto
+
+- Configure adapter static: https://github.com/sveltejs/kit/tree/master/packages/adapter-static
+```
+adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false
+		})
+```
+- By default no ssr as it is a SPA - create file  src/routes/+layout.ts and add `export const ssr = false;`
 
 Svelte router steps
 - install roxy router run-all
@@ -202,15 +216,25 @@ Configuring Svelte workspace to my liking
 - add aliases using $ sign (in vite.config as well as tsconfig) - https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck
 
 PWA steps:
-Follow the documentation on vite-plugin-pwa.netlify.app!! VERRRRRY easy
-Changed some stuff in index.html, including adding base-href and some meta stuff
+Follow the documentation on vite-plugin-pwa.netlify.app!! 
+- install Vite PWA, and config in vite.config.ts
+- Copy stuff in index.html, related to PWA
+- 	<link rel="manifest" href="/manifest.webmanifest">
+- Config manifest
+- I copied a dummy manifest file in src to get rid of error in dev-mode (hacky?)
+The SvelteKit framework instruction did not work for me. I decided to configure VitePWA to output to build instead of .sveltekit folder, so the generated serviceworker is available for upload. So from thereon, it works pretty nicely (maybe I am wrong?)
 
-Ionic related steps
-- npm i @ionic/core  sass
-- create "ionic/svelte" library (via alias) - so the ionic-integration almost looks like for real
-- added initialise function for Ionic UI stuff - (initialiseIonicSvelte)
-- main.ts -> refer to initialiseIonicSvelte
-- App.svelte -> include ion-app 
+Integration Ionic 
+- npm i @ionic/core 
+- copy ionic/svelte code into lib
+- add integration in +layout.svelte
+
+Migration from Vite Svelte Ionic project:
+- run npx svelte-migrate routes (for migration purpose only)
+- modifications needed in various imports (lib path change)
+- IonPage routify change to pagehook of SvelteKit
+- Menu needs to have static list of components - no generated list
+- Created slug navigation, using +page.ts and load function for tabs
 
 Then......
 As of this step, the hard work started. Getting all UI components working, aligning with the Ionic documentation... 
@@ -229,9 +253,8 @@ REPLS available - https://github.com/Tommertom/svelte-ionic-app/blob/main/REPLS.
 These are Ionic 4 components only.
 
 ## Todo
-- Get many to test and use Svelte, Ionic and Vite :)
+- Get many to test and use SvelteKit and Ionic :)
 - Ionic 6.2 and Ionic 6.3
-- migration to SvelteKit (SPA mode) once the major update is there from their end - Work in Progress - https://github.com/Tommertom/kitrcionictest
 - put 	`const createHTMLCompFromSvelte = ( from NavHome` into $ionic/svelte
 
 ## Issues - help needed/workaround provided
@@ -265,9 +288,11 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 
 - Nav component - works nicely, but implementation might be dirty (leaking DOM elements?). ion-nav-link not implemented.
 
+- ItemSliding sometimes does not catch the gesture
+
+- Many "File not found errors" on css.map files. I frankly don't really mind these. Maybe it is easy to get rid of these, but for now, I leave it.
 
 ## Things to do maybe one day...
-- make it an npm package - already in a lib style - https://betterprogramming.pub/creating-a-package-for-svelte-f44fccbc886b, https://blog.logrocket.com/build-your-own-component-library-svelte/
 - dark mode selector
 
 ## Things not being implemented
@@ -285,8 +310,6 @@ README inspiration: https://github.com/gitpoint/git-point/blob/master/README.md
 PWA logo: https://github.com/webmaxru/progressive-web-apps-logo
 
 Borat logo: https://sapper.svelte.dev/
-
-Roxi Routify router:  https://v3.ci.routify.dev/docs#
 
 Raymondboswel's repo: https://github.com/raymondboswel/ionic-svelte-example
 
