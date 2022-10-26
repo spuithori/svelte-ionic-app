@@ -1,0 +1,1 @@
+import{S as e,i as n,s as o}from"../../../../chunks/singletons-834fc638.js";import{g as a}from"../../../../chunks/navigation-f5450c35.js";function r(t){return a("/components/tabs/explain"),[]}class p extends e{constructor(s){super(),n(this,s,r,null,o,{})}}export{p as default};

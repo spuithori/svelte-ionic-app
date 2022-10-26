@@ -1,0 +1,1 @@
+import{S as e,i as o,s as n}from"../../chunks/singletons-834fc638.js";import{g as a}from"../../chunks/navigation-f5450c35.js";function r(s){return a("/components/Splash"),[]}class p extends e{constructor(t){super(),o(this,t,r,null,n,{})}}export{p as default};
