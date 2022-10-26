@@ -189,9 +189,9 @@ npm install
 ```
 
 Make it a SPA:
-- npm i -D @sveltejs/adapter-static
-- import adapter from '@sveltejs/adapter-static' in svelte.config.js
-- npm remove @sveltejs/adapter-auto
+- `npm i -D @sveltejs/adapter-static`
+- `import adapter from '@sveltejs/adapter-static'` in `svelte.config.js`
+- `npm remove @sveltejs/adapter-auto`
 
 - Configure adapter static: https://github.com/sveltejs/kit/tree/master/packages/adapter-static
 ```
@@ -202,7 +202,7 @@ adapter: adapter({
 			precompress: false
 		})
 ```
-- By default no ssr as it is a SPA - create file  src/routes/+layout.ts and add `export const ssr = false;`
+- By default no ssr as it is a SPA - create file  `src/routes/+layout.ts` and add `export const ssr = false;`
 
 Svelte router steps
 - install roxy router run-all
@@ -219,7 +219,7 @@ PWA steps:
 Follow the documentation on vite-plugin-pwa.netlify.app!! 
 - install Vite PWA, and config in vite.config.ts
 - Copy stuff in index.html, related to PWA
-- 	<link rel="manifest" href="/manifest.webmanifest">
+- 	`<link rel="manifest" href="/manifest.webmanifest">`
 - Config manifest
 - I copied a dummy manifest file in src to get rid of error in dev-mode (hacky?)
 The SvelteKit framework instruction did not work for me. I decided to configure VitePWA to output to build instead of .sveltekit folder, so the generated serviceworker is available for upload. So from thereon, it works pretty nicely (maybe I am wrong?)
