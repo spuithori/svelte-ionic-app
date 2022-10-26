@@ -14,4 +14,3 @@ node_modules
 .eslintignore
 .eslintrc.cjs
 firebase.json
-
