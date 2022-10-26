@@ -13,4 +13,4 @@ node_modules
 .prettierrc
 .eslintignore
 .eslintrc.cjs
-firebase.json
+firebase.json 
