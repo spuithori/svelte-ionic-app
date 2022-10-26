@@ -220,7 +220,7 @@ Follow the documentation on vite-plugin-pwa.netlify.app!!
 - install Vite PWA, and config in vite.config.ts
 - Copy stuff in index.html, related to PWA
 - 	`<link rel="manifest" href="/manifest.webmanifest">`
-- Config manifest
+- Config manifest (via pwa-configuration.ts - linked via vite.config.ts)
 - I copied a dummy manifest file in src to get rid of error in dev-mode (hacky?)
 The SvelteKit framework instruction did not work for me. I decided to configure VitePWA to output to build instead of .sveltekit folder, so the generated serviceworker is available for upload. So from thereon, it works pretty nicely (maybe I am wrong?)
 
