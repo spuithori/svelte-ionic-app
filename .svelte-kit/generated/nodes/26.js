@@ -1,1 +1,0 @@
-export { default as component } from "..\\..\\..\\src\\routes\\components\\Nav\\+page.svelte";
