@@ -1,6 +1,10 @@
 <script lang="ts">
-	import Menu from '$lib/components/Menu.svelte';
+	import { dev } from '$app/environment';
+	import { prefetchRoutes } from '$app/navigation';
+
 	import { pwaStatusStream, type PWAStatus } from '$lib/services/pwa';
+
+	import Menu from '$lib/components/Menu.svelte';
 
 	// this gives error -
 	import { setupIonicSvelte } from '$ionic/svelte';
@@ -20,6 +24,11 @@
 			}, 4000);
 		}
 	});
+
+	// Aggressive prefetching for faster rendering
+	if (!dev) {
+		prefetchRoutes();
+	}
 </script>
 
 <ion-app>

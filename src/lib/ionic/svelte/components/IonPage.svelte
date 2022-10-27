@@ -23,16 +23,6 @@
 	onDestroy(() => {
 		ionViewDidLeave();
 	});
-
-	/*
-  <main in:fly={{ x: 100, duration: 250 }}>
- <slot />
-</main>
-
- 
-
-This clips maybe the content - found when migrating Conference starter.
-  */
 </script>
 
 <div class="ion-page" in:fly={{ x: 1000, duration: 300 }} out:fly={{ x: -1000, duration: 300 }}>

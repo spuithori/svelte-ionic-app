@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { dev } from '$app/environment';
-	import { prefetch, prefetchRoutes } from '$app/navigation';
 
 	import { pwaBeforeInstallPrompt, canInstall } from '$lib/services/pwa';
 
@@ -143,14 +141,6 @@
 	// Aggressive prefetching for faster rendering
 	if (!dev) {
 		prefetchRoutes();
-		componentList.forEach((componentName, i) => {
-			const url =
-				componentName !== 'Tabs' ? `/components/${componentName}` : `/components/tabs/explain`;
-			setTimeout(() => {
-				//	console.log('Prefetching', url);
-				//		prefetch(url);
-			}, 150 * (i + 1));
-		});
 	}
 </script>
 
