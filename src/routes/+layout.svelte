@@ -6,7 +6,6 @@
 
 	import Menu from '$lib/components/Menu.svelte';
 
-	// this gives error -
 	import { setupIonicSvelte } from '$ionic/svelte';
 
 	/* Theme variables */
