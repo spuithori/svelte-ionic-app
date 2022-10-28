@@ -137,11 +137,6 @@
 
 		await modal.present();
 	};
-
-	// Aggressive prefetching for faster rendering
-	if (!dev) {
-		prefetchRoutes();
-	}
 </script>
 
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
