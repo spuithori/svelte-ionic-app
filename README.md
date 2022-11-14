@@ -38,7 +38,8 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
-- [All starters - how to get started quickly!](#all-starters---how-to-get-started-quickly)
+- [How to get started - NPM](#how-to-get-started---npm)
+- [How to get started - Ionic starters](#how-to-get-started---ionic-starters)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How to contribute?](#how-to-contribute)
 - [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
@@ -103,7 +104,57 @@ Hint: try responsive design of the app and ionic UI magic by using various devic
 
 More screens: https://ionicsvelte.firebaseapp.com
 
-## All starters - how to get started quickly!
+## How to get started - NPM
+Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
+```
+npm create svelte@latest my-app
+cd my-app
+npm install
+```
+
+We need adapter static, because Ionic pages must run as SPA.
+- `npm i -D @sveltejs/adapter-static`
+- `import adapter from '@sveltejs/adapter-static'` in `svelte.config.js`
+- `npm remove @sveltejs/adapter-auto`
+- Configure adapter static: https://github.com/sveltejs/kit/tree/master/packages/adapter-static
+```
+adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false
+		})
+```
+- Pages that use Ionic must be a SPA - so these routes need to have ssr disabled in their layout files. Kit example: `src/routes/+layout.ts` and add `export const ssr = false;`
+
+Integration of Ionic 
+- `npm i @ionic/core ionic-svelte`
+- create a theme folder/file that contains the colours for Ionic (see starterfiles/theme)
+- the top-root layour file (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
+
+```
+<script lang="ts">
+	import { setupIonicSvelte } from 'ionic-svelte';
+
+	/* Theme variables */
+	import '../theme/variables.css';
+
+	setupIonicSvelte();
+</script>
+
+<ion-app>
+	Hi there <ion-button>test</ion-button>
+</ion-app>
+
+```
+
+Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/starterfiles
+Use these files as reference to see how to do the final steps integrating Ionic in your svelte project.
+
+Code for NPM library - https://github.com/Tommertom/svelte-ionic-npm
+
+
+## How to get started - Ionic starters 
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
 
 **PLEASE NOTE - THESE ARE NOT YET IN SVELTEKIT, BUT IN SVELTE+VITE+ROUTIFY**
