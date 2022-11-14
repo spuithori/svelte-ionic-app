@@ -154,6 +154,8 @@ Use these files as reference to see how to do the final steps integrating Ionic 
 
 Code for NPM library - https://github.com/Tommertom/svelte-ionic-npm
 
+Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
+
 
 ## How to get started - Ionic starters 
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
