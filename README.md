@@ -157,7 +157,7 @@ Code for NPM library - https://github.com/Tommertom/svelte-ionic-npm
 ## How to get started - Ionic starters 
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
 
-**PLEASE NOTE - THESE ARE NOT YET IN SVELTEKIT, BUT IN SVELTE+VITE+ROUTIFY**
+**PLEASE NOTE - THESE ARE NOT IN SVELTEKIT, BUT IN SVELTE+VITE+ROUTIFY**
 
 * Blank demo 
   - https://github.com/Tommertom/svelte-ionic-blank-demo
