@@ -38,7 +38,7 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
-- [How to get started - NPM](#how-to-get-started---npm)
+- [How to get started - NPM package ionic-svelte](#how-to-get-started---npm-package-ionic-svelte)
 - [How to get started - Ionic starters](#how-to-get-started---ionic-starters)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How to contribute?](#how-to-contribute)
@@ -104,7 +104,7 @@ Hint: try responsive design of the app and ionic UI magic by using various devic
 
 More screens: https://ionicsvelte.firebaseapp.com
 
-## How to get started - NPM
+## How to get started - NPM package ionic-svelte
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit)
 ```
 npm create svelte@latest my-app
