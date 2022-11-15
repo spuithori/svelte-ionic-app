@@ -16,6 +16,7 @@ import "@ionic/core/css/flex-utils.css";
 import "@ionic/core/css/display.css";
 
 /* All Ionic components */
+
 import { IonAccordion } from "@ionic/core/components/ion-accordion";
 import { IonAccordionGroup } from "@ionic/core/components/ion-accordion-group";
 import { IonApp } from "@ionic/core/components/ion-app";
@@ -117,6 +118,8 @@ const defineComponent = (tagName: string, customElement: any) => {
 };
 
 export const defineIonComponents = () => {
+
+
     defineComponent("ion-accordion", IonAccordion);
     defineComponent("ion-accordion-group", IonAccordionGroup);
     defineComponent("ion-app", IonApp);
@@ -209,6 +212,7 @@ export const defineIonComponents = () => {
     defineComponent("ion-picker-internal", IonPickerInternal);
 
     defineComponent("ion-toast", IonToast);
+
 
     // Maybe do this - https://github.com/ionic-team/ionic-framework/blob/223f36f6adacf8adce47cee4809a60c94a9e0efa/packages/vue/src/controllers.ts
     // https://github.com/ionic-team/ionic-framework/blob/5bb1414f7fa04ea07954cb3f68883ee2f162586a/packages/react/src/components/proxies.ts
