@@ -39,6 +39,8 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
 - [How to get started - NPM package ionic-svelte](#how-to-get-started---npm-package-ionic-svelte)
+- [Special components](#special-components)
+- [Moving to native Svelte components](#moving-to-native-svelte-components)
 - [How to get started - Ionic starters](#how-to-get-started---ionic-starters)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How to contribute?](#how-to-contribute)
@@ -163,6 +165,17 @@ There are three special compontents included that override/fix the ionic standar
 - IonBackButton - a rudimentary fix to the IonBackButton
 
 To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';';`
+
+## Moving to native Svelte components
+In order to support tree shaking, type-safety and auto-completion, I started creating svelte-wrappers. These are experimental.
+So moving from `<ion-button>A great button</ion-button>` to 
+```
+import { IonButton } from 'ionic-svelte/experimental/components/IonButton.svelte';
+<IonButton>A great button</IonButton>
+```
+Experimental also has version of `setupIonicSvelte`. 
+
+So if you want to use this, change imports from ` ... from 'ionic-svelte` to ` ... from 'ionic-svelte/experimental`  
 
 ## How to get started - Ionic starters 
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
