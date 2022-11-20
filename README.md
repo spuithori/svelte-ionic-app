@@ -158,6 +158,29 @@ Code for NPM library - https://github.com/Tommertom/svelte-ionic-npm
 
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
 
+## How to use components
+Well there are two ways, the kebab way and the pascal way....
+
+The kebab way is the current default:
+```
+<ion-card>
+Here content
+</ion-card>
+```
+`setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit), no type-safety and no intellisence.
+
+So here is pascal to the rescue (requiring `npm i ionic-svelte`)
+```
+import {IonCard} from 'ionic-svelte/experimental';
+
+<IonCard>
+Here content
+</IonCard>
+```
+And then you need to import `setupIonicSvelte` from 'ionic-svelte/experimental'. Then no components are registered during setup, and the bundle gets more optimised. As the wording says - this is experimental, there is some testing needed. But most of the components should work.
+
+Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.svelte.bak`.
+
 ## Special components
 There are three special compontents included that override/fix the ionic standard webcomponents:
 - IonTabs - fixing some default selected tabs as well as fixing compatibility with the router
