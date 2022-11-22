@@ -38,6 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"@ionic/core": "^6.3.0",
+		"ionic-svelte": "^0.5.13",
 		"localforage": "^1.10.0"
 	}
 }
