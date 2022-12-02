@@ -61,13 +61,11 @@
 			</ion-slide>
 
 			<ion-slide>
-				<img src="../assets/img/slides/slide-2.png" alt="pict" />
-				<h2>Easy starters</h2>
-				This project also has references to a number of starter templates for you to jumpstart Ionic
-				development
-				<br />
-				Check the readme on
-				<a href="https://github.com/Tommertom/svelte-ionic-app" target="_blank">Github</a>
+				<img src="../assets/img/slides/slide-2.png" alt="pict" width="50%" />
+				<h2>Easy start</h2>
+
+				<pre>npm create ionic-svelte-app@latest </pre>
+
 				<br />
 				<br />
 			</ion-slide>
