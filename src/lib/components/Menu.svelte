@@ -142,7 +142,7 @@
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
 	{#if menuItems.length > 0}
 		<ion-header>
-			<ion-toolbar translucent="true">
+			<ion-toolbar translucent={true}>
 				<ion-title>Menu</ion-title>
 			</ion-toolbar>
 		</ion-header>

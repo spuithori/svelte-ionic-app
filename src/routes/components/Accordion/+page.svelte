@@ -20,7 +20,7 @@
 </svelte:head>
 
 <IonPage>
-	<ion-header translucent="true">
+	<ion-header translucent={true}>
 		<ion-toolbar>
 			<ion-buttons slot="start">
 				<ion-menu-button />
@@ -33,7 +33,7 @@
 	</ion-header>
 
 	<ion-content fullscreen>
-		<ion-list inset="true">
+		<ion-list inset={true}>
 			<ion-list-header>Basic</ion-list-header>
 			<ion-accordion-group>
 				<ion-accordion value="colors">
@@ -90,7 +90,7 @@
 			</ion-accordion-group>
 		</ion-list>
 
-		<ion-list inset="true">
+		<ion-list inset={true}>
 			<ion-list-header>Custom Icon</ion-list-header>
 			<ion-accordion-group>
 				<ion-accordion value="colors" toggle-icon={arrowDownCircle} toggle-icon-slot="start">
@@ -147,7 +147,7 @@
 			</ion-accordion-group>
 		</ion-list>
 
-		<ion-list inset="true">
+		<ion-list inset={true}>
 			<ion-list-header>Open Accordion</ion-list-header>
 			<ion-accordion-group value="colors">
 				<ion-accordion value="colors">
@@ -204,7 +204,7 @@
 			</ion-accordion-group>
 		</ion-list>
 
-		<ion-list inset="true">
+		<ion-list inset={true}>
 			<ion-list-header>Multiple Accordions</ion-list-header>
 			<ion-accordion-group multiple="true" id="multiple">
 				<ion-accordion value="colors">
@@ -261,7 +261,7 @@
 			</ion-accordion-group>
 		</ion-list>
 
-		<ion-list inset="true">
+		<ion-list inset={true}>
 			<ion-list-header>Managing State</ion-list-header>
 			<ion-accordion-group id="state" value="numbers" bind:this={stateAccordion}>
 				<ion-accordion value="colors">

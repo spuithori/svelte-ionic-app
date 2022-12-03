@@ -396,7 +396,7 @@
 </svelte:head>
 
 <IonPage>
-	<ion-header translucent="true">
+	<ion-header translucent={true}>
 		<ion-toolbar>
 			<ion-buttons slot="start">
 				<ion-menu-button />

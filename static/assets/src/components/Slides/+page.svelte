@@ -28,7 +28,7 @@
 </svelte:head>
 
 <IonPage>
-	<ion-header translucent="true">
+	<ion-header translucent={true}>
 		<ion-toolbar>
 			<ion-buttons slot="start">
 				<ion-menu-button />
@@ -41,7 +41,7 @@
 	</ion-header>
 
 	<ion-content fullscreen padding scroll-y="false">
-		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager="true">
+		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager={true}>
 			<ion-slide>
 				<img src="../assets/img/slides/slide-1.png" alt="pict" />
 				<h2>Welcome!</h2>

@@ -22,7 +22,7 @@
 <svelte:head>
 	<title>Ionic Companion - Modal Extra</title>
 </svelte:head>
-<ion-header translucent="true">
+<ion-header translucent={true}>
 	<ion-toolbar>
 		<ion-title>Modal Content</ion-title>
 		<ion-buttons slot="end">
