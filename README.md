@@ -38,9 +38,12 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
+- [How to get started - npm create ionic-svelte-app@latest](#how-to-get-started---npm-create-ionic-svelte-applatest)
 - [How to get started - NPM package ionic-svelte](#how-to-get-started---npm-package-ionic-svelte)
+- [How to use components](#how-to-use-components)
 - [Special components](#special-components)
-- [Moving to native Svelte components](#moving-to-native-svelte-components)
+- [Typesafety and type-ahead support](#typesafety-and-type-ahead-support)
+- [Tree shaking](#tree-shaking)
 - [How to get started - Ionic starters](#how-to-get-started---ionic-starters)
 - [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
 - [How to contribute?](#how-to-contribute)
@@ -166,46 +169,63 @@ Code for NPM library - https://github.com/Tommertom/svelte-ionic-npm
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
 
 ## How to use components
-Well there are two ways, the kebab way and the pascal way....
+Ionic components are webcomponents, so appear in your template just like other dom elements. They don't need ECMA imports like `import {IonCard} from '...`. 
 
-The kebab way is the current default:
 ```
 <ion-card>
 Here content
 </ion-card>
 ```
-`setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit), no type-safety and no intellisence.
 
-So here is pascal to the rescue (requiring `npm i ionic-svelte`)
-```
-import {IonCard} from 'ionic-svelte/experimental';
-
-<IonCard>
-Here content
-</IonCard>
-```
-And then you need to import `setupIonicSvelte` from 'ionic-svelte/experimental'. Then no components are registered during setup, and the bundle gets more optimised. As the wording says - this is experimental, there is some testing needed. But most of the components should work.
-
-Would you like to migrate an existing kebab-page to a pascal-page, look into the scripts folder. There is `migrateToImport.js` which you can run using `node migrateToImport <directoryname>`. It will scan for .svelte files, and does the migration for you. A backup will be makde from your svelte file -> named `.bak`.
+`setupIonicSvelte` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicSvelte` a bit).
 
 ## Special components
-There are three special compontents included that override/fix the ionic standard webcomponents:
+Due to router incompatability, there are three special compontents included that override/replace the ionic standard webcomponents:
+
 - IonTabs - fixing some default selected tabs as well as fixing compatibility with the router
 - IonPage - wrapping the page and providing the ion-lifecycle hooks. And implementing a basic animation
 - IonBackButton - a rudimentary fix to the IonBackButton
 
-To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';';`
+To be imported from the package: `import IonTab from 'ionic-svelte/components/IonTabs.svelte';` etc..
 
-## Moving to native Svelte components
-In order to support tree shaking, type-safety and auto-completion, I started creating svelte-wrappers. These are experimental.
-So moving from `<ion-button>A great button</ion-button>` to 
-```
-import { IonButton } from 'ionic-svelte/experimental/components/IonButton.svelte';
-<IonButton>A great button</IonButton>
-```
-Experimental also has version of `setupIonicSvelte`. 
+## Typesafety and type-ahead support
+The package provides typings for all webcomponents. These can be included in your IDE by adding the following to your the `compilerOptions` section in `tsconfig.json`:
 
-So if you want to use this, change imports from ` ... from 'ionic-svelte` to ` ... from 'ionic-svelte/experimental`  
+```
+		"typeRoots": [
+			"./node_modules/ionic-svelte"
+		],
+		"types": [
+			"ionic-svelte"
+		]
+```
+
+Sample `tsconfig.json`:
+```
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"typeRoots": [
+			"./node_modules/ionic-svelte"
+		],
+		"types": [
+			"ionic-svelte"
+		]
+	}
+}
+```
+
+
+## Tree shaking
+In order to support tree shaking I am looking at ways to split the import of ionic webcomponents, as of when they are needed. Now they are all loaded in one module, leading at least one chunk being fairly big.
 
 ## How to get started - Ionic starters 
 If you want to get started with Ionic, Svelte and Vite, just use one of the starters:
