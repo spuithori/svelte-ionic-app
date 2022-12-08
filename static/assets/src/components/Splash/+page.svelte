@@ -47,6 +47,8 @@
 <style>
 	img {
 		width: 60%;
+		max-width: 90vw;
+		max-height: 90vh;
 	}
 
 	div {
