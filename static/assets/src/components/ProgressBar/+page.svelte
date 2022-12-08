@@ -52,7 +52,7 @@
 			<ion-list-header>
 				<ion-label>Indeterminate (reversed)</ion-label>
 			</ion-list-header>
-			<ion-progress-bar type="indeterminate" reversed="true" />
+			<ion-progress-bar type="indeterminate" reversed={true} />
 
 			<ion-list-header>
 				<ion-label>Buffer</ion-label>
