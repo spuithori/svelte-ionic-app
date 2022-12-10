@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PopoverExtra from '$lib/components/PopoverExtra.svelte';
-	import { popoverController } from '$ionic/svelte';
+	import { popoverController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import IonPage from '$ionic/svelte/components/IonPage.svelte';

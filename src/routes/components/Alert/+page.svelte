@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { alertController } from '$ionic/svelte';
+	import { alertController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import IonPage from '$ionic/svelte/components/IonPage.svelte';

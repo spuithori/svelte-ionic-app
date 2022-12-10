@@ -6,12 +6,12 @@
 
 	import Menu from '$lib/components/Menu.svelte';
 
-	import { setupIonicSvelte } from '$ionic/svelte';
+	import { setupIonicBase } from 'ionic-svelte';
 
 	/* Theme variables */
 	import '../theme/variables.css';
-
-	setupIonicSvelte();
+	import 'ionic-svelte/components/all';
+	setupIonicBase();
 
 	pwaStatusStream.subscribe((status: PWAStatus) => {
 		console.log('PWA status', status);

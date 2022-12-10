@@ -9,7 +9,7 @@
 		pickerController,
 		actionSheetController,
 		popoverController
-	} from '$ionic/svelte';
+	} from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 

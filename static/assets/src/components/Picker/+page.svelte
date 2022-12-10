@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { pickerController } from '$ionic/svelte';
+	import { pickerController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import IonPage from '$ionic/svelte/components/IonPage.svelte';

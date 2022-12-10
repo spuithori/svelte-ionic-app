@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { toastController } from '$ionic/svelte';
+	import { toastController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import IonPage from '$ionic/svelte/components/IonPage.svelte';

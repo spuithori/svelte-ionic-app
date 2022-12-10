@@ -4,7 +4,7 @@
 
 	import { pwaBeforeInstallPrompt, canInstall } from '$lib/services/pwa';
 
-	import { menuController, modalController, registerMenu } from '$ionic/svelte';
+	import { menuController, modalController, registerMenu } from 'ionic-svelte';
 	import { isPlatform } from '@ionic/core';
 	import * as allIonicIcons from 'ionicons/icons';
 
@@ -12,7 +12,7 @@
 
 	let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
 
-	export let side = 'start';
+	export let side: 'start' | 'end' | undefined = 'start';
 
 	const getRandomColor = () => {
 		const items = [
@@ -35,7 +35,6 @@
 
 	// and build the menu list from it
 	const modules = import.meta.glob('../../**/*.svelte', { as: 'raw' });
-	console.log('asdasdsa', modules);
 	let menuItems: Array<{ url: string; label: string; icon: any }> = Object.keys(modules)
 		.filter((key) => key.includes('/routes/components/') && !key.includes('[tab]'))
 		.map((key) =>
@@ -107,7 +106,7 @@
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
 	{#if menuItems.length > 0}
 		<ion-header>
-			<ion-toolbar translucent={true}>
+			<ion-toolbar>
 				<ion-title>Menu</ion-title>
 			</ion-toolbar>
 		</ion-header>

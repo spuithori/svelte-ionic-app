@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ModalExtra from '$lib/components/ModalExtra.svelte';
 
-	import { modalController } from '$ionic/svelte';
+	import { modalController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 
