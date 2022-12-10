@@ -10,7 +10,7 @@
 <IonPage>
 	<ion-header translucent={true}>
 		<ion-toolbar>
-			<ion-buttons slot="start">
+			<ion-buttons collapse={true} slot="start">
 				<ion-menu-button />
 			</ion-buttons>
 			<ion-buttons slot="end">

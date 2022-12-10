@@ -1,12 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	import type { Animation } from '@ionic/core';
+	import { createAnimation } from '@ionic/core';
+
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import IonPage from '$ionic/svelte/components/IonPage.svelte';
 
-	import { createAnimation } from '@ionic/core';
-	import { onMount } from 'svelte';
-
-	let squareA, squareB, squareC;
-	let animation;
+	let squareA: Element, squareB: Element, squareC: Element;
+	let animation: Animation;
 
 	onMount(() => {
 		const squareAanimation = createAnimation()
