@@ -2,7 +2,7 @@
 	import { alertController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	const showAlert = async (options) => {
 		const alert = await alertController.create(options);

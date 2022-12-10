@@ -12,7 +12,7 @@
 	} from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	const showActionSheet = async () => {
 		const options = {

@@ -74,7 +74,7 @@ do all the lifting for you to create a SvelteKit SPA app.
 
 <img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
 
-What is next - visit https://github.com/Tommertom/svelte-ionic-npm to get more info on how to develop with Ionic Svelte. Including known issues and workarounds.
+What is next - visit https://github.com/Tommertom/svelte-ionic-npm to get more info on how to develop with Ionic Svelte. Including known issues and workaround and some info on special components such as `IonPage` and `IonTabs`.
 
 Questions - find me on Ionic's discord server, with a separate Ionic Svelte Channel - https://discordapp.com/channels/520266681499779082/1049388501629681675
 

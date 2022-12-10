@@ -6,7 +6,7 @@
 	import SourceButton from '$lib/components/SourceButton.svelte';
 
 	import Music from '$lib/components/Music.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	let inlineModalOpen = false;
 	let breakpoints = [0, 0.5, 1];

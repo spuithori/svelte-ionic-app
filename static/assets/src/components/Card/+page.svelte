@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 </script>
 
 <svelte:head>

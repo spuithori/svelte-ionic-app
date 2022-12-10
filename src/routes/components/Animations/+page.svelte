@@ -5,7 +5,7 @@
 	import { createAnimation } from '@ionic/core';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	let squareA: Element, squareB: Element, squareC: Element;
 	let animation: Animation;

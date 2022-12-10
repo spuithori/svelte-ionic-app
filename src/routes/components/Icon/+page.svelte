@@ -3,7 +3,7 @@
 	import SourceButton from '$lib/components/SourceButton.svelte';
 
 	import { toastController } from 'ionic-svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	let icons = Object.keys(allIonicIcons);
 	let list = [];

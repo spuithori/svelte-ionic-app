@@ -17,7 +17,7 @@
 		keydown,
 		resize
 	} from 'ionic-svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	let platforms: string[] = getPlatforms();
 

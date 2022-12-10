@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 	import { spring } from 'svelte/motion';
 
 	let coords = spring(

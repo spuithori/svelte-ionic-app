@@ -2,7 +2,7 @@
 	import { menu } from 'ionicons/icons';
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { menuController } from 'ionic-svelte';
-	import IonPage from '$ionic/svelte/components/IonPage.svelte';
+	import { IonPage } from 'ionic-svelte';
 
 	let menuIconClicked = false;
 
