@@ -33,62 +33,18 @@
 		registerMenu('mainmenu');
 	});
 
-	const componentList = [
-		'Accordion',
-		'Actionsheet',
-		'Alert',
-		'Animations',
-		'Avatar',
-		'Badge',
-		'Breadcrumb',
-		'Button',
-		'Card',
-		'Checkbox',
-		'Chip',
-		'Controllers',
-		'Datetime',
-		'Fab',
-		'Gesture',
-		'Grid',
-		'Icon',
-		'Infinitescroll',
-		'Inputs',
-		'Item',
-		'List',
-		'Loading',
-		'Modal',
-		'Nav',
-		'Note',
-		'Page',
-		'Picker',
-		'Platform',
-		'Popover',
-		'ProgressBar',
-		'Radio',
-		'Range',
-		'Refresher',
-		'Reorder',
-		'Searchbar',
-		'Segment',
-		'Select',
-		'Skeleton',
-		'Slides',
-		'Spinner',
-		'Splash',
-		'SvelteAnimate',
-		'SvelteSpring',
-		'SvelteTransition',
-		'SvelteTweened',
-		'Tabs',
-		'Text',
-		'Thumbnails',
-		'Toast',
-		'Toggle',
-		'Toolbar'
-	].sort();
-
-	let menuItems: Array<{ url: string; label: string; icon: any }> = componentList.map(
-		(componentName) => {
+	// and build the menu list from it
+	const modules = import.meta.glob('../../**/*.svelte', { as: 'raw' });
+	console.log('asdasdsa', modules);
+	let menuItems: Array<{ url: string; label: string; icon: any }> = Object.keys(modules)
+		.filter((key) => key.includes('/routes/components/') && !key.includes('[tab]'))
+		.map((key) =>
+			capitalizeFirstLetter(
+				key.replace('../../routes/components/', '').replace('/+page.svelte', '')
+			)
+		)
+		.sort()
+		.map((componentName) => {
 			const url =
 				componentName !== 'Tabs' ? `/components/${componentName}` : `/components/tabs/[tab]`;
 			return {
@@ -96,8 +52,13 @@
 				label: componentName,
 				icon: allIonicIcons['home']
 			};
-		}
-	);
+		});
+
+	// ChatGPT suggestion
+	// let input = '../../routes/components/Card/+page.svelte';
+	// let regex = /components\/(.+?)\//;
+	// let match = input.match(regex);
+	// console.log(match[1]); // outputs "Card"
 
 	// Randomize the icons
 	const icons = Object.keys(allIonicIcons);
@@ -137,6 +98,10 @@
 
 		await modal.present();
 	};
+
+	function capitalizeFirstLetter(text: string) {
+		return text.charAt(0).toUpperCase() + text.slice(1);
+	}
 </script>
 
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
