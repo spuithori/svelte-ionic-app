@@ -33,23 +33,14 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Introduction](#introduction)
+- [Want to start your own Ionic project?](#want-to-start-your-own-ionic-project)
 - [Screenshots](#screenshots)
-- [How to get started - npm create ionic-svelte-app@latest](#how-to-get-started---npm-create-ionic-svelte-applatest)
-- [How to get started - NPM package ionic-svelte](#how-to-get-started---npm-package-ionic-svelte)
-- [How to use components](#how-to-use-components)
-- [Special components](#special-components)
-- [Typesafety and type-ahead support](#typesafety-and-type-ahead-support)
-- [Tree shaking](#tree-shaking)
-- [How to get started - Ionic starters](#how-to-get-started---ionic-starters)
-- [PWA Interface - easing the PWA work in your app](#pwa-interface---easing-the-pwa-work-in-your-app)
+- [Ionic starters - the Ionic CLI standard projects](#ionic-starters---the-ionic-cli-standard-projects)
 - [How to contribute?](#how-to-contribute)
-- [How I got started with this rebuild: the basic steps performed](#how-i-got-started-with-this-rebuild-the-basic-steps-performed)
 - [REPLS](#repls)
-- [Todo](#todo)
-- [Issues - help needed/workaround provided](#issues---help-neededworkaround-provided)
 - [Things to do maybe one day...](#things-to-do-maybe-one-day)
-- [Things not being implemented](#things-not-being-implemented)
 - [Acknowledgements](#acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
