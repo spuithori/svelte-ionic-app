@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 
 	import { pwaBeforeInstallPrompt, canInstall } from '$lib/services/pwa';
+	import { showMenu } from '$lib/services/menu';
 
 	import { menuController, modalController, registerMenu } from 'ionic-svelte';
 	import { isPlatform } from '@ionic/core';
@@ -10,7 +11,8 @@
 
 	import IOSInstall from '$lib/components/IOSInstall.svelte';
 
-	let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
+	//	let hideMenu = true; // a hack because the menu shows before the splash (in Chrome on Windows)
+	$: hideMenu = !$showMenu;
 
 	export let side: 'start' | 'end' | undefined = 'start';
 
@@ -77,7 +79,7 @@
 
 	// hack because of visibility of menu in Chrome/Windows
 	setTimeout(() => {
-		hideMenu = false;
+		//	hideMenu = false;
 	}, 100);
 
 	let iosInstall = isPlatform('ios') && !isPlatform('pwa');

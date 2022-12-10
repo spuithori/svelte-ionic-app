@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IonTab from 'ionic-svelte/components/IonTabs.svelte';
+	import { IonTabs } from 'ionic-svelte';
 
 	import Controllers from '../../Controllers/+page.svelte';
 	import Music from '$lib/components/Music.svelte';
@@ -28,7 +28,7 @@
 	};
 </script>
 
-<IonTab
+<IonTabs
 	slot="bottom"
 	tabs={myTabs}
 	selected={tab}

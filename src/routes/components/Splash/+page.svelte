@@ -5,6 +5,8 @@
 	import { goto } from '$app/navigation';
 
 	import { onMount } from 'svelte';
+	import { showMenu } from '$lib/services/menu';
+	showMenu.set(false);
 
 	onMount(() => {
 		let splitpane: HTMLIonSplitPaneElement | null;
@@ -18,7 +20,7 @@
 	});
 
 	function navigate(url: string) {
-		console.log('Navigate url', url);
+		showMenu.set(true);
 		goto(url);
 	}
 </script>
