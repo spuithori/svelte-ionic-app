@@ -16,6 +16,8 @@
 
 	export let side: 'start' | 'end' | undefined = 'start';
 
+	let inlineModalOpen = false;
+
 	const getRandomColor = () => {
 		const items = [
 			'secondary',
@@ -105,11 +107,67 @@
 	}
 </script>
 
+<ion-modal is-open={inlineModalOpen}>
+	<br />
+
+	<ion-content>
+		<ion-card>
+			<ion-card-header>
+				<ion-card-title>Ionic Svelte - Unofficial Ionic integration</ion-card-title>
+			</ion-card-header>
+			<ion-card-content>
+				<p>Ionic-Svelte is work in progress and needs your support.</p>
+				<br />
+				<p>
+					Share how you are using it, what is really working for you and which parts need
+					improvement.
+				</p>
+				<br />
+				<p>
+					Raise issues on Github - <a
+						href="https://github.com/Tommertom/svelte-ionic-npm/issues"
+						target="_new">https://github.com/Tommertom/svelte-ionic-npm/issues</a
+					>
+				</p>
+				<br />
+				<p>
+					Join <a
+						href="https://discordapp.com/channels/520266681499779082/1049388501629681675"
+						target="_new">Ionic-Svelte channel</a
+					> on Ionic's official discord
+				</p>
+				<br /><br />
+				<p>Thanks!!! Tommertom</p>
+				<br />
+				<img src="/assets/svelte-ionic-logo.png" width="25%" alt="Feedback" />
+			</ion-card-content>
+		</ion-card>
+		<br />
+		<ion-button
+			expand="block"
+			on:click={() => {
+				inlineModalOpen = false;
+			}}
+		>
+			Close modal
+		</ion-button>
+	</ion-content>
+</ion-modal>
+
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
 	{#if menuItems.length > 0}
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>Menu</ion-title>
+				<ion-button
+					expand="block"
+					on:click={() => {
+						//@ts-ignore
+						window.gtag('event', 'Feedback open');
+						inlineModalOpen = true;
+					}}
+					slot="end">Give feedback!</ion-button
+				>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
@@ -148,6 +206,8 @@
 
 				<ion-item
 					on:click={() => {
+						//@ts-ignore
+						window.gtag('event', 'github-svelte-ionic-app');
 						window.open('https://github.com/Tommertom/svelte-ionic-app', '_blank');
 					}}
 				>
@@ -156,6 +216,8 @@
 				</ion-item>
 				<ion-item
 					on:click={() => {
+						//@ts-ignore
+						window.gtag('event', 'forum-visit');
 						window.open(
 							'https://forum.ionicframework.com/t/ionicsvelte-all-of-ionics-ui-in-one-svelte-app',
 							'_blank'

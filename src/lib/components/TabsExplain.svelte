@@ -20,13 +20,17 @@
 
 <ion-content fullscreen class="ion-padding">
 	<h1>Explanation of TABS</h1>
-	<p>So, ionic tabs are working pretty ok.</p>
+
 	<p>
-		There are now two non-blocking issues: you have to use IonTabs component to render tab
-		interface. This seems doable, but not according to Ionic docs.
+		Tabs are a real joy working within Svelte since we are now able to use SvelteKit routing and
+		layouts to create nested routeroutlets. This demo app itself has not yet been upgraded to this,
+		but there is a HOWTO-you can look at to see how it works.
 	</p>
+
+	<p>This also solves some earlier issues and eases the DX.</p>
 	<p>
-		Second issue is that the selected-tab property does not work out-of-the box. A workaround is
-		implemented which requires an Ionic update. So out of control for me.
+		<a href="https://github.com/Tommertom/ionic-svelte-tabs-howto" target="_new"
+			>https://github.com/Tommertom/ionic-svelte-tabs-howto</a
+		>
 	</p>
 </ion-content>
