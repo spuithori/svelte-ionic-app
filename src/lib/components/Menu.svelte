@@ -73,6 +73,9 @@
 	menuItems = [...menuItems];
 
 	const closeAndNavigate = async (url: string) => {
+		//@ts-ignore
+		window.gtag('event', url);
+
 		console.log('Navigate url', url);
 		goto(url);
 
@@ -107,54 +110,54 @@
 	}
 </script>
 
-<ion-modal is-open={inlineModalOpen}>
-	<br />
-
-	<ion-content>
-		<ion-card>
-			<ion-card-header>
-				<ion-card-title>Ionic Svelte - Unofficial Ionic integration</ion-card-title>
-			</ion-card-header>
-			<ion-card-content>
-				<p>Ionic-Svelte is work in progress and needs your support.</p>
-				<br />
-				<p>
-					Share how you are using it, what is really working for you and which parts need
-					improvement.
-				</p>
-				<br />
-				<p>
-					Raise issues on Github - <a
-						href="https://github.com/Tommertom/svelte-ionic-npm/issues"
-						target="_new">https://github.com/Tommertom/svelte-ionic-npm/issues</a
-					>
-				</p>
-				<br />
-				<p>
-					Join <a
-						href="https://discordapp.com/channels/520266681499779082/1049388501629681675"
-						target="_new">Ionic-Svelte channel</a
-					> on Ionic's official discord
-				</p>
-				<br /><br />
-				<p>Thanks!!! Tommertom</p>
-				<br />
-				<img src="/assets/svelte-ionic-logo.png" width="25%" alt="Feedback" />
-			</ion-card-content>
-		</ion-card>
-		<br />
-		<ion-button
-			expand="block"
-			on:click={() => {
-				inlineModalOpen = false;
-			}}
-		>
-			Close modal
-		</ion-button>
-	</ion-content>
-</ion-modal>
-
 <ion-menu {side} content-id="main" menu-id="mainmenu" class:menuhide={hideMenu}>
+	<ion-modal is-open={inlineModalOpen}>
+		<br />
+
+		<ion-content>
+			<ion-card>
+				<ion-card-header>
+					<ion-card-title>Ionic Svelte - Unofficial Ionic integration</ion-card-title>
+				</ion-card-header>
+				<ion-card-content>
+					<p>Ionic-Svelte is work in progress and needs your support.</p>
+					<br />
+					<p>
+						Share how you are using it, what is really working for you and which parts need
+						improvement.
+					</p>
+					<br />
+					<p>
+						Raise issues on Github - <a
+							href="https://github.com/Tommertom/svelte-ionic-npm/issues"
+							target="_new">https://github.com/Tommertom/svelte-ionic-npm/issues</a
+						>
+					</p>
+					<br />
+					<p>
+						Join <a
+							href="https://discordapp.com/channels/520266681499779082/1049388501629681675"
+							target="_new">Ionic-Svelte channel</a
+						> on Ionic's official discord
+					</p>
+					<br /><br />
+					<p>Thanks!!! Tommertom</p>
+					<br />
+					<img src="/assets/svelte-ionic-logo.png" width="25%" alt="Feedback" />
+				</ion-card-content>
+			</ion-card>
+			<br />
+			<ion-button
+				expand="block"
+				on:click={() => {
+					inlineModalOpen = false;
+				}}
+			>
+				Close modal
+			</ion-button>
+		</ion-content>
+	</ion-modal>
+
 	{#if menuItems.length > 0}
 		<ion-header>
 			<ion-toolbar>

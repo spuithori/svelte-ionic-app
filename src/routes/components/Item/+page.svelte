@@ -32,8 +32,6 @@
 	};
 	//	console.log('stuff', itemSlidingEnd, itemSlidingStart);
 
-	//@ts-ignore
-	window.gtag('event', 'IonItem');
 </script>
 
 <svelte:head>
