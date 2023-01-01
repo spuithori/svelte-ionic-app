@@ -5,8 +5,8 @@
 	import { onMount } from 'svelte';
 	import { IonPage } from 'ionic-svelte';
 
-	let itemSlidingStart;
-	let itemSlidingEnd;
+	let itemSlidingStart: HTMLIonItemSlidingElement;
+	let itemSlidingEnd: HTMLIonItemSlidingElement;
 
 	const animateSliding = () => {
 		if (itemSlidingEnd && itemSlidingStart) {
@@ -26,6 +26,12 @@
 	onMount(() => {
 		animateSliding();
 	});
+
+	const dragEvent = (event) => {
+		console.log('Drag event', event);
+	};
+	//	console.log('stuff', itemSlidingEnd, itemSlidingStart);
+
 </script>
 
 <svelte:head>
@@ -47,43 +53,10 @@
 
 	<ion-content fullscreen class="ion-padding">
 		<ion-list>
-			<ion-list-header> Sliding Item </ion-list-header>
-
-			<ion-item-sliding>
-				<ion-item>
-					<ion-label>New Message</ion-label>
-				</ion-item>
-
-				<ion-item-options side="start">
-					<ion-item-option color="primary">Mark Unread</ion-item-option>
-				</ion-item-options>
-
-				<ion-item-options side="end">
-					<ion-item-option color="danger">Delete</ion-item-option>
-				</ion-item-options>
-			</ion-item-sliding>
-
-			<ion-item-sliding>
-				<ion-item>
-					<ion-label>New Message</ion-label>
-				</ion-item>
-
-				<ion-item-options side="start">
-					<ion-item-option color="primary">Mark Unread</ion-item-option>
-				</ion-item-options>
-
-				<ion-item-options side="end">
-					<ion-item-option color="danger">Delete</ion-item-option>
-				</ion-item-options>
-			</ion-item-sliding>
-		</ion-list>
-
-		<ion-list>
 			<ion-list-header>Items with Labels</ion-list-header>
 			<ion-item class="grey-item">
 				<ion-label>Label</ion-label>
 			</ion-item>
-
 			<ion-item>
 				<ion-icon slot="end" icon={logoIonic} />
 				<ion-label>Label with Icon</ion-label>
@@ -153,10 +126,16 @@
 
 		<ion-list>
 			<ion-list-header>Sliding Item</ion-list-header>
+			<ion-item>
+				<ion-label class="ion-text-wrap">
+					Item-Sliding is not working due to an issue related to Ionic and/or Svelte -
+					https://github.com/Tommertom/svelte-ionic-npm/issues/10
+				</ion-label>
+			</ion-item>
 
-			<ion-item-sliding bind:this={itemSlidingStart}>
+			<ion-item-sliding bind:this={itemSlidingStart} on:ionDrag={dragEvent}>
 				<ion-item class="blue-item">
-					<ion-label>New Message</ion-label>
+					<ion-label>New Message - slide me left or right</ion-label>
 				</ion-item>
 
 				<ion-item-options side="start">
@@ -168,9 +147,23 @@
 				</ion-item-options>
 			</ion-item-sliding>
 
-			<ion-item-sliding bind:this={itemSlidingEnd}>
+			<ion-item-sliding bind:this={itemSlidingEnd} on:ionDrag={dragEvent}>
 				<ion-item>
-					<ion-label>New Message</ion-label>
+					<ion-label>New Message - slide me left or right</ion-label>
+				</ion-item>
+
+				<ion-item-options side="start">
+					<ion-item-option color="primary">Mark Unread</ion-item-option>
+				</ion-item-options>
+
+				<ion-item-options side="end">
+					<ion-item-option color="danger">Delete</ion-item-option>
+				</ion-item-options>
+			</ion-item-sliding>
+
+			<ion-item-sliding on:ionDrag={dragEvent} on:click={dragEvent}>
+				<ion-item class="blue-item">
+					<ion-label>New Message - slide me left or right</ion-label>
 				</ion-item>
 
 				<ion-item-options side="start">
