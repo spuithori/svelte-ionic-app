@@ -3,13 +3,13 @@
 	import * as allIonicIcons from 'ionicons/icons';
 	export let tech: Tech;
 
-	console.log('TEC', tech, window.Ionic);
+	console.log('TEC', tech);
 </script>
 
 <ion-header translucent>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-back-button text="Volver" color="danger" />
+			<ion-back-button text="Back off!" default-href="/" color="danger" />
 		</ion-buttons>
 		<ion-title>{tech.title}</ion-title>
 	</ion-toolbar>

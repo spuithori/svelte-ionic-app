@@ -5,6 +5,7 @@
 	import { type Tech, techs } from '$lib/services/techs';
 	import type { SvelteComponent } from 'svelte';
 
+	// get's defined via the bind:this - too much magic imho
 	export let ionNav: HTMLIonNavElement;
 
 	const createHTMLCompFromSvelte = (
@@ -34,6 +35,7 @@
 	};
 
 	const showDetail = (tech: Tech) => {
+		console.log('ion-nav element', ionNav);
 		ionNav.push(createHTMLCompFromSvelte(NavDetail, { tech }));
 	};
 </script>
