@@ -3,6 +3,7 @@
 	import { IonPage } from 'ionic-svelte';
 	import { onMount, SvelteComponent } from 'svelte';
 
+	// moving this to new IonNav element
 	let ionNav: HTMLIonNavElement;
 
 	const createHTMLCompFromSvelte = (
@@ -31,7 +32,7 @@
 		return divWrapper;
 	};
 
-	let root;
+	let root: HTMLElement;
 
 	onMount(() => {
 		root = createHTMLCompFromSvelte(NavHome, {});
