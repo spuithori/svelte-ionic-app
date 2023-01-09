@@ -169,7 +169,7 @@
 						window.gtag('event', 'Feedback open');
 						inlineModalOpen = true;
 					}}
-					slot="end">Give feedback!</ion-button
+					slot="end">About...</ion-button
 				>
 			</ion-toolbar>
 		</ion-header>
