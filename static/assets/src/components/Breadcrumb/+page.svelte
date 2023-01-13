@@ -119,7 +119,7 @@
 
 		<ion-list inset={true}>
 			<ion-list-header>Items Before Collapse</ion-list-header>
-			<ion-breadcrumbs max-items="4" items-before-collapse="2">
+			<ion-breadcrumbs maxitems="4" items-before-collapse="2">
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
 				<ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
 				<ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>

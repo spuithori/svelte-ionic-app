@@ -40,7 +40,7 @@
 		</ion-toolbar>
 	</ion-header>
 
-	<ion-content fullscreen padding scroll-y="false">
+	<ion-content fullscreen class="ion-padding" scroll-y="false">
 		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager={true}>
 			<ion-slide>
 				<img src="../assets/img/slides/slide-1.png" alt="pict" />

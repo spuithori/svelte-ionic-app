@@ -4,6 +4,7 @@
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { type Tech, techs } from '$lib/services/techs';
 	import type { SvelteComponent } from 'svelte';
+	import { navController } from 'ionic-svelte';
 
 	// get's defined via the bind:this - too much magic imho
 	export let ionNav: HTMLIonNavElement;
@@ -35,9 +36,10 @@
 	};
 
 	const showDetail = (tech: Tech) => {
-		console.log('ion-nav element', ionNav);
-		ionNav.push(createHTMLCompFromSvelte(NavDetail, { tech }));
+		navController.push(NavDetail, { tech });
 	};
+
+	// Please note - API changes for IonNav, check https://github.com/Tommertom/ionic-svelte-nav-howto
 </script>
 
 <svelte:head>

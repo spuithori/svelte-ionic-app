@@ -206,7 +206,7 @@
 
 		<ion-list inset={true}>
 			<ion-list-header>Multiple Accordions</ion-list-header>
-			<ion-accordion-group multiple="true" id="multiple">
+			<ion-accordion-group multiple={true} id="multiple">
 				<ion-accordion value="colors">
 					<ion-item slot="header">
 						<ion-label>Colors</ion-label>
