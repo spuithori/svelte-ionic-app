@@ -72,7 +72,7 @@ Hint: try responsive design of the app and ionic UI magic by using various devic
 On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
 do all the lifting for you to create a SvelteKit SPA app.
 
-<img alt="create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-npm/raw/main/packages/create-ionic-svelte-app/create-ionic-svelte-app.png" width="45%">
+<img alt="npm create ionic-svelte-app@latest" title="create ionic-svelte-app@latest" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="45%">
 
 What is next - visit https://github.com/Tommertom/svelte-ionic-npm to get more info on how to develop with Ionic Svelte. Including known issues and workaround and some info on special components such as `IonPage` and `IonTabs`.
 
