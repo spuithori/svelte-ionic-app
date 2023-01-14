@@ -149,12 +149,16 @@
 			<br />
 			<ion-button
 				expand="block"
+				on:keyup={() => {
+					inlineModalOpen = false;
+				}}
 				on:click={() => {
 					inlineModalOpen = false;
 				}}
 			>
 				Close modal
 			</ion-button>
+			vite v4.
 		</ion-content>
 	</ion-modal>
 
@@ -164,6 +168,11 @@
 				<ion-title>Menu</ion-title>
 				<ion-button
 					expand="block"
+					on:keyup={() => {
+						//@ts-ignore
+						window.gtag('event', 'Feedback open');
+						inlineModalOpen = true;
+					}}
 					on:click={() => {
 						//@ts-ignore
 						window.gtag('event', 'Feedback open');
@@ -177,6 +186,9 @@
 			<ion-list>
 				{#each menuItems as menuItem, i}
 					<ion-item
+						on:keyup={() => {
+							closeAndNavigate(menuItem.url);
+						}}
 						on:click={() => {
 							closeAndNavigate(menuItem.url);
 						}}
@@ -188,7 +200,7 @@
 
 				<ion-item />
 				{#if iosInstall}
-					<ion-item on:click={showIOSinstall}>
+					<ion-item on:click={showIOSinstall} on:keyup={showIOSinstall}>
 						<ion-icon icon={allIonicIcons['download']} slot="start" />
 						<ion-label>Install this app as PWA</ion-label>
 					</ion-item>
@@ -196,6 +208,10 @@
 				{/if}
 				{#if $canInstall}
 					<ion-item
+						on:keyup={() => {
+							const prompt = $pwaBeforeInstallPrompt;
+							prompt.prompt();
+						}}
 						on:click={() => {
 							const prompt = $pwaBeforeInstallPrompt;
 							prompt.prompt();
@@ -208,6 +224,11 @@
 				{/if}
 
 				<ion-item
+					on:keyup={() => {
+						//@ts-ignore
+						window.gtag('event', 'github-svelte-ionic-app');
+						window.open('https://github.com/Tommertom/svelte-ionic-app', '_blank');
+					}}
 					on:click={() => {
 						//@ts-ignore
 						window.gtag('event', 'github-svelte-ionic-app');
@@ -218,6 +239,14 @@
 					<ion-label>Go to GitHub for this app</ion-label>
 				</ion-item>
 				<ion-item
+					on:keyup={() => {
+						//@ts-ignore
+						window.gtag('event', 'forum-visit');
+						window.open(
+							'https://forum.ionicframework.com/t/ionicsvelte-all-of-ionics-ui-in-one-svelte-app',
+							'_blank'
+						);
+					}}
 					on:click={() => {
 						//@ts-ignore
 						window.gtag('event', 'forum-visit');

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import { prefetchRoutes } from '$app/navigation';
+	import { preloadCode } from '$app/navigation';
 
 	import { pwaStatusStream, type PWAStatus } from '$lib/services/pwa';
 
@@ -11,6 +11,7 @@
 	/* Theme variables */
 	import '../theme/variables.css';
 	import 'ionic-svelte/components/all';
+
 	setupIonicBase();
 
 	pwaStatusStream.subscribe((status: PWAStatus) => {
@@ -26,7 +27,7 @@
 
 	// Aggressive prefetching for faster rendering
 	if (!dev) {
-		prefetchRoutes();
+		preloadCode();
 	}
 </script>
 
