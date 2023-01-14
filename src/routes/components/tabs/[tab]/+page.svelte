@@ -1,7 +1,7 @@
 <script lang="ts">
 	// SvelteKit users - please refer to https://github.com/Tommertom/ionic-svelte-tabs-howto
 	// this has a newer and better way to implement tabs, using layout-system of SvelteKit router
-	import { IonTabs } from 'ionic-svelte';
+	import { IonTabsLegacy } from 'ionic-svelte';
 
 	import Controllers from '../../Controllers/+page.svelte';
 	import Music from '$lib/components/Music.svelte';
@@ -30,7 +30,7 @@
 	};
 </script>
 
-<IonTabs
+<IonTabsLegacy
 	slot="bottom"
 	tabs={myTabs}
 	selected={tab}
