@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { menu } from 'ionicons/icons';
+	import { menu, code } from 'ionicons/icons';
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { menuController } from 'ionic-svelte';
 	import { IonPage } from 'ionic-svelte';
@@ -40,45 +40,32 @@
 		</ion-toolbar>
 	</ion-header>
 
-	<ion-content fullscreen class="ion-padding" scroll-y="false">
+	<ion-content fullscreen class="ion-padding" scroll-y={false}>
 		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager={true}>
 			<ion-slide>
-				<img src="../assets/img/slides/slide-1.png" alt="pict" />
-				<h2>Welcome!</h2>
-				The<b>Ionic UI App</b> is a practical preview of the ionic framework, and a demonstration of
-				use in svelte or even other languages. <br />
-				<br />
-				<br />
-			</ion-slide>
-
-			<ion-slide>
-				<img src="../assets/img/slides/svelte.png" alt="pict" />
-				<h2>Handy tool!</h2>
-				By clicking the button bottom right you can instantly view the source code of the element you
-				are viewing, to copy/paste and direct link to API docs.<br />
-				<br />
-				<br />
-			</ion-slide>
-
-			<ion-slide>
 				<img src="../assets/img/slides/slide-2.png" alt="pict" width="50%" />
-				<h2>Easy start</h2>
+				<h2>Welcome!</h2>
 
+				<b> Ionic UI App</b> is a demo of the ionic framework made with Svelte<br />
+				<br /><br />
+
+				Easy start your own Ionic SvelteKit app?
 				<pre>npm create ionic-svelte-app@latest </pre>
 
 				<br />
 				<br />
 			</ion-slide>
-
 			<ion-slide>
-				<img src="../assets/img/slides/slide-4.png" alt="pict" />
+				<img src="../assets/img/slides/svelte.png" alt="pict" />
+				<h2>Handy tool!</h2>
+				View the source code of the element you are viewing - copy/paste code, and directly link to the
+				API docs!<br />Just click&nbsp;<ion-icon icon={code} /><br /><br />
+				Also in Angular, Vue, React, VanillaJS and Stencil
+				<br />
 				<h2>Ready to Play?</h2>
 				Check out
-				<ion-icon icon={menu} on:click={flipMenuOn} />
-				to look at UI examples. <br />
-				<br />
-				<br />
-				<br />
+				<ion-icon icon={menu} on:click={flipMenuOn} on:keypress={flipMenuOn} />
+				to look at Ionic UI examples. <br />
 			</ion-slide>
 		</ion-slides>
 	</ion-content>
