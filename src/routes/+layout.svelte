@@ -39,10 +39,3 @@
 		</div>
 	</ion-split-pane>
 </ion-app>
-
-<style global>
-	.sourcemodal .modal-wrapper {
-		height: 97%;
-		width: 97%;
-	}
-</style>

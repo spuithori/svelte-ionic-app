@@ -1,26 +1,14 @@
 <script lang="ts">
-	import {
-		add,
-		logoFacebook,
-		logoTwitter,
-		code,
-		logoVimeo,
-		logoGoogle,
-		share
-	} from 'ionicons/icons';
-	import { modalController } from 'ionic-svelte';
+	import { code } from 'ionicons/icons';
+
 	import SourceViewer from '$lib/components/SourceViewer.svelte';
 
 	export let name: string;
 	let pulseSourceViewer = false;
+	let isOpen = false;
 
 	const showSource = async () => {
-		const modal = await modalController.create({
-			cssClass: 'sourcemodal',
-			component: SourceViewer,
-			componentProps: { name }
-		});
-		await modal.present();
+		isOpen = true;
 	};
 
 	setTimeout(() => {
@@ -35,6 +23,15 @@
 <div on:click={showSource} on:keyup={showSource}>
 	<ion-icon icon={code} class:pulseSourceViewer />
 </div>
+
+<ion-modal
+	is-open={isOpen}
+	on:ionModalDidDismiss={() => {
+		isOpen = false;
+	}}
+>
+	<SourceViewer {name} />
+</ion-modal>
 
 <style>
 	ion-icon {
@@ -53,5 +50,10 @@
 	.pulseSourceViewer {
 		border-radius: 50%;
 		animation: shadow-pulse 1s infinite;
+	}
+
+	ion-modal {
+		--width: 100%;
+		--height: 100%;
 	}
 </style>
