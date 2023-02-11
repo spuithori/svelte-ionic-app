@@ -43,7 +43,7 @@
 	<ion-content fullscreen class="ion-padding" scroll-y={false}>
 		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager={true}>
 			<ion-slide>
-				<img src="../assets/img/slides/slide-2.png" alt="pict" width="50%" />
+				<img src="/logo.svg" alt="pict" />
 				<h2>Welcome!</h2>
 
 				<b> Ionic UI App</b> is a demo of the ionic framework made with Svelte<br />

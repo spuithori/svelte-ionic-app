@@ -4,16 +4,17 @@
 
 	import { onMount } from 'svelte';
 	import { IonPage } from 'ionic-svelte';
+	import type { BreadcrumbCollapsedClickEventDetail } from '@ionic/core';
 
-	let expandBreadcrumb;
+	let expandBreadcrumb: HTMLIonBreadcrumbsElement;
 	let popoverBreadcrumb;
-	let popover;
+	let popover: HTMLIonPopoverElement;
 
 	onMount(() => {
 		expandBreadcrumb.maxItems = 4;
 	});
 
-	const expandCollapsedClick = (ev) => {
+	const expandCollapsedClick = () => {
 		expandBreadcrumb.maxItems = undefined;
 	};
 
@@ -36,7 +37,7 @@
 	</ion-header>
 
 	<ion-content fullscreen>
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Basic</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -45,7 +46,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Colors</ion-list-header>
 			<ion-breadcrumbs color="secondary">
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -54,7 +55,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Icons - Start</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -72,7 +73,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Icons - End</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -87,7 +88,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Custom Separator - Icon</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -105,9 +106,9 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Max Items</ion-list-header>
-			<ion-breadcrumbs max-items="4">
+			<ion-breadcrumbs max-items={4}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
 				<ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
 				<ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>
@@ -117,9 +118,9 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Items Before Collapse</ion-list-header>
-			<ion-breadcrumbs maxitems="4" items-before-collapse="2">
+			<ion-breadcrumbs max-items={4} items-before-collapse={2}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
 				<ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
 				<ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>
@@ -129,9 +130,9 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Items After Collapse</ion-list-header>
-			<ion-breadcrumbs max-items="4" items-after-collapse="3">
+			<ion-breadcrumbs max-items={4} items-after-collapse={3}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
 				<ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
 				<ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>
@@ -141,9 +142,9 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Items Before And After Collapse</ion-list-header>
-			<ion-breadcrumbs max-items="4" items-before-collapse="0" items-after-collapse="3">
+			<ion-breadcrumbs max-items={4} items-before-collapse={0} items-after-collapse={3}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
 				<ion-breadcrumb href="#electronics"> Electronics </ion-breadcrumb>
 				<ion-breadcrumb href="#photography"> Photography </ion-breadcrumb>
@@ -153,7 +154,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Expand on Collapsed Indicator Click</ion-list-header>
 			<ion-breadcrumbs
 				id="expand"
@@ -188,10 +189,10 @@
 			</ion-popover>
 		</ion-list>
 
-		<ion-list inset={true}>
+		<ion-list>
 			<ion-list-header>Popover on Collapsed Indicator Click</ion-list-header>
 			<ion-breadcrumbs
-				max-items="4"
+				max-items={4}
 				id="popover"
 				bind:this={popoverBreadcrumb}
 				on:ionCollapsedClick={popoverCollapsedClick}
