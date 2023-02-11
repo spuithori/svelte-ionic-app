@@ -3,6 +3,9 @@
 	import { close } from 'ionicons/icons';
 	import localForage from 'localforage';
 
+	import { HighlightSvelte, LineNumbers } from 'svelte-highlight';
+	import githubDark from 'svelte-highlight/styles/github-dark';
+
 	export let name = '/';
 
 	const LASTLANGSELECTEDKEY = 'lastLangSelected';
@@ -172,6 +175,7 @@
 
 <svelte:head>
 	<title>Sourceviewer {name}</title>
+	{@html githubDark}
 </svelte:head>
 <ion-header translucent={true}>
 	<ion-toolbar>
@@ -217,12 +221,10 @@
 	{/if}
 </ion-header>
 
-<ion-content scroll-x="true" style="--padding-start: 15px;--padding-end: 15px;" fullscreen>
-	<pre
-		style="-webkit-user-select: text; /* Chrome 49+ */
-  -moz-user-select: text; /* Firefox 43+ */
-  -ms-user-select: text; /* No support yet */
-  user-select: text; /* Likely future */">{sourceCode}</pre>
+<ion-content scroll-x={true} style="--padding-start: 15px;--padding-end: 15px;" fullscreen>
+	<HighlightSvelte code={sourceCode} let:highlighted>
+		<LineNumbers {highlighted} />
+	</HighlightSvelte>
 </ion-content>
 
 <style>

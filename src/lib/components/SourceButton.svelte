@@ -16,6 +16,7 @@
 
 	const showSource = async () => {
 		const modal = await modalController.create({
+			cssClass: 'sourcemodal',
 			component: SourceViewer,
 			componentProps: { name }
 		});
@@ -31,7 +32,7 @@
 	}, 20000);
 </script>
 
-<div on:click={showSource}>
+<div on:click={showSource} on:keyup={showSource}>
 	<ion-icon icon={code} class:pulseSourceViewer />
 </div>
 
