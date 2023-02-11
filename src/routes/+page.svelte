@@ -1,4 +1,4 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	goto('/components/Splash');
+	goto('/components/Slides');
 </script>
