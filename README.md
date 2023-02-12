@@ -195,3 +195,5 @@ Borat logo: https://sapper.svelte.dev/
 
 Raymondboswel's repo: https://github.com/raymondboswel/ionic-svelte-example
 
+Code highlighting: https://github.com/metonym/svelte-highlight
+

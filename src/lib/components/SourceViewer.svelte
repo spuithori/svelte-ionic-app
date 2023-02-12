@@ -9,7 +9,7 @@
 	export let name = '/';
 
 	const LASTLANGSELECTEDKEY = 'lastLangSelected';
-	let REPLlink: string;
+	let REPLlink: string|undefined;
 	let APIlink: string = '';
 	let selectedCodeLanguage = 'svelte';
 	let sources: { [id: string]: string } = {};
@@ -171,6 +171,14 @@
 		sourceCode = sources[selectedCodeLanguage];
 		localForage.setItem(LASTLANGSELECTEDKEY, selectedCodeLanguage);
 	};
+
+	function simplePrettier(code: string) {
+		const lines = code.split('\n');
+		const result = lines.map((line) => line.replace(/^\t/, '')).join('\n');
+		return result.replace(/\t/g, '   ');
+	}
+
+	$: sourceCode = simplePrettier(sourceCode);
 </script>
 
 <svelte:head>
@@ -226,12 +234,3 @@
 		<LineNumbers {highlighted} />
 	</HighlightSvelte>
 </ion-content>
-
-<style>
-	pre {
-		-webkit-user-select: all; /* Chrome 49+ */
-		-moz-user-select: all; /* Firefox 43+ */
-		-ms-user-select: all; /* No support yet */
-		user-select: all; /* Likely future */
-	}
-</style>
