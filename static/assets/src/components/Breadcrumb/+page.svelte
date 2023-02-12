@@ -37,7 +37,7 @@
 	</ion-header>
 
 	<ion-content fullscreen>
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Basic</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -46,7 +46,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Colors</ion-list-header>
 			<ion-breadcrumbs color="secondary">
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -55,7 +55,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Icons - Start</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -73,7 +73,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Icons - End</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -88,7 +88,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Custom Separator - Icon</ion-list-header>
 			<ion-breadcrumbs>
 				<ion-breadcrumb href="#">
@@ -106,7 +106,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Max Items</ion-list-header>
 			<ion-breadcrumbs max-items={4}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -118,7 +118,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Items Before Collapse</ion-list-header>
 			<ion-breadcrumbs max-items={4} items-before-collapse={2}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -130,7 +130,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Items After Collapse</ion-list-header>
 			<ion-breadcrumbs max-items={4} items-after-collapse={3}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -142,7 +142,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Items Before And After Collapse</ion-list-header>
 			<ion-breadcrumbs max-items={4} items-before-collapse={0} items-after-collapse={3}>
 				<ion-breadcrumb href="#"> Home </ion-breadcrumb>
@@ -154,7 +154,7 @@
 			</ion-breadcrumbs>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Expand on Collapsed Indicator Click</ion-list-header>
 			<ion-breadcrumbs
 				id="expand"
@@ -171,7 +171,7 @@
 
 			<ion-popover alignment="center" bind:this={popover}>
 				<ion-content>
-					<ion-list>
+					<ion-list inset={true}>
 						<ion-item href="#electronics">
 							<ion-label>Electronics</ion-label>
 						</ion-item>
@@ -189,7 +189,7 @@
 			</ion-popover>
 		</ion-list>
 
-		<ion-list>
+		<ion-list inset={true}>
 			<ion-list-header>Popover on Collapsed Indicator Click</ion-list-header>
 			<ion-breadcrumbs
 				max-items={4}
@@ -220,9 +220,5 @@
 
 	ion-breadcrumbs.md {
 		padding: 0 4px;
-	}
-
-	ion-content {
-		--background: #f2f2f7;
 	}
 </style>
