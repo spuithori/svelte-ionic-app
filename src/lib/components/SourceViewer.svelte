@@ -9,7 +9,7 @@
 	export let name = '/';
 
 	const LASTLANGSELECTEDKEY = 'lastLangSelected';
-	let REPLlink: string|undefined;
+	let REPLlink: string | undefined;
 	let APIlink: string = '';
 	let selectedCodeLanguage = 'svelte';
 	let sources: { [id: string]: string } = {};
