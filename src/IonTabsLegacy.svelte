@@ -1,4 +1,8 @@
 <script lang="ts">
+  /*
+  DONT USE THIS ANYMORE - NO LONGER MAINTAINED
+  See https://github.com/Tommertom/ionic-svelte-tabs-howto
+  */
   import { onMount } from "svelte";
 
   import * as ionIcons from "ionicons/icons";
