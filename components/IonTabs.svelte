@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
@@ -8,15 +8,11 @@
   export let ionTabsWillChange = () => {};
   export let slot = "bottom";
 
-  let ionTabBarElement: HTMLIonTabsElement;
+  let ionTabBarElement;
 
-  export let tabs: {
-    label: string;
-    icon: string;
-    tab: string;
-  }[] = [];
+  export let tabs = [];
 
-  let controller: HTMLIonTabsElement;
+  let controller;
   onMount(async () => {
     // reassignment needed after onMount
     controller = ionTabBarElement;
@@ -37,7 +33,7 @@
     }
   });
 
-  const tabBarClick = async (selectedTab: string) => {
+  const tabBarClick = async (selectedTab) => {
     await goto(selectedTab);
     controller.select(selectedTab);
   };

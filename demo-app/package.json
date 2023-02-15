@@ -40,7 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@ionic/core": "^6.5.3",
-		"ionic-svelte": "^0.5.62",
+		"ionic-svelte": "^0.5.66",
 		"localforage": "^1.10.0"
 	}
 }

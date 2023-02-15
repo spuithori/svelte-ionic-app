@@ -1,19 +1,35 @@
-<script lang="ts">
-  import { onMount, type SvelteComponent } from "svelte";
+<script>
+  import { onMount } from "svelte";
 
-  export let root: any;
+  /**
+   * @typedef {Object} root: SvelteComponent;
+   */
+  export let root;
+
+  /**
+   * @typedef {Object} animated: boolean | undefined;
+   */
   export let animated = true;
-  export let animation: ((baseEl: any, opts?: any) => Animation) | undefined = undefined;
-  export let rootParams: undefined | { [key: string]: any } = undefined;
-  export let swipeGesture: boolean | undefined = undefined;
 
-  //@ts-ignore - if we export ionNav, then the root element actually has access to ion-nav via this variable
-  let ionNav: HTMLIonNavElement = undefined;
+  /**
+   * @typedef {Object} Animation: ((baseEl: any, opts?: any) => Animation) | undefined = undefined;
+   */
+  export let animation; //
 
-  const createHTMLCompFromSvelte = (
-    component: new (...args: any) => SvelteComponent,
-    componentProps: { [key: string]: any } = {}
-  ) => {
+  /**
+   * @typedef {Object} rootParams: undefined | { [key: string]: any } = undefined;
+   */
+  export let rootParams;
+
+  /**
+   * @typedef {Object} swipeGesture: boolean | undefined = undefined;
+   */
+  export let swipeGesture;
+
+  let ionNav;
+  let rootComponent;
+
+  const createHTMLCompFromSvelte = (component, componentProps = {}) => {
     const divWrapper = document.createElement("div");
     const contentID = "id" + Date.now();
     divWrapper.id = contentID;
@@ -25,7 +41,6 @@
 
     const props = {
       ...componentProps,
-      ionNav,
     };
 
     const svelteComponent = new component({
@@ -36,10 +51,7 @@
     return divWrapper;
   };
 
-  let rootComponent: HTMLElement;
-
   onMount(() => {
-    //@ts-ignore
     rootComponent = createHTMLCompFromSvelte(root, {});
   });
 </script>
