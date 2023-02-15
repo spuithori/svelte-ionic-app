@@ -61,10 +61,12 @@
 
 	// we use a separate way to load the svelte source
 	// hack the name for tabs
-	if (name == 'tabs') {
+	if (name == 'Tabs' || name == 'tabs') {
 		name = 'tabs/[tab]';
 	}
-	fetch(`/assets/src/components/${name}/+page.svelte`).then((response) => {
+
+	console.log('getting', `assets/src/components/${name}/+page.svelte`);
+	fetch(`assets/src/components/${name}/+page.svelte`).then((response) => {
 		response
 			.text()
 			.then((txt) => {

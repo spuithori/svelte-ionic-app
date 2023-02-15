@@ -78,8 +78,8 @@
 		<ion-toolbar>
 			<ion-searchbar
 				animated
-				debounce="1500"
-				show-cancel-button="'never'"
+				debounce={1500}
+				show-cancel-button="never"
 				on:ionInput={handleInput}
 			/>
 		</ion-toolbar>

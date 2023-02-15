@@ -39,6 +39,8 @@
 
 	// and build the menu list from it
 	const modules = import.meta.glob('../../**/*.svelte', { as: 'raw' });
+
+	console.log('MODULES', modules);
 	let menuItems: Array<{ url: string; label: string; icon: any }> = Object.keys(modules)
 		.filter((key) => key.includes('/routes/components/') && !key.includes('[tab]'))
 		.map((key) =>
@@ -46,8 +48,11 @@
 				key.replace('../../routes/components/', '').replace('/+page.svelte', '')
 			)
 		)
+		.concat(['Tabs'])
 		.sort()
+
 		.map((componentName) => {
+			// console.log('COMPONENTN', componentName);
 			const url =
 				componentName !== 'Tabs' ? `/components/${componentName}` : `/components/tabs/[tab]`;
 			return {

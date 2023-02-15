@@ -1,0 +1,30 @@
+[debug] [2023-02-15T19:10:03.857Z] ----------------------------------------------------------------------
+[debug] [2023-02-15T19:10:03.861Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tomgr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-15T19:10:03.862Z] CLI Version:   11.22.0
+[debug] [2023-02-15T19:10:03.862Z] Platform:      win32
+[debug] [2023-02-15T19:10:03.862Z] Node Version:  v16.14.2
+[debug] [2023-02-15T19:10:03.863Z] Time:          Wed Feb 15 2023 20:10:03 GMT+0100 (Central European Standard Time)
+[debug] [2023-02-15T19:10:03.864Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-15T19:10:03.956Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-15T19:10:03.957Z] > authorizing via signed-in user (tom.gruintjes@gmail.com)
+[debug] [2023-02-15T19:10:03.957Z] [iam] checking project ionicsvelte for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-15T19:10:03.959Z] > refreshing access token with scopes: []
+[debug] [2023-02-15T19:10:03.961Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-15T19:10:03.961Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-15T19:10:04.148Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-15T19:10:04.149Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-15T19:10:04.181Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ionicsvelte:testIamPermissions [none]
+[debug] [2023-02-15T19:10:04.181Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ionicsvelte:testIamPermissions x-goog-quota-user=projects/ionicsvelte
+[debug] [2023-02-15T19:10:04.181Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ionicsvelte:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-15T19:10:04.424Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ionicsvelte:testIamPermissions 200
+[debug] [2023-02-15T19:10:04.424Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ionicsvelte:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-15T19:10:04.426Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ionicsvelte [none]
+[debug] [2023-02-15T19:10:04.749Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ionicsvelte 200
+[debug] [2023-02-15T19:10:04.749Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ionicsvelte {"projectId":"ionicsvelte","projectNumber":"512207280782","displayName":"IonicSvelte","name":"projects/ionicsvelte","resources":{"hostingSite":"ionicsvelte","realtimeDatabaseInstance":"ionicsvelte","storageBucket":"ionicsvelte.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_7d18fc02-b04c-497e-9ed5-b948e0040043"}
+[info] 
+[info] === Deploying to 'ionicsvelte'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-02-15T19:10:04.762Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ionicsvelte/versions [none]
+[debug] [2023-02-15T19:10:04.762Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ionicsvelte/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

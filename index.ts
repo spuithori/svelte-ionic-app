@@ -166,7 +166,7 @@ export const registerMenu = (menuId: string): boolean => {
 // @ts-ignore
 export { default as IonTabs } from "./components/IonTabs.svelte";
 // @ts-ignore
-export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
+// export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
 // @ts-ignore
 export { default as IonPage } from "./components/IonPage.svelte";
 // @ts-ignore

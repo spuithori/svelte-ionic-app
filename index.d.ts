@@ -19,7 +19,7 @@ export function createNavPageFromSvelte(
 );
 
 export { default as IonTabs } from "./components/IonTabs.svelte";
-export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
+// export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
 export { default as IonPage } from "./components/IonPage.svelte";
 export { default as IonNav } from "./components/IonNav.svelte";
 

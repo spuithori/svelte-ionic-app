@@ -332,8 +332,4 @@
 	ion-list-header {
 		padding-bottom: 12px;
 	}
-
-	ion-content {
-		--background: #f2f2f7;
-	}
 </style>

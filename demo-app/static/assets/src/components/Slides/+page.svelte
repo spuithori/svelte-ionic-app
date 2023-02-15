@@ -87,4 +87,8 @@
 		max-width: 60%;
 		margin: 36px 0;
 	}
+
+	pre {
+		font-size: 80%;
+	}
 </style>
