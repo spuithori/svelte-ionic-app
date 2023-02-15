@@ -241,23 +241,17 @@
 				<ion-item
 					on:keyup={() => {
 						//@ts-ignore
-						window.gtag('event', 'forum-visit');
-						window.open(
-							'https://forum.ionicframework.com/t/ionicsvelte-all-of-ionics-ui-in-one-svelte-app',
-							'_blank'
-						);
+						window.gtag('event', 'npm-visit');
+						window.open('https://github.com/Tommertom/svelte-ionic-npm', '_blank');
 					}}
 					on:click={() => {
 						//@ts-ignore
-						window.gtag('event', 'forum-visit');
-						window.open(
-							'https://forum.ionicframework.com/t/ionicsvelte-all-of-ionics-ui-in-one-svelte-app',
-							'_blank'
-						);
+						window.gtag('event', 'npm-visit');
+						window.open('https://github.com/Tommertom/svelte-ionic-npm', '_blank');
 					}}
 				>
 					<ion-icon icon={allIonicIcons['star']} slot="start" />
-					<ion-label>Go to Ionic Forum</ion-label>
+					<ion-label>Github ionic-svelte NPM package</ion-label>
 				</ion-item>
 			</ion-list>
 		</ion-content>
