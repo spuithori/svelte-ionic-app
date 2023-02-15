@@ -35,7 +35,7 @@ do all the lifting for you to create a SvelteKit SPA app.
 ## Show me Ionic!
 A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com. This also has a handy tool to show the source code for Svelte - and even Angular, VanillaJS, Vue, React and stencil!
 
-And the code on how to use the components - repo at https://github.com/Tommertom/svelte-ionic-app/tree/main/demo-app
+And the code on how to use the components - repo at https://github.com/Tommertom/svelte-ionic-app/tree/main/demo-app 
 
 ## How to get started - manual import of ionic-svelte library
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit). Skip this part if you already have a project
