@@ -1,6 +1,9 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.60
+- Put the NPM package with the demo app in one repo
+
 ## Creator scripts / 0.5.59
 - css classic style selectors for dark, so developer can do apply dark theme programmatically
 - bumped to Ionic 6.5.3

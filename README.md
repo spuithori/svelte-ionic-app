@@ -1,4 +1,4 @@
-<h1 align="center"> Ionic SvelteKit NPM </h1> <br>
+<h1 align="center"> Ionic SvelteKit </h1> <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
     <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/demo-app/static/assets/svelte-ionic-logo.png" width="350">

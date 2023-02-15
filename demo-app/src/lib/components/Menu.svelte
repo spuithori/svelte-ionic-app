@@ -129,8 +129,8 @@
 					<br />
 					<p>
 						Raise issues on Github - <a
-							href="https://github.com/Tommertom/svelte-ionic-npm/issues"
-							target="_new">https://github.com/Tommertom/svelte-ionic-npm/issues</a
+							href="https://github.com/Tommertom/svelte-ionic-app/issues"
+							target="_new">https://github.com/Tommertom/svelte-ionic-app/issues</a
 						>
 					</p>
 					<br />
@@ -237,21 +237,6 @@
 				>
 					<ion-icon icon={allIonicIcons['star']} slot="start" />
 					<ion-label>Go to GitHub for this app</ion-label>
-				</ion-item>
-				<ion-item
-					on:keyup={() => {
-						//@ts-ignore
-						window.gtag('event', 'npm-visit');
-						window.open('https://github.com/Tommertom/svelte-ionic-npm', '_blank');
-					}}
-					on:click={() => {
-						//@ts-ignore
-						window.gtag('event', 'npm-visit');
-						window.open('https://github.com/Tommertom/svelte-ionic-npm', '_blank');
-					}}
-				>
-					<ion-icon icon={allIonicIcons['star']} slot="start" />
-					<ion-label>Github ionic-svelte NPM package</ion-label>
 				</ion-item>
 			</ion-list>
 		</ion-content>

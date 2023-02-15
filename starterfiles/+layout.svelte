@@ -19,7 +19,7 @@
 		It is recommended to do this in this file, as you only need to do such once. But you are free
 		to do this elsewhere if you like to code-split differently.
 
-		You can find these import lines to copy here - https://github.com/Tommertom/svelte-ionic-npm/blob/main/components/all.js
+		You can find these import lines to copy here - https://github.com/Tommertom/svelte-ionic-app/blob/main/components/all.js
 	
 		Please don't forget to import ion-app in this file when you decide to code-split:
 		
