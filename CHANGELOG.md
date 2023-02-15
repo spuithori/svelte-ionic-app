@@ -1,7 +1,7 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
-## 0.5.60
+## 0.5.60/61
 - Put the NPM package with the demo app in one repo
 
 ## Creator scripts / 0.5.59

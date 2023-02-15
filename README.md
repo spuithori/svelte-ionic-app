@@ -11,7 +11,7 @@
 </p>
 <brt>
 
-<h1>NPM library to go along with the Ionic Svelte integration demostrated at [ionicsvelte.firebaseapp.com](ionicsvelte.firebaseapp.com).</h1>
+NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.
 
 <br>
 
