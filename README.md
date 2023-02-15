@@ -9,9 +9,25 @@
 <p align="center">
   A library to include Ionic in your Svelte and SvelteKit app 
 </p>
-<brt>
+<br>
 
-NPM library to go along with the Ionic Svelte integration demostrated at ionicsvelte.firebaseapp.com.
+<p align="center">
+  <a href="https://ionicsvelte.firebaseapp.com">
+    <img alt="Download as PWA" title="PWA power" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/demo-app/static/assets/img/pwa-download.png" width="140"  target="_blank">
+  </a>
+</p>
+Click the PWA Launch button to see this app live in action - and install as PWA on your desktop or mobile!
+<br><br>
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT license](https://img.shields.io/greasyfork/l/407466?style=flat-square)](./LICENSE.md)
+[![Forks](https://img.shields.io/badge/forks-35-yellowgreen?style=flat-square)](https://github.com/Tommertom/svelte-ionic-app/fork)
+[![Forks](https://img.shields.io/github/stars/tommertom/svelte-ionic-app?style=flat-square)](https://img.shields.io/github/stars/tommertom/svelte-ionic-app?style=flat-square)
+[![Forks](https://img.shields.io/badge/watching-15-orange)](https://img.shields.io/badge/watching-15-orange)
+
+
+NPM library to go along with the Ionic Svelte integration demostrated at https://ionicsvelte.firebaseapp.com.
 
 <br>
 
