@@ -1,7 +1,7 @@
 <h1 align="center"> Ionic SvelteKit NPM </h1> <br>
 <p align="center">
   <a href="https://ionicsvelte.firebaseapp.com">
-    <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/static/assets/svelte-ionic-logo.png" width="350">
+    <img alt="IonicSvelte" title="IonicSvelteKit" src="https://github.com/Tommertom/svelte-ionic-app/raw/main/demo-app/static/assets/svelte-ionic-logo.png" width="350">
   </a>
 
 </p>
@@ -22,7 +22,7 @@ do all the lifting for you to create a SvelteKit SPA app.
 ## Show me Ionic!
 A showcase app for all Ionic UI elements, Supercharged by SvelteKit can be found at https://ionicsvelte.firebaseapp.com. This also has a handy tool to show the source code for Svelte - and even Angular, VanillaJS, Vue, React and stencil!
 
-And the code on how to use the components - repo at https://github.com/Tommertom/svelte-ionic-app
+And the code on how to use the components - repo at https://github.com/Tommertom/svelte-ionic-app/demo-app
 
 ## How to get started - manual import of ionic-svelte library
 Start a new SvelteKit project (or Svelte with Vite, even though I prefer Kit). Skip this part if you already have a project
@@ -56,7 +56,7 @@ adapter: adapter({
 Integration of Ionic
 
 - `npm i @ionic/core ionic-svelte` - (ionic svelte has typings until 6.4.2)
-- create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-npm/main/starterfiles/theme/variables.css
+- create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-app/main/starterfiles/theme/variables.css
 - the top-route layout file `+layout.svelte` (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
 ```
@@ -87,10 +87,10 @@ And then start working on the content of the app in `+page.svelte`:
 
 If you get a 500 internal error-error then likely SSR is not disabled. Making a SvelteKit app a real SPA really requires two steps - adapter static and `ssr=false`
 
-Starterfiles on github: https://github.com/Tommertom/svelte-ionic-npm/tree/main/starterfiles
+Starterfiles on github: https://github.com/Tommertom/svelte-ionic-app/tree/main/starterfiles
 Use these files as reference to see how to do the final steps integrating Ionic in your svelte project.
 
-Code for this library - https://github.com/Tommertom/svelte-ionic-npm
+Code for this library - https://github.com/Tommertom/svelte-ionic-app
 
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
 
@@ -207,8 +207,6 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 - Add IonPage, IonTabs and IonBackButton are not part of the default export - these are svelte components, so index.ts cannot handle these (?)
 
 - Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check) - solution could be to make a svelte IonIcon component, but that will likely import all icons in a non-tree-shakable way?
-
-- Adding custom class to Modal/Popover does not work (using controller) - using inline Modal/Popover is probably better anyway
 
 - In some cases IonPage clips the content enclosed - then you need to remove main tags in IonPage
 
