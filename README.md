@@ -26,10 +26,7 @@ Click the PWA Launch button to see this app live in action - and install as PWA 
 [![Forks](https://img.shields.io/github/stars/tommertom/svelte-ionic-app?style=flat-square)](https://img.shields.io/github/stars/tommertom/svelte-ionic-app?style=flat-square)
 [![Forks](https://img.shields.io/badge/watching-15-orange)](https://img.shields.io/badge/watching-15-orange)
 
-
 NPM library to go along with the Ionic Svelte integration demostrated at https://ionicsvelte.firebaseapp.com.
-
-<br>
 
 ## How to get started - npm create ionic-svelte-app@latest
 On the CLI just type `npm create ionic-svelte-app@latest` to spin a SvelteKit project from the CLI. This will
