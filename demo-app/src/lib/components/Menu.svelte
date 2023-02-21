@@ -78,12 +78,15 @@
 	menuItems = [...menuItems];
 
 	const closeAndNavigate = async (url: string) => {
-		//@ts-ignore
-		window.gtag('event', url);
+		// take the google tag from the main thread
+		setTimeout(() => {
+			//@ts-ignore
+			if (!dev) window.gtag('event', url);
+		}, 100);
 
 		console.log('Navigate url', url);
-		goto(url);
 
+		goto(url);
 		menuController.close('mainmenu');
 	};
 

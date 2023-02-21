@@ -68,7 +68,7 @@ adapter: adapter({
 
 Integration of Ionic
 
-- `npm i @ionic/core ionic-svelte` - (ionic svelte has typings until 6.4.2)
+- `npm i @ionic/core ionic-svelte` 
 - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-app/main/starterfiles/theme/variables.css
 - the top-route layout file `+layout.svelte` (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
@@ -83,7 +83,7 @@ Integration of Ionic
     import 'ionic-svelte/components/all';
 
 	/* run base configuration code from ionic/core */
-	setupIonicSvelte();
+	setupIonicBase();
 </script>
 
 <ion-app>
@@ -107,6 +107,28 @@ Code for this library - https://github.com/Tommertom/svelte-ionic-app
 
 Ionic-svelte on NPMjs- https://www.npmjs.com/package/ionic-svelte
 
+
+## Code Splitting to reduce bundle size
+In order to reduce bundle size or limit the size of individual chunks, you can replace the import in main layout file. Example: if you replace the line  `import 'ionic-svelte/components/all';` with imports like below. This can reduce the bundle for that chunk drastically. The import of `all` will result to at least an 800kb chunk (80 components), so it is worth it to change this. 
+
+Next you can choose to load specific components only where you use them. 
+
+Please note, you only need to import a component only once, as the import registers the webcomponent globally. So this saves you lots of imports, reducing the bundle as well (compared to tree-shaking).
+
+And never forget to at least `import 'ionic-svelte/components/ion-app';` - as this one is in the main layout.
+
+```	
+	import 'ionic-svelte/components/ion-app';
+	import 'ionic-svelte/components/ion-card';
+	import 'ionic-svelte/components/ion-card-title';
+	import 'ionic-svelte/components/ion-card-subtitle';
+	import 'ionic-svelte/components/ion-card-header';
+	import 'ionic-svelte/components/ion-card-content';
+	import 'ionic-svelte/components/ion-chip';
+	import 'ionic-svelte/components/ion-button';
+```
+
+
 ## How to use components
 Ionic components are webcomponents, so appear in your template just like other dom elements. They don't need ECMA imports like `import {IonCard} from '...`. 
 
@@ -115,8 +137,8 @@ Ionic components are webcomponents, so appear in your template just like other d
 Here content
 </ion-card>
 ```
+So you can also apply css classes to them, also when wanting to tweak UI via the shadow dom/web-parts.
 
-`setupIonicBase` - will register all these Ionic components as webcomponents so you can use them easily. But, there is a trade-off - no tree shaking (unless you change `setupIonicBase` a bit).
 
 ## Special components
 Due to router issues and overlays, there are three special compontents included that override/replace the ionic standard webcomponents:
@@ -168,25 +190,6 @@ Sample `tsconfig.json`:
 }
 ```
 
-## Code Splitting to reduce bundle size
-In order to reduce bundle size or limit the size of individual chunks, you can replace the 
-Example: if you replace the line  `import 'ionic-svelte/components/all';` with imports like below. This can reduce the bundle for that chunk drastically. The import of `all` will result to at least an 800kb chunk (80 components), so it is worth it to change this. 
-
-Please note, you only need to import a component only once, as the import registers the webcomponent globally. So this saves you lots of imports, reducing the bundle as well (compared to tree-shaking).
-
-And never forget to at least `import 'ionic-svelte/components/ion-app';`.
-
-```	
-	import 'ionic-svelte/components/ion-app';
-	import 'ionic-svelte/components/ion-card';
-	import 'ionic-svelte/components/ion-card-title';
-	import 'ionic-svelte/components/ion-card-subtitle';
-	import 'ionic-svelte/components/ion-card-header';
-	import 'ionic-svelte/components/ion-card-content';
-	import 'ionic-svelte/components/ion-chip';
-	import 'ionic-svelte/components/ion-button';
-```
-
 ## How to contribute?
 Would you like to contribute to this project? Great!
 
@@ -213,13 +216,15 @@ When you do a PR, make sure you explain what you did and why!
 
 - bind:value does not seem to work on input and other form elements, so a click handler is needed - which is cumbersome - https://github.com/sveltejs/svelte/issues/892 - so probably not solvable without support by Ionic or Svelte - or we need to create wrappers for all elements - which is quite some work and you will be required to manually import all elements you use per page (like with Vue and React) - which seems a drag to me?
 
+SvelteKit form actions make the usage of  bind:value even obsolete. So that is the go-to way route anyway - https://kit.svelte.dev/docs/form-actions
+
 Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.vercel.app/introduction together with Yup schemas https://github.com/jquense/yup, the bind:value-issue actually becomes less relevant as you will have the library handle the events and you will use the observables to manage validation and final values to use for further processing. See https://blog.logrocket.com/form-validation-in-svelte/ for nice examples.
 
-- Some styles are unused - related to md and ios options for webcomponents? Or need to be discarded. Probably issue with webcomponents and the nature of Ionic being sensitive to md or ios style (as part of its config)
+- Some styles are reported as unused - related to md and ios options for webcomponents? Or need to be discarded. Probably issue with webcomponents and the nature of Ionic being sensitive to md or ios style (as part of its config). Or the way Svelte/vite checks for unused css.
 
 - Add IonPage, IonTabs and IonBackButton are not part of the default export - these are svelte components, so index.ts cannot handle these (?)
 
-- Ion Icons implementation will not support md and ios specific icons etc (yet) - name prop does not function - also happening in Vue/React.Similar icon issues arise with other component that can digest custom icons (to check) - solution could be to make a svelte IonIcon component, but that will likely import all icons in a non-tree-shakable way?
+- Ion Icons implementation only uses icon-property syntax. Name/md/ios will not function
 
 - In some cases IonPage clips the content enclosed - then you need to remove main tags in IonPage
 
@@ -231,7 +236,9 @@ Please note - if you use a library such as https://svelte-forms-lib-sapper-docs.
 
 - ItemSliding sometimes does not catch the gesture - known issue - needs fix in @ionic/core
 
-- Many "File not found errors" on css.map files. I frankly don't really mind these. Maybe it is easy to get rid of these, but for now, I leave it.
+- Many "File not found errors" on css.map files in the demo app. I frankly don't really mind these. Maybe it is easy to get rid of these, but for now, I leave it.
+
+Check https://github.com/Tommertom/svelte-ionic-app/issues for most recent overview of issues.
 
 
 ## Things not being implemented
