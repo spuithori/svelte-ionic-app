@@ -50,6 +50,27 @@ export {
   toastController
 } from "@ionic/core";
 
+// platforms
+declare const PLATFORMS_MAP: {
+  [key: string]: boolean;
+};
+
+declare type Platforms = keyof typeof PLATFORMS_MAP;
+
+export function getPlatforms(win?: any): string[];
+export function setupPlatforms(win: any);
+
+interface IsPlatformSignature {
+  (plt: Platforms): boolean;
+  (win: Window, plt: Platforms): boolean;
+}
+export function isPlatform(
+  winOrPlatform: Window | Platforms | undefined,
+  platform?: Platforms
+): IsPlatformSignature;
+
+export function testUserAgent(win: Window, expr: RegExp);
+
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;
 export interface NavigationHookOptions {

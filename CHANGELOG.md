@@ -1,7 +1,10 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
-## 0.62/63/64/65/66/67
+## 0.5.68
+- added some typings for platform functions
+
+## 0.5.62/63/64/65/66/67
 - removed typescript in *.svelte components as Vite does not process them (but does process *.ts)
 - removed  IonTabsLegacy.svelte - can still be found here https://github.com/Tommertom/svelte-ionic-app/blob/main/src/IonTabsLegacy.svelte for manual inclusion
 
