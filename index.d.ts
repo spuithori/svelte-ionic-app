@@ -71,6 +71,14 @@ export function isPlatform(
 
 export function testUserAgent(win: Window, expr: RegExp);
 
+
+// for people using tabs
+export interface TabListItem {
+  label: string;
+  icon: string;
+  tab: string;
+}
+
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;
 export interface NavigationHookOptions {

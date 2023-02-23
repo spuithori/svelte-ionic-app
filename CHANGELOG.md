@@ -1,6 +1,9 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.69
+- IonTabs - possibly breaking changes for users - fixed bug when tabs are placed in main route
+
 ## 0.5.68
 - added some typings for platform functions
 

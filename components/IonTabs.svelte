@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
@@ -7,34 +8,25 @@
   export let ionTabsDidChange = () => {};
   export let ionTabsWillChange = () => {};
   export let slot = "bottom";
-
-  let ionTabBarElement;
-
   export let tabs = [];
 
+  let ionTabBarElement;
   let controller;
+
+  // we need relative path for the goto to function properly and to allow for relative tab definitions
+  const { pathname } = $page.url;
+  let currentTabName = pathname.split("/").at(-1); // we restrict tabs not to have nested paths
+  const relativePath = pathname.replace(currentTabName, "");
+
   onMount(async () => {
     // reassignment needed after onMount
     controller = ionTabBarElement;
-    const { pathname } = $page.url;
-    let tabInPathName = pathname.split("/").at(-1);
-
-    if (tabInPathName && tabs.length > 0) {
-      // if we have don't have a route to a tab, let's take the first one
-      if (!tabs.map((tab) => tab.tab).includes(tabInPathName)) {
-        await goto(tabInPathName + "/" + tabs[0]?.tab);
-        controller.select(tabs[0]?.tab);
-      }
-    } else {
-      // panic - incorrect route or no tabs provided
-      console.warn("Incorrect route or no tabs supplied for IonTabs", $page.url, tabs);
-      goto("/");
-      return;
-    }
+    controller.select(currentTabName);
   });
 
   const tabBarClick = async (selectedTab) => {
-    await goto(selectedTab);
+    currentTabName = selectedTab;
+    await goto(relativePath + selectedTab);
     controller.select(selectedTab);
   };
 </script>
