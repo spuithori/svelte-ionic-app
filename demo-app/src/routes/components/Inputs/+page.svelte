@@ -10,21 +10,21 @@
 	$: console.log('Form received', form);
 	$: console.log('Page form', $page.form);
 
-	$: if (form?.success) {
-		console.log('Processing form', form);
-		// event.preventDefault();
-		const controller = alertController
-			.create({
-				header: 'Account Created',
-				message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
-				buttons: [
-					{
-						text: 'OK'
-					}
-				]
-			})
-			.then((alert) => alert.present());
-	}
+	// $: if (form?.success) {
+	// 	console.log('Processing form', form);
+	// 	// event.preventDefault();
+	// 	const controller = alertController
+	// 		.create({
+	// 			header: 'Account Created',
+	// 			message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
+	// 			buttons: [
+	// 				{
+	// 					text: 'OK'
+	// 				}
+	// 			]
+	// 		})
+	// 		.then((alert) => alert.present());
+	// }
 </script>
 
 <svelte:head>

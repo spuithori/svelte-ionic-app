@@ -1,37 +1,30 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 	import SourceButton from '$lib/components/SourceButton.svelte';
-	import { IonPage } from 'ionic-svelte';
+	import { alertController, IonPage } from 'ionic-svelte';
+	import type { ActionData } from './$types';
 
-	let controller;
-	let firstName, lastName;
+	export let form: ActionData;
 
-	function processForm(event) {
-		console.log('Processing form', event);
-		// event.preventDefault();
-		controller
-			.create({
-				header: 'Account Created',
-				message: `Created account for: <b>${firstName} ${lastName}</b>`,
-				buttons: [
-					{
-						text: 'OK'
-					}
-				]
-			})
-			.then((alert) => alert.present());
-	}
-	function handleFirstNameValue(event) {
-		firstName = event.target.value;
-	}
-	function handleLastNameValue(event) {
-		lastName = event.target.value;
-	}
+	$: console.log('Form received', form);
+	$: console.log('Page form', $page.form);
 
-	const changeValue = (event) => {
-		console.log('Change of value', event.detail);
-	};
-
-	let stuff = '';
+	// $: if (form?.success) {
+	// 	console.log('Processing form', form);
+	// 	// event.preventDefault();
+	// 	const controller = alertController
+	// 		.create({
+	// 			header: 'Account Created',
+	// 			message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
+	// 			buttons: [
+	// 				{
+	// 					text: 'OK'
+	// 				}
+	// 			]
+	// 		})
+	// 		.then((alert) => alert.present());
+	// }
 </script>
 
 <svelte:head>
@@ -52,14 +45,14 @@
 	</ion-header>
 
 	<ion-content fullscreen class="ion-padding">
-		<form>
+		<form method="POST" use:enhance>
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
 				<ion-item>
 					<ion-label position="stacked">
 						First Name
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
-					<ion-input on:ionChange={handleFirstNameValue} required type="text" />
+					<ion-input name="firstName" type="text" value={form?.formData.firstName ?? ''} />
 				</ion-item>
 
 				<ion-item>
@@ -67,35 +60,38 @@
 						Last Name
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
-					<ion-input on:ionChange={handleLastNameValue} required type="text" />
+					<ion-input name="lastName" required type="text" />
 				</ion-item>
 
 				<ion-item>
 					<ion-label position="floating">Title</ion-label>
-					<ion-input on:ionChange={changeValue} />
+					<ion-input name="title" />
 				</ion-item>
 
 				<ion-item>
 					<ion-label position="stacked">Address</ion-label>
-					<ion-input placeholder="Address Line 1" on:ionChange={changeValue} />
-					<ion-input placeholder="Address Line 2" on:ionChange={changeValue} />
-					<ion-input placeholder="City" on:ionChange={changeValue} />
-					<ion-input placeholder="State" on:ionChange={changeValue} />
-					<ion-input placeholder="Zip Code" on:ionChange={changeValue} />
+					<ion-input placeholder="Address Line 1" name="addressLine1" />
+					<ion-input placeholder="Address Line 2" name="addressLine2" />
+					<ion-input placeholder="City" name="city" />
+					<ion-input placeholder="State" name="state" />
+					<ion-input placeholder="Zip Code" name="zip" />
 				</ion-item>
 
 				<ion-item>
 					<ion-label position="stacked">Notes</ion-label>
-					<ion-textarea on:ionChange={changeValue} />
+					<ion-textarea name="notes" />
 				</ion-item>
 			</ion-list>
 
 			<div class="ion-padding">
-				<ion-button expand="block" on:click={processForm} class="ion-no-margin">
-					Create account
-				</ion-button>
+				<ion-button expand="block" type="submit" class="ion-no-margin"> Create account </ion-button>
 			</div>
 		</form>
 	</ion-content>
-	<ion-alert-controller bind:this={controller} />
 </IonPage>
+
+<style>
+	input {
+		color: red;
+	}
+</style>
