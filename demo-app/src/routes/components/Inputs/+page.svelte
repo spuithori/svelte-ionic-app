@@ -1,30 +1,48 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
+	import { applyAction, enhance, type SubmitFunction } from '$app/forms';
 	import { page } from '$app/stores';
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { alertController, IonPage } from 'ionic-svelte';
 	import type { ActionData } from './$types';
+
+	const patchForm: SubmitFunction = () => {
+		return async ({ result }) => {
+			await applyAction(result);
+		};
+	};
 
 	export let form: ActionData;
 
 	$: console.log('Form received', form);
 	$: console.log('Page form', $page.form);
 
-	// $: if (form?.success) {
-	// 	console.log('Processing form', form);
-	// 	// event.preventDefault();
-	// 	const controller = alertController
-	// 		.create({
-	// 			header: 'Account Created',
-	// 			message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
-	// 			buttons: [
-	// 				{
-	// 					text: 'OK'
-	// 				}
-	// 			]
-	// 		})
-	// 		.then((alert) => alert.present());
-	// }
+	$: if (form?.success) {
+		const controller = alertController
+			.create({
+				header: 'Account Created',
+				message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
+				buttons: [
+					{
+						text: 'OK'
+					}
+				]
+			})
+			.then((alert) => alert.present());
+	}
+
+	$: if (form !== null && !form?.success) {
+		const controller = alertController
+			.create({
+				header: 'Account Not Created',
+				message: `There were some errors - see console.log`,
+				buttons: [
+					{
+						text: 'OK'
+					}
+				]
+			})
+			.then((alert) => alert.present());
+	}
 </script>
 
 <svelte:head>
@@ -45,14 +63,14 @@
 	</ion-header>
 
 	<ion-content fullscreen class="ion-padding">
-		<form method="POST" use:enhance>
+		<form method="POST" use:enhance={patchForm}>
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
 				<ion-item>
 					<ion-label position="stacked">
 						First Name
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
-					<ion-input name="firstName" type="text" value={form?.formData.firstName ?? ''} />
+					<ion-input name="firstName" type="text" value={form?.formData?.firstName ?? ''} />
 				</ion-item>
 
 				<ion-item>

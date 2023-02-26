@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
+	import { applyAction, enhance, type SubmitFunction } from '$app/forms';
 	import { page } from '$app/stores';
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { IonPage } from 'ionic-svelte';
 	import type { ActionData } from '../Inputs/$types';
+
+	const patchForm: SubmitFunction = () => {
+		return async ({ result }) => {
+			await applyAction(result);
+		};
+	};
 
 	export let form: ActionData;
 
@@ -29,7 +35,7 @@
 	</ion-header>
 
 	<ion-content fullscreen>
-		<form method="POST" action="/components/Inputs" use:enhance>
+		<form method="POST" action="/components/Inputs" use:enhance={patchForm}>
 			<ion-list>
 				<ion-item>
 					<ion-label>Pet</ion-label>

@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@ionic/core": "^6.5.3",
 		"ionic-svelte": "^0.5.66",
-		"localforage": "^1.10.0"
+		"localforage": "^1.10.0",
+		"zod": "^3.20.6"
 	}
 }
