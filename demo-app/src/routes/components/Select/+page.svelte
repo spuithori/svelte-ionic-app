@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Ionic Companion - Select</title>
+	<title>Ionic Companion - Select - with Form Actions and zod</title>
 </svelte:head>
 
 <IonPage>

@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>Ionic Companion - Inputs</title>
+	<title>Ionic Companion - Inputs - with Form Actions and zod</title>
 </svelte:head>
 
 <IonPage>
