@@ -1,10 +1,9 @@
 <script lang="ts">
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { alertController, IonPage } from 'ionic-svelte';
-	import { onMount } from 'svelte';
 
 	import { accountSchema as schema } from './account.interface';
-	import { enhance, getFormWritable, validate } from './spa-enhance';
+	import { enhance, getFormWritable } from './spa-enhance';
 
 	const form = getFormWritable();
 
@@ -37,10 +36,6 @@
 			})
 			.then((alert) => alert.present());
 	}
-
-	onMount(() => {
-		console.log('Validate', validate);
-	});
 </script>
 
 <svelte:head>
