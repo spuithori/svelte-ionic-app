@@ -1,26 +1,20 @@
 <script lang="ts">
-	import { applyAction, enhance, type SubmitFunction } from '$app/forms';
-	import { page } from '$app/stores';
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { alertController, IonPage } from 'ionic-svelte';
-	import type { ActionData } from './$types';
+	import { onMount } from 'svelte';
 
-	const patchForm: SubmitFunction = () => {
-		return async ({ result }) => {
-			await applyAction(result);
-		};
-	};
+	import { accountSchema as schema } from './account.interface';
+	import { enhance, getFormWritable, validate } from './spa-enhance';
 
-	export let form: ActionData;
+	const form = getFormWritable();
 
-	$: console.log('Form received', form);
-	$: console.log('Page form', $page.form);
+	$: console.log('Form received', $form);
 
-	$: if (form?.success) {
+	$: if ($form?.success) {
 		const controller = alertController
 			.create({
 				header: 'Account Created',
-				message: `Created account for: <b>${form.formData.firstName} ${form.formData.lastName}</b>`,
+				message: `Created account for: <b>${$form.data.firstName} ${$form.data.lastName}</b>`,
 				buttons: [
 					{
 						text: 'OK'
@@ -30,7 +24,7 @@
 			.then((alert) => alert.present());
 	}
 
-	$: if (form !== null && !form?.success) {
+	$: if ($form !== null && !$form?.success) {
 		const controller = alertController
 			.create({
 				header: 'Account Not Created',
@@ -43,6 +37,10 @@
 			})
 			.then((alert) => alert.present());
 	}
+
+	onMount(() => {
+		console.log('Validate', validate);
+	});
 </script>
 
 <svelte:head>
@@ -63,22 +61,24 @@
 	</ion-header>
 
 	<ion-content fullscreen class="ion-padding">
-		<form method="POST" use:enhance={patchForm}>
+		<form use:enhance={{ form, schema }} id="accountform">
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
-				<ion-item>
+				<ion-item class:ion-invalid={$form?.errors?.firstName}>
 					<ion-label position="stacked">
 						First Name
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
-					<ion-input name="firstName" type="text" value={form?.formData?.firstName ?? ''} />
+					<ion-input name="firstName" type="text" value={$form?.data.firstName ?? ''} />
+					<ion-note slot="error">First name must be not empty and valid</ion-note>
 				</ion-item>
 
-				<ion-item>
+				<ion-item class:ion-invalid={$form?.errors?.lastName}>
 					<ion-label position="stacked">
 						Last Name
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
 					<ion-input name="lastName" required type="text" />
+					<ion-note slot="error">FLast name must be not empty and valid</ion-note>
 				</ion-item>
 
 				<ion-item>
@@ -107,9 +107,3 @@
 		</form>
 	</ion-content>
 </IonPage>
-
-<style>
-	input {
-		color: red;
-	}
-</style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { dev } from '$app/environment';
 
 	import { pwaBeforeInstallPrompt, canInstall } from '$lib/services/pwa';
 	import { showMenu } from '$lib/services/menu';
@@ -138,15 +139,13 @@
 					<p>
 						Raise issues on Github - <a
 							href="https://github.com/Tommertom/svelte-ionic-app/issues"
-							target="_new">https://github.com/Tommertom/svelte-ionic-app/issues</a
-						>
+							target="_new">https://github.com/Tommertom/svelte-ionic-app/issues</a>
 					</p>
 					<br />
 					<p>
 						Join <a
 							href="https://discordapp.com/channels/520266681499779082/1049388501629681675"
-							target="_new">Ionic-Svelte channel</a
-						> on Ionic's official discord
+							target="_new">Ionic-Svelte channel</a> on Ionic's official discord
 					</p>
 					<br /><br />
 					<p>Thanks!!! Tommertom</p>
@@ -162,8 +161,7 @@
 				}}
 				on:click={() => {
 					inlineModalOpen = false;
-				}}
-			>
+				}}>
 				Close modal
 			</ion-button>
 			vite v4.
@@ -186,8 +184,7 @@
 						window.gtag('event', 'Feedback open');
 						inlineModalOpen = true;
 					}}
-					slot="end">About...</ion-button
-				>
+					slot="end">About...</ion-button>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
@@ -199,8 +196,7 @@
 						}}
 						on:click={() => {
 							closeAndNavigate(menuItem.url);
-						}}
-					>
+						}}>
 						<ion-icon icon={menuItem.icon} slot="start" color={getRandomColor()} />
 						<ion-label>{menuItem.label}</ion-label>
 					</ion-item>
@@ -223,8 +219,7 @@
 						on:click={() => {
 							const prompt = $pwaBeforeInstallPrompt;
 							prompt.prompt();
-						}}
-					>
+						}}>
 						<ion-icon icon={allIonicIcons['download']} slot="start" />
 						<ion-label>Install this app as PWA</ion-label>
 					</ion-item>
@@ -241,8 +236,7 @@
 						//@ts-ignore
 						window.gtag('event', 'github-svelte-ionic-app');
 						window.open('https://github.com/Tommertom/svelte-ionic-app', '_blank');
-					}}
-				>
+					}}>
 					<ion-icon icon={allIonicIcons['star']} slot="start" />
 					<ion-label>Go to GitHub for this app</ion-label>
 				</ion-item>
