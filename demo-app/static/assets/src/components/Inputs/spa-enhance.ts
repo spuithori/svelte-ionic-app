@@ -75,8 +75,6 @@ export function validateField(ev) {
                     newStatus.success = false;
                     newStatus.validate = current_validate_function
 
-                    console.log('Found error', name, value)
-
                     return newStatus
                 })
             }

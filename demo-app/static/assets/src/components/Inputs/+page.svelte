@@ -58,7 +58,7 @@
 	</ion-header>
 
 	<ion-content fullscreen class="ion-padding">
-		<form use:enhance={{ form, schema }} id="accountform">
+		<form use:enhance={{ form, schema }} id="accountform" on:submit={submit}>
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
 				<ion-item class:ion-invalid={$form?.errors?.firstName}>
 					<ion-label position="stacked">
