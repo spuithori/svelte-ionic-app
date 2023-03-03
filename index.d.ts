@@ -6,7 +6,7 @@
 /* tslint:disable */
 import type { HTMLAttributes } from 'svelte/elements';
 import type { AccordionGroupChangeEventDetail, ActionSheetAttributes, ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, BreadcrumbCollapsedClickEventDetail, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimePresentation, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, LoadingAttributes, MenuChangeEventDetail, ModalAttributes, ModalBreakpointChangeEventDetail, ModalHandleBehavior, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerAttributes, PickerButton, PickerColumn, PopoverAttributes, PopoverSize, PositionAlign, PositionReference, PositionSide, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeKnobMoveEndEventDetail, RangeKnobMoveStartEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, TitleSelectedDatesFormatter, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, TriggerAction, ViewController } from "@ionic/core";
-import type { IonicConfig, IonicSafeString, AlertAttributes, CounterFormatter, PinFormatter, SelectCompareFn, ToastAttributes } from "@ionic/core";
+import type { DatetimeHighlightStyle, DatetimeHighlight, IonicConfig, IonicSafeString, AlertAttributes, CounterFormatter, PinFormatter, SelectCompareFn, ToastAttributes } from "@ionic/core";
 import { Cell } from '@ionic/core';
 import { SvelteComponent } from 'svelte';
 
@@ -49,35 +49,6 @@ export {
   pickerController,
   toastController
 } from "@ionic/core";
-
-// platforms
-declare const PLATFORMS_MAP: {
-  [key: string]: boolean;
-};
-
-declare type Platforms = keyof typeof PLATFORMS_MAP;
-
-export function getPlatforms(win?: any): string[];
-export function setupPlatforms(win: any);
-
-interface IsPlatformSignature {
-  (plt: Platforms): boolean;
-  (win: Window, plt: Platforms): boolean;
-}
-export function isPlatform(
-  winOrPlatform: Window | Platforms | undefined,
-  platform?: Platforms
-): IsPlatformSignature;
-
-export function testUserAgent(win: Window, expr: RegExp);
-
-
-// for people using tabs
-export interface TabListItem {
-  label: string;
-  icon: string;
-  tab: string;
-}
 
 // not exported by @ionic/core
 export type NavigationHookResult = boolean | NavigationHookOptions;
@@ -1203,6 +1174,12 @@ declare global {
       * API info: https://ionicframework.com/docs/api/datetime#firstdayofweek
       */
       "first-day-of-week"?: number;
+
+      /**
+      * Used to apply custom text and background colors to specific dates.  Can be either an array of objects containing ISO strings and colors, or a callback that receives an ISO string and returns the colors.  Only applies to the `date`, `date-time`, and `time-date` presentations, with `preferWheel="false"`.
+      * API info: https://ionicframework.com/docs/api/datetime#highlighteddates
+      */
+      "highlighted-dates"?: ((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined;
 
       /**
       * The hour cycle of the `ion-datetime`. If no value is set, this is specified by the current locale.
@@ -4277,6 +4254,12 @@ declare global {
       * API info: https://ionicframework.com/docs/api/toast#keyboardclose
       */
       "keyboard-close"?: boolean;
+
+      /**
+      * Defines how the message and buttons are laid out in the toast. 'baseline': The message and the buttons will appear on the same line. Message text may wrap within the message container. 'stacked': The buttons containers and message will stack on top of each other. Use this if you have long text in your buttons.
+      * API info: https://ionicframework.com/docs/api/toast#layout
+      */
+      "layout"?: "baseline" | "stacked";
 
       /**
       * Animation to use when the toast is dismissed.

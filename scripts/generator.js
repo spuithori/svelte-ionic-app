@@ -1,7 +1,7 @@
 // todo - using https://unpkg.com/@ionic/docs@6.3.8/core.json
 // todo - using https://unpkg.com/@ionic/docs@6.4.2/core.json
 // todo - using https://unpkg.com/@ionic/docs@6.5.3/core.json
-
+// using https://unpkg.com/@ionic/docs@6.6.0/core.json
 
 const fs = require("fs");
 
@@ -44,7 +44,7 @@ const doStuff = () => {
   /* tslint:disable */
   import type { HTMLAttributes } from 'svelte/elements';
   import type { AccordionGroupChangeEventDetail, ActionSheetAttributes, ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, BreadcrumbCollapsedClickEventDetail, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimePresentation, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, LoadingAttributes, MenuChangeEventDetail, ModalAttributes, ModalBreakpointChangeEventDetail, ModalHandleBehavior, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerAttributes, PickerButton, PickerColumn, PopoverAttributes, PopoverSize, PositionAlign, PositionReference, PositionSide, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeKnobMoveEndEventDetail, RangeKnobMoveStartEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, TitleSelectedDatesFormatter, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, TriggerAction, ViewController } from "@ionic/core";
-  import type { IonicConfig, IonicSafeString, AlertAttributes, CounterFormatter, PinFormatter, SelectCompareFn, ToastAttributes } from "@ionic/core";
+  import type { DatetimeHighlightStyle, DatetimeHighlight,IonicConfig, IonicSafeString, AlertAttributes, CounterFormatter, PinFormatter, SelectCompareFn, ToastAttributes } from "@ionic/core";
   import { Cell } from '@ionic/core';
   import { SvelteComponent } from 'svelte';
 
@@ -57,7 +57,7 @@ const doStuff = () => {
   );
  
   export { default as IonTabs } from "./components/IonTabs.svelte";
-  export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
+  // export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
   export { default as IonPage } from "./components/IonPage.svelte";
   export { default as IonNav } from "./components/IonNav.svelte";
 

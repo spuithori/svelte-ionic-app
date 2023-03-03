@@ -1,5 +1,5 @@
 {
-    "timestamp": "2023-02-08T14:09:58",
+    "timestamp": "2023-03-01T14:39:46",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.18.0",
@@ -5086,6 +5086,12 @@
                     "target": "window",
                     "capture": false,
                     "passive": false
+                },
+                {
+                    "event": "resize",
+                    "target": "window",
+                    "capture": false,
+                    "passive": true
                 }
             ],
             "styles": [
@@ -5348,6 +5354,30 @@
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "highlightedDates",
+                    "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
+                    "mutable": false,
+                    "reflectToAttr": false,
+                    "docs": "Used to apply custom text and background colors to specific dates.\n\nCan be either an array of objects containing ISO strings and colors,\nor a callback that receives an ISO string and returns the colors.\n\nOnly applies to the `date`, `date-time`, and `time-date` presentations,\nwith `preferWheel=\"false\"`.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "((dateIsoString: string) => DatetimeHighlightStyle"
+                        },
+                        {
+                            "type": "undefined)"
+                        },
+                        {
+                            "type": "DatetimeHighlight[]"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -20349,6 +20379,28 @@
                     "values": [
                         {
                             "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "layout",
+                    "type": "\"baseline\" | \"stacked\"",
+                    "mutable": false,
+                    "attr": "layout",
+                    "reflectToAttr": false,
+                    "docs": "Defines how the message and buttons are laid out in the toast.\n'baseline': The message and the buttons will appear on the same line.\nMessage text may wrap within the message container.\n'stacked': The buttons containers and message will stack on top\nof each other. Use this if you have long text in your buttons.",
+                    "docsTags": [],
+                    "default": "'baseline'",
+                    "values": [
+                        {
+                            "value": "baseline",
+                            "type": "string"
+                        },
+                        {
+                            "value": "stacked",
+                            "type": "string"
                         }
                     ],
                     "optional": false,

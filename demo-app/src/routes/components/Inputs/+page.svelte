@@ -70,7 +70,8 @@
 						type="text"
 						value={$form?.data.firstName ?? ''}
 						on:ionChange={validateField} />
-					<ion-note slot="error">First name must be not empty and valid</ion-note>
+					<ion-note slot="helper">Here you may enter your first name - or something else</ion-note>
+					<ion-note slot="error">Please type more characters...</ion-note>
 				</ion-item>
 
 				<ion-item class:ion-invalid={$form?.errors?.lastName}>
@@ -79,7 +80,8 @@
 						<ion-text color="danger">*</ion-text>
 					</ion-label>
 					<ion-input name="lastName" required type="text" on:ionChange={validateField} />
-					<ion-note slot="error">Last name must be not empty and valid</ion-note>
+					<ion-note slot="helper">This place is to enter your last name</ion-note>
+					<ion-note slot="error">Nag nag.....too short</ion-note>
 				</ion-item>
 
 				<ion-item>

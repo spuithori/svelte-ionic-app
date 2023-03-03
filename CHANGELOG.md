@@ -1,6 +1,9 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.70
+- Ionic core 6.6.0 and create scripts locked to latest of 6 (arrival of 7)
+
 ## 0.5.69
 - IonTabs - possibly breaking changes for users - fixed bug when tabs are placed in main route
 
