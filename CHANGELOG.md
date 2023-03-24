@@ -1,8 +1,11 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
-## 0.5.71
-- Added platforms back
+## 0.5.73 create scripts 
+- bump create-svelte dependency to latest
+
+## 0.5.71/72
+- Added platforms back (typescript)
 
 ## 0.5.70
 - Ionic core 6.6.0 and create scripts locked to latest of 6 (arrival of 7)

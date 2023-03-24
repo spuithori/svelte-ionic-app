@@ -65,8 +65,7 @@
 				button
 				on:click={() => {
 					showDetail(tech);
-				}}
-			>
+				}}>
 				<ion-icon icon={allIonicIcons[tech.icon]} style="color: {tech.color};" />
 				<ion-label>
 					<h3>{tech.title}</h3>
