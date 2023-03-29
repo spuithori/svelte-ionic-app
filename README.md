@@ -247,6 +247,9 @@ Check https://github.com/Tommertom/svelte-ionic-app/issues for most recent overv
 
 `ion-nav-link` - not sure why not, but haven't used it yet in a project. Maybe my bad. What do you think?
 
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=Tommertom/svelte-ionic-app&type=Date)](https://star-history.com/#Tommertom/svelte-ionic-app&Date)
+
 ## Acknowledgements
 
 Logo by Brett Peary: https://brettpeary.com/
