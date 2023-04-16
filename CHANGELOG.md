@@ -1,6 +1,10 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.74/75/76 Ionic 7 (Ionic 7.0.2)
+- Ionic 7 package landed - demo app is not upgraded yet
+- Creator scripts are updated to 7.0.2 as well - fixing to that version as I assume there will be updates on core
+
 ## 0.5.73 create scripts 
 - bump create-svelte dependency to latest
 

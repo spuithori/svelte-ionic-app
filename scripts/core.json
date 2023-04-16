@@ -1,9 +1,9 @@
 {
-    "timestamp": "2023-03-01T14:39:46",
+    "timestamp": "2023-04-12T12:41:25",
     "compiler": {
         "name": "@stencil/core",
-        "version": "2.18.0",
-        "typescriptVersion": "4.7.4"
+        "version": "3.2.1",
+        "typescriptVersion": "4.9.5"
     },
     "components": [
         {
@@ -117,7 +117,7 @@
                     "mutable": false,
                     "attr": "toggle-icon-slot",
                     "reflectToAttr": false,
-                    "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `'end'`.",
+                    "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `\"end\"`.",
                     "docsTags": [],
                     "default": "'end'",
                     "values": [
@@ -321,7 +321,7 @@
                     "mutable": true,
                     "attr": "value",
                     "reflectToAttr": false,
-                    "docs": "The value of the accordion group.",
+                    "docs": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`",
                     "docsTags": [],
                     "values": [
                         {
@@ -349,7 +349,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the value property has changed.",
+                    "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",
                     "docsTags": []
                 }
             ],
@@ -511,6 +511,23 @@
                     "required": false
                 },
                 {
+                    "name": "isOpen",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "is-open",
+                    "reflectToAttr": false,
+                    "docs": "If `true`, the action sheet will open. If `false`, the action sheet will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the actionSheetController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe action sheet dismisses. You will need to do that in your code.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
                     "name": "keyboardClose",
                     "type": "boolean",
                     "mutable": false,
@@ -601,6 +618,25 @@
                     ],
                     "optional": false,
                     "required": false
+                },
+                {
+                    "name": "trigger",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "trigger",
+                    "reflectToAttr": false,
+                    "docs": "An ID corresponding to the trigger element that\ncauses the action sheet to open when clicked.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
                 }
             ],
             "methods": [
@@ -660,12 +696,30 @@
             ],
             "events": [
                 {
+                    "event": "didDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the action sheet has dismissed.\nShorthand for ionActionSheetDidDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "didPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the action sheet has presented.\nShorthand for ionActionSheetWillDismiss.",
+                    "docsTags": []
+                },
+                {
                     "event": "ionActionSheetDidDismiss",
                     "detail": "OverlayEventDetail<any>",
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted after the alert has dismissed.",
+                    "docs": "Emitted after the action sheet has dismissed.",
                     "docsTags": []
                 },
                 {
@@ -674,7 +728,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted after the alert has presented.",
+                    "docs": "Emitted after the action sheet has presented.",
                     "docsTags": []
                 },
                 {
@@ -683,7 +737,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted before the alert has dismissed.",
+                    "docs": "Emitted before the action sheet has dismissed.",
                     "docsTags": []
                 },
                 {
@@ -692,7 +746,25 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted before the alert has presented.",
+                    "docs": "Emitted before the action sheet has presented.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the action sheet has dismissed.\nShorthand for ionActionSheetWillDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the action sheet has presented.\nShorthand for ionActionSheetWillPresent.",
                     "docsTags": []
                 }
             ],
@@ -995,6 +1067,23 @@
                     "required": false
                 },
                 {
+                    "name": "isOpen",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "is-open",
+                    "reflectToAttr": false,
+                    "docs": "If `true`, the alert will open. If `false`, the alert will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the alertController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe alert dismisses. You will need to do that in your code.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
                     "name": "keyboardClose",
                     "type": "boolean",
                     "mutable": false,
@@ -1035,7 +1124,7 @@
                     "mutable": false,
                     "attr": "message",
                     "reflectToAttr": false,
-                    "docs": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+                    "docs": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -1107,6 +1196,25 @@
                     ],
                     "optional": false,
                     "required": false
+                },
+                {
+                    "name": "trigger",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "trigger",
+                    "reflectToAttr": false,
+                    "docs": "An ID corresponding to the trigger element that\ncauses the alert to open when clicked.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
                 }
             ],
             "methods": [
@@ -1166,6 +1274,24 @@
             ],
             "events": [
                 {
+                    "event": "didDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the alert has dismissed.\nShorthand for ionAlertDidDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "didPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the alert has presented.\nShorthand for ionAlertWillDismiss.",
+                    "docsTags": []
+                },
+                {
                     "event": "ionAlertDidDismiss",
                     "detail": "OverlayEventDetail<any>",
                     "bubbles": true,
@@ -1199,6 +1325,24 @@
                     "cancelable": true,
                     "composed": true,
                     "docs": "Emitted before the alert has presented.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the alert has dismissed.\nShorthand for ionAlertWillDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the alert has presented.\nShorthand for ionAlertWillPresent.",
                     "docsTags": []
                 }
             ],
@@ -2345,7 +2489,7 @@
                     "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
                     "mutable": false,
                     "attr": "color",
-                    "reflectToAttr": false,
+                    "reflectToAttr": true,
                     "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
                     "docsTags": [],
                     "values": [
@@ -3840,6 +3984,10 @@
                     "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
                 },
                 {
+                    "name": "slot",
+                    "text": "- The label text to associate with the checkbox. Use the \"labelPlacement\" property to control where the label is placed relative to the checkbox."
+                },
+                {
                     "name": "part",
                     "text": "container - The container for the checkbox mark."
                 },
@@ -3957,6 +4105,77 @@
                     "required": false
                 },
                 {
+                    "name": "justify",
+                    "type": "\"end\" | \"space-between\" | \"start\"",
+                    "mutable": false,
+                    "attr": "justify",
+                    "reflectToAttr": false,
+                    "docs": "How to pack the label and checkbox within a line.\n`\"start\"`: The label and checkbox will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and checkbox will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and checkbox will appear on opposite\nends of the line with space between the two elements.",
+                    "docsTags": [],
+                    "default": "'space-between'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "space-between",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt checkboxes in to the modern form markup when they are\nusing either the `aria-label` attribute or have text in the default slot. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\n\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "mode",
                     "type": "\"ios\" | \"md\"",
                     "mutable": false,
@@ -4029,7 +4248,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the checked property has changed.",
+                    "docs": "Emitted when the checked property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically\nsetting the checked property.",
                     "docsTags": []
                 },
                 {
@@ -4044,16 +4263,6 @@
             ],
             "listeners": [],
             "styles": [
-                {
-                    "name": "--background",
-                    "annotation": "prop",
-                    "docs": "Background of the checkbox icon"
-                },
-                {
-                    "name": "--background-checked",
-                    "annotation": "prop",
-                    "docs": "Background of the checkbox icon when checked"
-                },
                 {
                     "name": "--border-color",
                     "annotation": "prop",
@@ -4080,6 +4289,16 @@
                     "docs": "Border width of the checkbox icon"
                 },
                 {
+                    "name": "--checkbox-background",
+                    "annotation": "prop",
+                    "docs": "Background of the checkbox icon"
+                },
+                {
+                    "name": "--checkbox-background-checked",
+                    "annotation": "prop",
+                    "docs": "Background of the checkbox icon when checked"
+                },
+                {
                     "name": "--checkmark-color",
                     "annotation": "prop",
                     "docs": "Color of the checkbox checkmark when checked"
@@ -4100,7 +4319,12 @@
                     "docs": "Transition of the checkbox icon"
                 }
             ],
-            "slots": [],
+            "slots": [
+                {
+                    "name": "",
+                    "docs": "The label text to associate with the checkbox. Use the \"labelPlacement\" property to control where the label is placed relative to the checkbox."
+                }
+            ],
             "parts": [
                 {
                     "name": "container",
@@ -4876,7 +5100,7 @@
                     "mutable": true,
                     "attr": "force-overscroll",
                     "reflectToAttr": false,
-                    "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting.",
+                    "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, this does not disable the system bounce on iOS. That is an OS level setting.",
                     "docsTags": [],
                     "values": [
                         {
@@ -5453,7 +5677,7 @@
                     "mutable": false,
                     "attr": "locale",
                     "reflectToAttr": false,
-                    "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `'default'` value refers to the default\nlocale set by your device.",
+                    "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `\"default\"` value refers to the default\nlocale set by your device.",
                     "docsTags": [],
                     "default": "'default'",
                     "values": [
@@ -5613,7 +5837,7 @@
                     "mutable": false,
                     "attr": "prefer-wheel",
                     "reflectToAttr": false,
-                    "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `'date'`, `'date-time'`, or `'time-date'`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`'time'`, `'month'`, `'month-year'`, or `'year'`.",
+                    "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `\"date\"`, `\"date-time\"`, or `\"time-date\"`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`\"time\"`, `\"month\"`, `\"month-year\"`, or `\"year\"`.",
                     "docsTags": [],
                     "default": "false",
                     "values": [
@@ -5630,7 +5854,7 @@
                     "mutable": false,
                     "attr": "presentation",
                     "reflectToAttr": false,
-                    "docs": "Which values you want to select. `'date'` will show\na calendar picker to select the month, day, and year. `'time'`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `'date-time'` will show the date picker first and time picker second.\n`'time-date'` will show the time picker first and date picker second.",
+                    "docs": "Which values you want to select. `\"date\"` will show\na calendar picker to select the month, day, and year. `\"time\"`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `\"date-time\"` will show the date picker first and time picker second.\n`\"time-date\"` will show the time picker first and date picker second.",
                     "docsTags": [],
                     "default": "'date-time'",
                     "values": [
@@ -5797,7 +6021,7 @@
                     "mutable": true,
                     "attr": "value",
                     "reflectToAttr": false,
-                    "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nShould be an array of strings if `multiple=\"true\"`.",
+                    "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nThis should be an array of strings only when `multiple=\"true\"`.",
                     "docsTags": [],
                     "values": [
                         {
@@ -7376,7 +7600,7 @@
                     "mutable": false,
                     "attr": "loading-text",
                     "reflectToAttr": false,
-                    "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+                    "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -7824,20 +8048,57 @@
                     "required": false
                 },
                 {
-                    "name": "debounce",
-                    "type": "number",
+                    "name": "counter",
+                    "type": "boolean",
                     "mutable": false,
-                    "attr": "debounce",
+                    "attr": "counter",
                     "reflectToAttr": false,
-                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.",
+                    "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.",
                     "docsTags": [],
-                    "default": "0",
+                    "default": "false",
                     "values": [
                         {
-                            "type": "number"
+                            "type": "boolean"
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "counterFormatter",
+                    "type": "((inputLength: number, maxLength: number) => string) | undefined",
+                    "mutable": false,
+                    "reflectToAttr": false,
+                    "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "((inputLength: number, maxLength: number) => string)"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "debounce",
+                    "type": "number | undefined",
+                    "mutable": false,
+                    "attr": "debounce",
+                    "reflectToAttr": false,
+                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -7902,6 +8163,68 @@
                     "required": false
                 },
                 {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "Text that is placed under the input and displayed when an error is detected.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "fill",
+                    "type": "\"outline\" | \"solid\" | undefined",
+                    "mutable": false,
+                    "attr": "fill",
+                    "reflectToAttr": false,
+                    "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "outline",
+                            "type": "string"
+                        },
+                        {
+                            "value": "solid",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helperText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "helper-text",
+                    "reflectToAttr": false,
+                    "docs": "Text that is placed under the input and displayed when no error is detected.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "inputmode",
                     "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
                     "mutable": false,
@@ -7941,6 +8264,78 @@
                         {
                             "value": "url",
                             "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "label",
+                    "reflectToAttr": false,
+                    "docs": "The visible label associated with the input.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the input in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the input in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input.\n`\"stacked\"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "floating",
+                            "type": "string"
+                        },
+                        {
+                            "value": "stacked",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
                         },
                         {
                             "type": "undefined"
@@ -8161,6 +8556,26 @@
                     "required": false
                 },
                 {
+                    "name": "shape",
+                    "type": "\"round\" | undefined",
+                    "mutable": false,
+                    "attr": "shape",
+                    "reflectToAttr": false,
+                    "docs": "The shape of the input. If \"round\" it will have an increased border radius.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "round",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "size",
                     "type": "number | undefined",
                     "mutable": false,
@@ -8324,7 +8739,7 @@
                     },
                     "signature": "setFocus() => Promise<void>",
                     "parameters": [],
-                    "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.",
+                    "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
                     "docsTags": []
                 }
             ],
@@ -8344,7 +8759,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the value has changed.",
+                    "docs": "The `ionChange` event is fired for `<ion-input>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
                     "docsTags": []
                 },
                 {
@@ -8358,11 +8773,11 @@
                 },
                 {
                     "event": "ionInput",
-                    "detail": "InputEvent",
+                    "detail": "InputInputEventDetail",
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when a keyboard input occurred.",
+                    "docs": "The `ionInput` event fires when the `value` of an `<ion-input>` element\nhas been changed.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
                     "docsTags": []
                 }
             ],
@@ -8374,9 +8789,44 @@
                     "docs": "Background of the input"
                 },
                 {
+                    "name": "--border-color",
+                    "annotation": "prop",
+                    "docs": "Color of the border below the input when using helper text, error text, or counter"
+                },
+                {
+                    "name": "--border-radius",
+                    "annotation": "prop",
+                    "docs": "Radius of the input"
+                },
+                {
+                    "name": "--border-style",
+                    "annotation": "prop",
+                    "docs": "Style of the border below the input when using helper text, error text, or counter"
+                },
+                {
+                    "name": "--border-width",
+                    "annotation": "prop",
+                    "docs": "Width of the border below the input when using helper text, error text, or counter"
+                },
+                {
                     "name": "--color",
                     "annotation": "prop",
                     "docs": "Color of the input text"
+                },
+                {
+                    "name": "--highlight-color-focused",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the input when focused"
+                },
+                {
+                    "name": "--highlight-color-invalid",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the input when invalid"
+                },
+                {
+                    "name": "--highlight-color-valid",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the input when valid"
                 },
                 {
                     "name": "--padding-bottom",
@@ -8455,11 +8905,11 @@
                 },
                 {
                     "name": "slot",
-                    "text": "helper - Content is placed under the item and displayed when no error is detected."
+                    "text": "helper - Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
                 },
                 {
                     "name": "slot",
-                    "text": "error - Content is placed under the item and displayed when an error is detected."
+                    "text": "error - Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
                 },
                 {
                     "name": "part",
@@ -8551,8 +9001,14 @@
                     "attr": "counter",
                     "reflectToAttr": false,
                     "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Only applies when the `maxlength` property is set on the inner `ion-input` or `ion-textarea`.",
-                    "docsTags": [],
+                    "docsTags": [
+                        {
+                            "name": "deprecated",
+                            "text": "Use the `counter` property on `ion-input` or `ion-textarea` instead."
+                        }
+                    ],
                     "default": "false",
+                    "deprecation": "Use the `counter` property on `ion-input` or `ion-textarea` instead.",
                     "values": [
                         {
                             "type": "boolean"
@@ -8567,7 +9023,13 @@
                     "mutable": false,
                     "reflectToAttr": false,
                     "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
-                    "docsTags": [],
+                    "docsTags": [
+                        {
+                            "name": "deprecated",
+                            "text": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead."
+                        }
+                    ],
+                    "deprecation": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.",
                     "values": [
                         {
                             "type": "((inputLength: number, maxLength: number) => string)"
@@ -8657,7 +9119,7 @@
                     "mutable": false,
                     "attr": "fill",
                     "reflectToAttr": false,
-                    "docs": "The fill for the item. If `'solid'` the item will have a background. If\n`'outline'` the item will be transparent with a border. Only available in `md` mode.",
+                    "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
                     "docsTags": [],
                     "values": [
                         {
@@ -8876,7 +9338,7 @@
             "events": [],
             "listeners": [
                 {
-                    "event": "ionChange",
+                    "event": "ionInput",
                     "capture": false,
                     "passive": false
                 },
@@ -9079,11 +9541,11 @@
                 },
                 {
                     "name": "error",
-                    "docs": "Content is placed under the item and displayed when an error is detected."
+                    "docs": "Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
                 },
                 {
                     "name": "helper",
-                    "docs": "Content is placed under the item and displayed when no error is detected."
+                    "docs": "Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
                 },
                 {
                     "name": "start",
@@ -10343,6 +10805,23 @@
                     "required": false
                 },
                 {
+                    "name": "isOpen",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "is-open",
+                    "reflectToAttr": false,
+                    "docs": "If `true`, the loading indicator will open. If `false`, the loading indicator will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the loadingController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe loading indicator dismisses. You will need to do that in your code.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
                     "name": "keyboardClose",
                     "type": "boolean",
                     "mutable": false,
@@ -10383,7 +10862,7 @@
                     "mutable": false,
                     "attr": "message",
                     "reflectToAttr": false,
-                    "docs": "Optional text content to display in the loading indicator.",
+                    "docs": "Optional text content to display in the loading indicator.\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -10508,6 +10987,25 @@
                     ],
                     "optional": false,
                     "required": false
+                },
+                {
+                    "name": "trigger",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "trigger",
+                    "reflectToAttr": false,
+                    "docs": "An ID corresponding to the trigger element that\ncauses the loading indicator to open when clicked.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
                 }
             ],
             "methods": [
@@ -10567,6 +11065,24 @@
             ],
             "events": [
                 {
+                    "event": "didDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the loading indicator has dismissed.\nShorthand for ionLoadingDidDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "didPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the loading indicator has presented.\nShorthand for ionLoadingWillDismiss.",
+                    "docsTags": []
+                },
+                {
                     "event": "ionLoadingDidDismiss",
                     "detail": "OverlayEventDetail<any>",
                     "bubbles": true,
@@ -10600,6 +11116,24 @@
                     "cancelable": true,
                     "composed": true,
                     "docs": "Emitted before the loading has presented.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the loading indicator has dismissed.\nShorthand for ionLoadingWillDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the loading indicator has presented.\nShorthand for ionLoadingWillPresent.",
                     "docsTags": []
                 }
             ],
@@ -11456,12 +11990,13 @@
                 },
                 {
                     "name": "canDismiss",
-                    "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean | undefined",
+                    "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean",
                     "mutable": false,
                     "attr": "can-dismiss",
                     "reflectToAttr": false,
                     "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.",
                     "docsTags": [],
+                    "default": "true",
                     "values": [
                         {
                             "type": "((data?: any, role?: string"
@@ -11471,12 +12006,9 @@
                         },
                         {
                             "type": "boolean"
-                        },
-                        {
-                            "type": "undefined"
                         }
                     ],
-                    "optional": true,
+                    "optional": false,
                     "required": false
                 },
                 {
@@ -11704,29 +12236,6 @@
                     "required": false
                 },
                 {
-                    "name": "swipeToClose",
-                    "type": "boolean",
-                    "mutable": false,
-                    "attr": "swipe-to-close",
-                    "reflectToAttr": false,
-                    "docs": "If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.",
-                    "docsTags": [
-                        {
-                            "name": "deprecated",
-                            "text": "- To prevent modals from dismissing, use canDismiss instead."
-                        }
-                    ],
-                    "default": "false",
-                    "deprecation": "- To prevent modals from dismissing, use canDismiss instead.",
-                    "values": [
-                        {
-                            "type": "boolean"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
                     "name": "trigger",
                     "type": "string | undefined",
                     "mutable": false,
@@ -11839,7 +12348,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted after the modal has presented.\nShorthand for ionModalWillDismiss.",
+                    "docs": "Emitted after the modal has presented.\nShorthand for ionModalDidPresent.",
                     "docsTags": []
                 },
                 {
@@ -12811,6 +13320,23 @@
                     "required": false
                 },
                 {
+                    "name": "isOpen",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "is-open",
+                    "reflectToAttr": false,
+                    "docs": "If `true`, the picker will open. If `false`, the picker will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the pickerController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe picker dismisses. You will need to do that in your code.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
                     "name": "keyboardClose",
                     "type": "boolean",
                     "mutable": false,
@@ -12878,6 +13404,25 @@
                     "values": [
                         {
                             "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "trigger",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "trigger",
+                    "reflectToAttr": false,
+                    "docs": "An ID corresponding to the trigger element that\ncauses the picker to open when clicked.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
                         }
                     ],
                     "optional": false,
@@ -12957,6 +13502,24 @@
             ],
             "events": [
                 {
+                    "event": "didDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the picker has dismissed.\nShorthand for ionPickerDidDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "didPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the picker has presented.\nShorthand for ionPickerWillDismiss.",
+                    "docsTags": []
+                },
+                {
                     "event": "ionPickerDidDismiss",
                     "detail": "OverlayEventDetail<any>",
                     "bubbles": true,
@@ -12990,6 +13553,24 @@
                     "cancelable": true,
                     "composed": true,
                     "docs": "Emitted before the picker has presented.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the picker has dismissed.\nShorthand for ionPickerWillDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the picker has presented.\nShorthand for ionPickerWillPresent.",
                     "docsTags": []
                 }
             ],
@@ -13110,7 +13691,7 @@
                     "mutable": true,
                     "attr": "alignment",
                     "reflectToAttr": false,
-                    "docs": "Describes how to align the popover content with the `reference` point.\nDefaults to `'center'` for `ios` mode, and `'start'` for `md` mode.",
+                    "docs": "Describes how to align the popover content with the `reference` point.\nDefaults to `\"center\"` for `ios` mode, and `\"start\"` for `md` mode.",
                     "docsTags": [],
                     "values": [
                         {
@@ -13394,7 +13975,7 @@
                     "mutable": false,
                     "attr": "reference",
                     "reflectToAttr": false,
-                    "docs": "Describes what to position the popover relative to.\nIf `'trigger'`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `'event'`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
+                    "docs": "Describes what to position the popover relative to.\nIf `\"trigger\"`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `\"event\"`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
                     "docsTags": [],
                     "default": "'trigger'",
                     "values": [
@@ -13433,7 +14014,7 @@
                     "mutable": false,
                     "attr": "side",
                     "reflectToAttr": false,
-                    "docs": "Describes which side of the `reference` point to position\nthe popover on. The `'start'` and `'end'` values are RTL-aware,\nand the `'left'` and `'right'` values are not.",
+                    "docs": "Describes which side of the `reference` point to position\nthe popover on. The `\"start\"` and `\"end\"` values are RTL-aware,\nand the `\"left\"` and `\"right\"` values are not.",
                     "docsTags": [],
                     "default": "'bottom'",
                     "values": [
@@ -13471,7 +14052,7 @@
                     "mutable": false,
                     "attr": "size",
                     "reflectToAttr": false,
-                    "docs": "Describes how to calculate the popover width.\nIf `'cover'`, the popover width will match the width of the trigger.\nIf `'auto'`, the popover width will be determined by the content in\nthe popover.",
+                    "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be determined by the content in\nthe popover.",
                     "docsTags": [],
                     "default": "'auto'",
                     "values": [
@@ -13529,7 +14110,7 @@
                     "mutable": false,
                     "attr": "trigger-action",
                     "reflectToAttr": false,
-                    "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `'click'`, the popover will be presented when the trigger is left clicked.\nIf `'hover'`, the popover will be presented when a pointer hovers over the trigger.\nIf `'context-menu'`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
+                    "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `\"click\"`, the popover will be presented when the trigger is left clicked.\nIf `\"hover\"`, the popover will be presented when a pointer hovers over the trigger.\nIf `\"context-menu\"`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
                     "docsTags": [],
                     "default": "'click'",
                     "values": [
@@ -14005,6 +14586,10 @@
                     "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
                 },
                 {
+                    "name": "slot",
+                    "text": "- The label text to associate with the radio. Use the \"labelPlacement\" property to control where the label is placed relative to the radio."
+                },
+                {
                     "name": "part",
                     "text": "container - The container for the radio mark."
                 },
@@ -14085,6 +14670,77 @@
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "justify",
+                    "type": "\"end\" | \"space-between\" | \"start\"",
+                    "mutable": false,
+                    "attr": "justify",
+                    "reflectToAttr": false,
+                    "docs": "How to pack the label and radio within a line.\n`\"start\"`: The label and radio will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and radio will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and radio will appear on opposite\nends of the line with space between the two elements.",
+                    "docsTags": [],
+                    "default": "'space-between'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "space-between",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the radio.\n`\"start\"`: The label will appear to the left of the radio in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the radio in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -14186,7 +14842,12 @@
                     "docs": "Border radius of the inner checked radio"
                 }
             ],
-            "slots": [],
+            "slots": [
+                {
+                    "name": "",
+                    "docs": "The label text to associate with the radio. Use the \"labelPlacement\" property to control where the label is placed relative to the radio."
+                }
+            ],
             "parts": [
                 {
                     "name": "container",
@@ -14311,6 +14972,10 @@
                 },
                 {
                     "name": "slot",
+                    "text": "label - The label text to associate with the range. Use the \"labelPlacement\" property to control where the label is placed relative to the range."
+                },
+                {
+                    "name": "slot",
                     "text": "start - Content is placed to the left of the range slider in LTR, and to the right in RTL."
                 },
                 {
@@ -14420,19 +15085,21 @@
                 },
                 {
                     "name": "debounce",
-                    "type": "number",
+                    "type": "number | undefined",
                     "mutable": false,
                     "attr": "debounce",
                     "reflectToAttr": false,
-                    "docs": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`.",
+                    "docs": "How long, in milliseconds, to wait to trigger the\n`ionInput` event after each change in the range value.",
                     "docsTags": [],
-                    "default": "0",
                     "values": [
                         {
                             "type": "number"
+                        },
+                        {
+                            "type": "undefined"
                         }
                     ],
-                    "optional": false,
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -14467,6 +15134,51 @@
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -14532,7 +15244,7 @@
                     "reflectToAttr": false,
                     "docs": "The name of the control, which is submitted with the form data.",
                     "docsTags": [],
-                    "default": "''",
+                    "default": "this.rangeId",
                     "values": [
                         {
                             "type": "string"
@@ -14666,7 +15378,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the value property has changed.",
+                    "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\n`ionChange` is not fired when the value is changed programmatically.",
                     "docsTags": []
                 },
                 {
@@ -14676,6 +15388,15 @@
                     "cancelable": true,
                     "composed": true,
                     "docs": "Emitted when the range has focus.",
+                    "docsTags": []
+                },
+                {
+                    "event": "ionInput",
+                    "detail": "RangeChangeEventDetail",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "The `ionInput` event is fired for `<ion-range>` elements when the value\nis modified. Unlike `ionChange`, `ionInput` is fired continuously\nwhile the user is dragging the knob.",
                     "docsTags": []
                 },
                 {
@@ -14759,6 +15480,10 @@
                 {
                     "name": "end",
                     "docs": "Content is placed to the right of the range slider in LTR, and to the left in RTL."
+                },
+                {
+                    "name": "label",
+                    "docs": "The label text to associate with the range. Use the \"labelPlacement\" property to control where the label is placed relative to the range."
                 },
                 {
                     "name": "start",
@@ -15014,7 +15739,7 @@
                     "mutable": false,
                     "attr": "pulling-text",
                     "reflectToAttr": false,
-                    "docs": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+                    "docs": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -15091,7 +15816,7 @@
                     "mutable": false,
                     "attr": "refreshing-text",
                     "reflectToAttr": false,
-                    "docs": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+                    "docs": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -16327,19 +17052,21 @@
                 },
                 {
                     "name": "debounce",
-                    "type": "number",
+                    "type": "number | undefined",
                     "mutable": false,
                     "attr": "debounce",
                     "reflectToAttr": false,
-                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.",
+                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
                     "docsTags": [],
-                    "default": "250",
                     "values": [
                         {
                             "type": "number"
+                        },
+                        {
+                            "type": "undefined"
                         }
                     ],
-                    "optional": false,
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -16663,7 +17390,7 @@
                     },
                     "signature": "setFocus() => Promise<void>",
                     "parameters": [],
-                    "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+                    "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
                     "docsTags": []
                 }
             ],
@@ -16692,7 +17419,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the value has changed.",
+                    "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.",
                     "docsTags": []
                 },
                 {
@@ -16715,11 +17442,11 @@
                 },
                 {
                     "event": "ionInput",
-                    "detail": "KeyboardEvent",
+                    "detail": "SearchbarInputEventDetail",
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when a keyboard input occurred.",
+                    "docs": "Emitted when the `value` of the `ion-searchbar` element has changed.",
                     "docsTags": []
                 }
             ],
@@ -16952,16 +17679,13 @@
                 },
                 {
                     "name": "value",
-                    "type": "null | string | undefined",
+                    "type": "string | undefined",
                     "mutable": true,
                     "attr": "value",
                     "reflectToAttr": false,
                     "docs": "the value of the segment.",
                     "docsTags": [],
                     "values": [
-                        {
-                            "type": "null"
-                        },
                         {
                             "type": "string"
                         },
@@ -17033,7 +17757,7 @@
                 {
                     "name": "disabled",
                     "type": "boolean",
-                    "mutable": false,
+                    "mutable": true,
                     "attr": "disabled",
                     "reflectToAttr": false,
                     "docs": "If `true`, the user cannot interact with the segment button.",
@@ -17366,6 +18090,61 @@
                     "required": false
                 },
                 {
+                    "name": "color",
+                    "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+                    "mutable": false,
+                    "attr": "color",
+                    "reflectToAttr": true,
+                    "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).\n\nThis property is only available when using the modern select syntax.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "danger",
+                            "type": "string"
+                        },
+                        {
+                            "value": "dark",
+                            "type": "string"
+                        },
+                        {
+                            "value": "light",
+                            "type": "string"
+                        },
+                        {
+                            "value": "medium",
+                            "type": "string"
+                        },
+                        {
+                            "value": "primary",
+                            "type": "string"
+                        },
+                        {
+                            "value": "secondary",
+                            "type": "string"
+                        },
+                        {
+                            "value": "success",
+                            "type": "string"
+                        },
+                        {
+                            "value": "tertiary",
+                            "type": "string"
+                        },
+                        {
+                            "value": "warning",
+                            "type": "string"
+                        },
+                        {
+                            "type": "string & Record<never, never>"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "compareWith",
                     "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
                     "mutable": false,
@@ -17405,6 +18184,30 @@
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "fill",
+                    "type": "\"outline\" | \"solid\" | undefined",
+                    "mutable": false,
+                    "attr": "fill",
+                    "reflectToAttr": false,
+                    "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "outline",
+                            "type": "string"
+                        },
+                        {
+                            "value": "solid",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -17448,6 +18251,107 @@
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "justify",
+                    "type": "\"end\" | \"space-between\" | \"start\"",
+                    "mutable": false,
+                    "attr": "justify",
+                    "reflectToAttr": false,
+                    "docs": "How to pack the label and select within a line.\n`justify` does not apply when the label and select\nare on different lines when `labelPlacement` is set to\n`\"floating\"` or `\"stacked\"`.\n`\"start\"`: The label and select will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and select will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and select will appear on opposite\nends of the line with space between the two elements.",
+                    "docsTags": [],
+                    "default": "'space-between'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "space-between",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "label",
+                    "reflectToAttr": false,
+                    "docs": "The visible label associated with the select.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\" | undefined",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the select.\n`\"start\"`: The label will appear to the left of the select in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the select in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select.\n`\"stacked\"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\nWhen using `\"floating\"` or `\"stacked\"` we recommend initializing the select with either a `value` or a `placeholder`.",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "floating",
+                            "type": "string"
+                        },
+                        {
+                            "value": "stacked",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -17564,12 +18468,32 @@
                     "required": false
                 },
                 {
+                    "name": "shape",
+                    "type": "\"round\" | undefined",
+                    "mutable": false,
+                    "attr": "shape",
+                    "reflectToAttr": false,
+                    "docs": "The shape of the select. If \"round\" it will have an increased border radius.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "round",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "value",
                     "type": "any",
                     "mutable": true,
                     "attr": "value",
                     "reflectToAttr": false,
-                    "docs": "the value of the select.",
+                    "docs": "The value of the select.",
                     "docsTags": [],
                     "values": [
                         {
@@ -17648,6 +18572,46 @@
             "listeners": [],
             "styles": [
                 {
+                    "name": "--background",
+                    "annotation": "prop",
+                    "docs": "Background of the select"
+                },
+                {
+                    "name": "--border-color Color of the select border",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--border-radius Radius of the select border",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--border-style Style of the select border",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--border-width Width of the select border",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--highlight-color-focused The color of the highlight on the select when focused",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--highlight-color-invalid The color of the highlight on the select when invalid",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
+                    "name": "--highlight-color-valid The color of the highlight on the select when valid",
+                    "annotation": "prop",
+                    "docs": ""
+                },
+                {
                     "name": "--padding-bottom",
                     "annotation": "prop",
                     "docs": "Bottom padding of the select"
@@ -17676,6 +18640,11 @@
                     "name": "--placeholder-opacity",
                     "annotation": "prop",
                     "docs": "Opacity of the select placeholder text"
+                },
+                {
+                    "name": "--ripple-color",
+                    "annotation": "prop",
+                    "docs": "The color of the ripple effect on MD mode."
                 }
             ],
             "slots": [],
@@ -17698,14 +18667,16 @@
                 "ion-select-popover",
                 "ion-popover",
                 "ion-action-sheet",
-                "ion-alert"
+                "ion-alert",
+                "ion-icon"
             ],
             "dependencyGraph": {
                 "ion-select": [
                     "ion-select-popover",
                     "ion-popover",
                     "ion-action-sheet",
-                    "ion-alert"
+                    "ion-alert",
+                    "ion-icon"
                 ],
                 "ion-select-popover": [
                     "ion-item",
@@ -17831,524 +18802,6 @@
                     "name": "--border-radius",
                     "annotation": "prop",
                     "docs": "Border radius of the skeleton text"
-                }
-            ],
-            "slots": [],
-            "parts": [],
-            "dependents": [],
-            "dependencies": [],
-            "dependencyGraph": {}
-        },
-        {
-            "filePath": "./src/components/slide/slide.tsx",
-            "encapsulation": "none",
-            "tag": "ion-slide",
-            "docs": "",
-            "docsTags": [],
-            "usage": {},
-            "props": [],
-            "methods": [],
-            "events": [],
-            "listeners": [],
-            "styles": [],
-            "slots": [],
-            "parts": [],
-            "dependents": [],
-            "dependencies": [],
-            "dependencyGraph": {}
-        },
-        {
-            "filePath": "./src/components/slides/slides.tsx",
-            "encapsulation": "none",
-            "tag": "ion-slides",
-            "docs": "",
-            "docsTags": [
-                {
-                    "name": "virtualProp",
-                    "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
-                }
-            ],
-            "usage": {},
-            "props": [
-                {
-                    "name": "mode",
-                    "type": "\"ios\" | \"md\"",
-                    "mutable": false,
-                    "attr": "mode",
-                    "reflectToAttr": false,
-                    "docs": "The mode determines which platform styles to use.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "value": "ios",
-                            "type": "string"
-                        },
-                        {
-                            "value": "md",
-                            "type": "string"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "options",
-                    "type": "any",
-                    "mutable": false,
-                    "attr": "options",
-                    "reflectToAttr": false,
-                    "docs": "Options to pass to the swiper instance.\nSee https://swiperjs.com/swiper-api for valid options",
-                    "docsTags": [],
-                    "default": "{}",
-                    "values": [
-                        {
-                            "type": "any"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "pager",
-                    "type": "boolean",
-                    "mutable": false,
-                    "attr": "pager",
-                    "reflectToAttr": false,
-                    "docs": "If `true`, show the pagination.",
-                    "docsTags": [],
-                    "default": "false",
-                    "values": [
-                        {
-                            "type": "boolean"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "scrollbar",
-                    "type": "boolean",
-                    "mutable": false,
-                    "attr": "scrollbar",
-                    "reflectToAttr": false,
-                    "docs": "If `true`, show the scrollbar.",
-                    "docsTags": [],
-                    "default": "false",
-                    "values": [
-                        {
-                            "type": "boolean"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                }
-            ],
-            "methods": [
-                {
-                    "name": "getActiveIndex",
-                    "returns": {
-                        "type": "Promise<number>",
-                        "docs": ""
-                    },
-                    "signature": "getActiveIndex() => Promise<number>",
-                    "parameters": [],
-                    "docs": "Get the index of the active slide.",
-                    "docsTags": []
-                },
-                {
-                    "name": "getPreviousIndex",
-                    "returns": {
-                        "type": "Promise<number>",
-                        "docs": ""
-                    },
-                    "signature": "getPreviousIndex() => Promise<number>",
-                    "parameters": [],
-                    "docs": "Get the index of the previous slide.",
-                    "docsTags": []
-                },
-                {
-                    "name": "getSwiper",
-                    "returns": {
-                        "type": "Promise<any>",
-                        "docs": ""
-                    },
-                    "signature": "getSwiper() => Promise<any>",
-                    "parameters": [],
-                    "docs": "Get the Swiper instance.\nUse this to access the full Swiper API.\nSee https://swiperjs.com/swiper-api for all API options.",
-                    "docsTags": []
-                },
-                {
-                    "name": "isBeginning",
-                    "returns": {
-                        "type": "Promise<boolean>",
-                        "docs": ""
-                    },
-                    "signature": "isBeginning() => Promise<boolean>",
-                    "parameters": [],
-                    "docs": "Get whether or not the current slide is the first slide.",
-                    "docsTags": []
-                },
-                {
-                    "name": "isEnd",
-                    "returns": {
-                        "type": "Promise<boolean>",
-                        "docs": ""
-                    },
-                    "signature": "isEnd() => Promise<boolean>",
-                    "parameters": [],
-                    "docs": "Get whether or not the current slide is the last slide.",
-                    "docsTags": []
-                },
-                {
-                    "name": "length",
-                    "returns": {
-                        "type": "Promise<number>",
-                        "docs": ""
-                    },
-                    "signature": "length() => Promise<number>",
-                    "parameters": [],
-                    "docs": "Get the total number of slides.",
-                    "docsTags": []
-                },
-                {
-                    "name": "lockSwipeToNext",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "lockSwipeToNext(lock: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Lock or unlock the ability to slide to the next slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "lock If `true`, disable swiping to the next slide."
-                        }
-                    ]
-                },
-                {
-                    "name": "lockSwipeToPrev",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "lockSwipeToPrev(lock: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Lock or unlock the ability to slide to the previous slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "lock If `true`, disable swiping to the previous slide."
-                        }
-                    ]
-                },
-                {
-                    "name": "lockSwipes",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "lockSwipes(lock: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Lock or unlock the ability to slide to the next or previous slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "lock If `true`, disable swiping to the next and previous slide."
-                        }
-                    ]
-                },
-                {
-                    "name": "slideNext",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "slideNext(speed?: number, runCallbacks?: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Transition to the next slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "speed The transition duration (in ms)."
-                        },
-                        {
-                            "name": "param",
-                            "text": "runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events."
-                        }
-                    ]
-                },
-                {
-                    "name": "slidePrev",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "slidePrev(speed?: number, runCallbacks?: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Transition to the previous slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "speed The transition duration (in ms)."
-                        },
-                        {
-                            "name": "param",
-                            "text": "runCallbacks If true, the transition will produce the [Transition/SlideChange][Start/End] transition events."
-                        }
-                    ]
-                },
-                {
-                    "name": "slideTo",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "slideTo(index: number, speed?: number, runCallbacks?: boolean) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Transition to the specified slide.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "index The index of the slide to transition to."
-                        },
-                        {
-                            "name": "param",
-                            "text": "speed The transition duration (in ms)."
-                        },
-                        {
-                            "name": "param",
-                            "text": "runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events."
-                        }
-                    ]
-                },
-                {
-                    "name": "startAutoplay",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "startAutoplay() => Promise<void>",
-                    "parameters": [],
-                    "docs": "Start auto play.",
-                    "docsTags": []
-                },
-                {
-                    "name": "stopAutoplay",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "stopAutoplay() => Promise<void>",
-                    "parameters": [],
-                    "docs": "Stop auto play.",
-                    "docsTags": []
-                },
-                {
-                    "name": "update",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "update() => Promise<void>",
-                    "parameters": [],
-                    "docs": "Update the underlying slider implementation. Call this if you've added or removed\nchild slides.",
-                    "docsTags": []
-                },
-                {
-                    "name": "updateAutoHeight",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "updateAutoHeight(speed?: number) => Promise<void>",
-                    "parameters": [],
-                    "docs": "Force swiper to update its height (when autoHeight is enabled) for the duration\nequal to 'speed' parameter.",
-                    "docsTags": [
-                        {
-                            "name": "param",
-                            "text": "speed The transition duration (in ms)."
-                        }
-                    ]
-                }
-            ],
-            "events": [
-                {
-                    "event": "ionSlideDidChange",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted after the active slide has changed.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideDoubleTap",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the user double taps on the slide's container.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideDrag",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the slider is actively being moved.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideNextEnd",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the next slide has ended.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideNextStart",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the next slide has started.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlidePrevEnd",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the previous slide has ended.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlidePrevStart",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the previous slide has started.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideReachEnd",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the slider is at the last slide.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideReachStart",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the slider is at its initial position.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlidesDidLoad",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted after Swiper initialization",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideTap",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the user taps/clicks on the slide's container.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideTouchEnd",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the user releases the touch.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideTouchStart",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the user first touches the slider.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideTransitionEnd",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the slide transition has ended.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideTransitionStart",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted when the slide transition has started.",
-                    "docsTags": []
-                },
-                {
-                    "event": "ionSlideWillChange",
-                    "detail": "void",
-                    "bubbles": true,
-                    "cancelable": true,
-                    "composed": true,
-                    "docs": "Emitted before the active slide has changed.",
-                    "docsTags": []
-                }
-            ],
-            "listeners": [],
-            "styles": [
-                {
-                    "name": "--bullet-background",
-                    "annotation": "prop",
-                    "docs": "Background of the pagination bullets"
-                },
-                {
-                    "name": "--bullet-background-active",
-                    "annotation": "prop",
-                    "docs": "Background of the active pagination bullet"
-                },
-                {
-                    "name": "--progress-bar-background",
-                    "annotation": "prop",
-                    "docs": "Background of the pagination progress-bar"
-                },
-                {
-                    "name": "--progress-bar-background-active",
-                    "annotation": "prop",
-                    "docs": "Background of the active pagination progress-bar"
-                },
-                {
-                    "name": "--scroll-bar-background",
-                    "annotation": "prop",
-                    "docs": "Background of the pagination scroll-bar"
-                },
-                {
-                    "name": "--scroll-bar-background-active",
-                    "annotation": "prop",
-                    "docs": "Background of the active pagination scroll-bar"
                 }
             ],
             "slots": [],
@@ -18950,7 +19403,7 @@
                     "mutable": true,
                     "attr": "layout",
                     "reflectToAttr": false,
-                    "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`.",
+                    "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `\"icon-top\"`.",
                     "docsTags": [],
                     "values": [
                         {
@@ -19438,10 +19891,10 @@
                 {
                     "name": "clearOnEdit",
                     "type": "boolean",
-                    "mutable": true,
+                    "mutable": false,
                     "attr": "clear-on-edit",
                     "reflectToAttr": false,
-                    "docs": "If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `\"password\"`, `false` for all other types.",
+                    "docs": "If `true`, the value will be cleared after focus upon edit.",
                     "docsTags": [],
                     "default": "false",
                     "values": [
@@ -19527,20 +19980,57 @@
                     "required": false
                 },
                 {
-                    "name": "debounce",
-                    "type": "number",
+                    "name": "counter",
+                    "type": "boolean",
                     "mutable": false,
-                    "attr": "debounce",
+                    "attr": "counter",
                     "reflectToAttr": false,
-                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.",
+                    "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit.\nDevelopers must also set the `maxlength` property for the counter to be calculated correctly.",
                     "docsTags": [],
-                    "default": "0",
+                    "default": "false",
                     "values": [
                         {
-                            "type": "number"
+                            "type": "boolean"
                         }
                     ],
                     "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "counterFormatter",
+                    "type": "((inputLength: number, maxLength: number) => string) | undefined",
+                    "mutable": false,
+                    "reflectToAttr": false,
+                    "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "((inputLength: number, maxLength: number) => string)"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "debounce",
+                    "type": "number | undefined",
+                    "mutable": false,
+                    "attr": "debounce",
+                    "reflectToAttr": false,
+                    "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
                     "required": false
                 },
                 {
@@ -19605,6 +20095,68 @@
                     "required": false
                 },
                 {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "Text that is placed under the textarea and displayed when an error is detected.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "fill",
+                    "type": "\"outline\" | \"solid\" | undefined",
+                    "mutable": false,
+                    "attr": "fill",
+                    "reflectToAttr": false,
+                    "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "outline",
+                            "type": "string"
+                        },
+                        {
+                            "value": "solid",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helperText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "helper-text",
+                    "reflectToAttr": false,
+                    "docs": "Text that is placed under the textarea and displayed when no error is detected.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "inputmode",
                     "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
                     "mutable": false,
@@ -19653,12 +20205,84 @@
                     "required": false
                 },
                 {
+                    "name": "label",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "label",
+                    "reflectToAttr": false,
+                    "docs": "The visible label associated with the textarea.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the textarea.\n`\"start\"`: The label will appear to the left of the textarea in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the textarea in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the textarea when the textarea is focused or it has a value. Otherwise it will appear on top of the textarea.\n`\"stacked\"`: The label will appear smaller and above the textarea regardless even when the textarea is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "floating",
+                            "type": "string"
+                        },
+                        {
+                            "value": "stacked",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "maxlength",
                     "type": "number | undefined",
                     "mutable": false,
                     "attr": "maxlength",
                     "reflectToAttr": false,
-                    "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.",
+                    "docs": "This attribute specifies the maximum number of characters that the user can enter.",
                     "docsTags": [],
                     "values": [
                         {
@@ -19677,7 +20301,7 @@
                     "mutable": false,
                     "attr": "minlength",
                     "reflectToAttr": false,
-                    "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.",
+                    "docs": "This attribute specifies the minimum number of characters that the user can enter.",
                     "docsTags": [],
                     "values": [
                         {
@@ -19801,6 +20425,26 @@
                     "required": false
                 },
                 {
+                    "name": "shape",
+                    "type": "\"round\" | undefined",
+                    "mutable": false,
+                    "attr": "shape",
+                    "reflectToAttr": false,
+                    "docs": "The shape of the textarea. If \"round\" it will have an increased border radius.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "value": "round",
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "spellcheck",
                     "type": "boolean",
                     "mutable": false,
@@ -19909,7 +20553,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the input value has changed.",
+                    "docs": "The `ionChange` event is fired for `<ion-textarea>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the element loses focus after its value\nhas been modified.",
                     "docsTags": []
                 },
                 {
@@ -19923,11 +20567,11 @@
                 },
                 {
                     "event": "ionInput",
-                    "detail": "InputEvent",
+                    "detail": "TextareaInputEventDetail",
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when a keyboard input occurred.",
+                    "docs": "The `ionInput` event fires when the `value` of an `<ion-textarea>` element\nhas been changed.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
                     "docsTags": []
                 }
             ],
@@ -19939,14 +20583,44 @@
                     "docs": "Background of the textarea"
                 },
                 {
+                    "name": "--border-color",
+                    "annotation": "prop",
+                    "docs": "Color of the border below the textarea when using helper text, error text, or counter"
+                },
+                {
                     "name": "--border-radius",
                     "annotation": "prop",
                     "docs": "Border radius of the textarea"
                 },
                 {
+                    "name": "--border-style",
+                    "annotation": "prop",
+                    "docs": "Style of the border below the textarea when using helper text, error text, or counter"
+                },
+                {
+                    "name": "--border-width",
+                    "annotation": "prop",
+                    "docs": "Width of the border below the textarea when using helper text, error text, or counter"
+                },
+                {
                     "name": "--color",
                     "annotation": "prop",
                     "docs": "Color of the text"
+                },
+                {
+                    "name": "--highlight-color-focused",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the textarea when focused"
+                },
+                {
+                    "name": "--highlight-color-invalid",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the textarea when invalid"
+                },
+                {
+                    "name": "--highlight-color-valid",
+                    "annotation": "prop",
+                    "docs": "The color of the highlight on the textarea when valid"
                 },
                 {
                     "name": "--padding-bottom",
@@ -20368,6 +21042,23 @@
                     "required": false
                 },
                 {
+                    "name": "isOpen",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "is-open",
+                    "reflectToAttr": false,
+                    "docs": "If `true`, the toast will open. If `false`, the toast will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the toastController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe toast dismisses. You will need to do that in your code.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
                     "name": "keyboardClose",
                     "type": "boolean",
                     "mutable": false,
@@ -20430,7 +21121,7 @@
                     "mutable": false,
                     "attr": "message",
                     "reflectToAttr": false,
-                    "docs": "Message to be shown in the toast.",
+                    "docs": "Message to be shown in the toast.\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
                     "docsTags": [],
                     "values": [
                         {
@@ -20509,6 +21200,25 @@
                     ],
                     "optional": false,
                     "required": false
+                },
+                {
+                    "name": "trigger",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "trigger",
+                    "reflectToAttr": false,
+                    "docs": "An ID corresponding to the trigger element that\ncauses the toast to open when clicked.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
                 }
             ],
             "methods": [
@@ -20568,6 +21278,24 @@
             ],
             "events": [
                 {
+                    "event": "didDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the toast has dismissed.\nShorthand for ionToastDidDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "didPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted after the toast has presented.\nShorthand for ionToastWillDismiss.",
+                    "docsTags": []
+                },
+                {
                     "event": "ionToastDidDismiss",
                     "detail": "OverlayEventDetail<any>",
                     "bubbles": true,
@@ -20601,6 +21329,24 @@
                     "cancelable": true,
                     "composed": true,
                     "docs": "Emitted before the toast has presented.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willDismiss",
+                    "detail": "OverlayEventDetail<any>",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the toast has dismissed.\nShorthand for ionToastWillDismiss.",
+                    "docsTags": []
+                },
+                {
+                    "event": "willPresent",
+                    "detail": "void",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Emitted before the toast has presented.\nShorthand for ionToastWillPresent.",
                     "docsTags": []
                 }
             ],
@@ -20738,6 +21484,10 @@
                     "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
                 },
                 {
+                    "name": "slot",
+                    "text": "- The label text to associate with the toggle. Use the \"labelPlacement\" property to control where the label is placed relative to the toggle."
+                },
+                {
                     "name": "part",
                     "text": "track - The background track of the toggle."
                 },
@@ -20858,6 +21608,77 @@
                     "required": false
                 },
                 {
+                    "name": "justify",
+                    "type": "\"end\" | \"space-between\" | \"start\"",
+                    "mutable": false,
+                    "attr": "justify",
+                    "reflectToAttr": false,
+                    "docs": "How to pack the label and toggle within a line.\n`\"start\"`: The label and toggle will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and toggle will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and toggle will appear on opposite\nends of the line with space between the two elements.",
+                    "docsTags": [],
+                    "default": "'space-between'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "space-between",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "labelPlacement",
+                    "type": "\"end\" | \"fixed\" | \"start\"",
+                    "mutable": false,
+                    "attr": "label-placement",
+                    "reflectToAttr": false,
+                    "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the toggle in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the toggle in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+                    "docsTags": [],
+                    "default": "'start'",
+                    "values": [
+                        {
+                            "value": "end",
+                            "type": "string"
+                        },
+                        {
+                            "value": "fixed",
+                            "type": "string"
+                        },
+                        {
+                            "value": "start",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "legacy",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "legacy",
+                    "reflectToAttr": false,
+                    "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
                     "name": "mode",
                     "type": "\"ios\" | \"md\"",
                     "mutable": false,
@@ -20936,7 +21757,7 @@
                     "bubbles": true,
                     "cancelable": true,
                     "composed": true,
-                    "docs": "Emitted when the value property has changed.",
+                    "docs": "Emitted when the user switches the toggle on or off. Does not emit\nwhen programmatically changing the value of the `checked` property.",
                     "docsTags": []
                 },
                 {
@@ -20951,16 +21772,6 @@
             ],
             "listeners": [],
             "styles": [
-                {
-                    "name": "--background",
-                    "annotation": "prop",
-                    "docs": "Background of the toggle"
-                },
-                {
-                    "name": "--background-checked",
-                    "annotation": "prop",
-                    "docs": "Background of the toggle when checked"
-                },
                 {
                     "name": "--border-radius",
                     "annotation": "prop",
@@ -21010,9 +21821,24 @@
                     "name": "--handle-width",
                     "annotation": "prop",
                     "docs": "Width of the toggle handle"
+                },
+                {
+                    "name": "--track-background",
+                    "annotation": "prop",
+                    "docs": "Background of the toggle track"
+                },
+                {
+                    "name": "--track-background-checked",
+                    "annotation": "prop",
+                    "docs": "Background of the toggle track when checked"
                 }
             ],
-            "slots": [],
+            "slots": [
+                {
+                    "name": "",
+                    "docs": "The label text to associate with the toggle. Use the \"labelPlacement\" property to control where the label is placed relative to the toggle."
+                }
+            ],
             "parts": [
                 {
                     "name": "handle",
@@ -21231,312 +22057,6 @@
                     "docs": "Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
                 }
             ],
-            "parts": [],
-            "dependents": [],
-            "dependencies": [],
-            "dependencyGraph": {}
-        },
-        {
-            "filePath": "./src/components/virtual-scroll/virtual-scroll.tsx",
-            "encapsulation": "none",
-            "tag": "ion-virtual-scroll",
-            "docs": "",
-            "docsTags": [],
-            "usage": {},
-            "props": [
-                {
-                    "name": "approxFooterHeight",
-                    "type": "number",
-                    "mutable": false,
-                    "attr": "approx-footer-height",
-                    "reflectToAttr": false,
-                    "docs": "The approximate width of each footer template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
-                    "docsTags": [],
-                    "default": "30",
-                    "values": [
-                        {
-                            "type": "number"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "approxHeaderHeight",
-                    "type": "number",
-                    "mutable": false,
-                    "attr": "approx-header-height",
-                    "reflectToAttr": false,
-                    "docs": "The approximate height of each header template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
-                    "docsTags": [],
-                    "default": "30",
-                    "values": [
-                        {
-                            "type": "number"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "approxItemHeight",
-                    "type": "number",
-                    "mutable": false,
-                    "attr": "approx-item-height",
-                    "reflectToAttr": false,
-                    "docs": "It is important to provide this\nif virtual item height will be significantly larger than the default\nThe approximate height of each virtual item template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
-                    "docsTags": [],
-                    "default": "45",
-                    "values": [
-                        {
-                            "type": "number"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "footerFn",
-                    "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "Section footers and the data used within its given\ntemplate can be dynamically created by passing a function to `footerFn`.\nThe logic within the footer function can decide if the footer template\nshould be used, and what data to give to the footer template. The function\nmust return `null` if a footer cell shouldn't be created.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number, items: any[]) => string"
-                        },
-                        {
-                            "type": "null"
-                        },
-                        {
-                            "type": "undefined)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "footerHeight",
-                    "type": "((item: any, index: number) => number) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "An optional function that maps each item footer within their height.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => number)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "headerFn",
-                    "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "Section headers and the data used within its given\ntemplate can be dynamically created by passing a function to `headerFn`.\nFor example, a large list of contacts usually has dividers between each\nletter in the alphabet. App's can provide their own custom `headerFn`\nwhich is called with each record within the dataset. The logic within\nthe header function can decide if the header template should be used,\nand what data to give to the header template. The function must return\n`null` if a header cell shouldn't be created.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number, items: any[]) => string"
-                        },
-                        {
-                            "type": "null"
-                        },
-                        {
-                            "type": "undefined)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "headerHeight",
-                    "type": "((item: any, index: number) => number) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "An optional function that maps each item header within their height.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => number)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "itemHeight",
-                    "type": "((item: any, index: number) => number) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "An optional function that maps each item within their height.\nWhen this function is provides, heavy optimizations and fast path can be taked by\n`ion-virtual-scroll` leading to massive performance improvements.\n\nThis function allows to skip all DOM reads, which can be Doing so leads\nto massive performance",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => number)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "items",
-                    "type": "any[] | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "The data that builds the templates within the virtual scroll.\nIt's important to note that when this data has changed, then the\nentire virtual scroll is reset, which is an expensive operation and\nshould be avoided if possible.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "any[]"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "nodeRender",
-                    "type": "((el: HTMLElement | null, cell: Cell, domIndex: number) => HTMLElement) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "NOTE: only Vanilla JS API.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((el: HTMLElement"
-                        },
-                        {
-                            "type": "null, cell: Cell, domIndex: number) => HTMLElement)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "renderFooter",
-                    "type": "((item: any, index: number) => any) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the footer to be rendered. Returns a JSX virtual-dom.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => any)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "renderHeader",
-                    "type": "((item: any, index: number) => any) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the header to be rendered. Returns a JSX virtual-dom.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => any)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                },
-                {
-                    "name": "renderItem",
-                    "type": "((item: any, index: number) => any) | undefined",
-                    "mutable": false,
-                    "reflectToAttr": false,
-                    "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the items to be rendered. Returns a JSX virtual-dom.",
-                    "docsTags": [],
-                    "values": [
-                        {
-                            "type": "((item: any, index: number) => any)"
-                        },
-                        {
-                            "type": "undefined"
-                        }
-                    ],
-                    "optional": true,
-                    "required": false
-                }
-            ],
-            "methods": [
-                {
-                    "name": "checkEnd",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "checkEnd() => Promise<void>",
-                    "parameters": [],
-                    "docs": "This method marks the tail the items array as dirty, so they can be re-rendered.\n\nIt's equivalent to calling:\n\n```js\nvirtualScroll.checkRange(lastItemLen);\n```",
-                    "docsTags": []
-                },
-                {
-                    "name": "checkRange",
-                    "returns": {
-                        "type": "Promise<void>",
-                        "docs": ""
-                    },
-                    "signature": "checkRange(offset: number, len?: number) => Promise<void>",
-                    "parameters": [],
-                    "docs": "This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as\ndirty any time the content or their style changes.\n\nThe subset of items to be updated can are specifying by an offset and a length.",
-                    "docsTags": []
-                },
-                {
-                    "name": "positionForItem",
-                    "returns": {
-                        "type": "Promise<number>",
-                        "docs": ""
-                    },
-                    "signature": "positionForItem(index: number) => Promise<number>",
-                    "parameters": [],
-                    "docs": "Returns the position of the virtual item at the given index.",
-                    "docsTags": []
-                }
-            ],
-            "events": [],
-            "listeners": [
-                {
-                    "event": "resize",
-                    "target": "window",
-                    "capture": false,
-                    "passive": true
-                }
-            ],
-            "styles": [],
-            "slots": [],
             "parts": [],
             "dependents": [],
             "dependencies": [],

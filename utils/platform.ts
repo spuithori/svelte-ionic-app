@@ -223,13 +223,13 @@ if (typeof window !== "undefined") {
   keyboardDidShow = readableEventFactory({
     defaultvalue: "",
     event: "ionKeyboardDidShow",
-    eventAttr: undefined,
+    eventAttr: '',
     listenerComponent: window,
   });
   keyboardDidHide = readableEventFactory({
     defaultvalue: "",
     event: "ionKeyboardDidHide",
-    eventAttr: undefined,
+    eventAttr: '',
     listenerComponent: window,
   });
 }
@@ -250,19 +250,19 @@ if (typeof document !== "undefined") {
   resume = readableEventFactory({
     defaultvalue: "",
     event: "resume",
-    eventAttr: undefined,
+    eventAttr: '',
     listenerComponent: document,
   });
   pause = readableEventFactory({
     defaultvalue: "",
     event: "pause",
-    eventAttr: undefined,
+    eventAttr: '',
     listenerComponent: document,
   });
   backButton = readableEventFactory({
     defaultvalue: "",
     event: "ionBackButton",
-    eventAttr: undefined,
+    eventAttr: '',
     listenerComponent: document,
   });
   keydown = readableEventFactory({
@@ -318,7 +318,8 @@ export const getQueryParam = (key: string): string | null => {
 };
 
 export const isRTL = (): boolean => {
-  if (_doc) return _doc.dir === "rtl";
+  if (_doc) return _doc.dir === "rtl"
+  else return false;
 };
 
 /* redundant addition */

@@ -2,27 +2,32 @@
   import { onMount } from "svelte";
 
   /**
-   * @typedef {Object} root: SvelteComponent;
+   * The root component of a Svelte app.
+   * @type {SvelteComponent}
    */
   export let root;
 
   /**
-   * @typedef {Object} animated: boolean | undefined;
+   * Whether or not the component is animated.
+   * @type {boolean|undefined}
    */
   export let animated = true;
 
   /**
-   * @typedef {Object} Animation: ((baseEl: any, opts?: any) => Animation) | undefined = undefined;
+   * An animation function that takes a base element and optional options and returns an Animation object.
+   * @type {((baseEl: any, opts?: any) => Animation)|undefined}
    */
-  export let animation; //
+  export let animation;
 
   /**
-   * @typedef {Object} rootParams: undefined | { [key: string]: any } = undefined;
+   * Optional parameters for the root component.
+   * @type {undefined|{[key: string]: any}}
    */
   export let rootParams;
 
   /**
-   * @typedef {Object} swipeGesture: boolean | undefined = undefined;
+   * Whether or not swipe gesture is enabled.
+   * @type {boolean|undefined}
    */
   export let swipeGesture;
 

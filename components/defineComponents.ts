@@ -62,8 +62,6 @@ import { IonSegmentButton } from "@ionic/core/components/ion-segment-button";
 import { IonSelect } from "@ionic/core/components/ion-select";
 import { IonSelectOption } from "@ionic/core/components/ion-select-option";
 import { IonSkeletonText } from "@ionic/core/components/ion-skeleton-text";
-import { IonSlide } from "@ionic/core/components/ion-slide";
-import { IonSlides } from "@ionic/core/components/ion-slides";
 import { IonSpinner } from "@ionic/core/components/ion-spinner";
 import { IonSplitPane } from "@ionic/core/components/ion-split-pane";
 import { IonTab } from "@ionic/core/components/ion-tab";
@@ -76,7 +74,6 @@ import { IonThumbnail } from "@ionic/core/components/ion-thumbnail";
 import { IonTitle } from "@ionic/core/components/ion-title";
 import { IonToggle } from "@ionic/core/components/ion-toggle";
 import { IonToolbar } from "@ionic/core/components/ion-toolbar";
-import { IonVirtualScroll } from "@ionic/core/components/ion-virtual-scroll";
 
 import { IonActionSheet } from "@ionic/core/components/ion-action-sheet";
 import { IonAlert } from "@ionic/core/components/ion-alert";
@@ -168,8 +165,6 @@ export const defineIonComponents = () => {
   defineComponent("ion-select-option", IonSelectOption);
   defineComponent("ion-select-popover", IonSelectPopover);
   defineComponent("ion-skeleton-text", IonSkeletonText);
-  defineComponent("ion-slide", IonSlide);
-  defineComponent("ion-slides", IonSlides);
   defineComponent("ion-spinner", IonSpinner);
   defineComponent("ion-split-pane", IonSplitPane);
   defineComponent("ion-tab", IonTab);
@@ -183,7 +178,6 @@ export const defineIonComponents = () => {
   defineComponent("ion-title", IonTitle);
   defineComponent("ion-toggle", IonToggle);
   defineComponent("ion-toolbar", IonToolbar);
-  defineComponent("ion-virtual-scroll", IonVirtualScroll);
 
   defineComponent("ion-action-sheet", IonActionSheet);
   defineComponent("ion-alert", IonAlert);

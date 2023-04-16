@@ -17,9 +17,10 @@ import "@ionic/core/css/display.css";
 import { menuController } from "@ionic/core";
 
 import { initialize } from "@ionic/core/components";
-import type { IonicConfig, MenuI } from "@ionic/core/components";
+import type { IonicConfig } from "@ionic/core/components";
 
 import { defineIonComponents } from "./components/defineComponents";
+import { MenuI } from "@ionic/core/dist/types/components/menu/menu-interface";
 export { defineComponent } from "./components/defineComponents";
 
 // all exports
@@ -55,8 +56,6 @@ export type {
   ActionSheetButton,
   AlertOptions,
   AlertInput,
-  AlertTextareaAttributes,
-  AlertInputAttributes,
   AlertButton,
   BackButtonEvent,
   CheckboxCustomEvent,
@@ -72,7 +71,6 @@ export type {
   IonicSafeString,
   LoadingOptions,
   MenuCustomEvent,
-  MenuI,
   ModalOptions,
   NavCustomEvent,
   PickerOptions,
@@ -115,7 +113,6 @@ export {
   createGesture,
   iosTransitionAnimation,
   mdTransitionAnimation,
-  IonicSwiper,
   IonicSlides,
   getTimeGivenProgression,
 } from "@ionic/core/components";
