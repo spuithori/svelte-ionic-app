@@ -30,12 +30,12 @@
 
     ionViewDidLeave();
   });
+  // in:fly={{ x: 1000, duration: 300 }}
+  // out:fly={{ x: -1000, duration: 300 }}
 </script>
 
 <div
   class="ion-page"
-  in:fly={{ x: 1000, duration: 300 }}
-  out:fly={{ x: -1000, duration: 300 }}
 >
   <slot />
 </div>
