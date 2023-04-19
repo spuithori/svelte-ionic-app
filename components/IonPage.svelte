@@ -8,7 +8,7 @@
   export const ionViewDidEnter = () => {};
   export const ionViewWillLeave = undefined; // unsupported as we cannot use beforeNavigate in npm library
   export const ionViewDidLeave = () => {};
-  export let fly = {in: { x: 1000, duration: 300 }, out: { x: -1000, duration: 300 }};
+  export let animation = {in: { x: 1000, duration: 300 }, out: { x: -1000, duration: 300 }};
 
   ionViewWillEnter();
 
@@ -35,8 +35,8 @@
 
 <div
   class="ion-page"
-  in:fly={fly.in}
-  out:fly={fly.out}
+  in:fly={animation.in}
+  out:fly={animation.out}
 >
   <slot />
 </div>
