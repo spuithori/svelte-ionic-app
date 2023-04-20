@@ -20,7 +20,7 @@ import { initialize } from "@ionic/core/components";
 import type { IonicConfig } from "@ionic/core/components";
 
 import { defineIonComponents } from "./components/defineComponents";
-import { MenuI } from "@ionic/core/dist/types/components/menu/menu-interface";
+import { MenuI } from "@ionic/core/interface";
 export { defineComponent } from "./components/defineComponents";
 
 // all exports
