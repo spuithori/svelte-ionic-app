@@ -31,6 +31,6 @@
     "svelte": "^3.55.1"
   },
   "dependencies": {
-    "@ionic/core": "^7.0.2"
+    "@ionic/core": "^7.0.3"
   }
 }
