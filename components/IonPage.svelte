@@ -8,7 +8,9 @@
   export const ionViewDidEnter = () => {};
   export const ionViewWillLeave = undefined; // unsupported as we cannot use beforeNavigate in npm library
   export const ionViewDidLeave = () => {};
-  export let animation = {in: { x: 1000, duration: 300 }, out: { x: -1000, duration: 300 }};
+
+  // put export in front, copy to your $lib and then you have your custom IonPage!
+  let animation = { in: { x: 1000, duration: 300 }, out: { x: -1000, duration: 300 } };
 
   ionViewWillEnter();
 
@@ -33,10 +35,6 @@
   });
 </script>
 
-<div
-  class="ion-page"
-  in:fly={animation.in}
-  out:fly={animation.out}
->
+<div class="ion-page" in:fly={animation.in} out:fly={animation.out}>
   <slot />
 </div>
