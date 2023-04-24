@@ -51,7 +51,7 @@ const doStuff = () => {
   /* tslint:disable */
   import type { HTMLAttributes } from 'svelte/elements';
   import type { AccordionGroupChangeEventDetail, ActionSheetButton, AlertButton, AlertInput, BreadcrumbCollapsedClickEventDetail, CheckboxChangeEventDetail, ComponentProps, DatetimeChangeEventDetail, InputChangeEventDetail, InputInputEventDetail, ItemReorderEventDetail, ModalBreakpointChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeKnobMoveEndEventDetail, RangeKnobMoveStartEventDetail, RefresherEventDetail, RouterEventDetail, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SearchbarInputEventDetail, SegmentChangeEventDetail, SelectChangeEventDetail, TextareaChangeEventDetail, TextareaInputEventDetail, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, ViewController } from "@ionic/core";
-  import type { DatetimeHighlight, IonicConfig, IonicSafeString, } from "@ionic/core";
+  import type { DatetimeHighlight, IonicConfig, IonicSafeString } from "@ionic/core";
   import { SvelteComponent } from 'svelte';
   import { DatetimeHighlightStyle } from '@ionic/core/dist/types/components/datetime/datetime-interface';
   
