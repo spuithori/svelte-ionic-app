@@ -1,6 +1,12 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.78
+- Fixed issue with IonTabs - a href and goto navigation not supported - https://github.com/Tommertom/svelte-ionic-app/issues/76
+- May create issue with slug-routing
+- removed default exports of IonTabs, IonNav and IonPage so non-kit users can use Ionic
+- removed defineComponents - deprecated so people use all.js to import components - can cause BREAKING changes for some older implementations
+
 ## 0.5.77
 - Bumped to 7.0.3 - including creator scripts
 - Fix on MenuI

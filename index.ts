@@ -19,9 +19,7 @@ import { menuController } from "@ionic/core";
 import { initialize } from "@ionic/core/components";
 import type { IonicConfig } from "@ionic/core/components";
 
-import { defineIonComponents } from "./components/defineComponents";
 import type { MenuI } from "@ionic/core/dist/types/interface";
-export { defineComponent } from "./components/defineComponents";
 
 // all exports
 export {
@@ -130,7 +128,7 @@ export const setupIonicSvelte = async (config?: IonicConfig) => {
   initialize(config);
 
   /* Loading webcomponents en styles */
-  defineIonComponents();
+  console.warn('Ionic components not loaded - so your UI will appear broken.')
 
   /* something else needed */
   if (typeof (document as any) !== "undefined") {
@@ -161,10 +159,10 @@ export const registerMenu = (menuId: string): boolean => {
 
 // special component export
 // @ts-ignore
-export { default as IonTabs } from "./components/IonTabs.svelte";
+export { default as IonTabs } from "./components/TabsEmpty.svelte";
 // @ts-ignore
 // export { default as IonTabsLegacy } from "./components/IonTabsLegacy.svelte";
 // @ts-ignore
-export { default as IonPage } from "./components/IonPage.svelte";
+export { default as IonPage } from "./components/PageEmpty.svelte";
 // @ts-ignore
-export { default as IonNav } from "./components/IonNav.svelte";
+export { default as IonNav } from "./components/NavEmpty.svelte";
