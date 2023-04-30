@@ -3,18 +3,75 @@
 	import { alertController, IonPage } from 'ionic-svelte';
 
 	import { accountSchema as schema } from './account.interface';
-	import { enhance, getFormWritable, validateField } from './spa-enhance';
+	//	import { enhance, getFormWritable, validateField } from './spa-enhance';
 
-	const form = getFormWritable();
+	import { superForm, setMessage, setError } from 'sveltekit-superforms/client';
+	import { z } from 'zod';
+
+	/*
+<h1>Edit user</h1>
+
+{#if $message}<h3>{$message}</h3>{/if}
+
+<form method="POST" use:enhance>
+  <input type="hidden" name="id" bind:value={$form.id} />
+
+  <label>
+    Name<br />
+    <input
+      name="name"
+      data-invalid={$errors.name}
+      bind:value={$form.name}
+      {...$constraints.name} />
+  </label>
+  {#if $errors.name}<span class="invalid">{$errors.name}</span>{/if}
+
+  <label>
+    E-mail<br />
+    <input
+      name="email"
+      type="email"
+      data-invalid={$errors.email}
+      bind:value={$form.email}
+      {...$constraints.email} />
+  </label>
+  {#if $errors.email}<span class="invalid">{$errors.email}</span>{/if}
+
+  <button>Submit</button>
+</form>
+
+	*/
+
+	//const form = getFormWritable();
+
+	const userSchema = z.object({
+		firstName: z.string().min(2).default(''),
+		lastName: z.string().min(2).default('')
+	});
+
+	const { form, errors, message, constraints, enhance, delayed, validate } = superForm(
+		{ firstName: 'F', lastName: 'ss' },
+		{
+			SPA: true,
+			validators: userSchema,
+			onUpdate(form) {
+				console.log('SUBMIT clicked, received form', form);
+			},
+			onError({ result, message }) {
+				message.set(result.error.message);
+			},
+			validationMethod: 'oninput'
+		}
+	);
 
 	// $: console.log('Form received', $form);
 
 	function submit() {
-		if ($form?.success) {
+		if (!$errors) {
 			const controller = alertController
 				.create({
 					header: 'Account Created',
-					message: `Created account for: <b>${$form.data.firstName} ${$form.data.lastName}</b>`,
+					message: `Created account for: <b>${$form.firstName} ${$form.firstName}</b>`,
 					buttons: [
 						{
 							text: 'OK'
@@ -24,7 +81,7 @@
 				.then((alert) => alert.present());
 		}
 
-		if ($form !== null && !$form?.success) {
+		if ($errors) {
 			const controller = alertController
 				.create({
 					header: 'Account Not Created',
@@ -38,6 +95,31 @@
 				.then((alert) => alert.present());
 		}
 	}
+
+	async function doStuff(e: any) {
+		console.log('doStuff', e.detail.value, e.target.name);
+
+		// const nameErrors = awai	validate(e.target.value);
+		// validate('firstName', { update: 'errors' }).then(console.log);
+		//	validate('lastName', { update: 'errors' }).then(console.log);
+		const nameErrors = await validate('firstName', { update: false });
+		console.log('validate errors', nameErrors);
+		/*
+
+const nameErrors = await validate('name', { update: false })
+
+// Validate and update field with a custom value
+validate('name', { value: 'Test' })
+
+// Validate a custom value, update errors only
+validate('name', { value: 'Test', update: 'errors' })
+
+// Validate and update nested data, and also taint the field
+validate(['tags', 1, 'name'], { value: 'Test', taint: true })
+
+
+*/
+	}
 </script>
 
 <svelte:head>
@@ -45,48 +127,51 @@
 </svelte:head>
 
 <IonPage>
-	<ion-header translucent={true}>
-		<ion-toolbar>
-			<ion-buttons slot="start">
-				<ion-menu-button />
-			</ion-buttons>
-			<ion-buttons slot="end">
-				<SourceButton name="Inputs" />
-			</ion-buttons>
-			<ion-title>Create Account</ion-title>
-		</ion-toolbar>
-	</ion-header>
-
 	<ion-content fullscreen class="ion-padding">
-		<form use:enhance={{ form, schema }} id="accountform" on:submit={submit}>
+		<form method="POST" use:enhance>
+			<ion-header translucent={true}>
+				<ion-toolbar>
+					<ion-buttons slot="start">
+						<ion-menu-button />
+					</ion-buttons>
+					<ion-buttons slot="end">
+						<SourceButton name="Inputs" />
+					</ion-buttons>
+					<ion-title>Create Account</ion-title>
+				</ion-toolbar>
+			</ion-header>
+
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
-				<ion-item class:ion-invalid={$form?.errors?.firstName}>
-					<ion-label position="stacked">
-						First Name
-						<ion-text color="danger">*</ion-text>
-					</ion-label>
+				<ion-item>
 					<ion-input
+						class:ion-invalid={$errors.firstName}
+						class:ion-touched={$errors.firstName}
+						label="First Name"
+						label-placement="stacked"
+						helper-text="Here you may enter your first name - or something else"
+						error-text="Please type more characters..."
 						name="firstName"
 						type="text"
-						value={$form?.data.firstName ?? ''}
-						on:ionChange={validateField} />
-					<ion-note slot="helper">Here you may enter your first name - or something else</ion-note>
-					<ion-note slot="error">Please type more characters...</ion-note>
-				</ion-item>
-
-				<ion-item class:ion-invalid={$form?.errors?.lastName}>
-					<ion-label position="stacked">
-						Last Name
-						<ion-text color="danger">*</ion-text>
-					</ion-label>
-					<ion-input name="lastName" required type="text" on:ionChange={validateField} />
-					<ion-note slot="helper">This place is to enter your last name</ion-note>
-					<ion-note slot="error">Nag nag.....too short</ion-note>
+						value={$form.firstName ?? ''}
+						on:ionInput={doStuff} />
 				</ion-item>
 
 				<ion-item>
-					<ion-label position="floating">Title</ion-label>
-					<ion-input name="title" />
+					<ion-input
+						class:ion-invalid={$errors.lastName}
+						class:ion-touched={$errors.lastName}
+						label="Last Name"
+						label-placement="stacked"
+						helper-text="Here you may enter your last name - or something else"
+						error-text="Please type more characters..."
+						name="lastName"
+						type="text"
+						value={$form.lastName ?? ''}
+						on:ionInput={doStuff} />
+				</ion-item>
+
+				<ion-item>
+					<ion-input label="Title" label-placement="floating" name="title" />
 				</ion-item>
 
 				<ion-item>
@@ -99,8 +184,7 @@
 				</ion-item>
 
 				<ion-item>
-					<ion-label position="stacked">Notes</ion-label>
-					<ion-textarea name="notes" />
+					<ion-textarea label-placement="stacked" label="Notes" name="notes" />
 				</ion-item>
 			</ion-list>
 

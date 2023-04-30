@@ -114,7 +114,7 @@
 				<img alt="avatar" src={getRandomAvatar()} />
 			</ion-avatar>
 			<ion-label>
-				<h2>Event handler: reisze</h2>
+				<h2>Event handler: resize</h2>
 				<p>Resize the window - timestamp: {$resize}</p>
 			</ion-label>
 		</ion-item>
