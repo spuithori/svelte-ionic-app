@@ -91,11 +91,11 @@
 
 				<ion-item>
 					<ion-label position="stacked">Address</ion-label>
-					<ion-input placeholder="Address Line 1" name="addressLine1" />
-					<ion-input placeholder="Address Line 2" name="addressLine2" />
-					<ion-input placeholder="City" name="city" />
-					<ion-input placeholder="State" name="state" />
-					<ion-input placeholder="Zip Code" name="zip" />
+					<ion-input legacy={true} placeholder="Address Line 1" name="addressLine1" />
+					<ion-input legacy={true} placeholder="Address Line 2" name="addressLine2" />
+					<ion-input legacy={true} placeholder="City" name="city" />
+					<ion-input legacy={true} placeholder="State" name="state" />
+					<ion-input legacy={true} placeholder="Zip Code" name="zip" />
 				</ion-item>
 
 				<ion-item>
