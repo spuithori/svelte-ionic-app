@@ -29,6 +29,8 @@ const openModal = async (modalComponent: SvelteComponent, formData: {}) => {
 
 export const modalController = {
   create: (modalOptions: ModalOptions): Promise<HTMLIonModalElement> => {
+
+    console.warn('modalController broken - use inline modal - https://github.com/Tommertom/svelte-ionic-app/issues/77')
     // needs to be typed to ModalOptions (Partial or so?)
     // @ts-ignore - issue with modalOptions.component not matching
     return Promise.resolve(

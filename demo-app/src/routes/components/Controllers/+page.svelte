@@ -15,6 +15,8 @@
 
 	import Music from '$lib/components/Music.svelte';
 	import { IonPage } from 'ionic-svelte';
+	import type { ModalOptions } from '@ionic/core';
+	import { SvelteComponent } from 'svelte';
 
 	let inlineModalOpen = false;
 	let breakpoints = [0, 0.5, 1];
@@ -370,8 +372,68 @@
 		actionsheet.present();
 	};
 
+	export const modalController2 = {
+		create: (modalOptions: ModalOptions): Promise<HTMLIonModalElement> => {
+			// needs to be typed to ModalOptions (Partial or so?)
+			// @ts-ignore - issue with modalOptions.component not matching
+
+			return Promise.resolve(
+				modalController.__create(modalOptions.component, modalOptions)
+			) as Promise<HTMLIonModalElement>;
+		},
+		__create: (component: new (...args: any) => SvelteComponent, modalOptions: ModalOptions) => {
+			const divWrapper = document.createElement('div');
+			const contentID = 'id' + Date.now();
+			divWrapper.id = contentID;
+
+			const modalWrapper = document.createElement('ion-modal') as HTMLIonModalElement;
+			// console.log('ADDING CSS', modalOptions.cssClass);
+			// this part is not working
+			if (modalOptions.cssClass) {
+				if (Array.isArray(modalOptions.cssClass)) {
+					modalOptions.cssClass.forEach((cssClass) => {
+						modalWrapper.classList.add(cssClass);
+					});
+				} else modalWrapper.classList.add(modalOptions.cssClass);
+			}
+
+			let modalContent = document.createElement('div');
+
+			/* assign properties */
+			Object.keys(modalOptions)
+				.filter((key) => !['component', 'componentProps'].includes(key))
+				.forEach((key) => {
+					modalWrapper[key] = modalOptions[key];
+				});
+
+			divWrapper.appendChild(modalWrapper);
+			modalWrapper.appendChild(modalContent);
+			document.body.appendChild(divWrapper);
+
+			const svelteComponent = new component({
+				target: modalContent,
+				props: modalOptions.componentProps
+			});
+
+			modalWrapper.onDidDismiss().then(() => {
+				svelteComponent.$destroy();
+				divWrapper.remove();
+			});
+
+			return modalWrapper;
+		},
+
+		dismiss: (data?: any, role?: string | undefined, id?: string | undefined) => {
+			return modalController.dismiss(data, role);
+		},
+
+		getTop: () => {
+			return modalController.getTop();
+		}
+	};
+
 	const showModalController = async () => {
-		const modal = await modalController.create({
+		const modal = await modalController2.create({
 			component: ModalExtra,
 			componentProps: {
 				firstName: 'Douglas',
@@ -417,14 +479,12 @@
 		<ion-button expand="block" on:click={showInputAlert}> Show Input Alert </ion-button>
 
 		<ion-button expand="block" on:click={showModalController}
-			>Show modal - via controller</ion-button
-		>
+			>Show modal - via controller</ion-button>
 		<ion-button
 			expand="block"
 			on:click={() => {
 				inlineModalOpen = true;
-			}}>Show modal - via inline & as sheet</ion-button
-		>
+			}}>Show modal - via inline & as sheet</ion-button>
 		<ion-button expand="block" on:click={showPopover}>Show Popover</ion-button>
 		<ion-button expand="block" on:click={showLoading}>Show Loading</ion-button>
 		<ion-button expand="block" on:click={showPicker}>Show Picker</ion-button>
@@ -434,16 +494,14 @@
 			is-open={inlineModalOpen}
 			initial-breakpoint="0.5"
 			{breakpoints}
-			on:ionModalDidDismiss={inlineModalDismissed}
-		>
+			on:ionModalDidDismiss={inlineModalDismissed}>
 			<ion-content>
 				<br /><br /><br />
 				<ion-button
 					expand="block"
 					on:click={() => {
 						inlineModalOpen = false;
-					}}
-				>
+					}}>
 					Close modal
 				</ion-button>
 				<Music />

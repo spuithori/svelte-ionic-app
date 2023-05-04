@@ -125,11 +125,11 @@
 
 				<ion-item>
 					<ion-label position="stacked">Address</ion-label>
-					<ion-input placeholder="Address Line 1" name="addressLine1" />
-					<ion-input placeholder="Address Line 2" name="addressLine2" />
-					<ion-input placeholder="City" name="city" />
-					<ion-input placeholder="State" name="state" />
-					<ion-input placeholder="Zip Code" name="zip" />
+					<ion-input aria-label="Address Line 2" placeholder="Address Line 1" name="addressLine1" />
+					<ion-input aria-label="Address Line 2" placeholder="Address Line 2" name="addressLine2" />
+					<ion-input aria-label="City" placeholder="City" name="city" />
+					<ion-input aria-label="State" placeholder="State" name="state" />
+					<ion-input aria-label="Zip Code" placeholder="Zip Code" name="zip" />
 				</ion-item>
 
 				<ion-item>
