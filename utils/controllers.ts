@@ -31,6 +31,9 @@ export const modalController = {
   create: (modalOptions: ModalOptions): Promise<HTMLIonModalElement> => {
     // needs to be typed to ModalOptions (Partial or so?)
     // @ts-ignore - issue with modalOptions.component not matching
+
+    console.warn('modalController fails - use inline modal instead - https://github.com/Tommertom/svelte-ionic-app/issues/77')
+
     return Promise.resolve(
       modalController.__create(modalOptions.component, modalOptions)
     ) as Promise<HTMLIonModalElement>;
