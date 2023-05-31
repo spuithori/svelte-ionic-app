@@ -433,23 +433,33 @@
 	};
 
 	const showModalController = async () => {
-		const modal = await modalController2.create({
-			component: ModalExtra,
-			componentProps: {
-				firstName: 'Douglas',
-				lastName: 'Adams',
-				middleInitial: 'N'
-			},
-			showBackdrop: true,
-			backdropDismiss: false
-		});
+		const options = {
+			header: 'OOPS!',
+			subHeader: 'broken',
+			message: 'Opening modal with modalcontroller does no longer work as of Ionic7 - needs debugging',
+			buttons: ['OK']
+		};
 
-		modal.onDidDismiss().then((value) => {
-			console.log('Dismissed the modal', value);
-			if (value.role === 'backdrop') console.log('Backdrop clicked');
-		});
+		return showAlert(options);
 
-		await modal.present();
+		// modal controller broken as of Ionic 7
+		// const modal = await modalController2.create({
+		// 	component: ModalExtra,
+		// 	componentProps: {
+		// 		firstName: 'Douglas',
+		// 		lastName: 'Adams',
+		// 		middleInitial: 'N'
+		// 	},
+		// 	showBackdrop: true,
+		// 	backdropDismiss: false
+		// });
+
+		// modal.onDidDismiss().then((value) => {
+		// 	console.log('Dismissed the modal', value);
+		// 	if (value.role === 'backdrop') console.log('Backdrop clicked');
+		// });
+
+		// await modal.present();
 	};
 </script>
 

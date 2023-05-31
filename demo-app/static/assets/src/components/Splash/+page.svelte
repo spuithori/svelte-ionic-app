@@ -31,16 +31,11 @@
 	<br /> <br />
 	<br />
 	<br />
-	<br /> <br />
-	<br />
-	<br />
-	<br />
 	<div class="ion-text-center">
 		<img
 			src="/assets/svelte-ionic-logo.png"
 			alt="Great success"
-			in:scale={{ duration: 1900, easing: elasticInOut }}
-		/>
+			in:scale={{ duration: 1900, easing: elasticInOut }} />
 		<br /><br /><br />
 		<div in:scale={{ delay: 400, duration: 1900, easing: elasticInOut }}>Great success!</div>
 	</div>

@@ -2,55 +2,18 @@
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { alertController, IonPage } from 'ionic-svelte';
 
-	import { accountSchema as schema } from './account.interface';
-	//	import { enhance, getFormWritable, validateField } from './spa-enhance';
-
 	import { superForm, setMessage, setError } from 'sveltekit-superforms/client';
 	import { z } from 'zod';
-
-	/*
-<h1>Edit user</h1>
-
-{#if $message}<h3>{$message}</h3>{/if}
-
-<form method="POST" use:enhance>
-  <input type="hidden" name="id" bind:value={$form.id} />
-
-  <label>
-    Name<br />
-    <input
-      name="name"
-      data-invalid={$errors.name}
-      bind:value={$form.name}
-      {...$constraints.name} />
-  </label>
-  {#if $errors.name}<span class="invalid">{$errors.name}</span>{/if}
-
-  <label>
-    E-mail<br />
-    <input
-      name="email"
-      type="email"
-      data-invalid={$errors.email}
-      bind:value={$form.email}
-      {...$constraints.email} />
-  </label>
-  {#if $errors.email}<span class="invalid">{$errors.email}</span>{/if}
-
-  <button>Submit</button>
-</form>
-
-	*/
-
-	//const form = getFormWritable();
 
 	const userSchema = z.object({
 		firstName: z.string().min(2).default(''),
 		lastName: z.string().min(2).default('')
 	});
 
+	type User = z.infer<typeof userSchema>; // not used - but usefull
+
 	const { form, errors, message, constraints, enhance, delayed, validate } = superForm(
-		{ firstName: 'F', lastName: 'ss' },
+		{ firstName: '', lastName: '' },
 		{
 			SPA: true,
 			validators: userSchema,
@@ -58,13 +21,12 @@
 				console.log('SUBMIT clicked, received form', form);
 			},
 			onError({ result, message }) {
+				console.log('ERROR received', result, message);
 				message.set(result.error.message);
 			},
 			validationMethod: 'oninput'
 		}
 	);
-
-	// $: console.log('Form received', $form);
 
 	function submit() {
 		if (!$errors) {
@@ -96,29 +58,14 @@
 		}
 	}
 
-	async function doStuff(e: any) {
-		console.log('doStuff', e.detail.value, e.target.name);
-
-		// const nameErrors = awai	validate(e.target.value);
-		// validate('firstName', { update: 'errors' }).then(console.log);
-		//	validate('lastName', { update: 'errors' }).then(console.log);
+	async function checkInput(e: any) {
+		console.log('Getting stuff', e.detail.value, e.target.name);
+		if (e.target.name in $form) {
+			//@ts-ignore
+			$form[e.target.name] = e.detail.value;
+		}
 		const nameErrors = await validate('firstName', { update: false });
 		console.log('validate errors', nameErrors);
-		/*
-
-const nameErrors = await validate('name', { update: false })
-
-// Validate and update field with a custom value
-validate('name', { value: 'Test' })
-
-// Validate a custom value, update errors only
-validate('name', { value: 'Test', update: 'errors' })
-
-// Validate and update nested data, and also taint the field
-validate(['tags', 1, 'name'], { value: 'Test', taint: true })
-
-
-*/
 	}
 </script>
 
@@ -144,30 +91,32 @@ validate(['tags', 1, 'name'], { value: 'Test', taint: true })
 			<ion-list lines="full" class="ion-no-margin ion-no-padding">
 				<ion-item>
 					<ion-input
+						placeholder="Start typing here to see superforms"
 						class:ion-invalid={$errors.firstName}
 						class:ion-touched={$errors.firstName}
-						label="First Name"
+						label="First Name - Superforms supercharged"
 						label-placement="stacked"
 						helper-text="Here you may enter your first name - or something else"
 						error-text="Please type more characters..."
 						name="firstName"
 						type="text"
 						value={$form.firstName ?? ''}
-						on:ionInput={doStuff} />
+						on:ionInput={checkInput} />
 				</ion-item>
 
 				<ion-item>
 					<ion-input
+						placeholder="Start typing here to see superforms"
 						class:ion-invalid={$errors.lastName}
 						class:ion-touched={$errors.lastName}
-						label="Last Name"
+						label="Last Name - Superforms supercharged"
 						label-placement="stacked"
 						helper-text="Here you may enter your last name - or something else"
 						error-text="Please type more characters..."
 						name="lastName"
 						type="text"
 						value={$form.lastName ?? ''}
-						on:ionInput={doStuff} />
+						on:ionInput={checkInput} />
 				</ion-item>
 
 				<ion-item>
@@ -176,11 +125,11 @@ validate(['tags', 1, 'name'], { value: 'Test', taint: true })
 
 				<ion-item>
 					<ion-label position="stacked">Address</ion-label>
-					<ion-input placeholder="Address Line 1" name="addressLine1" />
-					<ion-input placeholder="Address Line 2" name="addressLine2" />
-					<ion-input placeholder="City" name="city" />
-					<ion-input placeholder="State" name="state" />
-					<ion-input placeholder="Zip Code" name="zip" />
+					<ion-input aria-label="Address Line 2" placeholder="Address Line 1" name="addressLine1" />
+					<ion-input aria-label="Address Line 2" placeholder="Address Line 2" name="addressLine2" />
+					<ion-input aria-label="City" placeholder="City" name="city" />
+					<ion-input aria-label="State" placeholder="State" name="state" />
+					<ion-input aria-label="Zip Code" placeholder="Zip Code" name="zip" />
 				</ion-item>
 
 				<ion-item>
