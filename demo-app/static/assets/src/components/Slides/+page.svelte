@@ -3,6 +3,7 @@
 	import SourceButton from '$lib/components/SourceButton.svelte';
 	import { menuController } from 'ionic-svelte';
 	import { IonPage } from 'ionic-svelte';
+	import { register } from 'swiper/element/bundle';
 
 	let menuIconClicked = false;
 
@@ -21,6 +22,8 @@
 		menuIconClicked = true;
 		menuController.open('mainmenu');
 	};
+
+	register();
 </script>
 
 <svelte:head>
@@ -41,8 +44,8 @@
 	</ion-header>
 
 	<ion-content fullscreen class="ion-padding" scroll-y={false}>
-		<ion-slides on:ionSlideReachEnd={flipMenuOnOff} pager={true}>
-			<ion-slide>
+		<swiper-container pager={true} on:reachend={flipMenuOnOff}>
+			<swiper-slide>
 				<img src="/logo.svg" alt="pict" />
 				<h2>Welcome!</h2>
 
@@ -54,20 +57,16 @@
 
 				<br />
 				<br />
-			</ion-slide>
-			<ion-slide>
-				<img src="../assets/img/slides/svelte.png" alt="pict" />
+			</swiper-slide>
+			<swiper-slide>
+				<img src="../assets/img/slides/svelte.png" alt="pict" width="50%" />
 				<h2>Handy tool!</h2>
 				View the source code of the element you are viewing - copy/paste code, and directly link to the
-				API docs!<br />Just click&nbsp;<ion-icon icon={code} /><br /><br />
+				API docs!<br />
 				Also in Angular, Vue, React, VanillaJS and Stencil
-				<br />
-				<h2>Ready to Play?</h2>
-				Check out
-				<ion-icon icon={menu} on:click={flipMenuOn} on:keypress={flipMenuOn} />
-				to look at Ionic UI examples. <br />
-			</ion-slide>
-		</ion-slides>
+			</swiper-slide>
+			<swiper-slide>Slide 3</swiper-slide>
+		</swiper-container>
 	</ion-content>
 </IonPage>
 
@@ -76,19 +75,41 @@
 		--ion-safe-area-top: 20px;
 		--ion-safe-area-bottom: 22px;
 	}
-	ion-slide {
-		display: block;
-	}
-	ion-slide > h2 {
-		margin-top: 2.8rem;
-	}
-	ion-slide > img {
-		max-height: 50%;
-		max-width: 60%;
-		margin: 36px 0;
-	}
 
 	pre {
 		font-size: 80%;
+	}
+
+	swiper-container {
+		--swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+		--swiper-pagination-color: var(--ion-color-primary, #3880ff);
+		--swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+		--swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+		--swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+	}
+
+	swiper-slide {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+		height: 100%;
+
+		font-size: 18px;
+
+		text-align: center;
+		box-sizing: border-box;
+	}
+
+	swiper-slide img {
+		width: auto;
+		max-width: 40%;
+		height: auto;
+		max-height: 40%;
 	}
 </style>

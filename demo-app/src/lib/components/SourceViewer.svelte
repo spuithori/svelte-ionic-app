@@ -62,7 +62,7 @@
 	// we use a separate way to load the svelte source
 	// hack the name for tabs
 	if (name == 'Tabs' || name == 'tabs') {
-		name = 'tabs/[tab]';
+		name = 'tabs/explain';
 	}
 
 	console.log('getting', `assets/src/components/${name}/+page.svelte`);
@@ -196,8 +196,7 @@
 						if (REPLlink.length > 1) {
 							window.open(REPLlink, '_blank');
 						}
-					}}
-				>
+					}}>
 					REPL
 				</ion-button>
 			{/if}
@@ -205,8 +204,7 @@
 			<ion-button
 				on:click={() => {
 					window.open(APIlink, '_blank');
-				}}
-			>
+				}}>
 				API
 			</ion-button>
 

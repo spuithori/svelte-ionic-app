@@ -55,7 +55,7 @@
 		.map((componentName) => {
 			// console.log('COMPONENTN', componentName);
 			const url =
-				componentName !== 'Tabs' ? `/components/${componentName}` : `/components/tabs/[tab]`;
+				componentName !== 'Tabs' ? `/components/${componentName}` : `/components/tabs/explain`;
 			return {
 				url,
 				label: componentName,

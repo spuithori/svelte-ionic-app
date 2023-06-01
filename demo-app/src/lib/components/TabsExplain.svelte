@@ -27,10 +27,14 @@
 		but there is a HOWTO-you can look at to see how it works.
 	</p>
 
+	<p>
+		Use a href to navigate to other tabs
+		<a href="/components/tabs/explain">explain</a>
+	</p>
+
 	<p>This also solves some earlier issues and eases the DX.</p>
 	<p>
 		<a href="https://github.com/Tommertom/ionic-svelte-tabs-howto" target="_new"
-			>https://github.com/Tommertom/ionic-svelte-tabs-howto</a
-		>
+			>https://github.com/Tommertom/ionic-svelte-tabs-howto</a>
 	</p>
 </ion-content>

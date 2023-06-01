@@ -1,7 +1,15 @@
 # Change Log Ionic-Svelte-NPM
 All notable changes to this project will be documented in this file.
 
+## 0.5.80
+- modalController does not function - use inline - which is better for styling and binding anyway
+
+## 0.5.79
+- support for a href and goto routing for IonTabs - solving https://github.com/Tommertom/svelte-ionic-app/issues/76
+- this may create an issue with slug navigation - will test later
+
 ## 0.5.78
+- migrated the demo-app - see MIGRATION.md  https://github.com/Tommertom/svelte-ionic-app/blob/mainMIGRATION.md on how I did so
 - Fixed issue with IonTabs - a href and goto navigation not supported - https://github.com/Tommertom/svelte-ionic-app/issues/76
 - May create issue with slug-routing
 - removed default exports of IonTabs, IonNav and IonPage so non-kit users can use Ionic

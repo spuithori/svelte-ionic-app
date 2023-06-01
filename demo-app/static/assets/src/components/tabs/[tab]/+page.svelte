@@ -25,7 +25,7 @@
 
 	console.log('Tabs', tab, myTabs);
 
-	const logStuff = (event) => {
+	const logStuff = (event: { detail: { tab: any }; type: any }) => {
 		console.log('>', event?.detail?.tab, event?.type);
 	};
 </script>
@@ -36,5 +36,4 @@
 	selected={tab}
 	ionTabsWillChange={logStuff}
 	ionNavWillLoad={logStuff}
-	ionTabsDidChange={logStuff}
-/>
+	ionTabsDidChange={logStuff} />

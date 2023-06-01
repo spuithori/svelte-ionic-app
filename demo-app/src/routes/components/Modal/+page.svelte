@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ModalExtra from '$lib/components/ModalExtra.svelte';
 
-	import { modalController } from 'ionic-svelte';
+	import { alertController, modalController } from 'ionic-svelte';
 
 	import SourceButton from '$lib/components/SourceButton.svelte';
 
@@ -16,24 +16,39 @@
 		inlineModalOpen = false;
 	};
 
+	const showAlert = async (options) => {
+		const alert = await alertController.create(options);
+		alert.present();
+	};
+
 	const showModalController = async () => {
-		const modal = await modalController.create({
-			component: ModalExtra,
-			componentProps: {
-				firstName: 'Douglas',
-				lastName: 'Adams',
-				middleInitial: 'N'
-			},
-			showBackdrop: true,
-			backdropDismiss: false
-		});
+		const options = {
+			header: 'OOPS!',
+			subHeader: 'broken',
+			message:
+				'Opening modal with modalcontroller does no longer work as of Ionic7 - needs debugging',
+			buttons: ['OK']
+		};
 
-		modal.onDidDismiss().then((value) => {
-			console.log('Dismissed the modal', value);
-			if (value.role === 'backdrop') console.log('Backdrop clicked');
-		});
+		return showAlert(options);
 
-		await modal.present();
+		// const modal = await modalController.create({
+		// 	component: ModalExtra,
+		// 	componentProps: {
+		// 		firstName: 'Douglas',
+		// 		lastName: 'Adams',
+		// 		middleInitial: 'N'
+		// 	},
+		// 	showBackdrop: true,
+		// 	backdropDismiss: false
+		// });
+
+		// modal.onDidDismiss().then((value) => {
+		// 	console.log('Dismissed the modal', value);
+		// 	if (value.role === 'backdrop') console.log('Backdrop clicked');
+		// });
+
+		// await modal.present();
 	};
 </script>
 
@@ -57,29 +72,25 @@
 	<ion-content fullscreen class="ion-padding">
 		<h1>Click me stuff below!</h1>
 		<ion-button expand="block" on:click={showModalController}
-			>Show modal - via controller</ion-button
-		>
+			>Show modal - via controller</ion-button>
 		<ion-button
 			expand="block"
 			on:click={() => {
 				inlineModalOpen = true;
-			}}>Show modal - via inline & as sheet</ion-button
-		>
+			}}>Show modal - via inline & as sheet</ion-button>
 
 		<ion-modal
 			is-open={inlineModalOpen}
 			initial-breakpoint="0.5"
 			{breakpoints}
-			on:ionModalDidDismiss={inlineModalDismissed}
-		>
+			on:ionModalDidDismiss={inlineModalDismissed}>
 			<ion-content>
 				<br /><br /><br />
 				<ion-button
 					expand="block"
 					on:click={() => {
 						inlineModalOpen = false;
-					}}
-				>
+					}}>
 					Close modal
 				</ion-button>
 				<Music />
