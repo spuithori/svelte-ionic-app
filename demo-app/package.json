@@ -8,7 +8,7 @@
 		"url": "https://github.com/Tommertom/svelte-ionic-npm.git"
 	},
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"deploy": "vite build && firebase deploy",
