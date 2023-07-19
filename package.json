@@ -1,10 +1,6 @@
 {
   "name": "ionic-svelte",
-<<<<<<< HEAD
   "version": "0.5.81",
-=======
-  "version": "0.5.80",
->>>>>>> ionic7
   "private": false,
   "homepage": "https://ionicsvelte.firebaseapp.com",
   "repository": {
