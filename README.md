@@ -69,7 +69,7 @@ adapter: adapter({
 Integration of Ionic
 
 - `npm i @ionic/core ionic-svelte` 
-- create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: - create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-app/main/starterfiles/theme/variables.css
+- create a theme folder/file that contains the colours for Ionic (see starterfiles/theme). Example: https://raw.githubusercontent.com/Tommertom/svelte-ionic-app/main/starterfiles/theme/variables.css
 - the top-route layout file `+layout.svelte` (Kit) or top root module (others) needs to run `setupIonicSvelte()` and import the theme stylesheet before anything else - also see starterfiles/+layout.svelte. Example:
 
 ```
