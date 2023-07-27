@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-04-19T13:24:50",
+  "timestamp": "2023-07-26T15:49:42",
   "compiler": {
     "name": "@stencil/core",
-    "version": "3.2.1",
-    "typescriptVersion": "4.9.5"
+    "version": "3.4.0",
+    "typescriptVersion": "5.0.4"
   },
   "components": [
     {
@@ -5410,6 +5410,26 @@
         {
           "name": "slot",
           "text": "time-label - The label for the time selector in the datetime."
+        },
+        {
+          "name": "part",
+          "text": "wheel-item - The individual items when using a wheel style layout, or in the\nmonth/year picker when using a grid style layout."
+        },
+        {
+          "name": "part",
+          "text": "wheel-item active - The currently selected wheel-item."
+        },
+        {
+          "name": "part",
+          "text": "time-button - The button that opens the time picker when using a grid style\nlayout with `presentation=\"date-time\"` or `\"time-date\"`."
+        },
+        {
+          "name": "part",
+          "text": "time-button active - The time picker button when the picker is open."
+        },
+        {
+          "name": "part",
+          "text": "month-year-button - The button that opens the month/year picker when\nusing a grid style layout."
         }
       ],
       "usage": {},
@@ -6046,7 +6066,7 @@
           "mutable": false,
           "attr": "year-values",
           "reflectToAttr": false,
-          "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`.",
+          "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2008,2012,2016,2020,2024\"`.",
           "docsTags": [],
           "values": [
             {
@@ -6155,6 +6175,16 @@
           "name": "--title-color",
           "annotation": "prop",
           "docs": "The text color of the title."
+        },
+        {
+          "name": "--wheel-fade-background-rgb",
+          "annotation": "prop",
+          "docs": "The color of the gradient covering non-selected items when using a wheel style layout, or in the month/year picker for grid style layouts. Must be in RGB format, e.g. `255, 255, 255`."
+        },
+        {
+          "name": "--wheel-highlight-background",
+          "annotation": "prop",
+          "docs": "The background of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
         }
       ],
       "slots": [
@@ -6171,7 +6201,28 @@
           "docs": "The title of the datetime."
         }
       ],
-      "parts": [],
+      "parts": [
+        {
+          "name": "month-year-button",
+          "docs": "The button that opens the month/year picker when\nusing a grid style layout."
+        },
+        {
+          "name": "time-button",
+          "docs": "The button that opens the time picker when using a grid style\nlayout with `presentation=\"date-time\"` or `\"time-date\"`."
+        },
+        {
+          "name": "time-button active",
+          "docs": "The time picker button when the picker is open."
+        },
+        {
+          "name": "wheel-item",
+          "docs": "The individual items when using a wheel style layout, or in the\nmonth/year picker when using a grid style layout."
+        },
+        {
+          "name": "wheel-item active",
+          "docs": "The currently selected wheel-item."
+        }
+      ],
       "dependents": [],
       "dependencies": [
         "ion-buttons",
@@ -7642,6 +7693,10 @@
         {
           "name": "virtualProp",
           "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "label - The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
         }
       ],
       "usage": {},
@@ -8278,7 +8333,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the input.",
+          "docs": "The visible label associated with the input.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
           "docsTags": [],
           "values": [
             {
@@ -8759,7 +8814,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-input>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
+          "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
           "docsTags": []
         },
         {
@@ -8777,7 +8832,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event fires when the `value` of an `<ion-input>` element\nhas been changed.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
+          "docs": "The `ionInput` event is fired each time the user modifies the input's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the input's value. This typically happens for each keystroke as the user types.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
           "docsTags": []
         }
       ],
@@ -8796,7 +8851,7 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Radius of the input"
+          "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
         },
         {
           "name": "--border-style",
@@ -8869,7 +8924,12 @@
           "docs": "Opacity of the input placeholder text"
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "label",
+          "docs": "The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": [
@@ -15137,6 +15197,25 @@
           "required": false
         },
         {
+          "name": "label",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The text to display as the control's label. Use this over the `label` slot if\nyou only need plain text. The `label` property will take priority over the\n`label` slot if both are used.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "labelPlacement",
           "type": "\"end\" | \"fixed\" | \"start\"",
           "mutable": false,
@@ -17200,6 +17279,23 @@
           "required": false
         },
         {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "If used in a form, set the name of the control, which is submitted with the form data.",
+          "docsTags": [],
+          "default": "this.inputId",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "placeholder",
           "type": "string",
           "mutable": false,
@@ -17679,13 +17775,16 @@
         },
         {
           "name": "value",
-          "type": "string | undefined",
+          "type": "number | string | undefined",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
           "docs": "the value of the segment.",
           "docsTags": [],
           "values": [
+            {
+              "type": "number"
+            },
             {
               "type": "string"
             },
@@ -17861,7 +17960,7 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "number | string",
           "mutable": false,
           "attr": "value",
           "reflectToAttr": false,
@@ -17869,6 +17968,9 @@
           "docsTags": [],
           "default": "'ion-sb-' + ids++",
           "values": [
+            {
+              "type": "number"
+            },
             {
               "type": "string"
             }
@@ -18058,6 +18160,10 @@
           "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
+          "name": "slot",
+          "text": "label - The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+        },
+        {
           "name": "part",
           "text": "placeholder - The text displayed in the select when there is no value."
         },
@@ -18068,6 +18174,14 @@
         {
           "name": "part",
           "text": "icon - The select icon container."
+        },
+        {
+          "name": "part",
+          "text": "container - The container for the selected text or placeholder."
+        },
+        {
+          "name": "part",
+          "text": "label - The label text describing the select."
         }
       ],
       "usage": {},
@@ -18187,6 +18301,25 @@
           "required": false
         },
         {
+          "name": "expandedIcon",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "expanded-icon",
+          "reflectToAttr": false,
+          "docs": "The toggle icon to show when the select is open. If defined, the icon\nrotation behavior in `md` mode will be disabled. If undefined, `toggleIcon`\nwill be used for when the select is both open and closed.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "fill",
           "type": "\"outline\" | \"solid\" | undefined",
           "mutable": false,
@@ -18285,7 +18418,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the select.",
+          "docs": "The visible label associated with the select.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
           "docsTags": [],
           "values": [
             {
@@ -18488,6 +18621,25 @@
           "required": false
         },
         {
+          "name": "toggleIcon",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "toggle-icon",
+          "reflectToAttr": false,
+          "docs": "The toggle icon to use. Defaults to `chevronExpand` for `ios` mode,\nor `caretDownSharp` for `md` mode.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "value",
           "type": "any",
           "mutable": true,
@@ -18584,7 +18736,7 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Radius of the select border"
+          "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
         },
         {
           "name": "--border-style",
@@ -18647,11 +18799,24 @@
           "docs": "The color of the ripple effect on MD mode."
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "label",
+          "docs": "The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+        }
+      ],
       "parts": [
+        {
+          "name": "container",
+          "docs": "The container for the selected text or placeholder."
+        },
         {
           "name": "icon",
           "docs": "The select icon container."
+        },
+        {
+          "name": "label",
+          "docs": "The label text describing the select."
         },
         {
           "name": "placeholder",
@@ -19647,7 +19812,7 @@
           },
           "signature": "getSelected() => Promise<string | undefined>",
           "parameters": [],
-          "docs": "Get the currently selected tab.",
+          "docs": "Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
           "docsTags": []
         },
         {
@@ -19658,7 +19823,7 @@
           },
           "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
           "parameters": [],
-          "docs": "Get a specific tab by the value of its `tab` property or an element reference.",
+          "docs": "Get a specific tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
           "docsTags": [
             {
               "name": "param",
@@ -19674,7 +19839,7 @@
           },
           "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
           "parameters": [],
-          "docs": "Select a tab by the value of its `tab` property or an element reference.",
+          "docs": "Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
           "docsTags": [
             {
               "name": "param",
@@ -19833,6 +19998,10 @@
         {
           "name": "virtualProp",
           "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "label - The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
         }
       ],
       "usage": {},
@@ -20210,7 +20379,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the textarea.",
+          "docs": "The visible label associated with the textarea.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
           "docsTags": [],
           "values": [
             {
@@ -20553,7 +20722,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-textarea>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the element loses focus after its value\nhas been modified.",
+          "docs": "The `ionChange` event is fired when the user modifies the textarea's value.\nUnlike the `ionInput` event, the `ionChange` event is fired when\nthe element loses focus after its value has been modified.",
           "docsTags": []
         },
         {
@@ -20571,7 +20740,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event fires when the `value` of an `<ion-textarea>` element\nhas been changed.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
+          "docs": "The `ionInput` event is fired each time the user modifies the textarea's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the textarea's value. This typically happens for each keystroke as the user types.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
           "docsTags": []
         }
       ],
@@ -20663,7 +20832,12 @@
           "docs": "Opacity of the placeholder text"
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "label",
+          "docs": "The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": [],

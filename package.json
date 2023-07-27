@@ -1,6 +1,6 @@
 {
   "name": "ionic-svelte",
-  "version": "0.5.81",
+  "version": "0.5.82",
   "private": false,
   "homepage": "https://ionicsvelte.firebaseapp.com",
   "repository": {
@@ -28,10 +28,10 @@
   },
   "type": "module",
   "devDependencies": {
-    "svelte": "^3.55.1"
+    "svelte": "^4.0.5"
   },
   "dependencies": {
-    "@ionic/core": "^7.0.3",
+    "@ionic/core": "^7.2.1",
     "swiper": "^9.2.4"
   }
 }

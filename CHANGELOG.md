@@ -1,149 +1,193 @@
 # Change Log Ionic-Svelte-NPM
+
 All notable changes to this project will be documented in this file.
 
+## 0.5.81/82
+
+- bumped Ionic core to 7.2.1
+- bumped Svelte to 4.0.5
+- added message referring to Vite PWA to make your app a PWA
+
 ## 0.5.80
+
 - modalController does not function - use inline - which is better for styling and binding anyway
 
 ## 0.5.79
+
 - support for a href and goto routing for IonTabs - solving https://github.com/Tommertom/svelte-ionic-app/issues/76
 - this may create an issue with slug navigation - will test later
 
 ## 0.5.78
-- migrated the demo-app - see MIGRATION.md  https://github.com/Tommertom/svelte-ionic-app/blob/mainMIGRATION.md on how I did so
+
+- migrated the demo-app - see MIGRATION.md https://github.com/Tommertom/svelte-ionic-app/blob/mainMIGRATION.md on how I did so
 - Fixed issue with IonTabs - a href and goto navigation not supported - https://github.com/Tommertom/svelte-ionic-app/issues/76
 - May create issue with slug-routing
 - removed default exports of IonTabs, IonNav and IonPage so non-kit users can use Ionic
 - removed defineComponents - deprecated so people use all.js to import components - can cause BREAKING changes for some older implementations
 
 ## 0.5.77
+
 - Bumped to 7.0.3 - including creator scripts
 - Fix on MenuI
 - IonPage.svelte now holds a secret
 
 ## 0.5.74/75/76 Ionic 7 (Ionic 7.0.2)
+
 - Ionic 7 package landed - demo app is not upgraded yet
 - Creator scripts are updated to 7.0.2 as well - fixing to that version as I assume there will be updates on core
 
-## 0.5.73 create scripts 
+## 0.5.73 create scripts
+
 - bump create-svelte dependency to latest
 
 ## 0.5.71/72
+
 - Added platforms back (typescript)
 
 ## 0.5.70
+
 - Ionic core 6.6.0 and create scripts locked to latest of 6 (arrival of 7)
 
 ## 0.5.69
+
 - IonTabs - possibly breaking changes for users - fixed bug when tabs are placed in main route
 
 ## 0.5.68
+
 - added some typings for platform functions
 
 ## 0.5.62/63/64/65/66/67
-- removed typescript in *.svelte components as Vite does not process them (but does process *.ts)
-- removed  IonTabsLegacy.svelte - can still be found here https://github.com/Tommertom/svelte-ionic-app/blob/main/src/IonTabsLegacy.svelte for manual inclusion
+
+- removed typescript in _.svelte components as Vite does not process them (but does process _.ts)
+- removed IonTabsLegacy.svelte - can still be found here https://github.com/Tommertom/svelte-ionic-app/blob/main/src/IonTabsLegacy.svelte for manual inclusion
 
 ## 0.5.60/61
+
 - Put the NPM package with the demo app in one repo
 
 ## Creator scripts / 0.5.59
+
 - css classic style selectors for dark, so developer can do apply dark theme programmatically
 - bumped to Ionic 6.5.3
 
 ## Creator scripts fixes
+
 - added dark mode variables (they were missing)
-- fixed HMR flag url - there needs to be http:// 
+- fixed HMR flag url - there needs to be http://
 
 ## 0.5.57/58
+
 - Event types fixed - needed CustomEvent wrapper - https://github.com/ionic-team/ionic-framework/issues/26747
 
 ## 0.5.56
+
 - Platform types added
 
 ## 0.5.54/55
+
 - Updated README to cover HOWTOs
 - Changed description for SSR/SPA
 
 ## 0.5.53
+
 - Forgot about the typings for controllers! Added them
 
 ## 0.5.52
+
 - Bumped ionic to 6.4.2 for creator scripts and ionic-svelte
 - Ionic Nav and navController cleanup for better API:
 
-Now you can load the ion-nav via `<IonNav root={SvelteRootComponent}/>` and this "NavHome" can use the `navController` to `push` new Sveltecomponents on the stack. 
+Now you can load the ion-nav via `<IonNav root={SvelteRootComponent}/>` and this "NavHome" can use the `navController` to `push` new Sveltecomponents on the stack.
 
 See HOWTO - https://github.com/Tommertom/ionic-svelte-nav-howto
 
 ## 0.5.51
+
 - Typescript update after receiving good support from Svelte community
 
 ## 0.5.50
+
 - Added navController and IonNav.svelte for better nav APIs - experimental, will make a HOWTO to show how it works
 
 ## 0.5.49
+
 - Typings update (exporting the default pages)
 
 ## 0.5.47/0.5.48
+
 - Typings update (exporting the default functions)
 
 ## 0.5.46
+
 - Typings update - some more debugging
 
 ## Creator scripts updated
-- Better HMR support (via dynamic config) - generated for *.json or *.ts approach
+
+- Better HMR support (via dynamic config) - generated for _.json or _.ts approach
 
 ## 0.5.45
+
 - Typings changed using svelte/elements
 
 ## 0.5.44
+
 - NavController added (experimental) - to support IonNav easy DX - not working
 - IonNav.svelte introduced as wrapper for Ionic's Nav navigation stack.
 
 ## 0.5.43
+
 - Added `IonNav` component for better API support on an IonNav (experimental)
 
 ## Update to creator scripts (both)
+
 - Running npx cap init from the script
 - Feedback on capacitor config so user can tweak where needed
 
-## Creator scripts for Capacitor and Ionic 
+## Creator scripts for Capacitor and Ionic
+
 - Updated to have HMR enabled by default
 - Additional instructions for users
 
 ## 0.5.37/38/39/40/41/42
+
 - Fixed issues in typings (camelcase to kebabcase for props, and fixed urls to api docs)
 
 ## 0.5.35/0.5.36
+
 - BREAKING change for IonTabs - If you are using IonTabs, please import `IonTabsLegacy.svelte`
 - Implemented IonTabs which uses SvelteKit Layout System
 - If you are not using SvelteKit -> please continue using `IonTabsLegacy.svelte`
 - See - https://github.com/Tommertom/ionic-svelte-tabs-howto
 - Important notes when migrating away from legacy:
-	- Change your icon reference and include imports `import {close} from 'ionicons/icons';`
-	- Complete the `+layout.svelte` as per howto
-	- Create the subfolders for the routes
-	- Place your components in `+page.svelte` files
-	- Make sure they are wrapped in `ion-tab` with `tab` property 
+  - Change your icon reference and include imports `import {close} from 'ionicons/icons';`
+  - Complete the `+layout.svelte` as per howto
+  - Create the subfolders for the routes
+  - Place your components in `+page.svelte` files
+  - Make sure they are wrapped in `ion-tab` with `tab` property
 
 ## 0.5.34
+
 - Minor text update for creator - explanation CapacitorJS
 - fixed Vite4 dependency in creator
 - Package size reduction
 
 ## 0.5.33
-- Creator 0.0.15 - some  fixes & better reference for npx cap init (webdir flag) 
+
+- Creator 0.0.15 - some fixes & better reference for npx cap init (webdir flag)
 
 ## 0.5.32
+
 - Typings - Added on-handlers for all components per component
 
 ## 0.5.31
+
 - Capacitor added to creator 0.0.8
 - Ionicons bug fix in creator - disabled verbose logging for the time being
 
 ## 0.5.30
+
 - Changed the default starter to use the cjs import, also to enable codesplitting - creator 0.0.8
-- `setupIonicSvelte()` deprecated -  Changed config routine to `setupIonicBase();` 
+- `setupIonicSvelte()` deprecated - Changed config routine to `setupIonicBase();`
 
 ```
 <script lang="ts">
@@ -162,7 +206,9 @@ See HOWTO - https://github.com/Tommertom/ionic-svelte-nav-howto
 </ion-app>
 
 ```
+
 Should become:
+
 ```
 <script lang="ts">
 	import { setupIonicBase } from 'ionic-svelte';
@@ -196,12 +242,12 @@ Should become:
 		to do this elsewhere if you like to code-split differently.
 
 		You can find these import lines to copy here by going to the imported file below (ionic-svelte/components/all).
-	
+
 		Please don't forget to import ion-app in this file when you decide to code-split:
-		
+
 	    import 'ionic-svelte/components/ion-app';
 	*/
-	
+
 </script>
 
 <ion-app>
@@ -212,27 +258,33 @@ Should become:
 ```
 
 ## 0.5.29
+
 - Updated typings
 - Modular imports available, but not defaulted yet
 
 ## 0.5.28/27
+
 - Typings for style, default events, class added
 - Still problem with ok-text (ion-select), is-open (modal) etc...
 - How to deal with svelte specific goodies like use: and bind:....?
 - Also padding (with =true), checked (without parameter)
-- Fixed issue create-app script (now 0.0.7) - Package warnings are treated as errors 
+- Fixed issue create-app script (now 0.0.7) - Package warnings are treated as errors
 
 ## 0.5.26
+
 - Ionic event type bindings fix
 
 ## 0.5.25
+
 - Fixes in type definitions (slots)
 
 ## 0.5.24
+
 - Removed Experimental package - no ES-imports because of style encapsulation
 - Added typings (need a bit more testing)
 
 ## 0.5.22
+
 - Added create-ionic-svelte-app package
 
 ## 0.5.21

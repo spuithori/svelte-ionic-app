@@ -286,9 +286,9 @@ function bumpPackageJson(version) {
   const currentDirectory = process.cwd();
 
   if (currentDirectory.includes("script")) {
-    console.log("Current directory contains the word 'script'");
+    console.log("Current directory contains the word 'script' - that is how we want it");
   } else {
-    console.log("Current directory does not contain the word 'script'");
+    console.log("Current directory does not contain the word 'script' - aborting");
     process.exit()
   }
 
@@ -350,8 +350,6 @@ https.get(url, (res) => {
 
 function bumpCreatorPackages(version, fileName) {
   // Read the contents of the creator.js file
-
-
 
   fs.readFile(fileName, 'utf8', (err, data) => {
     if (err) {

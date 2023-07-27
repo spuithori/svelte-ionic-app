@@ -133,6 +133,8 @@ async function main() {
 			console.log(`\nUse the ${bold(cyan('-hmr'))} flag after your ${bold(cyan('npx cap run/open/sync'))} commands to use HMR together with ${bold(cyan('npm run dev'))}`);
 		}
 
+		console.log(`\nHint: Make your app offline and near native by turning it into a progressive web app - see ${cyan(' https://github.com/vite-pwa/sveltekit')}`);
+
 		console.log(`\nStuck? Visit us at Ionic's discord ${cyan('https://discordapp.com/channels/520266681499779082/1049388501629681675')}`);
 
 		console.log(grey(`\nNeed some help or found an issue with this installer? Visit us on Github https://github.com/Tommertom/svelte-ionic-npm`));
